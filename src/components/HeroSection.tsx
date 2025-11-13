@@ -26,9 +26,6 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground italic mt-4">
             _ Chất lượng là danh dự _
           </p>
-          <div className="text-2xl md:text-4xl lg:text-5xl font-light text-foreground mt-8 tracking-wider">
-            A New SOURCE of ENERGY
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               Khám phá ngay
