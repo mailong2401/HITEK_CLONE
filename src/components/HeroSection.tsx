@@ -13,7 +13,7 @@ const HeroSection = () => {
       >
         <source src="https://hitek.com.vn/wp-content/uploads/2024/10/home-page-hitek-software.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-tech-dark/80 via-tech-dark/70 to-tech-dark"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-tech-dark/40 via-tech-dark/30 to-tech-dark/50"></div>
 
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto space-y-6 animate-fade-in">
