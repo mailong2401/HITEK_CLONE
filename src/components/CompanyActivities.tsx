@@ -79,7 +79,7 @@ const CompanyActivities: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -94,7 +94,7 @@ const CompanyActivities: React.FC = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -111,7 +111,7 @@ const CompanyActivities: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -126,7 +126,7 @@ const CompanyActivities: React.FC = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };

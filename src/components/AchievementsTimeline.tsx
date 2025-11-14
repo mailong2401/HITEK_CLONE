@@ -69,7 +69,7 @@ const AchievementsTimeline: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -84,7 +84,7 @@ const AchievementsTimeline: React.FC = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -99,7 +99,7 @@ const AchievementsTimeline: React.FC = () => {
       x: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -114,7 +114,7 @@ const AchievementsTimeline: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };

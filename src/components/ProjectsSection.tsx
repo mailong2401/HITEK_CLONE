@@ -334,7 +334,7 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .snap-x {
           scroll-snap-type: x mandatory;
         }
