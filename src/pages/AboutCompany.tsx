@@ -1,21 +1,20 @@
-import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import CompanyVision from "@/components/CompanyVision"
-import CompanyInfo from '@/components/CompanyInfo';
-import VisionCard from '@/components/VisionCard';
 import CompanyInformation from '@/components/CompanyInformation';
 import AchievementsTimeline from '@/components/AchievementsTimeline';
-import KeyMembersHorizontal from '@/components/KeyMembersHorizontal';
 import KeyMembers from '@/components/KeyMembers';
+import ModernCompanyBanner from '@/components/ModernCompanyBanner';
+import CompanyActivities from '@/components/CompanyActivities'
 
 const AboutCompany = () => {
   return (
     <>
+      <ModernCompanyBanner />
       <CompanyVision />
       <CompanyInformation />
       <AchievementsTimeline />
       <KeyMembers />
+      <CompanyActivities />
       <ContactSection />
     </>
   );
