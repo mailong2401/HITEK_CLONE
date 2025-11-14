@@ -4,7 +4,7 @@ import aiTechImage from "@/assets/banner-ai-section.gif";
 import { 
   Sparkles, Brain, Zap, Target, MessageCircle, Cpu, 
   GitBranch, Code2, TestTube, Ship, Activity, Cloud,
-  Layout, Flowchart, Mic, Bug, Monitor, Globe,
+  Layout, Mic, Bug, Monitor, Globe,
   BarChart, Gauge, MessageSquare, Database, Figma
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,7 +32,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: "easeOut" as const
     }
   }
 };
@@ -47,7 +47,7 @@ const slideInUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: "easeOut" as const
     }
   }
 };
@@ -64,7 +64,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: "easeOut" as const
     }
   }
 };
@@ -92,7 +92,7 @@ const toolItemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -109,9 +109,9 @@ const titleGradientVariants = {
       opacity: { duration: 1, delay: 0.3 },
       backgroundPosition: { 
         duration: 3, 
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         repeat: Infinity,
-        repeatType: "reverse"
+        repeatType: "reverse" as const
       }
     }
   }
@@ -284,11 +284,11 @@ const AISection = () => {
         opacity: {
           duration: 4,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse" as const
         },
         scale: {
           duration: 2,
-          ease: "easeOut"
+          ease: "easeOut" as const
         }
       }
     }
