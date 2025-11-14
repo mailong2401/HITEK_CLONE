@@ -30,7 +30,7 @@ const AboutUsBanner: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -45,7 +45,7 @@ const AboutUsBanner: React.FC = () => {
       y: 0,
       transition: {
         duration: 1,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeOut" as const
       }
     }
   };
@@ -62,9 +62,9 @@ const AboutUsBanner: React.FC = () => {
         opacity: { duration: 1, delay: 0.5 },
         backgroundPosition: { 
           duration: 3, 
-          ease: "easeInOut",
+          ease: "easeInOut" as const,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse" as const
         }
       }
     }
@@ -80,7 +80,7 @@ const AboutUsBanner: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -97,11 +97,11 @@ const AboutUsBanner: React.FC = () => {
         opacity: {
           duration: 4,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse" as const
         },
         scale: {
           duration: 2,
-          ease: "easeOut"
+          ease: "easeOut" as const
         }
       }
     }
