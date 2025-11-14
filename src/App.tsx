@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AboutCompany from "./pages/AboutCompany";
+import Layout from "./components/Layout"; // Import Layout
 
 const queryClient = new QueryClient();
 
@@ -17,9 +19,23 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            {/* Sử dụng Layout cho từng route */}
+            <Route path="/" element={
+              <Layout>
+                <Index />
+              </Layout>
+            } />
+            <Route path="/about-company" element={
+              <Layout>
+                <AboutCompany />
+              </Layout>
+            } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={
+              <Layout>
+                <NotFound />
+              </Layout>
+            } />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

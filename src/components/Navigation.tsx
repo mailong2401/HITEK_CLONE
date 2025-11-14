@@ -74,7 +74,7 @@ const Navigation = () => {
     {
       title: "Thông tin công ty",
       description: "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK",
-      href: "#company-info"
+      href: "about-company"
     },
     {
       title: "Về chúng tôi", 
@@ -137,7 +137,7 @@ const Navigation = () => {
   ];
 
   const navLinks = [
-    { name: "TRANG CHỦ", href: "#home" },
+    { name: "TRANG CHỦ", href: "/" },
     { 
       name: "VỀ HITEK", 
       href: "#about",
