@@ -292,12 +292,12 @@ const Navigation = () => {
                       }`} />
                     </div>
                   ) : (
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-sm font-medium text-foreground hover:text-primary transition-colors whitespace-nowrap"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   )}
 
                   {/* About Dropdown Menu */}
