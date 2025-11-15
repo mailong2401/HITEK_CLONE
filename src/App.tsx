@@ -21,17 +21,17 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Sử dụng Layout cho từng route */}
-            <Route path="/" element={
+            <Route path="/HITEK_CLONE" element={
               <Layout>
                 <Index />
               </Layout>
             } />
-            <Route path="/about-company" element={
+            <Route path="/HITEK_CLONE/about-company" element={
               <Layout>
                 <AboutCompany />
               </Layout>
             } />
-            <Route path="/about-us" element={
+            <Route path="/HITEK_CLONE/about-us" element={
               <Layout>
                 <AboutUs />
               </Layout>
