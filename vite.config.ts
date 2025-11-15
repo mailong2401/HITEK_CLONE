@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/HITEK_EXPLORE/",   // 🚀 THÊM DÒNG NÀY!
+  base: "/HITEK_CLONE/",
   server: {
     host: "::",
     port: 8080,
