@@ -3,6 +3,7 @@ import { Menu, X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSelector from "@/components/LanguageSelector";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -74,12 +75,12 @@ const Navigation = () => {
     {
       title: "Thông tin công ty",
       description: "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK",
-      href: "about-company"
+      href: "/about-company"
     },
     {
       title: "Về chúng tôi", 
       description: "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi",
-      href: "about-us"
+      href: "/about-us"
     }
   ];
 
@@ -190,16 +191,17 @@ const Navigation = () => {
         <div className="space-y-4">
           {aboutData.map((item, index) => (
             <div key={index} className="border border-border rounded-lg p-4 hover:border-primary transition-colors">
-              <a 
-                href={item.href}
+              <Link 
+                to={item.href}
                 className="block hover:text-primary transition-colors"
+                onClick={() => setIsAboutHovered(false)}
               >
                 <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
                 <p className="text-sm text-muted-foreground mb-2">
                   {item.description}
                 </p>
                 <span className="text-sm text-primary hover:underline font-medium">Tìm hiểu thêm</span>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
