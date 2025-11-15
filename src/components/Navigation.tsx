@@ -79,7 +79,7 @@ const Navigation = () => {
     {
       title: "Về chúng tôi", 
       description: "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi",
-      href: "#about-us"
+      href: "about-us"
     }
   ];
 
