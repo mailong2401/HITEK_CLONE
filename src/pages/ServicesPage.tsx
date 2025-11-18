@@ -18,7 +18,7 @@ import { services, stats, process } from "@/data/servicesData";
 const ServicesPage = () => {
   const [activeService, setActiveService] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div className="min-h-screen bg-background pt-20">
