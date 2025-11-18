@@ -98,7 +98,7 @@ const Navigation = () => {
     { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
     { name: "DỊCH VỤ", href: "/services-page", hasDropdown: true, type: "services" },
     { name: "CÔNG NGHỆ", href: "/technology" },
-    { name: "DỰ ÁN", href: "#projects" },
+    { name: "DỰ ÁN", href: "/projects-page" },
     { name: "TESTIMONIALS", href: "#testimonials" },
     { name: "TUYỂN DỤNG", href: "#careers" },
   ];
