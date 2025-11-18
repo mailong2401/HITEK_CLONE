@@ -14,7 +14,7 @@ interface ActiveServiceDetailProps {
 }
 
 const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>(
-  ({ services, activeService }, ref) => {
+  function ActiveServiceDetail({ services, activeService }, ref) {
     const service = services[activeService];
 
     return (
@@ -52,7 +52,5 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
     );
   }
 );
-
-ActiveServiceDetail.displayName = "ActiveServiceDetail";
 
 export default ActiveServiceDetail;
