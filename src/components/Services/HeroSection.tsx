@@ -1,54 +1,287 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Star, Rocket, Zap, Sparkles } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 const HeroSection = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        duration: 0.8
+      }
+    }
+  };
+
+  const floatingAnimation = {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  };
+
+  const pulseAnimation = {
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  };
+
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* Background Image với hiệu ứng */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background với hiệu ứng nâng cao */}
       <div className="absolute inset-0">
-        <img
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-          alt="Background"
+          alt="Technology Background"
           className="w-full h-full object-cover"
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/50" />
+        
+        {/* Gradient Overlay nâng cao */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-primary/20 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+        
+        {/* Animated Grid Overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"
+        />
       </div>
+
+      {/* Floating Elements */}
+      <motion.div
+        animate={floatingAnimation}
+        className="absolute top-20 left-10 hidden lg:block"
+      >
+        <div className="w-6 h-6 bg-primary/30 rounded-full blur-sm" />
+      </motion.div>
       
+      <motion.div
+        animate={{
+          ...floatingAnimation,
+          y: [5, -5, 5],
+          transition: { ...floatingAnimation.transition, delay: 1 }
+        }}
+        className="absolute top-1/3 right-20 hidden lg:block"
+      >
+        <div className="w-8 h-8 bg-primary/20 rounded-full blur-sm" />
+      </motion.div>
+
+      <motion.div
+        animate={pulseAnimation}
+        className="absolute bottom-32 left-1/4 hidden lg:block"
+      >
+        <Sparkles className="w-6 h-6 text-primary/40" />
+      </motion.div>
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="max-w-6xl mx-auto text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Dịch Vụ <span className="text-primary">Công Nghệ</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Cung cấp giải pháp công nghệ toàn diện từ tư vấn, thiết kế đến phát triển 
-            và bảo trì hệ thống phần mềm cho doanh nghiệp
-          </p>
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20 mb-8"
+          >
+            <Rocket className="w-4 h-4 text-primary" />
+            <span className="text-primary font-semibold text-sm">
+              Đồng hành cùng 500+ doanh nghiệp
+            </span>
+            <Star className="w-4 h-4 text-primary fill-current" />
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight"
+          >
+            <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent">
+              Dịch Vụ{" "}
+            </span>
+            <motion.span
+              animate={{
+                backgroundPosition: ["0%", "100%", "0%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-[length:200%_auto] bg-clip-text text-transparent"
+            >
+              Công Nghệ
+            </motion.span>
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.div
+            variants={itemVariants}
+            className="relative"
+          >
+            <motion.p
+              className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
+            >
+              Cung cấp giải pháp công nghệ toàn diện từ{" "}
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
+              >
+                tư vấn
+              </motion.span>
+              ,{" "}
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
+              >
+                thiết kế
+              </motion.span>
+              {" "}đến{" "}
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
+              >
+                phát triển
+              </motion.span>
+              {" "}và{" "}
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
+              >
+                bảo trì
+              </motion.span>
+              {" "}hệ thống phần mềm cho doanh nghiệp
+            </motion.p>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap justify-center gap-8 mb-12"
+          >
+            {[
+              { number: "500+", label: "Dự án thành công" },
+              { number: "50+", label: "Chuyên gia" },
+              { number: "99%", label: "Khách hàng hài lòng" },
+              { number: "24/7", label: "Hỗ trợ kỹ thuật" }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="text-center"
+              >
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link to="/HITEK_CLONE#contact">
-              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2">
-                Nhận tư vấn ngay
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:from-primary/90 hover:to-primary transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
+              >
+                <span>Nhận tư vấn ngay</span>
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </motion.button>
             </Link>
-            <button className="border border-border px-8 py-3 rounded-lg font-semibold hover:bg-accent transition-colors flex items-center gap-2">
-              <Play className="w-4 h-4" />
-              Xem case study
-            </button>
+            
+            <motion.button
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "rgba(255,255,255,0.1)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-border/50 bg-background/20 backdrop-blur-sm px-8 py-4 rounded-2xl font-semibold hover:bg-accent/10 transition-all duration-300 flex items-center gap-3 hover:border-primary/30"
+            >
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <Play className="w-4 h-4 text-primary" />
+              </motion.div>
+              <span>Xem case study</span>
+            </motion.button>
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="flex flex-col items-center gap-2 text-muted-foreground"
+            >
+              <span className="text-sm font-medium">Khám phá thêm</span>
+              <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center">
+                <motion.div
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-1 h-3 bg-primary rounded-full mt-2"
+                />
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

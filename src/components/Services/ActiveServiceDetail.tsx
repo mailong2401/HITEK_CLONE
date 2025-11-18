@@ -31,6 +31,11 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
       triggerOnce: true,
     });
 
+    const [featuresRef, featuresInView] = useInView({
+      threshold: 0.2,
+      triggerOnce: true,
+    });
+
     const service = services[activeService];
 
     const getIcon = (iconName: string) => {
@@ -94,10 +99,10 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
     };
 
     const featureVariants = {
-      hidden: { opacity: 0, x: -20 },
+      hidden: { opacity: 0, y: 20 },
       visible: {
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: {
           type: "spring",
           damping: 25,
@@ -125,7 +130,8 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
             transition={{ duration: 0.3 }}
             className="max-w-7xl mx-auto"
           >
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Phần trên: Grid 2 cột */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20">
               {/* Nội dung bên trái */}
               <motion.div
                 ref={contentRef}
@@ -163,40 +169,6 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                 >
                   {service.fullDescription || service.description}
                 </motion.p>
-
-                {/* Features List */}
-                <motion.div
-                  variants={containerVariants}
-                  className="space-y-4"
-                >
-                  <motion.h3 
-                    variants={contentVariants}
-                    className="text-2xl font-semibold text-foreground flex items-center gap-2"
-                  >
-                    <Rocket className="w-6 h-6 text-primary" />
-                    Tính năng nổi bật
-                  </motion.h3>
-                  <div className="space-y-3">
-                    {service.features?.map((feature, index) => (
-                      <motion.div
-                        key={index}
-                        variants={featureVariants}
-                        whileHover={{ x: 5 }}
-                        className="flex items-start gap-4 p-3 rounded-lg hover:bg-primary/5 transition-colors group"
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.2 }}
-                          className="mt-1 text-primary text-xl p-1 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors"
-                        >
-                          <CheckCircle2 className="w-5 h-5" />
-                        </motion.div>
-                        <p className="text-foreground text-lg leading-relaxed flex-1">
-                          {feature}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
 
                 {/* Technologies Tags */}
                 {service.technologies && (
@@ -306,6 +278,94 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                 </div>
               </motion.div>
             </div>
+
+            {/* Phần dưới: Tính năng nổi bật - Full Width */}
+            <motion.div
+              ref={featuresRef}
+              initial={{ opacity: 0, y: 40 }}
+              animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-3xl p-8 lg:p-12 border border-border/50"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={featuresInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="text-center mb-12"
+              >
+                <motion.h3 
+                  className="text-3xl md:text-4xl font-bold text-foreground flex items-center justify-center gap-3 mb-4"
+                >
+                  <motion.div
+                    animate={{ rotate: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Rocket className="w-8 h-8 text-primary" />
+                  </motion.div>
+                  Tính Năng Nổi Bật
+                  <motion.div
+                    animate={{ rotate: [0, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  >
+                    <Rocket className="w-8 h-8 text-primary" />
+                  </motion.div>
+                </motion.h3>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Khám phá những tính năng đặc biệt giúp giải pháp của chúng tôi trở nên khác biệt
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {service.features?.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    whileHover={{ 
+                      y: -5, 
+                      scale: 1.02,
+                      transition: { type: "spring", stiffness: 300 }
+                    }}
+                    className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/30 group cursor-pointer"
+                  >
+                    <div className="flex items-start gap-4">
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        className="flex-shrink-0 mt-1 text-primary text-xl p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors"
+                      >
+                        <CheckCircle2 className="w-6 h-6" />
+                      </motion.div>
+                      <p className="text-foreground text-lg leading-relaxed flex-1">
+                        {feature}
+                      </p>
+                    </div>
+                    
+                    {/* Hover line effect */}
+                    <motion.div
+                      className="h-1 bg-gradient-to-r from-primary to-transparent rounded-full mt-4 opacity-0 group-hover:opacity-100"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Decorative corner elements */}
+              <motion.div
+                animate={floatingAnimation}
+                className="absolute top-4 left-4 w-6 h-6 bg-primary/20 rounded-full blur-sm"
+              />
+              <motion.div
+                animate={{
+                  ...floatingAnimation,
+                  y: [5, -5, 5],
+                  transition: { ...floatingAnimation.transition, delay: 0.5 }
+                }}
+                className="absolute bottom-4 right-4 w-4 h-4 bg-primary/30 rounded-full blur-sm"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>

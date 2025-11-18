@@ -11,6 +11,7 @@ import AboutUs from "@/pages/AboutUs"
 import Layout from "./components/Layout"; // Import Layout
 import TechnologyPage from "@/pages/TechnologyPage";
 import ServicesPage from "@/pages/ServicesPage";
+import ProjectsPage from "@/pages/ProjectsPage";
 
 
 const queryClient = new QueryClient();
@@ -47,6 +48,11 @@ const App = () => (
             <Route path="/services-page" element={
               <Layout>
                 <ServicesPage />
+              </Layout>
+            } />
+            <Route path="/projects-page" element={
+              <Layout>
+                <ProjectsPage />
               </Layout>
             } />
             
