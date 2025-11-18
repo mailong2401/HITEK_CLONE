@@ -9,6 +9,9 @@ import NotFound from "./pages/NotFound";
 import AboutCompany from "./pages/AboutCompany";
 import AboutUs from "@/pages/AboutUs"
 import Layout from "./components/Layout"; // Import Layout
+import TechnologyPage from "@/pages/TechnologyPage";
+import ServicesPage from "@/pages/ServicesPage";
+
 
 const queryClient = new QueryClient();
 
@@ -31,11 +34,23 @@ const App = () => (
                 <AboutCompany />
               </Layout>
             } />
+            <Route path="/technology" element={
+              <Layout>
+                <TechnologyPage />
+              </Layout>
+            } />
             <Route path="/about-us" element={
               <Layout>
                 <AboutUs />
               </Layout>
             } />
+            <Route path="/services-page" element={
+              <Layout>
+                <ServicesPage />
+              </Layout>
+            } />
+            
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={
               <Layout>
