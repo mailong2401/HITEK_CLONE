@@ -18,20 +18,20 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/HITEK_CLONE">
           <Routes>
             {/* Sử dụng Layout cho từng route */}
-            <Route path="/HITEK_CLONE" element={
+            <Route path="/" element={
               <Layout>
                 <Index />
               </Layout>
             } />
-            <Route path="/HITEK_CLONE/about-company" element={
+            <Route path="/about-company" element={
               <Layout>
                 <AboutCompany />
               </Layout>
             } />
-            <Route path="/HITEK_CLONE/about-us" element={
+            <Route path="/about-us" element={
               <Layout>
                 <AboutUs />
               </Layout>
