@@ -20,6 +20,11 @@ const Navigation = () => {
   const aboutTimeoutRef = useRef(null);
   const servicesTimeoutRef = useRef(null);
 
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  }, []);
+
   // ----- SCROLL EFFECT -----
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -142,7 +147,10 @@ const Navigation = () => {
               key={index}
               to={item.href}
               className="block border border-border rounded-lg p-4 hover:border-primary transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                scrollToTop();
+                setIsMobileMenuOpen(false);
+              }}
             >
               <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
               <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
