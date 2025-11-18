@@ -96,7 +96,7 @@ const Navigation = () => {
   const navLinks = [
     { name: "TRANG CHỦ", href: "/" },
     { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
-    { name: "DỊCH VỤ", href: "#services", hasDropdown: true, type: "services" },
+    { name: "DỊCH VỤ", href: "/services-page"},
     { name: "CÔNG NGHỆ", href: "/technology" },
     { name: "DỰ ÁN", href: "#projects" },
     { name: "TESTIMONIALS", href: "#testimonials" },
