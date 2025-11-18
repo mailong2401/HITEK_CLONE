@@ -1,16 +1,8 @@
-import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight, Clock, Users } from "lucide-react";
-import { Project } from "@/data/projectsData";
-import { categories } from "@/data/projectsData";
+// Updated ProjectCard using your component style, integrated with Supabase data
+import { motion } from 'framer-motion';
+import { ExternalLink, ArrowRight, Clock, Users } from 'lucide-react';
 
-interface ProjectCardProps {
-  project: Project;
-  onClick: () => void;
-}
-
-const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
-  const categoryName = categories.find(cat => cat.id === project.category)?.name;
-
+export default function ProjectCard({ project, onClick }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -44,7 +36,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium">
-            {categoryName}
+            {project.category}
           </span>
           <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
         </div>
@@ -69,6 +61,4 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       </div>
     </motion.div>
   );
-};
-
-export default ProjectCard;
+}
