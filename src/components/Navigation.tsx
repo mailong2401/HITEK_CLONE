@@ -76,8 +76,8 @@ const Navigation = () => {
 
   // ----- DATA -----
   const aboutData = [
-    { title: "Thông tin công ty", description: "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK", href: "/HITEK_CLONE/about-company" },
-    { title: "Về chúng tôi", description: "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi", href: "/HITEK_CLONE/about-us" },
+    { title: "Thông tin công ty", description: "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK", href: "/about-company" },
+    { title: "Về chúng tôi", description: "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi", href: "/about-us" },
   ];
 
   const servicesData = [
@@ -94,7 +94,7 @@ const Navigation = () => {
   ];
 
   const navLinks = [
-    { name: "TRANG CHỦ", href: "/HITEK_CLONE" },
+    { name: "TRANG CHỦ", href: "/" },
     { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
     { name: "DỊCH VỤ", href: "#services", hasDropdown: true, type: "services" },
     { name: "CÔNG NGHỆ", href: "#technology" },
@@ -192,7 +192,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-lg" : ""}`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/HITEK_CLONE" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src="https://hitek.com.vn/wp-content/uploads/2022/08/logo-140x38.avif" alt="HITEK Logo" className="h-8 w-auto" />
         </Link>
 
