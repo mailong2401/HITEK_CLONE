@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 interface Service {
   id: string;
@@ -15,8 +16,13 @@ interface AllServicesGridProps {
 }
 
 const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) => {
+  const [containerRef, containerInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   const getIcon = (iconName: string) => {
-    const icons: any = {
+    const icons: Record<string, string> = {
       Code2: '💻',
       BarChart3: '📊',
       Globe: '🌐',
@@ -26,7 +32,12 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
       Users: '👥',
       Building: '🏢',
       TrendingUp: '📈',
-      Shield: '🛡️'
+      Shield: '🛡️',
+      Cpu: '⚡',
+      Database: '🗄️',
+      Zap: '⚡',
+      Lock: '🔒',
+      Palette: '🎨'
     };
     return icons[iconName] || '⚡';
   };
@@ -36,84 +47,158 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+      scale: 0.95
+    },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 100,
         duration: 0.6
       }
     }
   };
 
+  const hoverVariants = {
+    hover: {
+      y: -8,
+      scale: 1.02,
+      boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 300
+      }
+    }
+  };
+
+  const iconVariants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Tất Cả Dịch Vụ
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Khám phá toàn bộ dịch vụ công nghệ mà HITEK cung cấp
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Khám phá toàn bộ dịch vụ công nghệ đa dạng mà HITEK cung cấp, 
+            mang đến giải pháp tối ưu cho doanh nghiệp của bạn
           </p>
         </motion.div>
 
         <motion.div
+          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          animate={containerInView ? "visible" : "hidden"}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
-              className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all group cursor-pointer"
+              whileHover="hover"
+              className="group relative cursor-pointer"
               onClick={() => setActiveService(index)}
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-3xl">
-                  {getIcon(service.iconName)}
-                </div>
-                <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
+              {/* Background gradient effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-4 line-clamp-3">
-                {service.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                {service.technologies.slice(0, 3).map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-1 bg-muted rounded text-xs text-muted-foreground"
+              <motion.div
+                variants={hoverVariants}
+                className="relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-full flex flex-col transition-all duration-300 group-hover:border-primary/30 group-hover:bg-card/90"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <motion.div
+                    variants={iconVariants}
+                    className="p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl text-primary group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-500 text-3xl shadow-sm"
                   >
-                    {tech}
-                  </span>
-                ))}
-                {service.technologies.length > 3 && (
-                  <span className="px-2 py-1 bg-muted rounded text-xs text-muted-foreground">
-                    +{service.technologies.length - 3}
-                  </span>
-                )}
-              </div>
+                    {getIcon(service.iconName)}
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 45 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                  </motion.div>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
+                  {service.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-6 line-clamp-3 flex-grow leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {service.technologies.slice(0, 3).map((tech, idx) => (
+                    <motion.span
+                      key={idx}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-3 py-1.5 bg-primary/5 rounded-full text-xs font-medium text-primary border border-primary/10"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                  {service.technologies.length > 3 && (
+                    <motion.span
+                      whileHover={{ scale: 1.05 }}
+                      className="px-3 py-1.5 bg-muted rounded-full text-xs font-medium text-muted-foreground"
+                    >
+                      +{service.technologies.length - 3}
+                    </motion.span>
+                  )}
+                </div>
+
+                {/* Hover border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-primary/10 transition-all duration-500 pointer-events-none" />
+              </motion.div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Decorative elements */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <p className="text-muted-foreground/60 text-sm font-medium">
+            👆 Click vào từng dịch vụ để khám phá chi tiết
+          </p>
         </motion.div>
       </div>
     </section>

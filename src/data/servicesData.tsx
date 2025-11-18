@@ -25,7 +25,7 @@ export const services: Service[] = [
       "Bảo mật thông tin tuyệt đối"
     ],
     technologies: [".NET", "Java", "Python", "Node.js", "React", "Angular", "Vue.js"],
-    image: "https://images.unsplash.com/photo-1556655848-f3a79cc6d4a7?w=500&h=400&fit=crop"
+    image: "https://techvccloud.mediacdn.vn/thumb_w/650/2018/11/26/mainframe-image-shutterstock746652745-e1525253151433-15431997497441692234940.jpg"
   },
   {
     id: "long-term-software",
