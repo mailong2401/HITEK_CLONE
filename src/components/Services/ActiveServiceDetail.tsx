@@ -43,28 +43,47 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-7xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-4 bg-primary/10 rounded-xl text-primary text-4xl">
-                {getIcon(service.iconName)}
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                {service.title}
-              </h2>
-            </div>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              {service.fullDescription || service.description}
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {service.features?.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="mt-1 text-primary">✓</div>
-                  <p className="text-foreground">{feature}</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Nội dung bên trái */}
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-4 bg-primary/10 rounded-xl text-primary text-4xl">
+                    {getIcon(service.iconName)}
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                    {service.title}
+                  </h2>
                 </div>
-              ))}
+                
+                <p className="text-lg text-muted-foreground mb-8">
+                  {service.fullDescription || service.description}
+                </p>
+
+                <div className="space-y-4">
+                  {service.features?.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="mt-1 text-primary text-xl">✓</div>
+                      <p className="text-foreground">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Ảnh bên phải */}
+              <div className="relative">
+                <div className="sticky top-24">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
