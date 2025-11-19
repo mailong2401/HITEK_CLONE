@@ -96,7 +96,7 @@ const Navigation = () => {
   const navLinks = [
     { name: "TRANG CHỦ", href: "/" },
     { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
-    { name: "DỊCH VỤ", href: "/services-page"},
+    { name: "DỊCH VỤ", href: "/services-page", hasDropdown: true, type: "services" },
     { name: "CÔNG NGHỆ", href: "/technology" },
     { name: "DỰ ÁN", href: "#projects" },
     { name: "TESTIMONIALS", href: "#testimonials" },
@@ -206,7 +206,7 @@ const Navigation = () => {
             >
               {link.hasDropdown ? (
                 <div className="flex items-center cursor-pointer">
-                  <span className="text-sm font-medium text-foreground hover:text-primary transition-colors">{link.name}</span>
+                  <Link to={link.href} className="text-sm font-medium text-foreground hover:text-primary transition-colors">{link.name}</Link>
                   <ChevronDown className={`h-4 w-4 ml-1 transition-transform ${(link.type === "about" && isAboutHovered) || (link.type === "services" && isServicesHovered) ? "rotate-180" : ""}`} />
                   <AnimatePresence>
                     {link.type === "about" && isAboutHovered && renderAboutDropdown()}
