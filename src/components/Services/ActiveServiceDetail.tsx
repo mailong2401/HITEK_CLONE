@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 interface Service {
   title: string;
   description: string;
-  icon: any;
+  iconName: string;
+  fullDescription: string;
   features: string[];
+  image: string;
 }
 
 interface ActiveServiceDetailProps {
@@ -16,6 +18,22 @@ interface ActiveServiceDetailProps {
 const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>(
   function ActiveServiceDetail({ services, activeService }, ref) {
     const service = services[activeService];
+
+    const getIcon = (iconName: string) => {
+      const icons: any = {
+        Code2: '💻',
+        BarChart3: '📊',
+        Globe: '🌐',
+        Cloud: '☁️',
+        Smartphone: '📱',
+        CheckCircle: '✅',
+        Users: '👥',
+        Building: '🏢',
+        TrendingUp: '📈',
+        Shield: '🛡️'
+      };
+      return icons[iconName] || '⚡';
+    };
 
     return (
       <section ref={ref} className="py-20 bg-background">
@@ -28,22 +46,24 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
             className="max-w-4xl mx-auto"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-primary text-5xl">{service.icon}</div>
-              <h2 className="text-4xl font-bold">{service.title}</h2>
+              <div className="p-4 bg-primary/10 rounded-xl text-primary text-4xl">
+                {getIcon(service.iconName)}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                {service.title}
+              </h2>
             </div>
-            <p className="text-lg text-muted-foreground mb-8">{service.description}</p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {service.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 rounded-lg bg-muted/50"
-                >
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
-                  <span>{feature}</span>
-                </motion.div>
+            
+            <p className="text-lg text-muted-foreground mb-8">
+              {service.fullDescription || service.description}
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {service.features?.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="mt-1 text-primary">✓</div>
+                  <p className="text-foreground">{feature}</p>
+                </div>
               ))}
             </div>
           </motion.div>

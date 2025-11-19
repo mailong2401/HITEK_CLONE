@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 interface Service {
   id: string;
-  icon: JSX.Element;
+  iconName: string;
   title: string;
   description: string;
   technologies: string[];
@@ -15,6 +15,22 @@ interface AllServicesGridProps {
 }
 
 const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) => {
+  const getIcon = (iconName: string) => {
+    const icons: any = {
+      Code2: '💻',
+      BarChart3: '📊',
+      Globe: '🌐',
+      Cloud: '☁️',
+      Smartphone: '📱',
+      CheckCircle: '✅',
+      Users: '👥',
+      Building: '🏢',
+      TrendingUp: '📈',
+      Shield: '🛡️'
+    };
+    return icons[iconName] || '⚡';
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -67,8 +83,8 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
               onClick={() => setActiveService(index)}
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  {service.icon}
+                <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-3xl">
+                  {getIcon(service.iconName)}
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
