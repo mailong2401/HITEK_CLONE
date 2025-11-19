@@ -1,5 +1,7 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
+import { Phone, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Service {
   title: string;
@@ -61,13 +63,25 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                   {service.fullDescription || service.description}
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   {service.features?.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <div className="mt-1 text-primary text-xl">✓</div>
                       <p className="text-foreground">{feature}</p>
                     </div>
                   ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-4">
+                  <Button size="lg" className="group">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Liên hệ ngay
+                  </Button>
+                  <Button size="lg" variant="outline" className="group">
+                    Xem thêm
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               </div>
 
