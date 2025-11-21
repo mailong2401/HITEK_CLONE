@@ -1,5 +1,20 @@
+// hooks/useProjects.ts
 import { useEffect, useState, useCallback } from 'react'
 import { supabase } from '@/lib/supabase'
+
+// Cập nhật interface Project để phù hợp với Supabase
+export interface ProjectImage {
+  id: number
+  project_id: number
+  image_url: string
+  caption: string
+  sort_order: number
+}
+
+export interface ProjectResult {
+  key: string
+  value: string
+}
 
 export interface Project {
   id: number
@@ -7,15 +22,13 @@ export interface Project {
   category: string
   client: string
   description: string
-  image: string
-  technologies: string[]
-  features: string[]
-  results: {
-    [key: string]: string
-  }
   duration: string
   team: string
   created_at: string
+  technologies: string[]
+  features: string[]
+  results: ProjectResult[]
+  images: ProjectImage[]
 }
 
 export interface Category {
@@ -42,32 +55,49 @@ export function useProjects() {
 
       console.log('Đang tải dữ liệu từ Supabase...')
 
-      // Lấy projects từ Supabase - BỎ ĐIỀU KIỆN STATUS
+      // Lấy projects với tất cả các bảng liên quan
       const { data: projectsData, error: projectsError } = await supabase
         .from('projects')
-        .select('*')
+        .select(`
+          *,
+          project_technologies(technology),
+          project_features(feature),
+          project_results(key, value),
+          project_images(*)
+        `)
         .order('created_at', { ascending: false })
 
       if (projectsError) {
         console.error('Lỗi khi tải projects:', projectsError)
-        
-        // Nếu lỗi do column không tồn tại, thử select không có order
-        if (projectsError.message.includes('column') && projectsError.message.includes('does not exist')) {
-          console.log('Thử tải dữ liệu không có order...')
-          const { data: simpleData, error: simpleError } = await supabase
-            .from('projects')
-            .select('*')
-          
-          if (simpleError) {
-            throw new Error(`Lỗi kết nối database: ${simpleError.message}`)
-          }
-          setProjects(simpleData || [])
-        } else {
-          throw new Error(`Lỗi projects: ${projectsError.message}`)
-        }
-      } else {
-        setProjects(projectsData || [])
+        throw new Error(`Lỗi projects: ${projectsError.message}`)
       }
+
+      // Chuyển đổi dữ liệu từ Supabase sang định dạng Project
+      const formattedProjects: Project[] = (projectsData || []).map(project => ({
+        id: project.id,
+        title: project.title,
+        category: project.category,
+        client: project.client,
+        description: project.description,
+        duration: project.duration,
+        team: project.team,
+        created_at: project.created_at,
+        technologies: project.project_technologies?.map((t: any) => t.technology) || [],
+        features: project.project_features?.map((f: any) => f.feature) || [],
+        results: project.project_results?.map((r: any) => ({ 
+          key: r.key, 
+          value: r.value 
+        })) || [],
+        images: project.project_images?.map((img: any) => ({
+          id: img.id,
+          project_id: img.project_id,
+          image_url: img.image_url,
+          caption: img.caption,
+          sort_order: img.sort_order
+        })) || []
+      }))
+
+      setProjects(formattedProjects)
 
       // Lấy categories từ Supabase
       const { data: categoriesData, error: categoriesError } = await supabase
@@ -78,17 +108,7 @@ export function useProjects() {
       if (categoriesError) {
         console.error('Lỗi khi tải categories:', categoriesError)
         // Fallback categories
-        const fallbackCategories = [
-          { id: 'all', name: 'Tất cả dự án', icon: 'Code' },
-          { id: 'enterprise', name: 'Doanh nghiệp', icon: 'Database' },
-          { id: 'fintech', name: 'Fintech', icon: 'Shield' },
-          { id: 'web-app', name: 'Web Application', icon: 'Globe' },
-          { id: 'healthcare', name: 'Y tế', icon: 'Smartphone' },
-          { id: 'mobile-app', name: 'Mobile App', icon: 'Users' },
-          { id: 'education', name: 'Giáo dục', icon: 'Code' },
-          { id: 'gaming', name: 'Gaming & Blockchain', icon: 'GamepadIcon' }
-        ]
-        setCategories(fallbackCategories)
+        setCategories(getFallbackCategories())
       } else {
         setCategories(categoriesData || [])
       }
@@ -123,8 +143,8 @@ export function useProjects() {
   return { projects, categories, loading, error, reload: loadProjects }
 }
 
-// Hàm tạo fallback projects
-function getFallbackProjects() {
+// Hàm tạo fallback projects với cấu trúc mới
+function getFallbackProjects(): Project[] {
   return [
     {
       id: 1,
@@ -132,17 +152,25 @@ function getFallbackProjects() {
       category: "enterprise",
       client: "Tập đoàn Sản xuất Công nghiệp",
       description: "Phát triển hệ thống ERP tùy chỉnh cho ngành sản xuất, tích hợp IoT và AI để tối ưu hóa quy trình sản xuất và quản lý chuỗi cung ứng.",
-      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      technologies: [".NET Core", "React", "SQL Server", "Azure IoT", "Power BI"],
-      features: ["Quản lý sản xuất real-time", "Theo dõi thiết bị IoT", "Báo cáo thông minh", "Tự động hóa quy trình"],
-      results: {
-        efficiency: "Tăng 40% hiệu suất",
-        cost: "Giảm 25% chi phí",
-        quality: "Giảm 60% lỗi sản phẩm"
-      },
       duration: "6 tháng",
       team: "12 developers",
-      created_at: new Date().toISOString()
+      created_at: new Date().toISOString(),
+      technologies: [".NET Core", "React", "SQL Server", "Azure IoT", "Power BI"],
+      features: ["Quản lý sản xuất real-time", "Theo dõi thiết bị IoT", "Báo cáo thông minh", "Tự động hóa quy trình"],
+      results: [
+        { key: "Hiệu suất", value: "Tăng 40% hiệu suất" },
+        { key: "Chi phí", value: "Giảm 25% chi phí" },
+        { key: "Chất lượng", value: "Giảm 60% lỗi sản phẩm" }
+      ],
+      images: [
+        {
+          id: 1,
+          project_id: 1,
+          image_url: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+          caption: "Giao diện quản lý sản xuất",
+          sort_order: 0
+        }
+      ]
     },
     {
       id: 2,
@@ -150,32 +178,40 @@ function getFallbackProjects() {
       category: "fintech",
       client: "Ngân hàng TMCP Việt Nam",
       description: "Xây dựng ứng dụng ngân hàng di động với đầy đủ tính năng giao dịch, đầu tư và bảo mật đa lớp.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      technologies: ["Flutter", "Node.js", "PostgreSQL", "Redis", "Kubernetes"],
-      features: ["Chuyển khoản đa kênh", "Đầu tư tài chính", "Bảo mật sinh trắc học", "Hỗ trợ 24/7"],
-      results: {
-        users: "500,000+ người dùng",
-        transactions: "1M+ giao dịch/ngày",
-        rating: "4.8/5 trên App Store"
-      },
       duration: "9 tháng",
       team: "15 developers",
-      created_at: new Date().toISOString()
+      created_at: new Date().toISOString(),
+      technologies: ["Flutter", "Node.js", "PostgreSQL", "Redis", "Kubernetes"],
+      features: ["Chuyển khoản đa kênh", "Đầu tư tài chính", "Bảo mật sinh trắc học", "Hỗ trợ 24/7"],
+      results: [
+        { key: "Người dùng", value: "500,000+ người dùng" },
+        { key: "Giao dịch", value: "1M+ giao dịch/ngày" },
+        { key: "Đánh giá", value: "4.8/5 trên App Store" }
+      ],
+      images: [
+        {
+          id: 2,
+          project_id: 2,
+          image_url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+          caption: "Giao diện ứng dụng ngân hàng",
+          sort_order: 0
+        }
+      ]
     }
   ]
 }
 
 // Hàm tạo fallback categories
-function getFallbackCategories() {
+function getFallbackCategories(): Category[] {
   return [
-    { id: 'all', name: 'Tất cả dự án', icon: 'Code' },
-    { id: 'enterprise', name: 'Doanh nghiệp', icon: 'Database' },
-    { id: 'fintech', name: 'Fintech', icon: 'Shield' },
-    { id: 'web-app', name: 'Web Application', icon: 'Globe' },
-    { id: 'healthcare', name: 'Y tế', icon: 'Smartphone' },
-    { id: 'mobile-app', name: 'Mobile App', icon: 'Users' },
-    { id: 'education', name: 'Giáo dục', icon: 'Code' },
-    { id: 'gaming', name: 'Gaming & Blockchain', icon: 'GamepadIcon' }
+    { id: 'all', name: 'Tất cả dự án', icon: '🌐' },
+    { id: 'enterprise', name: 'Doanh nghiệp', icon: '🏢' },
+    { id: 'fintech', name: 'Fintech', icon: '💰' },
+    { id: 'web-app', name: 'Web Application', icon: '💻' },
+    { id: 'healthcare', name: 'Y tế', icon: '🏥' },
+    { id: 'mobile-app', name: 'Mobile App', icon: '📱' },
+    { id: 'education', name: 'Giáo dục', icon: '🎓' },
+    { id: 'gaming', name: 'Gaming & Blockchain', icon: '🎮' }
   ]
 }
 

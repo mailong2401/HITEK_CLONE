@@ -14,7 +14,7 @@ const KeyMembers = () => {
     {
       name: "ÔNG OH SEAN BEOM",
       position: "Giám đốc kinh doanh tại Hàn Quốc",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
+      image: "https://hitek.com.vn/wp-content/uploads/2022/09/sean-1.png",
       achievements: [
         { type: "highlight", text: "10+ năm kinh nghiệm phát triển mobile app/web" },
         { type: "highlight", text: "5+ năm kinh nghiệm quản lý team, leadership" },
@@ -26,7 +26,7 @@ const KeyMembers = () => {
     {
       name: "ÔNG LÊ QUỐC VŨ",
       position: "Giám đốc công nghệ công ty Hitek Software",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
+      image: "https://hitek.com.vn/wp-content/uploads/2022/11/Le-Quoc-Vu.png",
       achievements: [
         { type: "highlight", text: "7+ năm kinh nghiệm phát triển phần mềm và thiết kế hệ thống" },
         { type: "highlight", text: "2+ năm kinh nghiệm trong thiết kế và triển khai hệ thống IOT, xây dựng bản mẫu" },
@@ -40,7 +40,7 @@ const KeyMembers = () => {
     {
       name: "ÔNG LÂM THỨ TIÊN",
       position: "Giám đốc công ty Hitek Capital",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face",
+      image: "https://hitek.com.vn/wp-content/uploads/2022/09/Sep-Long-768x816.png",
       achievements: [
         { type: "normal", text: "Sáng lập và là Chủ tịch HĐQT Công ty cổ phần Đầu tư Công nghệ số Rồng Việt (Rovi Group)" },
         { type: "normal", text: "Cổ đông sáng lập và Thành viên HĐQT Công ty cổ phần Công nghệ Mọi Người Cùng Vui" },

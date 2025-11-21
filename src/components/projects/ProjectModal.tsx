@@ -1,3 +1,4 @@
+//components/projects/ProjectModal
 import { motion } from "framer-motion";
 import { Code, Smartphone, Clock, Users } from "lucide-react";
 import { Project } from "@/data/projectsData";

@@ -1,3 +1,4 @@
+// App.tsx - Thêm route mới
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,11 +9,11 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AboutCompany from "./pages/AboutCompany";
 import AboutUs from "@/pages/AboutUs"
-import Layout from "./components/Layout"; // Import Layout
+import Layout from "./components/Layout";
 import TechnologyPage from "@/pages/TechnologyPage";
 import ServicesPage from "@/pages/ServicesPage";
 import ProjectsPage from "@/pages/ProjectsPage";
-
+import ProjectDetailPage from "@/pages/ProjectDetailPage"; // 👈 Thêm import
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,6 @@ const App = () => (
         <Sonner />
         <BrowserRouter basename="/HITEK_CLONE">
           <Routes>
-            {/* Sử dụng Layout cho từng route */}
             <Route path="/" element={
               <Layout>
                 <Index />
@@ -55,8 +55,13 @@ const App = () => (
                 <ProjectsPage />
               </Layout>
             } />
+            {/* 👇 Thêm route mới cho project detail */}
+            <Route path="/project/:id" element={
+              <Layout>
+                <ProjectDetailPage />
+              </Layout>
+            } />
             
-
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={
               <Layout>

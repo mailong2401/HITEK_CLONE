@@ -20,9 +20,12 @@ const Navigation = () => {
   const aboutTimeoutRef = useRef(null);
   const servicesTimeoutRef = useRef(null);
 
+  // Hàm scroll lên đầu trang
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsMobileMenuOpen(false);
+    setIsAboutHovered(false);
+    setIsServicesHovered(false);
   }, []);
 
   // ----- SCROLL EFFECT -----
@@ -94,13 +97,13 @@ const Navigation = () => {
   ];
 
   const navLinks = [
-    { name: "TRANG CHỦ", href: "/" },
+    { name: "TRANG CHỦ", href: "/", onClick: scrollToTop },
     { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
-    { name: "DỊCH VỤ", href: "/services-page", hasDropdown: true, type: "services" },
-    { name: "CÔNG NGHỆ", href: "/technology" },
-    { name: "DỰ ÁN", href: "/projects-page" },
-    { name: "TESTIMONIALS", href: "#testimonials" },
-    { name: "TUYỂN DỤNG", href: "#careers" },
+    { name: "DỊCH VỤ", href: "/services-page", hasDropdown: true, type: "services", onClick: scrollToTop }, // THÊM onClick Ở ĐÂY
+    { name: "CÔNG NGHỆ", href: "/technology", onClick: scrollToTop },
+    { name: "DỰ ÁN", href: "/projects-page", onClick: scrollToTop },
+    { name: "TESTIMONIALS", href: "#testimonials", onClick: scrollToTop },
+    { name: "TUYỂN DỤNG", href: "#careers", onClick: scrollToTop },
   ];
 
   // ----- HOVER HANDLERS -----
@@ -129,6 +132,21 @@ const Navigation = () => {
     };
   }, []);
 
+  // Hàm xử lý khi click vào các mục dropdown
+  const handleDropdownItemClick = () => {
+    scrollToTop();
+  };
+
+  // Hàm xử lý khi click vào link chính của DỊCH VỤ
+  const handleServicesLinkClick = (e) => {
+    e.preventDefault();
+    scrollToTop();
+    // Sau khi scroll lên đầu, chuyển hướng đến trang dịch vụ
+    setTimeout(() => {
+      window.location.href = "/HITEK_CLONE/services-page";
+    }, 500);
+  };
+
   // ----- RENDER DROPDOWNS -----
   const renderAboutDropdown = () => (
     <motion.div 
@@ -147,10 +165,7 @@ const Navigation = () => {
               key={index}
               to={item.href}
               className="block border border-border rounded-lg p-4 hover:border-primary transition-colors"
-              onClick={() => {
-                scrollToTop();
-                setIsMobileMenuOpen(false);
-              }}
+              onClick={handleDropdownItemClick}
             >
               <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
               <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
@@ -177,6 +192,7 @@ const Navigation = () => {
             key={index}
             href={service.link}
             className="block border border-border rounded-lg p-4 hover:border-primary transition-colors"
+            onClick={handleDropdownItemClick}
           >
             <h4 className="font-medium text-foreground mb-2">{service.title}</h4>
             <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{service.description}</p>
@@ -192,7 +208,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-lg" : ""}`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center" onClick={scrollToTop}>
           <img src="https://hitek.com.vn/wp-content/uploads/2022/08/logo-140x38.avif" alt="HITEK Logo" className="h-8 w-auto" />
         </Link>
 
@@ -206,7 +222,24 @@ const Navigation = () => {
             >
               {link.hasDropdown ? (
                 <div className="flex items-center cursor-pointer">
-                  <Link to={link.href} className="text-sm font-medium text-foreground hover:text-primary transition-colors">{link.name}</Link>
+                  {link.type === "services" ? (
+                    // Xử lý riêng cho link DỊCH VỤ
+                    <a
+                      href={link.href}
+                      className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      onClick={handleServicesLinkClick}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      to={link.href} 
+                      className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      onClick={link.onClick}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                   <ChevronDown className={`h-4 w-4 ml-1 transition-transform ${(link.type === "about" && isAboutHovered) || (link.type === "services" && isServicesHovered) ? "rotate-180" : ""}`} />
                   <AnimatePresence>
                     {link.type === "about" && isAboutHovered && renderAboutDropdown()}
@@ -214,7 +247,13 @@ const Navigation = () => {
                   </AnimatePresence>
                 </div>
               ) : (
-                <Link to={link.href} className="text-sm font-medium text-foreground hover:text-primary transition-colors">{link.name}</Link>
+                <Link 
+                  to={link.href} 
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  onClick={link.onClick}
+                >
+                  {link.name}
+                </Link>
               )}
             </div>
           ))}
@@ -232,7 +271,26 @@ const Navigation = () => {
           <div ref={scrollContainerRef} className="flex overflow-x-auto scrollbar-hide mx-2 flex-1" onScroll={checkScrollButtons}>
             <div className="flex items-center space-x-4 px-2">
               {navLinks.map((link) => (
-                <Link key={link.name} to={link.href} className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0">{link.name}</Link>
+                <div key={link.name}>
+                  {link.type === "services" ? (
+                    <a
+                      href={link.href}
+                      className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0"
+                      onClick={handleServicesLinkClick}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      key={link.name} 
+                      to={link.href} 
+                      className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0"
+                      onClick={link.onClick || scrollToTop}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -262,17 +320,38 @@ const Navigation = () => {
             <div key={link.name}>
               {link.hasDropdown ? (
                 <div className="space-y-3">
-                  <div className="text-sm font-medium text-foreground">{link.name}</div>
+                  <div className="text-sm font-medium text-foreground">
+                    {link.type === "services" ? (
+                      <a
+                        href={link.href}
+                        onClick={handleServicesLinkClick}
+                        className="cursor-pointer"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      link.name
+                    )}
+                  </div>
                   <div className="pl-4 space-y-3 border-l-2 border-border">
                     {(link.type === "about" ? aboutData : servicesData).map((item, index) => (
-                      <Link key={index} to={item.href || item.link} className="block text-sm text-muted-foreground hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Link 
+                        key={index} 
+                        to={item.href || item.link} 
+                        className="block text-sm text-muted-foreground hover:text-primary transition-colors" 
+                        onClick={handleDropdownItemClick}
+                      >
                         {item.title}
                       </Link>
                     ))}
                   </div>
                 </div>
               ) : (
-                <Link to={link.href} className="block text-sm font-medium text-foreground hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link 
+                  to={link.href} 
+                  className="block text-sm font-medium text-foreground hover:text-primary transition-colors" 
+                  onClick={link.onClick || scrollToTop}
+                >
                   {link.name}
                 </Link>
               )}
@@ -285,4 +364,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
