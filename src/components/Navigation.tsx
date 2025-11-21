@@ -101,7 +101,7 @@ const Navigation = () => {
   const navLinks = [
     { name: t('nav.home'), href: "/", onClick: scrollToTop },
     { name: t('nav.about'), href: "#about", hasDropdown: true, type: "about" },
-    { name: t('nav.services'), href: "/services-page", hasDropdown: true, type: "services", onClick: scrollToTop },
+    { name: t('nav.services'), href: "/services-page", type: "services", onClick: scrollToTop },
     { name: t('nav.technology'), href: "/technology", onClick: scrollToTop },
     { name: t('nav.projects'), href: "/projects-page", onClick: scrollToTop },
     { name: t('nav.testimonials'), href: "/testimonials", onClick: scrollToTop },
