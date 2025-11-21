@@ -1,17 +1,20 @@
 import { Code, Database, Shield, Globe, Smartphone, Cloud, Users, Cpu, GamepadIcon } from 'lucide-react';
 
+export interface ProjectResult {
+  key: string;
+  value: string;
+}
+
 export interface Project {
   id: number;
   title: string;
   category: string;
   client: string;
   description: string;
-  image: string;
+  image?: string;
   technologies: string[];
   features: string[];
-  results: {
-    [key: string]: string;
-  };
+  results: ProjectResult[] | { [key: string]: string };  // Accept both formats
   duration: string;
   team: string;
 }

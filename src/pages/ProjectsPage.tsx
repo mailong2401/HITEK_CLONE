@@ -30,7 +30,7 @@ const ProjectsPage = () => {
   }
 
   if (error) {
-    return <div>Lỗi khi tải dữ liệu: {error.message}</div>;
+    return <div>Lỗi khi tải dữ liệu: {error}</div>;
   }
 
   return (
@@ -42,7 +42,6 @@ const ProjectsPage = () => {
         searchTerm={searchTerm}
         onCategoryChange={setSelectedCategory}
         onSearchChange={setSearchTerm}
-        categories={categories} // Truyền categories từ Supabase
       />
 
       <ProjectsGrid

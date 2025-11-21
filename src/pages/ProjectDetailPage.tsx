@@ -36,7 +36,7 @@ const ProjectDetailPage = () => {
             {error ? "Lỗi khi tải dữ liệu" : "Dự án không tồn tại"}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            {error?.message || "Không tìm thấy dự án với ID này."}
+            {error || "Không tìm thấy dự án với ID này."}
           </p>
           <Link 
             to="/projects-page" 

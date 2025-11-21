@@ -51,7 +51,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
         duration: 0.8
@@ -65,7 +65,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 15,
         stiffness: 200,
         duration: 0.8
@@ -78,7 +78,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
     transition: {
       duration: 4,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     }
   };
 
@@ -88,7 +88,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
     transition: {
       duration: 2,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     }
   };
 
@@ -137,7 +137,7 @@ const StatsSection = ({ stats }: StatsSectionProps) => {
               >
                 {/* Background Glow Effect */}
                 <motion.div
-                  variants={floatingAnimation}
+                  animate={floatingAnimation}
                   className="absolute inset-0 bg-primary/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
                 

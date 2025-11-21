@@ -25,6 +25,7 @@ export interface Project {
   duration: string
   team: string
   created_at: string
+  image?: string // Add image field
   technologies: string[]
   features: string[]
   results: ProjectResult[]
@@ -82,6 +83,7 @@ export function useProjects() {
         duration: project.duration,
         team: project.team,
         created_at: project.created_at,
+        image: project.project_images?.[0]?.image_url, // Use first image as main image
         technologies: project.project_technologies?.map((t: any) => t.technology) || [],
         features: project.project_features?.map((f: any) => f.feature) || [],
         results: project.project_results?.map((r: any) => ({ 
@@ -155,6 +157,7 @@ function getFallbackProjects(): Project[] {
       duration: "6 tháng",
       team: "12 developers",
       created_at: new Date().toISOString(),
+      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       technologies: [".NET Core", "React", "SQL Server", "Azure IoT", "Power BI"],
       features: ["Quản lý sản xuất real-time", "Theo dõi thiết bị IoT", "Báo cáo thông minh", "Tự động hóa quy trình"],
       results: [
@@ -181,6 +184,7 @@ function getFallbackProjects(): Project[] {
       duration: "9 tháng",
       team: "15 developers",
       created_at: new Date().toISOString(),
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
       technologies: ["Flutter", "Node.js", "PostgreSQL", "Redis", "Kubernetes"],
       features: ["Chuyển khoản đa kênh", "Đầu tư tài chính", "Bảo mật sinh trắc học", "Hỗ trợ 24/7"],
       results: [

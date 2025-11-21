@@ -63,8 +63,8 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        damping: 15,
+        type: "spring" as const,
+        damping: 20,
         stiffness: 100,
         duration: 0.6
       }
@@ -77,7 +77,7 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
       scale: 1.02,
       boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 15,
         stiffness: 300
       }
@@ -90,12 +90,13 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 15,
-        stiffness: 100
+        stiffness: 200
       }
     }
   };
+
 
   return (
     <section className="py-20 bg-gradient-to-b from-muted/20 to-background">

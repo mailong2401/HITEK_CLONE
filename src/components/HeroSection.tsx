@@ -106,11 +106,11 @@ const HeroSection = () => {
       <div className="relative z-10 w-full pb-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in opacity-0" style={{animationDelay: "0.6s", animationFillMode: "forwards"}}>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button onClick={() => scrollToSection('ai-section')} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
               Khám phá ngay
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button onClick={() => scrollToSection('ai-section')} size="lg" variant="outline" className="bg-black-600 border-white text-white hover:bg-white/10">
+            <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="bg-black-600 border-white text-white hover:bg-white/10">
               Liên hệ tư vấn
             </Button>
           </div>
