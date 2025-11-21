@@ -5,8 +5,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSelector from "@/components/LanguageSelector";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -79,31 +81,31 @@ const Navigation = () => {
 
   // ----- DATA -----
   const aboutData = [
-    { title: "Thông tin công ty", description: "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK", href: "/about-company" },
-    { title: "Về chúng tôi", description: "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi", href: "/about-us" },
+    { title: t('about.companyInfo.title'), description: t('about.companyInfo.description'), href: "/about-company" },
+    { title: t('about.aboutUs.title'), description: t('about.aboutUs.description'), href: "/about-us" },
   ];
 
   const servicesData = [
-    { title: "Dịch vụ custom phần mềm", description: "Công ty phát triển phần mềm custom hàng đầu Việt Nam.", link: "#custom-software" },
-    { title: "Dịch vụ phát triển phần mềm dài hạn", description: "Xây dựng phần mềm dài hạn phức tạp và chuyên sâu.", link: "#long-term-software" },
-    { title: "Dịch vụ phát triển web", description: "Phát triển web bằng .NET, NodeJS, Java, PHP, Angular, ReactJS...", link: "#web-development" },
-    { title: "Dịch vụ Cloud Migration", description: "Tận dụng đám mây và cơ sở hạ tầng để tăng trưởng kinh doanh.", link: "#cloud-migration" },
-    { title: "Dịch vụ phát triển mobile app", description: "Ứng dụng di động chất lượng cao cho khách hàng.", link: "#mobile-app" },
-    { title: "Dịch vụ kiểm thử phần mềm", description: "Xây dựng trải nghiệm web và thiết bị di động tối ưu.", link: "#software-testing" },
-    { title: "Dịch vụ outsourcing theo dự án", description: "Xử lý các dự án Outsourcing quốc tế phức tạp.", link: "#outsourcing" },
-    { title: "Dịch vụ xây dựng offshore center", description: "Xây dựng offshore center hiện đại và phù hợp.", link: "#offshore-center" },
-    { title: "Dịch vụ phát triển phần mềm gần thị trường", description: "Phát triển phần mềm tại các quốc gia gần với thị trường tiêu thụ.", link: "#nearshore-software" },
-    { title: "Dịch vụ Blockchain cho doanh nghiệp", description: "Phát triển Blockchain dễ dàng và an toàn cho doanh nghiệp.", link: "#blockchain" },
+    { title: t('services.customSoftware.title'), description: t('services.customSoftware.description'), link: "#custom-software" },
+    { title: t('services.longTermDevelopment.title'), description: t('services.longTermDevelopment.description'), link: "#long-term-software" },
+    { title: t('services.webDevelopment.title'), description: t('services.webDevelopment.description'), link: "#web-development" },
+    { title: t('services.cloudMigration.title'), description: t('services.cloudMigration.description'), link: "#cloud-migration" },
+    { title: t('services.mobileApp.title'), description: t('services.mobileApp.description'), link: "#mobile-app" },
+    { title: t('services.softwareTesting.title'), description: t('services.softwareTesting.description'), link: "#software-testing" },
+    { title: t('services.outsourcing.title'), description: t('services.outsourcing.description'), link: "#outsourcing" },
+    { title: t('services.offshoreCenter.title'), description: t('services.offshoreCenter.description'), link: "#offshore-center" },
+    { title: t('services.nearshoreSoftware.title'), description: t('services.nearshoreSoftware.description'), link: "#nearshore-software" },
+    { title: t('services.blockchain.title'), description: t('services.blockchain.description'), link: "#blockchain" },
   ];
 
   const navLinks = [
-    { name: "TRANG CHỦ", href: "/", onClick: scrollToTop },
-    { name: "VỀ HITEK", href: "#about", hasDropdown: true, type: "about" },
-    { name: "DỊCH VỤ", href: "/services-page", hasDropdown: true, type: "services", onClick: scrollToTop }, // THÊM onClick Ở ĐÂY
-    { name: "CÔNG NGHỆ", href: "/technology", onClick: scrollToTop },
-    { name: "DỰ ÁN", href: "/projects-page", onClick: scrollToTop },
-    { name: "TESTIMONIALS", href: "#testimonials", onClick: scrollToTop },
-    { name: "TUYỂN DỤNG", href: "#careers", onClick: scrollToTop },
+    { name: t('nav.home'), href: "/", onClick: scrollToTop },
+    { name: t('nav.about'), href: "#about", hasDropdown: true, type: "about" },
+    { name: t('nav.services'), href: "/services-page", hasDropdown: true, type: "services", onClick: scrollToTop },
+    { name: t('nav.technology'), href: "/technology", onClick: scrollToTop },
+    { name: t('nav.projects'), href: "/projects-page", onClick: scrollToTop },
+    { name: t('nav.testimonials'), href: "#testimonials", onClick: scrollToTop },
+    { name: t('nav.careers'), href: "#careers", onClick: scrollToTop },
   ];
 
   // ----- HOVER HANDLERS -----
@@ -158,7 +160,7 @@ const Navigation = () => {
       exit={{ opacity: 0, y: -10 }}
     >
       <div className="p-6">
-        <h3 className="font-semibold text-foreground mb-4 text-lg text-center">VỀ HITEK</h3>
+        <h3 className="font-semibold text-foreground mb-4 text-lg text-center">{t('nav.about')}</h3>
         <div className="space-y-4">
           {aboutData.map((item, index) => (
             <Link 
@@ -169,7 +171,7 @@ const Navigation = () => {
             >
               <h4 className="font-medium text-foreground mb-2">{item.title}</h4>
               <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
-              <span className="text-sm text-primary hover:underline font-medium">Tìm hiểu thêm</span>
+              <span className="text-sm text-primary hover:underline font-medium">{t('nav.learnMore')}</span>
             </Link>
           ))}
         </div>
@@ -196,7 +198,7 @@ const Navigation = () => {
           >
             <h4 className="font-medium text-foreground mb-2">{service.title}</h4>
             <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{service.description}</p>
-            <span className="text-sm text-primary hover:underline font-medium">Xem thêm</span>
+            <span className="text-sm text-primary hover:underline font-medium">{t('nav.viewMore')}</span>
           </a>
         ))}
       </div>

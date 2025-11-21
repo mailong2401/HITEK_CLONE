@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const languages = [
   { code: "vi", name: "Tiếng Việt", flag: "🇻🇳" },
@@ -16,7 +16,8 @@ const languages = [
 ];
 
 const LanguageSelector = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const { language, setLanguage } = useLanguage();
+  const selectedLanguage = languages.find(lang => lang.code === language) || languages[0];
 
   return (
     <DropdownMenu>
@@ -31,9 +32,9 @@ const LanguageSelector = () => {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setSelectedLanguage(lang)}
+            onClick={() => setLanguage(lang.code as any)}
             className={`cursor-pointer ${
-              selectedLanguage.code === lang.code ? "bg-primary/10" : ""
+              language === lang.code ? "bg-primary/10" : ""
             }`}
           >
             <span className="mr-2 text-lg">{lang.flag}</span>
