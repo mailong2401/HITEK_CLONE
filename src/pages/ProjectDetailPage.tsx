@@ -1,13 +1,17 @@
 // pages/ProjectDetailPage.tsx
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useProjects } from "@/hooks/useProjects";
-import { ArrowLeft, Calendar, Users, ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, Users, ExternalLink, ArrowRight, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react"; // Thêm imports
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { projects, loading, error } = useProjects();
+
+  // State cho nút back to top
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   // Tìm project theo ID
   const project = projects.find(proj => proj.id === parseInt(id || "0"));
@@ -16,6 +20,33 @@ const ProjectDetailPage = () => {
   const otherProjects = projects
     .filter(proj => proj.id !== project?.id)
     .slice(0, 4); // Lấy tối đa 4 dự án
+
+  // Xử lý hiển thị nút back to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Hàm scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   if (loading) {
     return (
@@ -247,7 +278,7 @@ const ProjectDetailPage = () => {
         </section>
       )}
 
-      {/* Other Projects Section - MỚI THÊM */}
+      {/* Other Projects Section */}
       {otherProjects.length > 0 && (
         <section className="py-8">
           <div className="container mx-auto px-4">
@@ -342,6 +373,21 @@ const ProjectDetailPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Back to Top Button - THÊM MỚI */}
+      {showScrollToTop && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <ChevronUp className="w-6 h-6" />
+        </motion.button>
+      )}
     </div>
   );
 };
