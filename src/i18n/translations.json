@@ -1,0 +1,322 @@
+{
+  "vi": {
+    "nav": {
+      "home": "TRANG CHỦ",
+      "about": "VỀ HITEK",
+      "services": "DỊCH VỤ",
+      "technology": "CÔNG NGHỆ",
+      "projects": "DỰ ÁN",
+      "testimonials": "TESTIMONIALS",
+      "careers": "TUYỂN DỤNG",
+      "learnMore": "Tìm hiểu thêm",
+      "viewMore": "Xem thêm"
+    },
+    "about": {
+      "companyInfo": {
+        "title": "Thông tin công ty",
+        "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK"
+      },
+      "aboutUs": {
+        "title": "Về chúng tôi",
+        "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi"
+      }
+    },
+    "services": {
+      "customSoftware": {
+        "title": "Dịch vụ custom phần mềm",
+        "description": "Công ty phát triển phần mềm custom hàng đầu Việt Nam."
+      },
+      "longTermDevelopment": {
+        "title": "Dịch vụ phát triển phần mềm dài hạn",
+        "description": "Xây dựng phần mềm dài hạn phức tạp và chuyên sâu."
+      },
+      "webDevelopment": {
+        "title": "Dịch vụ phát triển web",
+        "description": "Phát triển web bằng .NET, NodeJS, Java, PHP, Angular, ReactJS..."
+      },
+      "cloudMigration": {
+        "title": "Dịch vụ Cloud Migration",
+        "description": "Tận dụng đám mây và cơ sở hạ tầng để tăng trưởng kinh doanh."
+      },
+      "mobileApp": {
+        "title": "Dịch vụ phát triển mobile app",
+        "description": "Ứng dụng di động chất lượng cao cho khách hàng."
+      },
+      "softwareTesting": {
+        "title": "Dịch vụ kiểm thử phần mềm",
+        "description": "Xây dựng trải nghiệm web và thiết bị di động tối ưu."
+      },
+      "outsourcing": {
+        "title": "Dịch vụ outsourcing theo dự án",
+        "description": "Xử lý các dự án Outsourcing quốc tế phức tạp."
+      },
+      "offshoreCenter": {
+        "title": "Dịch vụ xây dựng offshore center",
+        "description": "Xây dựng offshore center hiện đại và phù hợp."
+      },
+      "nearshoreSoftware": {
+        "title": "Dịch vụ phát triển phần mềm gần thị trường",
+        "description": "Phát triển phần mềm tại các quốc gia gần với thị trường tiêu thụ."
+      },
+      "blockchain": {
+        "title": "Dịch vụ Blockchain cho doanh nghiệp",
+        "description": "Phát triển Blockchain dễ dàng và an toàn cho doanh nghiệp."
+      }
+    },
+    "hero": {
+      "title1": "THÚC ĐẨY SÁNG TẠO, TĂNG TỐC ĐỔI MỚI",
+      "title2": "ĐỒNG HÀNH PHÁT TRIỂN, NÂNG TẦM THÀNH CÔNG",
+      "subtitle": "_ Chất lượng là danh dự _",
+      "explore": "Khám phá ngay",
+      "contact": "Liên hệ tư vấn"
+    },
+    "contact": {
+      "title": "LIÊN HỆ",
+      "heading": "Hãy kết nối với chúng tôi",
+      "description": "Đội ngũ chuyên gia của HITEK sẵn sàng tư vấn và hỗ trợ bạn",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "address": "Địa chỉ"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "HOME",
+      "about": "ABOUT HITEK",
+      "services": "SERVICES",
+      "technology": "TECHNOLOGY",
+      "projects": "PROJECTS",
+      "testimonials": "TESTIMONIALS",
+      "careers": "CAREERS",
+      "learnMore": "Learn more",
+      "viewMore": "View more"
+    },
+    "about": {
+      "companyInfo": {
+        "title": "Company Information",
+        "description": "Learn about HITEK's development journey, mission and vision"
+      },
+      "aboutUs": {
+        "title": "About Us",
+        "description": "Expert team, company culture and core values"
+      }
+    },
+    "services": {
+      "customSoftware": {
+        "title": "Custom Software Development",
+        "description": "Leading custom software development company in Vietnam."
+      },
+      "longTermDevelopment": {
+        "title": "Long-term Software Development",
+        "description": "Building complex and specialized long-term software."
+      },
+      "webDevelopment": {
+        "title": "Web Development Services",
+        "description": "Web development using .NET, NodeJS, Java, PHP, Angular, ReactJS..."
+      },
+      "cloudMigration": {
+        "title": "Cloud Migration Services",
+        "description": "Leverage cloud and infrastructure for business growth."
+      },
+      "mobileApp": {
+        "title": "Mobile App Development",
+        "description": "High-quality mobile applications for customers."
+      },
+      "softwareTesting": {
+        "title": "Software Testing Services",
+        "description": "Building optimal web and mobile device experiences."
+      },
+      "outsourcing": {
+        "title": "Project-based Outsourcing",
+        "description": "Handling complex international outsourcing projects."
+      },
+      "offshoreCenter": {
+        "title": "Offshore Center Setup",
+        "description": "Building modern and suitable offshore centers."
+      },
+      "nearshoreSoftware": {
+        "title": "Nearshore Software Development",
+        "description": "Software development in countries close to the market."
+      },
+      "blockchain": {
+        "title": "Enterprise Blockchain Services",
+        "description": "Easy and secure Blockchain development for enterprises."
+      }
+    },
+    "hero": {
+      "title1": "DRIVING INNOVATION, ACCELERATING TRANSFORMATION",
+      "title2": "PARTNERING FOR GROWTH, ELEVATING SUCCESS",
+      "subtitle": "_ Quality is our Honor _",
+      "explore": "Explore Now",
+      "contact": "Contact Us"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "heading": "Let's Connect",
+      "description": "HITEK's expert team is ready to consult and support you",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    }
+  },
+  "ja": {
+    "nav": {
+      "home": "ホーム",
+      "about": "HITEKについて",
+      "services": "サービス",
+      "technology": "テクノロジー",
+      "projects": "プロジェクト",
+      "testimonials": "お客様の声",
+      "careers": "採用情報",
+      "learnMore": "詳細を見る",
+      "viewMore": "もっと見る"
+    },
+    "about": {
+      "companyInfo": {
+        "title": "会社情報",
+        "description": "HITEKの発展の歩み、使命、ビジョンについて"
+      },
+      "aboutUs": {
+        "title": "私たちについて",
+        "description": "専門家チーム、企業文化、核心的価値観"
+      }
+    },
+    "services": {
+      "customSoftware": {
+        "title": "カスタムソフトウェア開発",
+        "description": "ベトナムトップのカスタムソフトウェア開発会社"
+      },
+      "longTermDevelopment": {
+        "title": "長期ソフトウェア開発",
+        "description": "複雑で専門的な長期ソフトウェアの構築"
+      },
+      "webDevelopment": {
+        "title": "Web開発サービス",
+        "description": ".NET、NodeJS、Java、PHP、Angular、ReactJSなどによるWeb開発"
+      },
+      "cloudMigration": {
+        "title": "クラウド移行サービス",
+        "description": "ビジネス成長のためのクラウドとインフラの活用"
+      },
+      "mobileApp": {
+        "title": "モバイルアプリ開発",
+        "description": "お客様向けの高品質なモバイルアプリケーション"
+      },
+      "softwareTesting": {
+        "title": "ソフトウェアテストサービス",
+        "description": "最適なWebおよびモバイルデバイス体験の構築"
+      },
+      "outsourcing": {
+        "title": "プロジェクトベースアウトソーシング",
+        "description": "複雑な国際アウトソーシングプロジェクトの処理"
+      },
+      "offshoreCenter": {
+        "title": "オフショアセンター構築",
+        "description": "現代的で適切なオフショアセンターの構築"
+      },
+      "nearshoreSoftware": {
+        "title": "ニアショアソフトウェア開発",
+        "description": "市場に近い国でのソフトウェア開発"
+      },
+      "blockchain": {
+        "title": "企業向けブロックチェーンサービス",
+        "description": "企業向けの簡単で安全なブロックチェーン開発"
+      }
+    },
+    "hero": {
+      "title1": "イノベーションを推進し、変革を加速",
+      "title2": "成長のパートナー、成功の向上",
+      "subtitle": "_ 品質は名誉 _",
+      "explore": "今すぐ探索",
+      "contact": "お問い合わせ"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "heading": "つながりましょう",
+      "description": "HITEKの専門チームがコンサルティングとサポートをいたします",
+      "phone": "電話",
+      "email": "メール",
+      "address": "住所"
+    }
+  },
+  "kr": {
+    "nav": {
+      "home": "홈",
+      "about": "HITEK 소개",
+      "services": "서비스",
+      "technology": "기술",
+      "projects": "프로젝트",
+      "testimonials": "고객 후기",
+      "careers": "채용",
+      "learnMore": "자세히 보기",
+      "viewMore": "더 보기"
+    },
+    "about": {
+      "companyInfo": {
+        "title": "회사 정보",
+        "description": "HITEK의 발전 여정, 사명 및 비전에 대해 알아보기"
+      },
+      "aboutUs": {
+        "title": "회사 소개",
+        "description": "전문가 팀, 기업 문화 및 핵심 가치"
+      }
+    },
+    "services": {
+      "customSoftware": {
+        "title": "맞춤형 소프트웨어 개발",
+        "description": "베트남 최고의 맞춤형 소프트웨어 개발 회사"
+      },
+      "longTermDevelopment": {
+        "title": "장기 소프트웨어 개발",
+        "description": "복잡하고 전문적인 장기 소프트웨어 구축"
+      },
+      "webDevelopment": {
+        "title": "웹 개발 서비스",
+        "description": ".NET, NodeJS, Java, PHP, Angular, ReactJS 등을 사용한 웹 개발"
+      },
+      "cloudMigration": {
+        "title": "클라우드 마이그레이션 서비스",
+        "description": "비즈니스 성장을 위한 클라우드 및 인프라 활용"
+      },
+      "mobileApp": {
+        "title": "모바일 앱 개발",
+        "description": "고객을 위한 고품질 모바일 애플리케이션"
+      },
+      "softwareTesting": {
+        "title": "소프트웨어 테스팅 서비스",
+        "description": "최적의 웹 및 모바일 디바이스 경험 구축"
+      },
+      "outsourcing": {
+        "title": "프로젝트 기반 아웃소싱",
+        "description": "복잡한 국제 아웃소싱 프로젝트 처리"
+      },
+      "offshoreCenter": {
+        "title": "오프쇼어 센터 구축",
+        "description": "현대적이고 적합한 오프쇼어 센터 구축"
+      },
+      "nearshoreSoftware": {
+        "title": "니어쇼어 소프트웨어 개발",
+        "description": "시장과 가까운 국가에서의 소프트웨어 개발"
+      },
+      "blockchain": {
+        "title": "기업용 블록체인 서비스",
+        "description": "기업을 위한 쉽고 안전한 블록체인 개발"
+      }
+    },
+    "hero": {
+      "title1": "혁신 추진, 변화 가속화",
+      "title2": "성장 파트너, 성공 향상",
+      "subtitle": "_ 품질은 명예 _",
+      "explore": "지금 탐색",
+      "contact": "문의하기"
+    },
+    "contact": {
+      "title": "연락처",
+      "heading": "연결하세요",
+      "description": "HITEK 전문가 팀이 상담 및 지원을 제공합니다",
+      "phone": "전화",
+      "email": "이메일",
+      "address": "주소"
+    }
+  }
+}

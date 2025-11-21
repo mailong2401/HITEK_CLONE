@@ -2,20 +2,23 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="contact" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm text-primary font-semibold tracking-wider uppercase mb-4">
-            LIÊN HỆ
+            {t('contact.title')}
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Hãy kết nối với chúng tôi
+            {t('contact.heading')}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Đội ngũ chuyên gia của HITEK sẵn sàng tư vấn và hỗ trợ bạn
+            {t('contact.description')}
           </p>
         </div>
 
@@ -26,7 +29,7 @@ const ContactSection = () => {
                 <Phone className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Điện thoại</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.phone')}</h3>
                 <p className="text-muted-foreground">+84 123 456 789</p>
               </div>
             </div>
@@ -36,7 +39,7 @@ const ContactSection = () => {
                 <Mail className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Email</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.email')}</h3>
                 <p className="text-muted-foreground">contact@hitek.com.vn</p>
               </div>
             </div>
@@ -46,7 +49,7 @@ const ContactSection = () => {
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Địa chỉ</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('contact.address')}</h3>
                 <p className="text-muted-foreground">
                   Tòa nhà Technology Center, Quận 7, TP. Hồ Chí Minh
                 </p>

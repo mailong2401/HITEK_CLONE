@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const h1Ref = useRef(null);
   const h2Ref = useRef(null);
 
@@ -18,12 +20,12 @@ const HeroSection = () => {
     const startAnimation = () => {
       // Hiệu ứng typewriter cho h1
       const h1Element = h1Ref.current;
-      const h1Text = "THÚC ĐẨY SÁNG TẠO, TĂNG TỐC ĐỔI MỚI";
+      const h1Text = t('hero.title1');
       let h1Index = 0;
       
       // Hiệu ứng typewriter cho h2
       const h2Element = h2Ref.current;
-      const h2Text = "ĐỒNG HÀNH PHÁT TRIỂN, NÂNG TẦM THÀNH CÔNG";
+      const h2Text = t('hero.title2');
       let h2Index = 0;
 
       h1Element.textContent = "";
@@ -62,7 +64,7 @@ const HeroSection = () => {
     };
 
     startAnimation();
-  }, []);
+  }, [t]);
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-between overflow-hidden">
@@ -97,7 +99,7 @@ const HeroSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-300 italic mt-4 animate-fade-in opacity-0" style={{animationDelay: "0.3s", animationFillMode: "forwards"}}>
-            _ Chất lượng là danh dự _
+            {t('hero.subtitle')}
           </p>
         </div>
       </div>
@@ -107,11 +109,11 @@ const HeroSection = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in opacity-0" style={{animationDelay: "0.6s", animationFillMode: "forwards"}}>
             <Button onClick={() => scrollToSection('ai-section')} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-              Khám phá ngay
+              {t('hero.explore')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="bg-black-600 border-white text-white hover:bg-white/10">
-              Liên hệ tư vấn
+              {t('hero.contact')}
             </Button>
           </div>
         </div>
