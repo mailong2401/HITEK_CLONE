@@ -75,7 +75,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
         opacity: 1,
         x: 0,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           damping: 20,
           stiffness: 100,
           duration: 0.8
@@ -90,7 +90,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
         x: 0,
         scale: 1,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           damping: 20,
           stiffness: 100,
           duration: 0.8
@@ -104,7 +104,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
         opacity: 1,
         y: 0,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           damping: 25,
           stiffness: 100
         }
@@ -116,7 +116,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     };
 

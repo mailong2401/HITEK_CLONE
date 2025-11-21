@@ -71,7 +71,7 @@ const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
         duration: 0.6
@@ -83,9 +83,9 @@ const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
     hover: {
       y: -8,
       scale: 1.02,
-      boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+      boxShadow: "0 15px 30px rgba(0,0,0,0.15)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 15,
         stiffness: 300
       }
@@ -97,18 +97,18 @@ const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
     visible: {
       scaleX: 1,
       transition: {
-        duration: 1,
-        ease: "easeInOut"
+        duration: 1.2,
+        ease: "easeInOut" as const
       }
     }
   };
 
   const floatingAnimation = {
-    y: [-5, 5, -5],
+    y: [-10, 10, -10],
     transition: {
-      duration: 3,
+      duration: 4,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: "easeInOut" as const
     }
   };
 

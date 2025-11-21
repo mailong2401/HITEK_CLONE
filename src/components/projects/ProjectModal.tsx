@@ -1,7 +1,7 @@
 //components/projects/ProjectModal
 import { motion } from "framer-motion";
 import { Code, Smartphone, Clock, Users } from "lucide-react";
-import { Project } from "@/data/projectsData";
+import { Project, ProjectResult } from "@/data/projectsData";
 import { categories } from "@/data/projectsData";
 
 interface ProjectModalProps {
@@ -14,6 +14,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   if (!isOpen || !project) return null;
 
   const categoryName = categories.find(cat => cat.id === project.category)?.name;
+  
+  // Convert results to array format if it's an object
+  const resultsArray: ProjectResult[] = Array.isArray(project.results)
+    ? project.results
+    : Object.entries(project.results).map(([key, value]) => ({ key, value }));
 
   return (
     <motion.div 
@@ -30,7 +35,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       >
         <div className="relative">
           <img
-            src={project.image}
+            src={project.image || 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'}
             alt={project.title}
             className="w-full h-80 object-cover rounded-t-2xl"
           />
@@ -113,13 +118,13 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               Kết quả đạt được
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {Object.entries(project.results).map(([key, value]) => (
-                <div key={key} className="text-center">
+              {resultsArray.map((result) => (
+                <div key={result.key} className="text-center">
                   <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-3">
-                    {value.split(' ')[0]}
+                    {result.value.split(' ')[0]}
                   </div>
                   <div className="text-gray-700 dark:text-gray-300 font-medium">
-                    {value.split(' ').slice(1).join(' ')}
+                    {result.value.split(' ').slice(1).join(' ')}
                   </div>
                 </div>
               ))}

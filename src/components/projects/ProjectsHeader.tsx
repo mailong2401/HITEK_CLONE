@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Star, Rocket, Zap, Sparkles, ArrowRight } from "lucide-react";
+import { floating, pulse } from "@/lib/animations";
 
 const ProjectsHeader = () => {
   const [ref, inView] = useInView({
@@ -25,29 +26,11 @@ const ProjectsHeader = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
         duration: 0.8
       }
-    }
-  };
-
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
-
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
     }
   };
 
@@ -79,7 +62,7 @@ const ProjectsHeader = () => {
 
       {/* Floating Elements */}
       <motion.div
-        animate={floatingAnimation}
+        animate={floating}
         className="absolute top-20 left-10 hidden lg:block"
       >
         <div className="w-8 h-8 bg-blue-300/40 rounded-full blur-sm" />
@@ -87,9 +70,9 @@ const ProjectsHeader = () => {
       
       <motion.div
         animate={{
-          ...floatingAnimation,
+          ...floating,
           y: [5, -5, 5],
-          transition: { ...floatingAnimation.transition, delay: 1 }
+          transition: { ...floating.transition, delay: 1 }
         }}
         className="absolute top-1/3 right-20 hidden lg:block"
       >
@@ -97,7 +80,7 @@ const ProjectsHeader = () => {
       </motion.div>
 
       <motion.div
-        animate={pulseAnimation}
+        animate={pulse}
         className="absolute bottom-32 left-1/4 hidden lg:block"
       >
         <Sparkles className="w-8 h-8 text-blue-200/60" />
@@ -105,8 +88,8 @@ const ProjectsHeader = () => {
 
       <motion.div
         animate={{
-          ...floatingAnimation,
-          transition: { ...floatingAnimation.transition, delay: 2 }
+          ...floating,
+          transition: { ...floating.transition, delay: 2 }
         }}
         className="absolute bottom-20 right-1/4 hidden lg:block"
       >

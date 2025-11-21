@@ -2,6 +2,7 @@ import { Search, Filter, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { categories } from "@/data/projectsData";
 import { useState } from "react";
+import { scaleIn } from "@/lib/animations";
 
 interface ProjectsFilterProps {
   selectedCategory: string;
@@ -25,20 +26,7 @@ const ProjectsFilter = ({
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        damping: 15,
-        stiffness: 200
+        ease: "easeOut" as const
       }
     }
   };
@@ -62,7 +50,7 @@ const ProjectsFilter = ({
           
           {/* Search Bar với hiệu ứng nâng cao */}
           <motion.div
-            variants={itemVariants}
+            variants={scaleIn}
             className="relative w-full lg:w-96"
           >
             <div className="relative">
@@ -92,21 +80,24 @@ const ProjectsFilter = ({
           </motion.div>
 
           {/* Mobile Filter Toggle */}
-          <motion.button
-            variants={itemVariants}
-            onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className="lg:hidden flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+          <motion.div
+            variants={scaleIn}
           >
-            <Filter className="w-4 h-4" />
-            <span>Bộ lọc</span>
-            {hasActiveFilters && (
-              <motion.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                className="w-2 h-2 bg-white rounded-full"
-              />
-            )}
-          </motion.button>
+            <button
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+              className="lg:hidden flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+            >
+              <Filter className="w-4 h-4" />
+              <span>Bộ lọc</span>
+              {hasActiveFilters && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="w-2 h-2 bg-white rounded-full"
+                />
+              )}
+            </button>
+          </motion.div>
 
           {/* Category Filters - Desktop */}
           <motion.div
@@ -120,7 +111,7 @@ const ProjectsFilter = ({
               return (
                 <motion.button
                   key={category.id}
-                  variants={itemVariants}
+                  variants={scaleIn}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: index * 0.1 }}
