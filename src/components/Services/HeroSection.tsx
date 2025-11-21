@@ -218,7 +218,7 @@ const HeroSection = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link to="/HITEK_CLONE#contact">
+              <Link to="/consultation">
               <motion.button
                 whileHover={{ 
                   scale: 1.05,

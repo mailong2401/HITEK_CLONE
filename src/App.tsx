@@ -17,6 +17,8 @@ import ProjectsPage from "@/pages/ProjectsPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import RecruitmentPage from "@/pages/RecruitmentPage";
 import TestimonialsPage from "@/pages/TestimonialsPage"; // Thêm import mới
+import ConsultationPage from "@/pages/ConsultationPage"; // Thêm dòng này
+
 
 const queryClient = new QueryClient();
 
@@ -73,6 +75,11 @@ const App = () => (
               <Route path="/testimonials" element={
                 <Layout>
                   <TestimonialsPage />
+                </Layout>
+              } />
+              <Route path="/consultation" element={
+                <Layout>
+                  <ConsultationPage />
                 </Layout>
               } />
               
