@@ -1,6 +1,6 @@
 // src/pages/RecruitmentPage.tsx
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
@@ -16,12 +16,17 @@ import {
   Zap,
   Rocket,
   Star,
-  Award
+  Award,
+  Volume2,
+  VolumeX
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
 const RecruitmentPage = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const jobPositionsRef = useRef<HTMLDivElement>(null);
   
   const categories = [
     { id: "all", name: "Tất cả vị trí" },
@@ -177,18 +182,73 @@ const RecruitmentPage = () => {
     }
   };
 
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  // Hàm scrollToSection - bạn đã có sẵn
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  // Auto-play video when component mounts
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      {/* Hero Section với Video Background RÕ HƠN */}
+      <section className="relative py-20 overflow-hidden min-h-screen flex items-center justify-center">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Team Background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/80" />
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            className="w-full h-full object-cover scale-110"
+            poster="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            style={{
+              filter: "brightness(1.1) contrast(1.1) saturate(1.2)"
+            }}
+          >
+            <source src="https://hitek.com.vn/wp-content/uploads/2022/10/1010.mov" type="video/mp4" />
+            <img 
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              alt="Team Background" 
+            />
+          </video>
+          
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/40" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
+
+        {/* Mute/Unmute Button */}
+        <motion.button
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1 }}
+          onClick={toggleMute}
+          className="absolute top-6 right-6 z-20 bg-black/40 backdrop-blur-sm rounded-full p-3 text-white hover:bg-black/60 transition-all duration-300 border border-white/20"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+        </motion.button>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -201,7 +261,7 @@ const RecruitmentPage = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20 mb-6"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary/20 backdrop-blur-md rounded-full border border-primary/30 mb-6 shadow-lg"
             >
               <Rocket className="w-4 h-4 text-primary" />
               <span className="text-primary font-semibold text-sm">
@@ -210,8 +270,8 @@ const RecruitmentPage = () => {
               <Zap className="w-4 h-4 text-primary fill-current" />
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-              <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
+              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
                 Cùng Hitek{" "}
               </span>
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
@@ -219,21 +279,43 @@ const RecruitmentPage = () => {
               </span>
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
               Khám phá cơ hội nghề nghiệp tại Hitek - Nơi đam mê công nghệ gặp gỡ sự sáng tạo không giới hạn
             </p>
 
-            <motion.div
+            {/* Nút "Xem vị trí đang tuyển" đã được cập nhật để gọi scrollToSection */}
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
+              onClick={() => scrollToSection(jobPositionsRef)}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 shadow-lg"
             >
               <Briefcase className="w-5 h-5" />
               <span>Xem vị trí đang tuyển</span>
               <ArrowRight className="w-5 h-5" />
-            </motion.div>
+            </motion.button>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-6 h-10 border-2 border-primary rounded-full flex justify-center backdrop-blur-sm bg-white/10"
+          >
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1 h-3 bg-primary rounded-full mt-2"
+            />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Why Join Us Section */}
@@ -278,8 +360,8 @@ const RecruitmentPage = () => {
         </div>
       </section>
 
-      {/* Job Positions Section */}
-      <section className="py-20 bg-muted/50">
+      {/* Job Positions Section - Thêm ref để scroll tới */}
+      <section ref={jobPositionsRef} className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
