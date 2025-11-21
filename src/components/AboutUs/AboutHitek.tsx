@@ -110,6 +110,7 @@ const AboutHitek: React.FC = () => {
 
   return (
     <motion.div 
+      id="about-hitek"
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}

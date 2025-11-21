@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const AboutUsBanner: React.FC = () => {
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -223,8 +231,9 @@ const AboutUsBanner: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* CTA Button */}
+        {/* CTA Button - ĐÃ SỬA: Thêm onClick để scroll đến about-hitek */}
         <motion.button 
+          onClick={() => scrollToSection('about-hitek')} // 👈 THÊM DÒNG NÀY
           variants={itemVariants}
           transition={{ delay: 1.8 }}
           whileHover={{ 

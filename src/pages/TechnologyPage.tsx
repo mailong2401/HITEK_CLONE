@@ -228,9 +228,9 @@ const TechnologyPage = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link to="/HITEK_CLONE#contact">
+              <Link to="/projects-page">
                 <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2">
-                  Bắt đầu dự án
+                  Xem các dự án
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>

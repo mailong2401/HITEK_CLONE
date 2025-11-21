@@ -1,59 +1,34 @@
 import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-// Import các hình ảnh dự án mẫu - bạn cần thay thế bằng hình ảnh thực tế
-import project1 from "@/assets/products/product_1.avif";
-import project2 from "@/assets/products/product_1.avif";
-import project3 from "@/assets/products/product_2.avif";
-import project4 from "@/assets/products/product_3.avif";
-import project5 from "@/assets/products/product_4.avif";
+import { useProjects } from "@/hooks/useProjects"; // 👈 Import hook
+import { useNavigate } from 'react-router-dom'; // 👈 Import navigate
 
 const ProjectsSection = () => {
   const scrollContainerRef = useRef(null);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px 0px" });
+  const navigate = useNavigate(); // 👈 Sử dụng navigate
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const projects = [
-    {
-      image: project1,
-      title: "Standard Center",
-      description: "Cửa hàng Bách Hóa Văn Phòng Phẩm & Thiết Bị Văn Phòng",
-      category: "Web Application",
-    },
-    {
-      image: project2,
-      title: "Korea Construction Standards Center",
-      description: "Korea Construction Standards Center là hệ thống quản lý tiêu chuẩn xây dựng Hàn Quốc",
-      category: "Management System",
-    },
-    {
-      image: project3,
-      title: "DIGITAL SIGNAGE",
-      description: "Hệ thống biển quảng cáo kỹ thuật số thông minh trên nền tảng Android",
-      category: "Digital Signage",
-    },
-    {
-      image: project4,
-      title: "LET ME READ",
-      description: "Ứng dụng học tiếng Anh với công nghệ AI và thư viện sách số đồ sộ",
-      category: "Mobile App",
-    },
-    {
-      image: project5,
-      title: "ONEDROP",
-      description: "OneDrop là một giải pháp chăm sóc sức khỏe kỹ thuật số và quản lý các loại bệnh.",
-      category: "Mobile App",
-    },
-  ];
+  // 👇 Sử dụng useProjects hook để lấy dữ liệu
+  const { projects, categories, loading, error } = useProjects();
+
+  // 👇 Lọc và giới hạn số lượng projects hiển thị (ví dụ: 6 projects đầu tiên)
+  const featuredProjects = projects.slice(0, 6).map(project => ({
+    id: project.id,
+    image: project.image || 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    title: project.title,
+    description: project.description,
+    category: categories.find(cat => cat.id === project.category)?.name || project.category,
+  }));
 
   // Tính toán số dots thực tế cần hiển thị
-  const totalDots = Math.max(projects.length - visibleCards + 1, 1);
+  const totalDots = Math.max(featuredProjects.length - visibleCards + 1, 1);
 
   const scrollToIndex = (index) => {
     if (scrollContainerRef.current) {
@@ -71,7 +46,7 @@ const ProjectsSection = () => {
   };
 
   const scroll = (direction) => {
-    const maxIndex = projects.length - visibleCards;
+    const maxIndex = featuredProjects.length - visibleCards;
     const newIndex = direction === 'right' 
       ? currentIndex >= maxIndex ? 0 : currentIndex + 1
       : currentIndex <= 0 ? maxIndex : currentIndex - 1;
@@ -79,16 +54,26 @@ const ProjectsSection = () => {
     scrollToIndex(newIndex);
   };
 
+  // 👇 Xử lý click để chuyển đến trang chi tiết
+  const handleProjectClick = (projectId: number) => {
+    navigate(`/project/${projectId}`);
+  };
+
+  // 👇 Xử lý click "Xem tất cả" để chuyển đến trang projects
+  const handleViewAllProjects = () => {
+    navigate('/projects');
+  };
+
   // Auto scroll chỉ khi section trong view
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || featuredProjects.length === 0) return;
 
     const interval = setInterval(() => {
       scroll('right');
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, isInView]);
+  }, [currentIndex, isInView, featuredProjects.length]);
 
   // Cập nhật số card hiển thị dựa trên kích thước màn hình
   useEffect(() => {
@@ -119,6 +104,57 @@ const ProjectsSection = () => {
     return index === currentIndex + Math.floor(visibleCards / 2);
   };
 
+  // 👇 Hiển thị loading state
+  if (loading) {
+    return (
+      <section 
+        ref={sectionRef}
+        id="projects" 
+        className="py-20 bg-gradient-to-br from-slate-50 via-orange-50/20 to-amber-50/10 dark:from-slate-950 dark:via-orange-950/10 dark:to-amber-950/5"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <div>Đang tải dữ liệu dự án...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // 👇 Hiển thị error state
+  if (error) {
+    return (
+      <section 
+        ref={sectionRef}
+        id="projects" 
+        className="py-20 bg-gradient-to-br from-slate-50 via-orange-50/20 to-amber-50/10 dark:from-slate-950 dark:via-orange-950/10 dark:to-amber-950/5"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center text-red-500">
+            Lỗi khi tải dữ liệu: {error}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // 👇 Hiển thị empty state nếu không có projects
+  if (featuredProjects.length === 0) {
+    return (
+      <section 
+        ref={sectionRef}
+        id="projects" 
+        className="py-20 bg-gradient-to-br from-slate-50 via-orange-50/20 to-amber-50/10 dark:from-slate-950 dark:via-orange-950/10 dark:to-amber-950/5"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <div>Chưa có dự án nào để hiển thị.</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section 
       ref={sectionRef}
@@ -143,7 +179,7 @@ const ProjectsSection = () => {
           </div>
 
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            100+ Sản phẩm
+            {projects.length}+ Sản phẩm
             <span className="block bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
               chất lượng nổi bật
             </span>
@@ -153,7 +189,10 @@ const ProjectsSection = () => {
             <p className="text-xl text-muted-foreground leading-relaxed text-center md:text-left flex-1">
               Hitek cam kết cung cấp các sản phẩm phần mềm có chất lượng vượt trội vì chúng tôi tin rằng chất lượng là vinh dự.
             </p>
-            <button className="group flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap hover:gap-3 hover:scale-105">
+            <button 
+              onClick={handleViewAllProjects}
+              className="group flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 whitespace-nowrap hover:gap-3 hover:scale-105"
+            >
               <span>Xem tất cả các dự án</span>
               <ArrowRight className="h-4 w-4 transition-all duration-300" />
             </button>
@@ -195,13 +234,13 @@ const ProjectsSection = () => {
               scrollBehavior: 'smooth'
             }}
           >
-            {projects.map((project, index) => {
+            {featuredProjects.map((project, index) => {
               const isCenter = isCenterCard(index);
               return (
                 <Card
-                  key={index}
+                  key={project.id}
                   className={`
-                    group transition-all duration-500 border-2 flex-shrink-0 flex flex-col snap-start
+                    group transition-all duration-500 border-2 flex-shrink-0 flex flex-col snap-start cursor-pointer
                     ${isCenter 
                       ? 'scale-105 shadow-2xl border-primary/30 bg-gradient-to-br from-card to-orange-50/50 dark:to-orange-950/20 w-[400px]' 
                       : 'scale-95 shadow-lg border-border/30 bg-card/70 backdrop-blur-sm opacity-70 w-[380px] hover:opacity-90'
@@ -212,6 +251,7 @@ const ProjectsSection = () => {
                     animationDelay: `${index * 100}ms`,
                     animationFillMode: 'both'
                   }}
+                  onClick={() => handleProjectClick(project.id)}
                 >
                   <CardHeader className="p-0 flex-shrink-0">
                     <div className="h-52 overflow-hidden rounded-t-lg relative">
@@ -315,7 +355,7 @@ const ProjectsSection = () => {
         >
           <div className="inline-grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">100+</div>
+              <div className="text-3xl font-bold text-primary">{projects.length}+</div>
               <div className="text-sm text-muted-foreground">Dự án hoàn thành</div>
             </div>
             <div className="text-center">

@@ -4,6 +4,12 @@ import { Star, Rocket, Zap, Sparkles, ArrowRight } from "lucide-react";
 import { floating, pulse } from "@/lib/animations";
 
 const ProjectsHeader = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -190,6 +196,7 @@ const ProjectsHeader = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.button
+              onClick={() => scrollToSection('projects-filter')}
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 30px rgba(255, 255, 255, 0.3)"

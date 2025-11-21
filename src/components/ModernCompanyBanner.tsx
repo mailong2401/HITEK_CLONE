@@ -8,6 +8,13 @@ const ModernCompanyBanner: React.FC = () => {
     threshold: 0.1
   });
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -226,6 +233,8 @@ const ModernCompanyBanner: React.FC = () => {
 
         {/* CTA Button */}
         <motion.button 
+          onClick={() => scrollToSection('company-vision')} // 👈 THÊM DÒNG NÀY
+
           variants={itemVariants}
           transition={{ delay: 1.8 }}
           whileHover={{ 

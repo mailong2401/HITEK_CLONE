@@ -102,6 +102,7 @@ const CompanyVision: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 py-8 pt-20">
       {/* Phần Tầm nhìn */}
       <motion.div 
+        id="company-vision"
         ref={visionRef}
         initial="hidden"
         animate={visionInView ? "visible" : "hidden"}

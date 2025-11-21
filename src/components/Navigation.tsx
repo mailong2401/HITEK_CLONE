@@ -104,8 +104,8 @@ const Navigation = () => {
     { name: t('nav.services'), href: "/services-page", hasDropdown: true, type: "services", onClick: scrollToTop },
     { name: t('nav.technology'), href: "/technology", onClick: scrollToTop },
     { name: t('nav.projects'), href: "/projects-page", onClick: scrollToTop },
-    { name: t('nav.testimonials'), href: "#testimonials", onClick: scrollToTop },
-    { name: t('nav.careers'), href: "#careers", onClick: scrollToTop },
+    { name: t('nav.testimonials'), href: "/testimonials", onClick: scrollToTop },
+    { name: t('nav.careers'), href: "/recruitment", onClick: scrollToTop },
   ];
 
   // ----- HOVER HANDLERS -----

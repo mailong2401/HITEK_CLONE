@@ -1,4 +1,4 @@
-// App.tsx - Thêm route mới
+// App.tsx - Thêm route testimonials
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +15,8 @@ import TechnologyPage from "@/pages/TechnologyPage";
 import ServicesPage from "@/pages/ServicesPage";
 import ProjectsPage from "@/pages/ProjectsPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
+import RecruitmentPage from "@/pages/RecruitmentPage";
+import TestimonialsPage from "@/pages/TestimonialsPage"; // Thêm import mới
 
 const queryClient = new QueryClient();
 
@@ -60,6 +62,17 @@ const App = () => (
               <Route path="/project/:id" element={
                 <Layout>
                   <ProjectDetailPage />
+                </Layout>
+              } />
+              <Route path="/recruitment" element={
+                <Layout>
+                  <RecruitmentPage />
+                </Layout>
+              } />
+              {/* Route testimonials mới */}
+              <Route path="/testimonials" element={
+                <Layout>
+                  <TestimonialsPage />
                 </Layout>
               } />
               

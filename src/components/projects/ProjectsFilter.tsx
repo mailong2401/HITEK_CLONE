@@ -40,6 +40,7 @@ const ProjectsFilter = ({
 
   return (
     <motion.section
+      id="projects-filter"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
