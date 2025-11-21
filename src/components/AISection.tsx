@@ -296,6 +296,7 @@ const AISection = () => {
 
   return (
     <motion.section 
+      id="ai-selection"
       ref={sectionRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

@@ -6,6 +6,14 @@ const HeroSection = () => {
   const h1Ref = useRef(null);
   const h2Ref = useRef(null);
 
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const startAnimation = () => {
       // Hiệu ứng typewriter cho h1
@@ -102,7 +110,7 @@ const HeroSection = () => {
               Khám phá ngay
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-black-600 border-white text-white hover:bg-white/10">
+            <Button onClick={() => scrollToSection('ai-section')} size="lg" variant="outline" className="bg-black-600 border-white text-white hover:bg-white/10">
               Liên hệ tư vấn
             </Button>
           </div>
