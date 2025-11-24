@@ -12,11 +12,40 @@
       "viewMore": "Xem thêm"
     },
     "about": {
-      "companyInfo": {
+      "company": {
         "title": "Thông tin công ty",
-        "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK"
+        "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK",
+  "banner": {
+    "title": {
+      "main": "Thông tin",
+      "highlight": "công ty"
+    },
+    "description": "Khám phá câu chuyện đằng sau một trong những công ty công nghệ phát triển nhanh nhất với tầm nhìn trở thành đối tác công nghệ hàng đầu toàn cầu",
+    "stats": [
+      {
+        "number": "5+",
+        "label": "Năm kinh nghiệm"
       },
-      "aboutUs": {
+      {
+        "number": "100+",
+        "label": "Nhân sự"
+      },
+      {
+        "number": "50+",
+        "label": "Dự án"
+      },
+      {
+        "number": "10+",
+        "label": "Quốc gia"
+      }
+    ],
+    "cta": {
+      "text": "Khám phá ngay"
+    }
+  }
+
+      },
+      "us": {
         "title": "Về chúng tôi",
         "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi"
       }

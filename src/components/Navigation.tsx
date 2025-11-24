@@ -81,8 +81,8 @@ const Navigation = () => {
 
   // ----- DATA -----
   const aboutData = [
-    { title: t('about.companyInfo.title'), description: t('about.companyInfo.description'), href: "/about-company" },
-    { title: t('about.aboutUs.title'), description: t('about.aboutUs.description'), href: "/about-us" },
+    { title: t('about.company.title'), description: t('about.company.description'), href: "/about-company" },
+    { title: t('about.us.title'), description: t('about.us.description'), href: "/about-us" },
   ];
 
   const servicesData = [

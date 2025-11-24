@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ModernCompanyBanner: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -37,7 +39,7 @@ const ModernCompanyBanner: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -52,7 +54,7 @@ const ModernCompanyBanner: React.FC = () => {
       y: 0,
       transition: {
         duration: 1,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -69,7 +71,7 @@ const ModernCompanyBanner: React.FC = () => {
         opacity: { duration: 1, delay: 0.5 },
         backgroundPosition: { 
           duration: 3, 
-          ease: "easeInOut" as const,
+          ease: "easeInOut",
           repeat: Infinity,
           repeatType: "reverse" as const
         }
@@ -87,7 +89,7 @@ const ModernCompanyBanner: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -108,17 +110,17 @@ const ModernCompanyBanner: React.FC = () => {
         },
         scale: {
           duration: 2,
-          ease: "easeOut" as const
+          ease: "easeOut"
         }
       }
     }
   };
 
   const stats = [
-    { number: "5+", label: "Năm kinh nghiệm" },
-    { number: "100+", label: "Nhân sự" },
-    { number: "50+", label: "Dự án" },
-    { number: "10+", label: "Quốc gia" }
+    { number: "5+", label: t.about.company.banner.stats[0].label },
+    { number: "100+", label: t.about.company.banner.stats[1].label },
+    { number: "50+", label: t.about.company.banner.stats[2].label },
+    { number: "10+", label: t.about.company.banner.stats[3].label }
   ];
 
   return (
@@ -167,7 +169,7 @@ const ModernCompanyBanner: React.FC = () => {
             variants={titleVariants}
             className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 leading-tight"
           >
-            Thông tin
+            {t.about.company.banner.title.main}
           </motion.h1>
           <motion.span 
             variants={gradientTextVariants}
@@ -176,7 +178,7 @@ const ModernCompanyBanner: React.FC = () => {
               backgroundSize: "200% 100%"
             }}
           >
-            công ty
+            {t.about.company.banner.title.highlight}
           </motion.span>
         </motion.div>
 
@@ -186,9 +188,7 @@ const ModernCompanyBanner: React.FC = () => {
           transition={{ delay: 0.8 }}
           className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
         >
-          Khám phá câu chuyện đằng sau một trong những công ty công nghệ 
-          <span className="font-semibold text-white"> phát triển nhanh nhất </span>
-          với tầm nhìn trở thành đối tác công nghệ hàng đầu toàn cầu
+          {t.about.company.banner.description}
         </motion.p>
 
         {/* Stats */}
@@ -233,8 +233,7 @@ const ModernCompanyBanner: React.FC = () => {
 
         {/* CTA Button */}
         <motion.button 
-          onClick={() => scrollToSection('company-vision')} // 👈 THÊM DÒNG NÀY
-
+          onClick={() => scrollToSection('company-vision')}
           variants={itemVariants}
           transition={{ delay: 1.8 }}
           whileHover={{ 
@@ -249,7 +248,7 @@ const ModernCompanyBanner: React.FC = () => {
             whileHover={{ gap: 4 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            Khám phá ngay
+            {t.about.company.banner.cta.text}
             <motion.svg 
               className="w-5 h-5"
               animate={{ x: [0, 5, 0] }}
@@ -266,8 +265,6 @@ const ModernCompanyBanner: React.FC = () => {
             </motion.svg>
           </motion.span>
         </motion.button>
-
-        {/* Scroll indicator */}
       </div>
     </motion.section>
   );

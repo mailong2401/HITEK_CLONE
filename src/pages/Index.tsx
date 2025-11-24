@@ -1,11 +1,11 @@
-import HeroSection from "@/components/HeroSection";
-import AISection from "@/components/AISection";
-import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
+import HeroSection from "@/components/homePage/HeroSection";
+import AISection from "@/components/homePage/AISection";
+import ServicesSection from "@/components/homePage/ServicesSection";
+import AboutSection from "@/components/homePage/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import FlexibleWorkSection from "@/components/FlexibleWorkSection";
-import ProjectsSection from "@/components/ProjectsSection"
-import ClientsSection from "@/components/ClientsSection"
+import FlexibleWorkSection from "@/components/homePage/FlexibleWorkSection";
+import ProjectsSection from "@/components/homePage/ProjectsSection"
+import ClientsSection from "@/components/homePage/ClientsSection"
 
 const Index = () => {
   return (
