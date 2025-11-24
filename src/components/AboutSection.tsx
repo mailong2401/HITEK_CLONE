@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 import { Award, Users, FolderCheck, UserCheck } from "lucide-react";
 import homePageHitekSoftware from "@/assets/home-page-hitek-software.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Component cho số đếm động
 const AnimatedCounter = ({ value, duration = 2000 }) => {
@@ -74,30 +75,32 @@ const AnimatedCard = ({ children, delay = 0 }) => {
 };
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+  
   const stats = [
     { 
       icon: Award, 
       value: "06+", 
-      label: "Năm kinh nghiệm",
-      description: "Nhiều năm kinh nghiệm đã mang lại cho chúng tôi kiến thức sâu rộng về nhiều ngành, cho phép cung cấp giải pháp trải nghiệm số tốt nhất."
+      label: t('aboutSection.stats.experience'),
+      description: t('aboutSection.stats.experienceDesc')
     },
     { 
       icon: Users, 
       value: "80+", 
-      label: "Khách hàng toàn cầu",
-      description: "Hơn 80 khách hàng toàn cầu từ khắp nơi trên thế giới, bao gồm Hàn Quốc, Nhật Bản, Canada, Úc và nhiều nơi khác."
+      label: t('aboutSection.stats.clients'),
+      description: t('aboutSection.stats.clientsDesc')
     },
     { 
       icon: FolderCheck, 
       value: "100+", 
-      label: "Dự án hoàn thành",
-      description: "Các dự án hoàn thành cho khách hàng, mang lại trải nghiệm chuyển đổi số vượt trội và giải pháp tối ưu."
+      label: t('aboutSection.stats.projects'),
+      description: t('aboutSection.stats.projectsDesc')
     },
     { 
       icon: UserCheck, 
       value: "100+", 
-      label: "Đội ngũ tài năng",
-      description: "Đội ngũ tài năng bao gồm các chuyên gia kỹ thuật số, nhà tư duy chiến lược, nhà thiết kế và nhà phát triển sáng tạo."
+      label: t('aboutSection.stats.team'),
+      description: t('aboutSection.stats.teamDesc')
     },
   ];
 
@@ -109,20 +112,19 @@ const AboutSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Award className="h-4 w-4 text-primary" />
             <span className="text-sm text-primary font-semibold tracking-wider uppercase">
-              THÀNH TỰU CỦA CHÚNG TÔI
+              {t('aboutSection.badge')}
             </span>
           </div>
 
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Cảm ơn sự tin tưởng
+            {t('aboutSection.heading').split(' ').slice(0, -2).join(' ')}
             <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              của khách hàng
+              {t('aboutSection.heading').split(' ').slice(-2).join(' ')}
             </span>
           </h2>
 
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Hành trình của chúng tôi được xây dựng dựa trên sự tin tưởng và hợp tác từ các đối tác 
-            toàn cầu, mang đến những giải pháp công nghệ xuất sắc và trải nghiệm khách hàng vượt trội.
+            {t('aboutSection.subheading')}
           </p>
         </AnimatedSection>
 
@@ -131,12 +133,10 @@ const AboutSection = () => {
           <AnimatedSection className="space-y-8" delay={0.2}>
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                Đối tác công nghệ đáng tin cậy của bạn
+                {t('aboutSection.title')}
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                HITEK là công ty công nghệ hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp
-                phần mềm và dịch vụ chuyển đổi số. Với đội ngũ chuyên gia giàu kinh nghiệm và
-                công nghệ tiên tiến, chúng tôi cam kết mang đến những sản phẩm chất lượng cao.
+                {t('aboutSection.description1')}
               </p>
               
               {/* Hình ảnh được chèn vào đây */}
@@ -148,14 +148,13 @@ const AboutSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60"></div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-medium">Đội ngũ Hitek Software</p>
-                  <p className="text-xs opacity-90">Chuyên gia công nghệ hàng đầu</p>
+                  <p className="text-sm font-medium">Hitek Software Team</p>
+                  <p className="text-xs opacity-90">Leading Technology Experts</p>
                 </div>
               </div>
 
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Sứ mệnh của chúng tôi là thúc đẩy sáng tạo, tăng tốc đổi mới, đồng hành phát
-                triển và nâng tầm thành công cho mọi doanh nghiệp.
+                {t('aboutSection.description2')}
               </p>
             </div>
 
@@ -203,14 +202,14 @@ const AboutSection = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-6 px-8 py-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/30 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
             <div className="text-left">
               <h4 className="text-lg font-semibold text-foreground mb-2">
-                Sẵn sàng hợp tác cùng chúng tôi?
+                {t('aboutSection.ctaHeading')}
               </h4>
               <p className="text-muted-foreground text-sm">
-                Hãy để chúng tôi giúp bạn hiện thực hóa ý tưởng với giải pháp công nghệ tối ưu
+                {t('aboutSection.ctaDescription')}
               </p>
             </div>
             <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 whitespace-nowrap hover:scale-105">
-              Liên hệ ngay
+              {t('aboutSection.ctaButton')}
             </button>
           </div>
         </AnimatedSection>
