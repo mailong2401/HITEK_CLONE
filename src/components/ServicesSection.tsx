@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import các hình ảnh mẫu
 import softwareDevImg from "@/assets/ai-tech.jpg";
@@ -12,6 +13,7 @@ import aiMlImg from "@/assets/ai-tech.jpg";
 import dataManagementImg from "@/assets/ai-tech.jpg";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
   const scrollContainerRef = useRef(null);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px 0px" });
@@ -23,43 +25,43 @@ const ServicesSection = () => {
   const services = [
     {
       image: softwareDevImg,
-      title: "Phát triển phần mềm",
-      description: "Xây dựng các giải pháp phần mềm tùy chỉnh đáp ứng nhu cầu kinh doanh với công nghệ hiện đại nhất",
+      title: t('servicesSection.services.softwareDev.title'),
+      description: t('servicesSection.services.softwareDev.description'),
     },
     {
       image: cloudSolutionImg,
-      title: "Giải pháp Cloud",
-      description: "Triển khai và quản lý hạ tầng đám mây hiệu quả và bảo mật cho doanh nghiệp",
+      title: t('servicesSection.services.cloudSolution.title'),
+      description: t('servicesSection.services.cloudSolution.description'),
     },
     {
       image: mobileAppImg,
-      title: "Ứng dụng di động",
-      description: "Phát triển app mobile đa nền tảng với trải nghiệm người dùng tối ưu và hiệu suất cao",
+      title: t('servicesSection.services.mobileApp.title'),
+      description: t('servicesSection.services.mobileApp.description'),
     },
     {
       image: cybersecurityImg,
-      title: "An ninh mạng",
-      description: "Bảo vệ hệ thống và dữ liệu với các giải pháp bảo mật tiên tiến và toàn diện",
+      title: t('servicesSection.services.cybersecurity.title'),
+      description: t('servicesSection.services.cybersecurity.description'),
     },
     {
       image: aiMlImg,
-      title: "AI & Machine Learning",
-      description: "Tích hợp AI và ML để tự động hóa và tối ưu quy trình vận hành doanh nghiệp",
+      title: t('servicesSection.services.aiMl.title'),
+      description: t('servicesSection.services.aiMl.description'),
     },
     {
       image: dataManagementImg,
-      title: "Quản lý dữ liệu",
-      description: "Thiết kế và quản lý cơ sở dữ liệu mạnh mẽ, có khả năng mở rộng và bảo mật cao",
+      title: t('servicesSection.services.dataManagement.title'),
+      description: t('servicesSection.services.dataManagement.description'),
     },
     {
       image: dataManagementImg,
-      title: "Tư vấn công nghệ",
-      description: "Đưa ra các giải pháp công nghệ tối ưu cho doanh nghiệp dựa trên nhu cầu thực tế",
+      title: t('servicesSection.services.consulting.title'),
+      description: t('servicesSection.services.consulting.description'),
     },
     {
       image: dataManagementImg,
-      title: "Bảo trì hệ thống",
-      description: "Dịch vụ bảo trì và nâng cấp hệ thống định kỳ đảm bảo hoạt động ổn định",
+      title: t('servicesSection.services.maintenance.title'),
+      description: t('servicesSection.services.maintenance.description'),
     },
   ];
 
@@ -148,16 +150,14 @@ const ServicesSection = () => {
           `}
         >
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Giải Pháp 
+            {t('servicesSection.heading').split(' ').slice(0, 2).join(' ')}
             <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent pb-2">
-              Công Nghệ Toàn Diện
+              {t('servicesSection.heading').split(' ').slice(2).join(' ')}
             </span>
           </h2>
 
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Khám phá các dịch vụ công nghệ hiện đại của chúng tôi, được thiết kế để 
-            <span className="font-semibold text-foreground"> thúc đẩy chuyển đổi số </span>
-            và nâng cao năng lực cạnh tranh cho doanh nghiệp của bạn
+            {t('servicesSection.subheading')}
           </p>
         </div>
 
@@ -257,7 +257,7 @@ const ServicesSection = () => {
                           : 'text-muted-foreground hover:text-foreground'
                         }
                       `}>
-                        <span>Khám phá ngay</span>
+                        <span>{t('servicesSection.exploreButton')}</span>
                         <ChevronRight className={`
                           transition-all duration-300
                           ${isCenter ? 'h-5 w-5' : 'h-4 w-4'}
