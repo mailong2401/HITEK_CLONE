@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Animation variants được tối ưu từ các component trước
 const containerVariants = {
@@ -154,122 +155,125 @@ const AnimatedCard = ({ children, delay = 0 }) => {
 };
 
 const AISection = () => {
+  const { t } = useLanguage();
+
+
   const aiSteps = [
-    {
-      step: "01",
-      title: "Phân tích yêu cầu",
-      description: "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
-      icon: Brain,
-      aiTools: [
-        { name: "ChatGPT / GPT", icon: MessageCircle, color: "text-green-500" },
-        { name: "Bard / Gemini", icon: Brain, color: "text-blue-500" },
-        { name: "Avscribe", icon: Mic, color: "text-purple-500" }
-      ],
-      features: [
-        "Phân tích yêu cầu, tư vấn giải pháp",
-        "Tự động viết tài liệu ban đầu",
-        "Chuyển lời nói → văn bản thông minh"
-      ]
-    },
-    {
-      step: "02",
-      title: "Thiết kế hệ thống",
-      description: "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
-      icon: Target,
-      aiTools: [
-        { name: "Bard / Gemini", icon: Brain, color: "text-blue-500" },
-        { name: "ChatGPT", icon: MessageCircle, color: "text-green-500" },
-        { name: "Draw.io", icon: Layout, color: "text-orange-500" },
-        { name: "Figma", icon: Figma, color: "text-pink-500" },
-        { name: "Visio", icon: Database, color: "text-red-500" }
-      ],
-      features: [
-        "Tạo sơ đồ kiến trúc thông minh",
-        "Mô tả API, ERD tự động",
-        "Thiết kế mô hình nâng cao"
-      ]
-    },
-    {
-      step: "03",
-      title: "Lập trình",
-      description: "Viết code các module theo thiết kế với sự hỗ trợ của AI",
-      icon: Code2,
-      aiTools: [
-        { name: "GitHub Copilot", icon: GitBranch, color: "text-purple-500" },
-        { name: "Cursor", icon: Code2, color: "text-blue-400" },
-        { name: "Tabnine", icon: Zap, color: "text-yellow-500" },
-        { name: "Sourcegraph", icon: Activity, color: "text-green-400" }
-      ],
-      features: [
-        "Tự động gợi ý code thông minh",
-        "AI review và refactor code",
-        "Hỗ trợ tìm kiếm code nhanh"
-      ]
-    },
-    {
-      step: "04",
-      title: "Kiểm thử phần mềm",
-      description: "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
-      icon: TestTube,
-      aiTools: [
-        { name: "Testim", icon: TestTube, color: "text-blue-500" },
-        { name: "Sapienz", icon: Bug, color: "text-red-500" },
-        { name: "Selenium", icon: Monitor, color: "text-green-600" },
-        { name: "BrowserStack", icon: Globe, color: "text-orange-500" },
-        { name: "ChatGPT", icon: MessageCircle, color: "text-green-500" }
-      ],
-      features: [
-        "Kiểm thử tự động bằng AI",
-        "Tạo test case tự động",
-        "Testing đa nền tảng thông minh"
-      ]
-    },
-    {
-      step: "05",
-      title: "Triển khai",
-      description: "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
-      icon: Ship,
-      aiTools: [
-        { name: "Harness", icon: Ship, color: "text-blue-500" },
-        { name: "Spinnaker", icon: Cloud, color: "text-red-500" },
-        { name: "ArgoCD", icon: Activity, color: "text-green-500" },
-        { name: "AWS CodePipeline", icon: Cloud, color: "text-orange-500" }
-      ],
-      features: [
-        "CI/CD với AI tối ưu",
-        "Deploy đa nền tảng",
-        "GitOps cho Kubernetes"
-      ]
-    },
-    {
-      step: "06",
-      title: "Bảo trì & Vận hành",
-      description: "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
-      icon: Activity,
-      aiTools: [
-        { name: "Moogsoft", icon: Activity, color: "text-purple-500" },
-        { name: "Splunk", icon: BarChart, color: "text-blue-400" },
-        { name: "Dynatrace", icon: Gauge, color: "text-green-500" },
-        { name: "Chatbot AI", icon: MessageSquare, color: "text-pink-500" }
-      ],
-      features: [
-        "Phát hiện sự cố tự động",
-        "Phân tích log thông minh",
-        "Giám sát hiệu năng bằng AI"
-      ]
-    },
-  ];
+  {
+    step: t(`home.aiSection.steps.${0}.step`),
+    title: t(`home.aiSection.steps.${0}.title`),
+    description: t(`home.aiSection.steps.${0}.description`),
+    icon: Brain,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${0}.tools.${0}`), icon: MessageCircle, color: "text-green-500" },
+      { name: t(`home.aiSection.steps.${0}.tools.${1}`), icon: Brain, color: "text-blue-500" },
+      { name: t(`home.aiSection.steps.${0}.tools.${2}`), icon: Mic, color: "text-purple-500" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${0}.features.${0}`),
+      t(`home.aiSection.steps.${0}.features.${1}`),
+      t(`home.aiSection.steps.${0}.features.${2}`),
+    ]
+  },
+  {
+    step: t(`home.aiSection.steps.${1}.step`),
+    title: t(`home.aiSection.steps.${1}.title`),
+    description: t(`home.aiSection.steps.${1}.description`),
+    icon: Target,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${1}.tools.${0}`), icon: Brain, color: "text-blue-500" },
+      { name: t(`home.aiSection.steps.${1}.tools.${1}`), icon: MessageCircle, color: "text-green-500" },
+      { name: t(`home.aiSection.steps.${1}.tools.${2}`), icon: Layout, color: "text-orange-500" },
+      { name: t(`home.aiSection.steps.${1}.tools.${3}`), icon: Figma, color: "text-pink-500" },
+      { name: t(`home.aiSection.steps.${1}.tools.${4}`), icon: Database, color: "text-red-500" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${1}.features.${0}`),
+      t(`home.aiSection.steps.${1}.features.${1}`),
+      t(`home.aiSection.steps.${1}.features.${2}`),
+    ]
+  },
+  {
+    step: t(`home.aiSection.steps.${2}.step`),
+    title: t(`home.aiSection.steps.${2}.title`),
+    description: t(`home.aiSection.steps.${2}.description`),
+    icon: Code2,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${2}.tools.${0}`), icon: GitBranch, color: "text-purple-500" },
+      { name: t(`home.aiSection.steps.${2}.tools.${1}`), icon: Code2, color: "text-blue-400" },
+      { name: t(`home.aiSection.steps.${2}.tools.${2}`), icon: Zap, color: "text-yellow-500" },
+      { name: t(`home.aiSection.steps.${2}.tools.${3}`), icon: Activity, color: "text-green-400" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${2}.features.${0}`),
+      t(`home.aiSection.steps.${2}.features.${1}`),
+      t(`home.aiSection.steps.${2}.features.${2}`),
+    ]
+  },
+  {
+    step: t(`home.aiSection.steps.${3}.step`),
+    title: t(`home.aiSection.steps.${3}.title`),
+    description: t(`home.aiSection.steps.${3}.description`),
+    icon: TestTube,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${3}.tools.${0}`), icon: TestTube, color: "text-blue-500" },
+      { name: t(`home.aiSection.steps.${3}.tools.${1}`), icon: Bug, color: "text-red-500" },
+      { name: t(`home.aiSection.steps.${3}.tools.${2}`), icon: Monitor, color: "text-green-600" },
+      { name: t(`home.aiSection.steps.${3}.tools.${3}`), icon: Globe, color: "text-orange-500" },
+      { name: t(`home.aiSection.steps.${3}.tools.${4}`), icon: MessageCircle, color: "text-green-500" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${3}.features.${0}`),
+      t(`home.aiSection.steps.${3}.features.${1}`),
+      t(`home.aiSection.steps.${3}.features.${2}`),
+    ]
+  },
+  {
+    step: t(`home.aiSection.steps.${4}.step`),
+    title: t(`home.aiSection.steps.${4}.title`),
+    description: t(`home.aiSection.steps.${4}.description`),
+    icon: Ship,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${4}.tools.${0}`), icon: Ship, color: "text-blue-500" },
+      { name: t(`home.aiSection.steps.${4}.tools.${1}`), icon: Cloud, color: "text-red-500" },
+      { name: t(`home.aiSection.steps.${4}.tools.${2}`), icon: Activity, color: "text-green-500" },
+      { name: t(`home.aiSection.steps.${4}.tools.${3}`), icon: Cloud, color: "text-orange-500" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${4}.features.${0}`),
+      t(`home.aiSection.steps.${4}.features.${1}`),
+      t(`home.aiSection.steps.${4}.features.${2}`),
+    ]
+  },
+  {
+    step: t(`home.aiSection.steps.${5}.step`),
+    title: t(`home.aiSection.steps.${5}.title`),
+    description: t(`home.aiSection.steps.${5}.description`),
+    icon: Activity,
+    aiTools: [
+      { name: t(`home.aiSection.steps.${5}.tools.${0}`), icon: Activity, color: "text-purple-500" },
+      { name: t(`home.aiSection.steps.${5}.tools.${1}`), icon: BarChart, color: "text-blue-400" },
+      { name: t(`home.aiSection.steps.${5}.tools.${2}`), icon: Gauge, color: "text-green-500" },
+      { name: t(`home.aiSection.steps.${5}.tools.${3}`), icon: MessageSquare, color: "text-pink-500" }
+    ],
+    features: [
+      t(`home.aiSection.steps.${5}.features.${0}`),
+      t(`home.aiSection.steps.${5}.features.${1}`),
+      t(`home.aiSection.steps.${5}.features.${2}`),
+    ]
+  },
+];
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const bannerTools = [
-    { name: "ChatGPT", icon: MessageCircle, bg: "bg-green-500/20" },
-    { name: "GitHub Copilot", icon: GitBranch, bg: "bg-purple-500/20" },
-    { name: "Testim", icon: TestTube, bg: "bg-blue-500/20" },
-    { name: "Harness", icon: Ship, bg: "bg-orange-500/20" },
-    { name: "Moogsoft", icon: Activity, bg: "bg-red-500/20" }
-  ];
+  { name: t(`home.aiSection.banner.tools.${0}`), icon: MessageCircle, bg: "bg-green-500/20" },
+  { name: t(`home.aiSection.banner.tools.${1}`), icon: GitBranch, bg: "bg-purple-500/20" },
+  { name: t(`home.aiSection.banner.tools.${2}`), icon: TestTube, bg: "bg-blue-500/20" },
+  { name: t(`home.aiSection.banner.tools.${3}`), icon: Ship, bg: "bg-orange-500/20" },
+  { name: t(`home.aiSection.banner.tools.${4}`), icon: Activity, bg: "bg-red-500/20" }
+];
 
   // Background orbs variants
   const orbVariants = {
@@ -329,13 +333,13 @@ const AISection = () => {
             className="mb-6"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Giải Pháp Phát Triển Phần Mềm
+              {t('home.aiSection.title')}
               <motion.span 
                 variants={titleGradientVariants}
                 className="block bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent mt-2"
                 style={{ backgroundSize: "200% 100%" }}
               >
-                Thông Minh với AI
+                {t('home.aiSection.subtitle')}
               </motion.span>
             </h2>
           </motion.div>
@@ -344,8 +348,7 @@ const AISection = () => {
             transition={{ delay: 0.4 }}
             className="text-xl text-muted-foreground leading-relaxed"
           >
-            HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, 
-            mang lại hiệu quả vượt trội về chất lượng và tốc độ
+            {t('home.aiSection.description')}
           </motion.p>
         </AnimatedSection>
 
@@ -371,7 +374,7 @@ const AISection = () => {
                   transition={{ duration: 0.6, delay: 1.0 }}
                   className="text-2xl font-bold mb-6"
                 >
-                  Công Nghệ AI Hàng Đầu Được Tích Hợp
+                  {t('home.aiSection.banner.heading')}
                 </motion.h3>
                 
                 <motion.div 
@@ -403,7 +406,7 @@ const AISection = () => {
                   transition={{ duration: 0.6, delay: 1.4 }}
                   className="text-lg opacity-90 max-w-2xl"
                 >
-                  Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển
+                  {t('home.aiSection.banner.note')}
                 </motion.p>
               </div>
             </div>
@@ -622,7 +625,7 @@ const AISection = () => {
               className="text-sm font-semibold text-foreground bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent bg-size-200"
               style={{ backgroundSize: "200% 100%" }}
             >
-              Sẵn sàng tích hợp AI vào dự án của bạn? Liên hệ chuyên gia ngay!
+              {t('cta.ready')} {t('cta.contactButton')}
             </motion.span>
             <motion.div
               animate={{ x: [0, 5, 0] }}

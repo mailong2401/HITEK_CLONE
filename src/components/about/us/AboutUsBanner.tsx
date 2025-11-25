@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutUsBanner: React.FC = () => {
-
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -168,7 +169,7 @@ const AboutUsBanner: React.FC = () => {
             variants={titleVariants}
             className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 leading-tight"
           >
-            Về chúng tôi
+            {t('about.us.title')}
           </motion.h1>
           <motion.span 
             variants={gradientTextVariants}
@@ -177,7 +178,7 @@ const AboutUsBanner: React.FC = () => {
               backgroundSize: "200% 100%"
             }}
           >
-            HITEK SOFTWARE
+            {t('about.us.banner.companyName')}
           </motion.span>
         </motion.div>
 
@@ -187,8 +188,8 @@ const AboutUsBanner: React.FC = () => {
           transition={{ delay: 0.8 }}
           className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
         >
-          Khám phá hành trình từ startup với 5 kỹ sư đến công ty công nghệ toàn cầu 
-          <span className="font-semibold text-white"> với sứ mệnh trở thành đối tác phần mềm hàng đầu thế giới</span>
+            {t('about.us.banner.description.text1')}
+          <span className="font-semibold text-white"> {t('about.us.banner.description.highlight')}</span>
         </motion.p>
 
         {/* Stats */}
@@ -248,7 +249,7 @@ const AboutUsBanner: React.FC = () => {
             whileHover={{ gap: 4 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            Khám phá hành trình
+            {t('about.us.banner.cta')}
             <motion.svg 
               className="w-5 h-5"
               animate={{ x: [0, 5, 0] }}

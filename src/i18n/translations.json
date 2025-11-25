@@ -11,14 +11,128 @@
       "learnMore": "Tìm hiểu thêm",
       "viewMore": "Xem thêm"
     },
+    "home" : 
+{
+  "aiSection": {
+    "title": "Giải Pháp Phát Triển Phần Mềm",
+    "subtitle": "Thông Minh với AI",
+    "description": "HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, mang lại hiệu quả vượt trội về chất lượng và tốc độ",
+    "banner": {
+      "heading": "Công Nghệ AI Hàng Đầu Được Tích Hợp",
+      "note": "Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển",
+      "tools": [
+        "ChatGPT",
+        "GitHub Copilot",
+        "Testim",
+        "Harness",
+        "Moogsoft"
+      ]
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": "Phân tích yêu cầu",
+        "description": "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
+        "features": [
+          "Phân tích yêu cầu, tư vấn giải pháp",
+          "Tự động viết tài liệu ban đầu",
+          "Chuyển lời nói → văn bản thông minh"
+        ],
+        "tools": ["ChatGPT / GPT", "Bard / Gemini", "Avscribe"]
+      },
+      {
+        "step": "02",
+        "title": "Thiết kế hệ thống",
+        "description": "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
+        "features": [
+          "Tạo sơ đồ kiến trúc thông minh",
+          "Mô tả API, ERD tự động",
+          "Thiết kế mô hình nâng cao"
+        ],
+        "tools": ["Bard / Gemini", "ChatGPT", "Draw.io", "Figma", "Visio"]
+      },
+      {
+        "step": "03",
+        "title": "Lập trình",
+        "description": "Viết code các module theo thiết kế với sự hỗ trợ của AI",
+        "features": [
+          "Tự động gợi ý code thông minh",
+          "AI review và refactor code",
+          "Hỗ trợ tìm kiếm code nhanh"
+        ],
+        "tools": ["GitHub Copilot", "Cursor", "Tabnine", "Sourcegraph"]
+      },
+      {
+        "step": "04",
+        "title": "Kiểm thử phần mềm",
+        "description": "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
+        "features": [
+          "Kiểm thử tự động bằng AI",
+          "Tạo test case tự động",
+          "Testing đa nền tảng thông minh"
+        ],
+        "tools": ["Testim", "Sapienz", "Selenium", "BrowserStack", "ChatGPT"]
+      },
+      {
+        "step": "05",
+        "title": "Triển khai",
+        "description": "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
+        "features": [
+          "CI/CD với AI tối ưu",
+          "Deploy đa nền tảng",
+          "GitOps cho Kubernetes"
+        ],
+        "tools": ["Harness", "Spinnaker", "ArgoCD", "AWS CodePipeline"]
+      },
+      {
+        "step": "06",
+        "title": "Bảo trì & Vận hành",
+        "description": "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
+        "features": [
+          "Phát hiện sự cố tự động",
+          "Phân tích log thông minh",
+          "Giám sát hiệu năng bằng AI"
+        ],
+        "tools": ["Moogsoft", "Splunk", "Dynatrace", "Chatbot AI"]
+      }
+    ]
+  }
+}
+,
     "about": {
-      "companyInfo": {
+      "company": {
         "title": "Thông tin công ty",
         "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK"
       },
-      "aboutUs": {
+      "us": {
         "title": "Về chúng tôi",
-        "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi"
+        "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi",
+        "banner": {
+          "companyName": "HITEK SOFTWARE",
+          "description": {
+            "text1": "Khám phá hành trình từ startup với 5 kỹ sư đến công ty công nghệ toàn cầu",
+            "highlight": " với sứ mệnh trở thành đối tác phần mềm hàng đầu thế giới"
+          },
+          "stats": {
+            "experience": {
+              "number": "5+",
+              "label": "Năm kinh nghiệm"
+            },
+            "staff": {
+              "number": "100+",
+              "label": "Nhân sự"
+            },
+            "projects": {
+              "number": "50+",
+              "label": "Dự án thành công"
+            },
+            "countries": {
+              "number": "10+",
+              "label": "Quốc gia"
+            }
+          },
+          "cta": "Khám phá hành trình"
+        }
       }
     },
     "services": {
@@ -142,444 +256,6 @@
         "projectsDesc": "Các dự án hoàn thành cho khách hàng, mang lại trải nghiệm chuyển đổi số vượt trội và giải pháp tối ưu.",
         "team": "Đội ngũ tài năng",
         "teamDesc": "Đội ngũ tài năng bao gồm các chuyên gia kỹ thuật số, nhà tư duy chiến lược, nhà thiết kế và nhà phát triển sáng tạo."
-      }
-    }
-  },
-  "en": {
-    "nav": {
-      "home": "HOME",
-      "about": "ABOUT HITEK",
-      "services": "SERVICES",
-      "technology": "TECHNOLOGY",
-      "projects": "PROJECTS",
-      "testimonials": "TESTIMONIALS",
-      "careers": "CAREERS",
-      "learnMore": "Learn more",
-      "viewMore": "View more"
-    },
-    "about": {
-      "companyInfo": {
-        "title": "Company Information",
-        "description": "Learn about HITEK's development journey, mission and vision"
-      },
-      "aboutUs": {
-        "title": "About Us",
-        "description": "Expert team, company culture and core values"
-      }
-    },
-    "services": {
-      "customSoftware": {
-        "title": "Custom Software Development",
-        "description": "Leading custom software development company in Vietnam."
-      },
-      "longTermDevelopment": {
-        "title": "Long-term Software Development",
-        "description": "Building complex and specialized long-term software."
-      },
-      "webDevelopment": {
-        "title": "Web Development Services",
-        "description": "Web development using .NET, NodeJS, Java, PHP, Angular, ReactJS..."
-      },
-      "cloudMigration": {
-        "title": "Cloud Migration Services",
-        "description": "Leverage cloud and infrastructure for business growth."
-      },
-      "mobileApp": {
-        "title": "Mobile App Development",
-        "description": "High-quality mobile applications for customers."
-      },
-      "softwareTesting": {
-        "title": "Software Testing Services",
-        "description": "Building optimal web and mobile device experiences."
-      },
-      "outsourcing": {
-        "title": "Project-based Outsourcing",
-        "description": "Handling complex international outsourcing projects."
-      },
-      "offshoreCenter": {
-        "title": "Offshore Center Setup",
-        "description": "Building modern and suitable offshore centers."
-      },
-      "nearshoreSoftware": {
-        "title": "Nearshore Software Development",
-        "description": "Software development in countries close to the market."
-      },
-      "blockchain": {
-        "title": "Enterprise Blockchain Services",
-        "description": "Easy and secure Blockchain development for enterprises."
-      }
-    },
-    "hero": {
-      "title1": "DRIVING INNOVATION, ACCELERATING TRANSFORMATION",
-      "title2": "PARTNERING FOR GROWTH, ELEVATING SUCCESS",
-      "subtitle": "_ Quality is our Honor _",
-      "explore": "Explore Now",
-      "contact": "Contact Us"
-    },
-    "contact": {
-      "title": "CONTACT",
-      "heading": "Let's Connect",
-      "description": "HITEK's expert team is ready to consult and support you",
-      "phone": "Phone",
-      "email": "Email",
-      "address": "Address"
-    },
-    "cta": {
-      "ready": "Ready to deploy your project?",
-      "description": "Contact us today for the most suitable solution consultation",
-      "contactButton": "Contact Consultation",
-      "callButton": "Call Now"
-    },
-    "servicesSection": {
-      "heading": "Comprehensive Technology Solutions",
-      "subheading": "Explore our modern technology services designed to drive digital transformation and enhance business competitiveness",
-      "exploreButton": "Explore Now",
-      "services": {
-        "softwareDev": {
-          "title": "Software Development",
-          "description": "Building custom software solutions that meet business needs with the latest technology"
-        },
-        "cloudSolution": {
-          "title": "Cloud Solutions",
-          "description": "Deploying and managing efficient and secure cloud infrastructure for enterprises"
-        },
-        "mobileApp": {
-          "title": "Mobile Apps",
-          "description": "Developing cross-platform mobile apps with optimized user experience and high performance"
-        },
-        "cybersecurity": {
-          "title": "Cybersecurity",
-          "description": "Protecting systems and data with advanced and comprehensive security solutions"
-        },
-        "aiMl": {
-          "title": "AI & Machine Learning",
-          "description": "Integrating AI and ML to automate and optimize business operational processes"
-        },
-        "dataManagement": {
-          "title": "Data Management",
-          "description": "Designing and managing powerful databases with scalability and high security"
-        },
-        "consulting": {
-          "title": "Technology Consulting",
-          "description": "Providing optimal technology solutions for businesses based on actual needs"
-        },
-        "maintenance": {
-          "title": "System Maintenance",
-          "description": "Regular system maintenance and upgrade services ensuring stable operation"
-        }
-      }
-    },
-    "aboutSection": {
-      "badge": "Our Achievements",
-      "heading": "Thank You for Your Trust",
-      "subheading": "Our journey is built on trust and collaboration from global partners, delivering excellent technology solutions and superior customer experiences.",
-      "title": "Your Trusted Technology Partner",
-      "description1": "HITEK is a leading technology company in Vietnam, specializing in software solutions and digital transformation services. With an experienced team of experts and advanced technology, we commit to delivering high-quality products.",
-      "description2": "Our mission is to drive innovation, accelerate transformation, partner for growth, and elevate success for every business.",
-      "ctaHeading": "Ready to collaborate with us?",
-      "ctaDescription": "Let us help you realize your ideas with optimal technology solutions",
-      "ctaButton": "Contact Now",
-      "stats": {
-        "experience": "Years of Experience",
-        "experienceDesc": "Years of experience have given us deep knowledge across many industries, allowing us to provide the best digital experience solutions.",
-        "clients": "Global Clients",
-        "clientsDesc": "Over 80 global clients from around the world, including Korea, Japan, Canada, Australia, and many others.",
-        "projects": "Completed Projects",
-        "projectsDesc": "Projects completed for clients, delivering superior digital transformation experiences and optimal solutions.",
-        "team": "Talented Team",
-        "teamDesc": "A talented team including digital experts, strategic thinkers, designers, and creative developers."
-      }
-    }
-  },
-  "ja": {
-    "nav": {
-      "home": "ホーム",
-      "about": "HITEKについて",
-      "services": "サービス",
-      "technology": "テクノロジー",
-      "projects": "プロジェクト",
-      "testimonials": "お客様の声",
-      "careers": "採用情報",
-      "learnMore": "詳細を見る",
-      "viewMore": "もっと見る"
-    },
-    "about": {
-      "companyInfo": {
-        "title": "会社情報",
-        "description": "HITEKの発展の歩み、使命、ビジョンについて"
-      },
-      "aboutUs": {
-        "title": "私たちについて",
-        "description": "専門家チーム、企業文化、核心的価値観"
-      }
-    },
-    "services": {
-      "customSoftware": {
-        "title": "カスタムソフトウェア開発",
-        "description": "ベトナムトップのカスタムソフトウェア開発会社"
-      },
-      "longTermDevelopment": {
-        "title": "長期ソフトウェア開発",
-        "description": "複雑で専門的な長期ソフトウェアの構築"
-      },
-      "webDevelopment": {
-        "title": "Web開発サービス",
-        "description": ".NET、NodeJS、Java、PHP、Angular、ReactJSなどによるWeb開発"
-      },
-      "cloudMigration": {
-        "title": "クラウド移行サービス",
-        "description": "ビジネス成長のためのクラウドとインフラの活用"
-      },
-      "mobileApp": {
-        "title": "モバイルアプリ開発",
-        "description": "お客様向けの高品質なモバイルアプリケーション"
-      },
-      "softwareTesting": {
-        "title": "ソフトウェアテストサービス",
-        "description": "最適なWebおよびモバイルデバイス体験の構築"
-      },
-      "outsourcing": {
-        "title": "プロジェクトベースアウトソーシング",
-        "description": "複雑な国際アウトソーシングプロジェクトの処理"
-      },
-      "offshoreCenter": {
-        "title": "オフショアセンター構築",
-        "description": "現代的で適切なオフショアセンターの構築"
-      },
-      "nearshoreSoftware": {
-        "title": "ニアショアソフトウェア開発",
-        "description": "市場に近い国でのソフトウェア開発"
-      },
-      "blockchain": {
-        "title": "企業向けブロックチェーンサービス",
-        "description": "企業向けの簡単で安全なブロックチェーン開発"
-      }
-    },
-    "hero": {
-      "title1": "イノベーションを推進し、変革を加速",
-      "title2": "成長のパートナー、成功の向上",
-      "subtitle": "_ 品質は名誉 _",
-      "explore": "今すぐ探索",
-      "contact": "お問い合わせ"
-    },
-    "contact": {
-      "title": "お問い合わせ",
-      "heading": "つながりましょう",
-      "description": "HITEKの専門チームがコンサルティングとサポートをいたします",
-      "phone": "電話",
-      "email": "メール",
-      "address": "住所"
-    },
-    "cta": {
-      "ready": "準備はできましたか？",
-      "description": "最適なソリューションについてご相談ください",
-      "contactButton": "お問い合わせ",
-      "callButton": "今すぐ電話"
-    },
-    "servicesSection": {
-      "heading": "包括的な技術ソリューション",
-      "subheading": "デジタル変革を促進し、ビジネスの競争力を向上させるために設計された最新の技術サービスを探索します",
-      "exploreButton": "今すぐ探索",
-      "services": {
-        "softwareDev": {
-          "title": "ソフトウェア開発",
-          "description": "最新技術でビジネスニーズに応えるカスタムソフトウェアソリューションを構築"
-        },
-        "cloudSolution": {
-          "title": "クラウドソリューション",
-          "description": "効率的で安全なクラウドインフラストラクチャの展開と管理"
-        },
-        "mobileApp": {
-          "title": "モバイルアプリ",
-          "description": "最適化されたユーザー体験と高性能なクロスプラットフォームモバイルアプリの開発"
-        },
-        "cybersecurity": {
-          "title": "サイバーセキュリティ",
-          "description": "高度で包括的なセキュリティソリューションでシステムとデータを保護"
-        },
-        "aiMl": {
-          "title": "AI & 機械学習",
-          "description": "AIとMLを統合してビジネス運用プロセスを自動化および最適化"
-        },
-        "dataManagement": {
-          "title": "データ管理",
-          "description": "スケーラブルで安全な強力なデータベースの設計と管理"
-        },
-        "consulting": {
-          "title": "技術コンサルティング",
-          "description": "実際のニーズに基づいたビジネスのための最適な技術ソリューションを提供"
-        },
-        "maintenance": {
-          "title": "システムメンテナンス",
-          "description": "安定した運用を保証する定期的なシステムメンテナンスとアップグレードサービス"
-        }
-      }
-    },
-    "aboutSection": {
-      "badge": "私たちの成果",
-      "heading": "お客様の信頼に感謝",
-      "subheading": "私たちの旅は、グローバルパートナーの信頼と協力に基づいて構築され、優れた技術ソリューションと卓越した顧客体験を提供しています。",
-      "title": "信頼できる技術パートナー",
-      "description1": "HITEKはベトナムの主要なテクノロジー企業で、ソフトウェアソリューションとデジタル変革サービスを専門としています。経験豊富な専門家チームと最先端技術により、高品質な製品をお届けします。",
-      "description2": "私たちの使命は、イノベーションを促進し、変革を加速させ、すべてのビジネスの成長を支援し、成功を高めることです。",
-      "ctaHeading": "一緒に協力する準備はできていますか？",
-      "ctaDescription": "最適な技術ソリューションでアイデアを実現するお手伝いをします",
-      "ctaButton": "今すぐお問い合わせ",
-      "stats": {
-        "experience": "年の経験",
-        "experienceDesc": "長年の経験により、多くの業界について深い知識を獲得し、最高のデジタル体験ソリューションを提供できます。",
-        "clients": "グローバル顧客",
-        "clientsDesc": "韓国、日本、カナダ、オーストラリアなど、世界中から80以上のグローバル顧客。",
-        "projects": "完了したプロジェクト",
-        "projectsDesc": "優れたデジタル変革体験と最適なソリューションを提供する顧客のために完了したプロジェクト。",
-        "team": "才能あるチーム",
-        "teamDesc": "デジタル専門家、戦略的思考者、デザイナー、創造的な開発者からなる才能あるチーム。"
-      }
-    }
-  },
-  "kr": {
-    "nav": {
-      "home": "홈",
-      "about": "HITEK 소개",
-      "services": "서비스",
-      "technology": "기술",
-      "projects": "프로젝트",
-      "testimonials": "고객 후기",
-      "careers": "채용",
-      "learnMore": "자세히 보기",
-      "viewMore": "더 보기"
-    },
-    "about": {
-      "companyInfo": {
-        "title": "회사 정보",
-        "description": "HITEK의 발전 여정, 사명 및 비전에 대해 알아보기"
-      },
-      "aboutUs": {
-        "title": "회사 소개",
-        "description": "전문가 팀, 기업 문화 및 핵심 가치"
-      }
-    },
-    "services": {
-      "customSoftware": {
-        "title": "맞춤형 소프트웨어 개발",
-        "description": "베트남 최고의 맞춤형 소프트웨어 개발 회사"
-      },
-      "longTermDevelopment": {
-        "title": "장기 소프트웨어 개발",
-        "description": "복잡하고 전문적인 장기 소프트웨어 구축"
-      },
-      "webDevelopment": {
-        "title": "웹 개발 서비스",
-        "description": ".NET, NodeJS, Java, PHP, Angular, ReactJS 등을 사용한 웹 개발"
-      },
-      "cloudMigration": {
-        "title": "클라우드 마이그레이션 서비스",
-        "description": "비즈니스 성장을 위한 클라우드 및 인프라 활용"
-      },
-      "mobileApp": {
-        "title": "모바일 앱 개발",
-        "description": "고객을 위한 고품질 모바일 애플리케이션"
-      },
-      "softwareTesting": {
-        "title": "소프트웨어 테스팅 서비스",
-        "description": "최적의 웹 및 모바일 디바이스 경험 구축"
-      },
-      "outsourcing": {
-        "title": "프로젝트 기반 아웃소싱",
-        "description": "복잡한 국제 아웃소싱 프로젝트 처리"
-      },
-      "offshoreCenter": {
-        "title": "오프쇼어 센터 구축",
-        "description": "현대적이고 적합한 오프쇼어 센터 구축"
-      },
-      "nearshoreSoftware": {
-        "title": "니어쇼어 소프트웨어 개발",
-        "description": "시장과 가까운 국가에서의 소프트웨어 개발"
-      },
-      "blockchain": {
-        "title": "기업용 블록체인 서비스",
-        "description": "기업을 위한 쉽고 안전한 블록체인 개발"
-      }
-    },
-    "hero": {
-      "title1": "혁신 추진, 변화 가속화",
-      "title2": "성장 파트너, 성공 향상",
-      "subtitle": "_ 품질은 명예 _",
-      "explore": "지금 탐색",
-      "contact": "문의하기"
-    },
-    "contact": {
-      "title": "연락처",
-      "heading": "연결하세요",
-      "description": "HITEK 전문가 팀이 상담 및 지원을 제공합니다",
-      "phone": "전화",
-      "email": "이메일",
-      "address": "주소"
-    },
-    "cta": {
-      "ready": "준비되셨나요?",
-      "description": "오늘 저희에게 연락하여 가장 적합한 솔루션을 상담받으세요",
-      "contactButton": "상담 문의",
-      "callButton": "전화하기"
-    },
-    "servicesSection": {
-      "heading": "종합 기술 솔루션",
-      "subheading": "디지털 전환을 촉진하고 비즈니스 경쟁력을 향상시키기 위해 설계된 최신 기술 서비스를 탐색하세요",
-      "exploreButton": "지금 탐색",
-      "services": {
-        "softwareDev": {
-          "title": "소프트웨어 개발",
-          "description": "최신 기술로 비즈니스 요구사항을 충족하는 맞춤형 소프트웨어 솔루션 구축"
-        },
-        "cloudSolution": {
-          "title": "클라우드 솔루션",
-          "description": "기업을 위한 효율적이고 안전한 클라우드 인프라 배포 및 관리"
-        },
-        "mobileApp": {
-          "title": "모바일 앱",
-          "description": "최적화된 사용자 경험과 높은 성능의 크로스 플랫폼 모바일 앱 개발"
-        },
-        "cybersecurity": {
-          "title": "사이버 보안",
-          "description": "고급 및 포괄적인 보안 솔루션으로 시스템과 데이터 보호"
-        },
-        "aiMl": {
-          "title": "AI & 머신러닝",
-          "description": "AI와 ML을 통합하여 비즈니스 운영 프로세스 자동화 및 최적화"
-        },
-        "dataManagement": {
-          "title": "데이터 관리",
-          "description": "확장 가능하고 안전한 강력한 데이터베이스 설계 및 관리"
-        },
-        "consulting": {
-          "title": "기술 컨설팅",
-          "description": "실제 요구사항에 기반한 비즈니스를 위한 최적의 기술 솔루션 제공"
-        },
-        "maintenance": {
-          "title": "시스템 유지보수",
-          "description": "안정적인 운영을 보장하는 정기적인 시스템 유지보수 및 업그레이드 서비스"
-        }
-      }
-    },
-    "aboutSection": {
-      "badge": "우리의 성과",
-      "heading": "고객의 신뢰에 감사드립니다",
-      "subheading": "우리의 여정은 글로벌 파트너의 신뢰와 협력을 기반으로 구축되어 뛰어난 기술 솔루션과 탁월한 고객 경험을 제공합니다.",
-      "title": "신뢰할 수 있는 기술 파트너",
-      "description1": "HITEK은 베트남의 선도적인 기술 회사로 소프트웨어 솔루션 및 디지털 전환 서비스를 전문으로 제공합니다. 경험 많은 전문가 팀과 첨단 기술로 고품질 제품을 제공할 것을 약속합니다.",
-      "description2": "우리의 사명은 혁신을 촉진하고, 변화를 가속화하며, 모든 비즈니스의 성장을 동반하고 성공을 높이는 것입니다.",
-      "ctaHeading": "우리와 협력할 준비가 되셨나요?",
-      "ctaDescription": "최적의 기술 솔루션으로 아이디어를 실현하도록 도와드리겠습니다",
-      "ctaButton": "지금 연락하세요",
-      "stats": {
-        "experience": "년 경험",
-        "experienceDesc": "다년간의 경험으로 다양한 산업에 대한 깊은 지식을 쌓아 최고의 디지털 경험 솔루션을 제공할 수 있습니다.",
-        "clients": "글로벌 고객",
-        "clientsDesc": "한국, 일본, 캐나다, 호주 등 전 세계 80개 이상의 글로벌 고객.",
-        "projects": "완료된 프로젝트",
-        "projectsDesc": "탁월한 디지털 전환 경험과 최적의 솔루션을 제공하는 고객을 위해 완료된 프로젝트.",
-        "team": "재능있는 팀",
-        "teamDesc": "디지털 전문가, 전략적 사고가, 디자이너 및 창의적인 개발자로 구성된 재능있는 팀."
       }
     }
   }
