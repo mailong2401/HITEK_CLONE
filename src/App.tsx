@@ -6,8 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { ChatbotProvider } from "@/contexts/ChatbotContext"; // Thêm import
-import Chatbot from "@/components/chatbot/Chatbot"; // Thêm import
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AboutCompany from "./pages/AboutCompany";
@@ -32,7 +30,6 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter basename="/HITEK_CLONE">
-            <ChatbotProvider> {/* Thêm ChatbotProvider */}
               <Routes>
                 <Route path="/" element={
                   <Layout>
@@ -92,7 +89,6 @@ const App = () => (
                 } />
               </Routes>
               <Chatbox /> {/* Thêm component Chatbot */}
-            </ChatbotProvider>
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>

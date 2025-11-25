@@ -52,9 +52,15 @@ const Chatbox: React.FC = () => {
   const [questionHistory, setQuestionHistory] = useState<QuestionHistory[]>([{ level: 0 }]);
   const [currentLevel, setCurrentLevel] = useState<number>(0);
   const [isQuestionsExpanded, setIsQuestionsExpanded] = useState<boolean>(true);
+  const [searchTerm, setSearchTerm] = useState<string>('');
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  // Filter questions based on search term
+  const filteredQuestions = presetQuestions.filter(question =>
+    question.question_text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   // Initialize chat
   useEffect(() => {
@@ -101,7 +107,11 @@ const Chatbox: React.FC = () => {
 
     initializeChat();
   }, []);
-
+  // Hàm xử lý scroll ngang bằng wheel
+  const handleQuestionsWheel = (e: React.WheelEvent<HTMLDivElement>): void => {
+    const container = e.currentTarget;
+    container.scrollLeft += e.deltaY;
+  };
   // Scroll to bottom when messages change
   useEffect(() => {
     scrollToBottom();
@@ -109,6 +119,15 @@ const Chatbox: React.FC = () => {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Prevent body scroll when mouse is inside chatbox
+  const handleMouseEnter = () => {
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleMouseLeave = () => {
+    document.body.style.overflow = 'auto';
   };
 
   const loadPresetQuestions = async (parentId?: string): Promise<void> => {
@@ -143,22 +162,32 @@ const Chatbox: React.FC = () => {
       setError('Lỗi tải danh sách câu hỏi');
     }
   };
+  // Ẩn nút điều hướng khi đang nhập
+    const [showNavigation, setShowNavigation] = useState<boolean>(true);
 
+    useEffect(() => {
+      if (inputMessage.trim() !== '') {
+        setShowNavigation(false);
+      } else {
+        setShowNavigation(true);
+      }
+    }, [inputMessage]);
   const goBackToPreviousLevel = async (): Promise<void> => {
-    if (currentLevel <= 0) return;
+  if (currentLevel <= 0) return;
 
-    const newHistory = [...questionHistory];
-    newHistory.pop(); // Remove current level
-    
-    const previousLevel = newHistory[newHistory.length - 1];
-    setQuestionHistory(newHistory);
-    setCurrentLevel(previousLevel.level);
-    
-    // Load questions for previous level
-    await loadPresetQuestions(previousLevel.parentQuestionId);
-    
-    
-  };
+  const newHistory = [...questionHistory];
+  newHistory.pop(); // Remove current level
+  
+  const previousLevel = newHistory[newHistory.length - 1];
+  setQuestionHistory(newHistory);
+  setCurrentLevel(previousLevel.level);
+  
+  // Load questions for previous level
+  await loadPresetQuestions(previousLevel.parentQuestionId);
+  
+  // LUÔN MỞ DANH SÁCH CÂU HỎI KHI QUAY LẠI
+  setIsQuestionsExpanded(true);
+};
 
   const sendPresetQuestion = async (questionId: string, questionText: string, isFinal: boolean = false): Promise<void> => {
     if (error) {
@@ -209,10 +238,6 @@ const Chatbox: React.FC = () => {
           }]);
           setCurrentLevel(newLevel);
           await loadPresetQuestions(questionId);
-          
-          // Auto collapse questions if it's a final question
-        } else {
-          setIsQuestionsExpanded(false);
         }
       }, 1000);
 
@@ -345,15 +370,13 @@ const Chatbox: React.FC = () => {
     setError('');
   };
 
-  const toggleQuestionsExpanded = (): void => {
-    setIsQuestionsExpanded(!isQuestionsExpanded);
-  };
-
   const resetToMainMenu = async (): Promise<void> => {
-    setQuestionHistory([{ level: 0 }]);
-    setCurrentLevel(0);
-    await loadPresetQuestions();
-  };
+  setQuestionHistory([{ level: 0 }]);
+  setCurrentLevel(0);
+  await loadPresetQuestions();
+  // LUÔN MỞ DANH SÁCH CÂU HỎI KHI VỀ TRANG CHỦ
+  setIsQuestionsExpanded(true);
+};
 
   // Get current parent question text for display
   const getCurrentParentText = (): string => {
@@ -378,6 +401,8 @@ const Chatbox: React.FC = () => {
       {/* Chatbox Container */}
       <div
         ref={chatContainerRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className={`fixed bottom-24 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col transition-all duration-300 transform ${
           isOpen
             ? 'scale-100 opacity-100 pointer-events-auto'
@@ -389,7 +414,7 @@ const Chatbox: React.FC = () => {
           <div className="flex items-center space-x-3">
             <div className="relative">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                <i className="fas fa-robot text-lg"></i>
+                🤖
               </div>
               <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-blue-600 ${
                 error ? 'bg-red-400' : 'bg-green-400'
@@ -437,11 +462,11 @@ const Chatbox: React.FC = () => {
               {/* Avatar */}
               {message.sender === 'user' ? (
                 <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <i className="fas fa-user text-white text-sm"></i>
+                  🧑
                 </div>
               ) : (
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <i className="fas fa-robot text-blue-600 text-sm"></i>
+                  🤖
                 </div>
               )}
 
@@ -487,71 +512,29 @@ const Chatbox: React.FC = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Preset Questions Section */}
+        {/* Preset Questions Section - Chiếm toàn bộ không gian */}
         <div className="border-t border-gray-200 bg-white">
-          {/* Questions Header with Toggle Button */}
-          <div className="flex justify-between items-center p-4 border-b border-gray-100">
-            <h4 className="text-sm font-semibold text-gray-600">
-              {getCurrentParentText()}
-              {currentLevel > 0 && (
-                <span className="text-xs text-gray-400 ml-2">(Cấp {currentLevel})</span>
-              )}
-            </h4>
-            <div className="flex space-x-2">
-              {/* Back Button */}
-              {currentLevel > 0 && (
-                <button
-                  onClick={goBackToPreviousLevel}
-                  disabled={isLoading}
-                  className="w-8 h-8 bg-orange-100 hover:bg-orange-200 text-orange-600 rounded-lg transition-all duration-200 flex items-center justify-center hover:scale-105"
-                  title="Quay lại"
-                >
-                  ←
-                </button>
-              )}
-              
-              {/* Home Button */}
-              {currentLevel > 0 && (
-                <button
-                  onClick={resetToMainMenu}
-                  disabled={isLoading}
-                  className="w-8 h-8 bg-purple-100 hover:bg-purple-200 text-purple-600 rounded-lg transition-colors duration-200 flex items-center justify-center hover:scale-105"
-                  title="Về menu chính"
-                >
-                  ⌂
-                </button>
-              )}
-              
-              {/* Expand/Collapse Button */}
-              <button
-                onClick={toggleQuestionsExpanded}
-                disabled={presetQuestions.length === 0}
-                className="w-8 h-8 bg-green-100 hover:bg-green-200 text-green-600 rounded-lg transition-colors duration-200 flex items-center justify-center hover:scale-105"
-                title={isQuestionsExpanded ? 'Thu gọn' : 'Mở rộng'}
+          {/* Questions List - Chiếm hết khối */}
+          {isQuestionsExpanded && filteredQuestions.length > 0 && (
+            <div className="p-4 h-20">
+              <div 
+                className="flex space-x-2 overflow-x-auto h-full items-center scrollbar-hide"
+                onWheel={handleQuestionsWheel}
               >
-                {isQuestionsExpanded ? '−' : '+'}
-              </button>
-            </div>
-          </div>
-
-          {/* Questions List */}
-          {isQuestionsExpanded && presetQuestions.length > 0 && (
-            <div className="p-4 max-h-48 overflow-y-auto">
-              <div className="flex flex-wrap gap-2">
-                {!isLoading && presetQuestions.map((question) => (
+                {!isLoading && filteredQuestions.map((question) => (
                   <button
                     key={question.id}
                     onClick={() => sendPresetQuestion(question.id, question.question_text, question.is_final)}
                     disabled={isLoading || !!error}
-                    className={`text-sm px-3 py-2 rounded-xl transition-colors duration-200 border ${
+                    className={`flex-shrink-0 text-sm px-4 py-2 rounded-xl transition-colors duration-200 border ${
                       question.is_final 
                         ? 'bg-green-50 hover:bg-green-100 text-green-700 border-green-200' 
                         : 'bg-blue-50 hover:bg-blue-100 text-blue-700 border-blue-200'
-                    } disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed`}
+                    } disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed whitespace-nowrap`}
                   >
                     {question.question_text}
                     {question.is_final && (
-                      <i className="fas fa-flag ml-1 text-xs"></i>
+                      <span className="ml-1">🚩</span>
                     )}
                   </button>
                 ))}
@@ -559,33 +542,71 @@ const Chatbox: React.FC = () => {
             </div>
           )}
 
+          {/* No Results Message */}
+          {isQuestionsExpanded && presetQuestions.length > 0 && filteredQuestions.length === 0 && searchTerm && (
+            <div className="p-4 h-20 flex items-center justify-center">
+              <p className="text-gray-500 text-sm">Không tìm thấy câu hỏi phù hợp với "{searchTerm}"</p>
+            </div>
+          )}
+
           {/* No Questions Message */}
           {isQuestionsExpanded && presetQuestions.length === 0 && !error && (
-            <div className="p-4">
-              <p className="text-gray-500 text-sm text-center">Không có câu hỏi nào trong danh mục này.</p>
+            <div className="p-4 h-20 flex items-center justify-center">
+              <p className="text-gray-500 text-sm">Không có câu hỏi nào trong danh mục này.</p>
             </div>
           )}
         </div>
 
-        {/* Input Area */}
+        {/* Input Area với Navigation Buttons */}
         <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
-          <div className="flex space-x-2">
-            <input
-              type="text"
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder={error ? "Hệ thống đang gặp lỗi..." : "Nhập câu hỏi của bạn..."}
-              disabled={isLoading || !!error}
-              className="flex-1 border border-gray-300 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-            />
-            <button
-              onClick={sendCustomMessage}
-              disabled={!inputMessage.trim() || isLoading || !!error}
-              className="w-12 h-12 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-2xl transition-all duration-200 flex items-center justify-center"
-            >
-              <i className="fas fa-paper-plane"></i>
-            </button>
+          <div className="flex space-x-2 items-center">
+            {/* Navigation Buttons - Bên trái */}
+          {showNavigation && (
+            <div className="flex space-x-2">
+              {/* Back Button - Luôn hiện nhưng disabled khi ở level 0 */}
+              <button
+                onClick={goBackToPreviousLevel}
+                disabled={isLoading || currentLevel <= 0}
+                className="w-10 h-10 bg-orange-100 hover:bg-orange-200 text-orange-600 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                title="Quay lại"
+              >
+                ←
+              </button>
+              
+              {/* Home Button - Luôn hiện nhưng disabled khi ở level 0 */}
+              <button
+                onClick={resetToMainMenu}
+                disabled={isLoading || currentLevel <= 0}
+                className="w-10 h-10 bg-purple-100 hover:bg-purple-200 text-purple-600 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                title="Về trang chủ"
+              >
+                🏠
+              </button>
+            </div>
+          )}
+
+            {/* Input Field - Chiếm phần còn lại */}
+            <div className="flex-1 flex space-x-2">
+              <input
+                type="text"
+                value={inputMessage}
+                onChange={(e) => {
+                  setInputMessage(e.target.value);
+                  setSearchTerm(e.target.value);
+                }}
+                onKeyPress={handleKeyPress}
+                placeholder={error ? "Hệ thống đang gặp lỗi..." : "Nhập để tìm kiếm hoặc hỏi..."}
+                disabled={isLoading || !!error}
+                className="flex-1 border border-gray-300 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
+              />
+              <button
+                onClick={sendCustomMessage}
+                disabled={!inputMessage.trim() || isLoading || !!error}
+                className="w-12 h-12 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-2xl transition-all duration-200 flex items-center justify-center"
+              >
+                ➤
+              </button>
+            </div>
           </div>
         </div>
       </div>
