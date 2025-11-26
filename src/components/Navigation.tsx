@@ -104,7 +104,7 @@ const Navigation = () => {
     { name: t('nav.services'), href: "/services-page", type: "services", onClick: scrollToTop },
     { name: t('nav.technology'), href: "/technology", onClick: scrollToTop },
     { name: t('nav.projects'), href: "/projects-page", onClick: scrollToTop },
-    { name: t('nav.testimonials'), href: "/testimonials", onClick: scrollToTop },
+    { name: t('nav.testimonials'), href: "/blog", onClick: scrollToTop },
     { name: t('nav.careers'), href: "/recruitment", onClick: scrollToTop },
   ];
 
@@ -207,7 +207,7 @@ const Navigation = () => {
 
   // ----- MAIN RETURN -----
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-lg" : ""}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-lg" : ""} h-16 md:h-20`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={scrollToTop}>

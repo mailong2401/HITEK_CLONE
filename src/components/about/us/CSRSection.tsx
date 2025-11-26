@@ -57,30 +57,34 @@ const CSRSection: React.FC = () => {
     {
       icon: DollarSign,
       title: "Thứ nhất",
-      description: "Về kinh tế, bao gồm thỏa mãn nhu cầu xã hội, tăng thêm phúc lợi xã hội, bảo đảm sự tồn tại và phát triển của doanh nghiệp.",
+      subtitle: "Về kinh tế",
+      description: "Bao gồm thỏa mãn nhu cầu xã hội, tăng thêm phúc lợi xã hội, bảo đảm sự tồn tại và phát triển của doanh nghiệp.",
       color: "from-green-500 to-emerald-500",
-      image: "/api/placeholder/400/300"
+      image: "https://hitek.com.vn/wp-content/uploads/2023/09/1-2048x1365.jpg"
     },
     {
       icon: Scale,
       title: "Thứ hai",
-      description: "Về pháp lý, doanh nghiệp phải thực hiện đầy đủ những quy định về pháp lý đối với các bên liên quan, bao gồm cổ đông, người tiêu dùng, gia đình của người lao động.",
+      subtitle: "Về pháp lý",
+      description: "Doanh nghiệp phải thực hiện đầy đủ những quy định về pháp lý đối với các bên liên quan, bao gồm cổ đông, người tiêu dùng, gia đình của người lao động.",
       color: "from-blue-500 to-cyan-500",
-      image: "/api/placeholder/400/300"
+      image: "https://hitek.com.vn/wp-content/uploads/2023/09/2-2048x1365.jpg"
     },
     {
       icon: Heart,
       title: "Thứ ba",
-      description: "Về đạo đức, là những hành vi và hoạt động mà xã hội mong đợi ở doanh nghiệp, nhưng không được quy định trong hệ thống pháp luật.",
+      subtitle: "Về đạo đức",
+      description: "Là những hành vi và hoạt động mà xã hội mong đợi ở doanh nghiệp, nhưng không được quy định trong hệ thống pháp luật.",
       color: "from-purple-500 to-pink-500",
-      image: "/api/placeholder/400/300"
+      image: "https://hitek.com.vn/wp-content/uploads/2023/09/3-2048x1498.jpg"
     },
     {
       icon: Users,
       title: "Thứ tư",
-      description: "Về tính nhân văn, doanh nghiệp cần thực hiện những hành vi thể hiện mong muốn đóng góp cho cộng đồng và xã hội.",
+      subtitle: "Về tính nhân văn",
+      description: "Doanh nghiệp cần thực hiện những hành vi thể hiện mong muốn đóng góp cho cộng đồng và xã hội.",
       color: "from-orange-500 to-red-500",
-      image: "/api/placeholder/400/300"
+      image: "https://hitek.com.vn/wp-content/uploads/2023/09/4-2048x1365.jpg"
     }
   ];
 
@@ -103,14 +107,13 @@ const CSRSection: React.FC = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            Trách nhiệm xã hội doanh nghiệp
+            HITEK SOFTWARE THỰC HIỆN CSR
           </motion.h2>
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            CSR (Corporate Social Responsibility) - Hitek Software cam kết thực hiện trách nhiệm xã hội 
-            nhằm đạt được nhiều nhất những tác động tích cực và giảm tối đa tác động tiêu cực đối với xã hội.
+            CSR là từ viết tắt của Corporate Social Responsibility – Trách nhiệm xã hội của doanh nghiệp, đây được xem là một xu hướng phổ biến trên thế giới, trở thành một yêu cầu “mềm” đối với doanh nghiệp. Để thực hiện nghĩa vụ mà một doanh nghiệp và cá nhân liên quan phải thực hiện đối với xã hội nhằm đạt được nhiều nhất những tác động tích cực và giảm tối đa tác động tiêu cực đối với xã hội. Hitek Software đã và đang thực hiện những điều mục sau:
           </motion.p>
         </motion.div>
 
@@ -128,7 +131,7 @@ const CSRSection: React.FC = () => {
                   isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
               >
-                {/* Content Column - Left */}
+                {/* Content Column */}
                 <motion.div 
                   variants={itemVariants}
                   className="lg:w-1/2 space-y-6"
@@ -149,12 +152,20 @@ const CSRSection: React.FC = () => {
                     >
                       <Icon className="w-8 h-8 text-white" />
                     </motion.div>
-                    <motion.h3 
-                      variants={itemVariants}
-                      className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
-                    >
-                      {item.title}
-                    </motion.h3>
+                    <div>
+                      <motion.h3 
+                        variants={itemVariants}
+                        className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white"
+                      >
+                        {item.title}
+                      </motion.h3>
+                      <motion.p 
+                        variants={itemVariants}
+                        className="text-lg text-gray-600 dark:text-gray-300 font-semibold"
+                      >
+                        {item.subtitle}
+                      </motion.p>
+                    </div>
                   </motion.div>
 
                   <motion.p 
@@ -173,7 +184,7 @@ const CSRSection: React.FC = () => {
                   />
                 </motion.div>
 
-                {/* Image Column - Right */}
+                {/* Image Column */}
                 <motion.div 
                   variants={imageVariants}
                   className="lg:w-1/2 relative"
@@ -181,30 +192,18 @@ const CSRSection: React.FC = () => {
                   <motion.div
                     whileHover={{ 
                       scale: 1.02,
-                      rotateY: 5
                     }}
                     transition={{ type: "spring", stiffness: 300 }}
                     className="relative rounded-2xl overflow-hidden shadow-2xl"
                   >
-                    {/* Placeholder image - replace with actual image */}
-                    <div className="w-full h-80 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center">
-                      <motion.div
-                        animate={{ 
-                          opacity: [0.5, 0.8, 0.5],
-                          scale: [1, 1.05, 1]
-                        }}
-                        transition={{ 
-                          duration: 3,
-                          repeat: Infinity 
-                        }}
-                        className="text-center"
-                      >
-                        <Icon className="w-16 h-16 text-gray-400 dark:text-gray-600 mx-auto mb-4" />
-                        <p className="text-gray-500 dark:text-gray-400 font-semibold">
-                          Hình ảnh minh họa {item.title.toLowerCase()}
-                        </p>
-                      </motion.div>
-                    </div>
+                    {/* Real image from URL */}
+                    <motion.img 
+                      src={item.image}
+                      alt={item.subtitle}
+                      className="w-full h-80 object-cover rounded-2xl"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    />
                     
                     {/* Gradient overlay */}
                     <motion.div 
@@ -213,6 +212,17 @@ const CSRSection: React.FC = () => {
                       transition={{ duration: 1, delay: index * 0.2 + 0.3 }}
                       className={`absolute inset-0 bg-gradient-to-br ${item.color} mix-blend-overlay`}
                     />
+                    
+                    {/* Loading fallback */}
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0 }}
+                      className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center ${
+                        item.image ? 'hidden' : 'flex'
+                      }`}
+                    >
+                      <Icon className="w-16 h-16 text-gray-400 dark:text-gray-600" />
+                    </motion.div>
                   </motion.div>
 
                   {/* Floating elements */}

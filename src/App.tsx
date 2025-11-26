@@ -1,4 +1,4 @@
-// App.tsx - Cập nhật
+// App.tsx - ĐÃ SỬA
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +19,8 @@ import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import RecruitmentPage from "@/pages/RecruitmentPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import ConsultationPage from "@/pages/ConsultationPage";
+import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage"; // Thêm import cho trang chi tiết blog
 
 const queryClient = new QueryClient();
 
@@ -71,9 +73,22 @@ const App = () => (
                     <RecruitmentPage />
                   </Layout>
                 } />
+                {/* ĐÃ SỬA: Route testimonials đúng với component TestimonialsPage */}
                 <Route path="/testimonials" element={
                   <Layout>
                     <TestimonialsPage />
+                  </Layout>
+                } />
+                {/* THÊM: Route cho blog */}
+                <Route path="/blog" element={
+                  <Layout>
+                    <BlogPage />
+                  </Layout>
+                } />
+                {/* THÊM: Route cho trang chi tiết bài viết blog */}
+                <Route path="/blog/:slug" element={
+                  <Layout>
+                    <BlogPostPage />
                   </Layout>
                 } />
                 <Route path="/consultation" element={
