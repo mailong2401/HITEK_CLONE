@@ -1,6 +1,7 @@
 import ContactSection from "@/components/ContactSection";
 import AboutHitek from "@/components/about/us/AboutHitek";
 import AboutUsBanner from "@/components/about/us/AboutUsBanner";
+import CSRSection from "@/components/about/us/CSRSection";
 
 const AboutUs = () => {
   return (
@@ -8,6 +9,7 @@ const AboutUs = () => {
       <AboutUsBanner />
       <AboutHitek />
       <ContactSection />
+      <CSRSection />
     </>
   );
 };
