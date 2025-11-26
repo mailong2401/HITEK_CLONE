@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", // QUAN TRỌNG: Đổi thành relative path
+  base: "/",
   server: {
     host: "::",
     port: 8080,
