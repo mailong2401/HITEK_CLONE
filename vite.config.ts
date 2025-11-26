@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/HITEK_CLONE/" : "/",
+  base: "./", // QUAN TRỌNG: Đổi thành relative path
   server: {
     host: "::",
     port: 8080,
@@ -18,14 +18,20 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: false,
-    // Thêm cấu hình build tối ưu
+    emptyOutDir: true,
+    // Thêm cấu hình quan trọng
+    assetsInlineLimit: 4096,
     rollupOptions: {
       output: {
-        manualChunks: undefined,
-        entryFileNames: "assets/[name]-[hash].js",
-        chunkFileNames: "assets/[name]-[hash].js",
-        assetFileNames: "assets/[name]-[hash].[ext]"
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo.name?.split('.')[1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = 'images';
+          }
+          return `assets/${extType}/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
     }
   }

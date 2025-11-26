@@ -31,7 +31,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="/HITEK_CLONE">
+          <BrowserRouter>
               <Routes>
                 <Route path="/" element={
                   <Layout>
