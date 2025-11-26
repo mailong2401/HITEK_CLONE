@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { DollarSign, Scale, Heart, Users } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 const CSRSection: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -53,40 +56,21 @@ const CSRSection: React.FC = () => {
     }
   };
 
-  const csrData = [
-    {
-      icon: DollarSign,
-      title: "Thứ nhất",
-      subtitle: "Về kinh tế",
-      description: "Bao gồm thỏa mãn nhu cầu xã hội, tăng thêm phúc lợi xã hội, bảo đảm sự tồn tại và phát triển của doanh nghiệp.",
-      color: "from-green-500 to-emerald-500",
-      image: "https://hitek.com.vn/wp-content/uploads/2023/09/1-2048x1365.jpg"
-    },
-    {
-      icon: Scale,
-      title: "Thứ hai",
-      subtitle: "Về pháp lý",
-      description: "Doanh nghiệp phải thực hiện đầy đủ những quy định về pháp lý đối với các bên liên quan, bao gồm cổ đông, người tiêu dùng, gia đình của người lao động.",
-      color: "from-blue-500 to-cyan-500",
-      image: "https://hitek.com.vn/wp-content/uploads/2023/09/2-2048x1365.jpg"
-    },
-    {
-      icon: Heart,
-      title: "Thứ ba",
-      subtitle: "Về đạo đức",
-      description: "Là những hành vi và hoạt động mà xã hội mong đợi ở doanh nghiệp, nhưng không được quy định trong hệ thống pháp luật.",
-      color: "from-purple-500 to-pink-500",
-      image: "https://hitek.com.vn/wp-content/uploads/2023/09/3-2048x1498.jpg"
-    },
-    {
-      icon: Users,
-      title: "Thứ tư",
-      subtitle: "Về tính nhân văn",
-      description: "Doanh nghiệp cần thực hiện những hành vi thể hiện mong muốn đóng góp cho cộng đồng và xã hội.",
-      color: "from-orange-500 to-red-500",
-      image: "https://hitek.com.vn/wp-content/uploads/2023/09/4-2048x1365.jpg"
-    }
-  ];
+  const csrItems = [
+  { icon: DollarSign, color: "from-green-500 to-emerald-500", image: "https://hitek.com.vn/wp-content/uploads/2023/09/1-2048x1365.jpg" },
+  { icon: Scale, color: "from-blue-500 to-cyan-500", image: "https://hitek.com.vn/wp-content/uploads/2023/09/2-2048x1365.jpg" },
+  { icon: Heart, color: "from-purple-500 to-pink-500", image: "https://hitek.com.vn/wp-content/uploads/2023/09/3-2048x1498.jpg" },
+  { icon: Users, color: "from-orange-500 to-red-500", image: "https://hitek.com.vn/wp-content/uploads/2023/09/4-2048x1365.jpg" }
+];
+
+const csrData = csrItems.map((item, idx) => ({
+  icon: item.icon,
+  title: t(`about.us.csr.items.${idx}.title`),
+  subtitle: t(`about.us.csr.items.${idx}.subtitle`),
+  description: t(`about.us.csr.items.${idx}.description`),
+  color: item.color,
+  image: item.image
+}));
 
   return (
     <motion.section 
@@ -107,13 +91,13 @@ const CSRSection: React.FC = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            HITEK SOFTWARE THỰC HIỆN CSR
+            {t("about.us.csr.header.title")}
           </motion.h2>
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            CSR là từ viết tắt của Corporate Social Responsibility – Trách nhiệm xã hội của doanh nghiệp, đây được xem là một xu hướng phổ biến trên thế giới, trở thành một yêu cầu “mềm” đối với doanh nghiệp. Để thực hiện nghĩa vụ mà một doanh nghiệp và cá nhân liên quan phải thực hiện đối với xã hội nhằm đạt được nhiều nhất những tác động tích cực và giảm tối đa tác động tiêu cực đối với xã hội. Hitek Software đã và đang thực hiện những điều mục sau:
+            {t("about.us.csr.header.description")}
           </motion.p>
         </motion.div>
 
@@ -265,14 +249,13 @@ const CSRSection: React.FC = () => {
             variants={itemVariants}
             className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            Cam kết phát triển bền vững
+            {t("about.us.csr.footer.title")}
           </motion.h3>
           <motion.p 
             variants={itemVariants}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            Hitek Software không ngừng nỗ lực thực hiện trách nhiệm xã hội trong mọi hoạt động kinh doanh, 
-            hướng tới sự phát triển bền vững và đóng góp tích cực cho cộng đồng.
+            {t("about.us.csr.footer.description")}
           </motion.p>
         </motion.div>
       </div>

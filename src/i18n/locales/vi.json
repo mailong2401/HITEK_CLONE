@@ -1,0 +1,473 @@
+{
+  "nav": {
+    "home": "TRANG CHỦ",
+    "about": "VỀ HITEK",
+    "services": "DỊCH VỤ",
+    "technology": "CÔNG NGHỆ",
+    "projects": "DỰ ÁN",
+    "testimonials": "TESTIMONIALS",
+    "careers": "TUYỂN DỤNG",
+    "learnMore": "Tìm hiểu thêm",
+    "viewMore": "Xem thêm"
+  },
+  "home": {
+    "aiSection": {
+      "title": "Giải Pháp Phát Triển Phần Mềm",
+      "subtitle": "Thông Minh với AI",
+      "description": "HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, mang lại hiệu quả vượt trội về chất lượng và tốc độ",
+      "banner": {
+        "heading": "Công Nghệ AI Hàng Đầu Được Tích Hợp",
+        "note": "Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển",
+        "tools": [
+          "ChatGPT",
+          "GitHub Copilot",
+          "Testim",
+          "Harness",
+          "Moogsoft"
+        ]
+      },
+      "steps": [
+        {
+          "step": "01",
+          "title": "Phân tích yêu cầu",
+          "description": "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
+          "features": [
+            "Phân tích yêu cầu, tư vấn giải pháp",
+            "Tự động viết tài liệu ban đầu",
+            "Chuyển lời nói → văn bản thông minh"
+          ],
+          "tools": [
+            "ChatGPT / GPT",
+            "Bard / Gemini",
+            "Avscribe"
+          ]
+        },
+        {
+          "step": "02",
+          "title": "Thiết kế hệ thống",
+          "description": "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
+          "features": [
+            "Tạo sơ đồ kiến trúc thông minh",
+            "Mô tả API, ERD tự động",
+            "Thiết kế mô hình nâng cao"
+          ],
+          "tools": [
+            "Bard / Gemini",
+            "ChatGPT",
+            "Draw.io",
+            "Figma",
+            "Visio"
+          ]
+        },
+        {
+          "step": "03",
+          "title": "Lập trình",
+          "description": "Viết code các module theo thiết kế với sự hỗ trợ của AI",
+          "features": [
+            "Tự động gợi ý code thông minh",
+            "AI review và refactor code",
+            "Hỗ trợ tìm kiếm code nhanh"
+          ],
+          "tools": [
+            "GitHub Copilot",
+            "Cursor",
+            "Tabnine",
+            "Sourcegraph"
+          ]
+        },
+        {
+          "step": "04",
+          "title": "Kiểm thử phần mềm",
+          "description": "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
+          "features": [
+            "Kiểm thử tự động bằng AI",
+            "Tạo test case tự động",
+            "Testing đa nền tảng thông minh"
+          ],
+          "tools": [
+            "Testim",
+            "Sapienz",
+            "Selenium",
+            "BrowserStack",
+            "ChatGPT"
+          ]
+        },
+        {
+          "step": "05",
+          "title": "Triển khai",
+          "description": "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
+          "features": [
+            "CI/CD với AI tối ưu",
+            "Deploy đa nền tảng",
+            "GitOps cho Kubernetes"
+          ],
+          "tools": [
+            "Harness",
+            "Spinnaker",
+            "ArgoCD",
+            "AWS CodePipeline"
+          ]
+        },
+        {
+          "step": "06",
+          "title": "Bảo trì & Vận hành",
+          "description": "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
+          "features": [
+            "Phát hiện sự cố tự động",
+            "Phân tích log thông minh",
+            "Giám sát hiệu năng bằng AI"
+          ],
+          "tools": [
+            "Moogsoft",
+            "Splunk",
+            "Dynatrace",
+            "Chatbot AI"
+          ]
+        }
+      ]
+    }
+  },
+  "stats": {
+    "experience": {
+      "number": "5+",
+      "label": "Năm kinh nghiệm"
+    },
+    "staff": {
+      "number": "100+",
+      "label": "Nhân sự"
+    },
+    "projects": {
+      "number": "50+",
+      "label": "Dự án"
+    },
+    "countries": {
+      "number": "10+",
+      "label": "Quốc gia"
+    }
+  },
+  "about": {
+    "company": {
+      "title": "Thông tin công ty",
+      "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK",
+      "banner": {
+        "title": {
+          "line1": "Thông tin",
+          "line2": "công ty"
+        },
+        "description": {
+          "line1": "Khám phá câu chuyện đằng sau một trong những công ty công nghệ",
+          "line2": "với tầm nhìn trở thành đối tác công nghệ hàng đầu toàn cầu"
+        },
+        "highlight": "phát triển nhanh nhất",
+        "cta": {
+          "exploreNow": "Khám phá ngay"
+        }
+      },
+      "info": {
+        "sectionNumber": "03",
+        "title": "THÔNG TIN CÔNG TY",
+        "subtitle": "XEM HỒ SƠ CÔNG TY",
+        "companyInfo": {
+          "companyName": "Tên công ty",
+          "established": "Thành lập",
+          "staff": "Nhân sự",
+          "capital": "Vốn điều lệ",
+          "businessField": {
+            "label": "Lĩnh vực kinh doanh",
+            "value": "Lập trình máy vi tính, Chi tiết: Sản xuất sản phẩm phần mềm"
+          }
+        },
+        "leadership": {
+          "title": "Ban Lãnh Đạo",
+          "members": [
+            {
+              "position": "Giám đốc Kinh doanh",
+              "name": "Ông QN Sean Beom",
+              "nationality": "Người Hàn Quốc",
+              "initials": "SB"
+            },
+            {
+              "position": "Giám đốc Điều hành",
+              "name": "Ông Trần Anh Khôi",
+              "role": "Người sáng lập",
+              "initials": "TK"
+            }
+          ],
+          "footerText": "Đội ngũ lãnh đạo tận tâm"
+        }
+      },
+      "vision": {
+        "visionSection": {
+          "number": "01",
+          "title": "TẦM NHÌN CỦA HITEK",
+          "mainStatement": "Mục tiêu dài hạn của Hitek là trở thành một công cụ phần mềm hàng đầu Thế Giới",
+          "description": "Hitek Software luôn nỗ lực không ngừng nghiên cứu công nghệ mỗi ngày để đạt được mục tiêu trở thành công cụ phần mềm hàng đầu Thế Giới."
+        },
+        "messageSection": {
+          "number": "02",
+          "title": "THÔNG ĐIỆP CHỦ TỊCH",
+          "mainGoal": "MỤC TIÊU DÀI HẠN CỦA HITEK LÀ TRỞ THÀNH MỘT CÔNG TY PHẦN MỀM HÀNG ĐẦU THẾ GIỚI",
+          "paragraphs": [
+            "May mắn có cơ hội làm việc với nhiều khách hàng trên toàn thế giới ở giai đoạn khởi nghiệp, tôi đã tích lũy cho mình được rất nhiều kinh nghiệm để có thể nắm bắt nhu cầu của khách hàng ở mỗi nước, mỗi lĩnh vực mà họ hướng đến.",
+            "Tôi đang xây dựng Hitek Software lớn mạnh hơn từng ngày bằng những kinh nghiệm đó.",
+            "Hitek Software là tập hợp những năng lượng trẻ, đầy nhiệt huyết, luôn sẵn sàng tìm kiếm và thích nghi với những công nghệ mới. Do đó, chúng tôi tự tin rằng, với thế mạnh cập nhật nhanh những công nghệ mới, kiến thức mới sẽ giúp khách hàng của Hitek thỏa mãn với những nhu cầu mà họ đưa ra.",
+            "Bên cạnh nguồn nhân lực trẻ trung, chúng tôi còn sở hữu những chuyên viên tư vấn giỏi ngoại ngữ - am hiểu sâu rộng về công nghệ, điều này sẽ giúp xóa bỏ rào cản ngôn ngữ giữa Hitek và khách hàng nước ngoài. Đây cũng là công thức để Hitek Software tiếp cận và đồng hành cùng nhiều khách hàng trên toàn thế giới trong hơn 5 năm qua."
+          ],
+          "image": {
+            "alt": "Chủ tịch Hitek Software - Trần Anh Khôi",
+            "fallbackText": "Ảnh thành viên"
+          },
+          "signature": {
+            "position": "Chủ tịch - Người sáng lập",
+            "name": "Trần Anh Khôi"
+          },
+          "quote": "Không ngừng đổi mới, không ngừng phát triển - Dẫn dắt đội ngũ trẻ đầy nhiệt huyết vươn tầm thế giới"
+        }
+      }
+    },
+    "us": {
+      "title": "Về chúng tôi",
+      "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi",
+      "banner": {
+        "companyName": "HITEK SOFTWARE",
+        "description": {
+          "text1": "Khám phá hành trình từ startup với 5 kỹ sư đến công ty công nghệ toàn cầu",
+          "highlight": " với sứ mệnh trở thành đối tác phần mềm hàng đầu thế giới"
+        },
+        "cta": "Khám phá hành trình"
+      },
+      "aboutHitek": {
+        "mainTitle": "Từ Khởi Nghiệp Đến Toàn Cầu",
+        "introTexts": [
+          "Hitek được thành lập từ năm 2018, một chặng đường đủ dài để chúng tôi có thể khẳng định vị thế của mình ở thị trường công nghệ hiện tại.",
+          "Mục tiêu ở tương lai Hitek không chỉ là một công ty phát triển phần mềm tốt nhất tại Việt Nam, mà còn là một công ty phần mềm hàng đầu Thế giới!"
+        ],
+        "sinceText": "Since 2018",
+        "timeline": {
+          "items": [
+            {
+              "year": "2018",
+              "title": "Thành lập Hitek",
+              "description": "Hitek được thành lập chỉ với 5 kỹ sư phần mềm, làm việc tự do, tập trung vào phát triển web và ứng dụng di động cho thị trường Việt Nam.",
+              "stats": "5 kỹ sư"
+            },
+            {
+              "year": "2019",
+              "title": "Bước ra thế giới",
+              "description": "Lần đầu nhận được hợp đồng gia công phần mềm cho thị trường Hàn Quốc, Hitek đã thay đổi chiến lược kinh doanh mở rộng sang thị trường nước ngoài.",
+              "stats": "Thị trường Hàn Quốc"
+            },
+            {
+              "year": "2020 - 2021",
+              "title": "Chuyên sâu Hàn Quốc",
+              "description": "Chúng tôi tiếp tục phát triển công nghệ tại Hàn Quốc. Gần 90% các dự án đến từ thị trường này.",
+              "stats": "90% dự án từ Hàn Quốc"
+            },
+            {
+              "year": "2022 - Nay",
+              "title": "Toàn cầu hóa",
+              "description": "Hitek cung cấp các dịch vụ gia công phần mềm và cung cấp phần mềm cho các khách hàng đến từ Mỹ, Canada, Đức, Hàn, Úc, Nhật.",
+              "stats": "6+ quốc gia"
+            }
+          ]
+        },
+        "mission": {
+          "title": "Sứ Mệnh Tiếp Theo",
+          "description": "Tiếp tục mở rộng sang các thị trường mới, đẩy mạnh nghiên cứu AI và công nghệ tiên tiến, không ngừng nâng cao chất lượng dịch vụ để trở thành đối tác công nghệ đáng tin cậy trên toàn cầu."
+        }
+      },
+      "csr": {
+        "header": {
+          "title": "HITEK SOFTWARE THỰC HIỆN CSR",
+          "description": "CSR là từ viết tắt của Corporate Social Responsibility – Trách nhiệm xã hội của doanh nghiệp, đây được xem là một xu hướng phổ biến trên thế giới, trở thành một yêu cầu “mềm” đối với doanh nghiệp. Để thực hiện nghĩa vụ mà một doanh nghiệp và cá nhân liên quan phải thực hiện đối với xã hội nhằm đạt được nhiều nhất những tác động tích cực và giảm tối đa tác động tiêu cực đối với xã hội. Hitek Software đã và đang thực hiện những điều mục sau:"
+        },
+        "items": [
+          {
+            "title": "Thứ nhất",
+            "subtitle": "Về kinh tế",
+            "description": "Bao gồm thỏa mãn nhu cầu xã hội, tăng thêm phúc lợi xã hội, bảo đảm sự tồn tại và phát triển của doanh nghiệp."
+          },
+          {
+            "title": "Thứ hai",
+            "subtitle": "Về pháp lý",
+            "description": "Doanh nghiệp phải thực hiện đầy đủ những quy định về pháp lý đối với các bên liên quan, bao gồm cổ đông, người tiêu dùng, gia đình của người lao động."
+          },
+          {
+            "title": "Thứ ba",
+            "subtitle": "Về đạo đức",
+            "description": "Là những hành vi và hoạt động mà xã hội mong đợi ở doanh nghiệp, nhưng không được quy định trong hệ thống pháp luật."
+          },
+          {
+            "title": "Thứ tư",
+            "subtitle": "Về tính nhân văn",
+            "description": "Doanh nghiệp cần thực hiện những hành vi thể hiện mong muốn đóng góp cho cộng đồng và xã hội."
+          }
+        ],
+        "footer": {
+          "title": "Cam kết phát triển bền vững",
+          "description": "Hitek Software không ngừng nỗ lực thực hiện trách nhiệm xã hội trong mọi hoạt động kinh doanh, hướng tới sự phát triển bền vững và đóng góp tích cực cho cộng đồng."
+        }
+      },
+      "sdg": {
+        "header": {
+          "title": "Mục tiêu phát triển bền vững",
+          "paragraphs": [
+            "Hitek Software đã và đang thiết lập mạng lưới hoạt động trên toàn thế giới, do đó chúng tôi luôn chú trọng chất lượng làm việc ở từng bước, từng giai đoạn.",
+            "Ban lãnh đạo của Hitek cũng rất quan tâm đến đời sống của nhân viên, vì thế chúng tôi hướng đến những mục tiêu phù hợp trong 17 Mục tiêu phát triển bền vững (Sustainable Development Goals)."
+          ]
+        },
+        "vision": {
+          "title": "Tầm nhìn của chúng tôi",
+          "description": "Hitek Software tin rằng sẽ giúp nâng cao chất lượng cuộc sống, và chúng tôi sẽ tiếp tục cố gắng để thực hiện hoá một xã hội hiện đại mới, thông minh hơn, hạnh phúc hơn."
+        },
+        "goals": [
+          {
+            "number": "1",
+            "title": "Giáo dục có chất lượng",
+            "description": "Đảm bảo giáo dục chất lượng, rộng mở và công bằng và nâng cao cơ hội học tập suốt đời cho tất cả mọi người.",
+            "hitekAction": "Hitek Software thường xuyên tổ chức các buổi training cho nhân viên về kiến thức lập trình, cùng những kỹ năng mềm cần thiết cho mọi người trong quá trình làm việc."
+          },
+          {
+            "number": "2",
+            "title": "Công việc tốt và tăng trưởng kinh tế",
+            "description": "Để đạt được hiệu suất kinh tế ở một mức độ cao nhất định, luôn cải tiến và đổi mới công nghệ, bao gồm cả việc tập trung vào các khu vực giá trị gia tăng cao và cần nhiều lao động.",
+            "hitekAction": "Thúc đẩy các chính sách định hướng phát triển để hỗ trợ các hoạt động sản xuất, tạo việc làm tốt, kinh doanh, sáng tạo và đổi mới."
+          },
+          {
+            "number": "3",
+            "title": "Công nghiệp, sáng tạo và phát triển hạ tầng",
+            "description": "Tạo ra các công nghệ mới, chú trọng phát triển các ý tưởng sáng tạo nhất của nhân viên.",
+            "hitekAction": "Luôn tạo điều kiện để nhân viên có thể làm việc trong một môi trường đầy đủ cơ sở vật chất hạ tầng chất lượng nhất."
+          }
+        ],
+        "globalImpact": {
+          "title": "Tác động toàn cầu",
+          "description": "Thông qua việc thực hiện các mục tiêu phát triển bền vững, Hitek Software không chỉ đóng góp cho cộng đồng địa phương mà còn tạo ra tác động tích cực trên quy mô toàn cầu."
+        }
+      }
+    }
+  },
+  "services": {
+    "customSoftware": {
+      "title": "Dịch vụ custom phần mềm",
+      "description": "Công ty phát triển phần mềm custom hàng đầu Việt Nam."
+    },
+    "longTermDevelopment": {
+      "title": "Dịch vụ phát triển phần mềm dài hạn",
+      "description": "Xây dựng phần mềm dài hạn phức tạp và chuyên sâu."
+    },
+    "webDevelopment": {
+      "title": "Dịch vụ phát triển web",
+      "description": "Phát triển web bằng .NET, NodeJS, Java, PHP, Angular, ReactJS..."
+    },
+    "cloudMigration": {
+      "title": "Dịch vụ Cloud Migration",
+      "description": "Tận dụng đám mây và cơ sở hạ tầng để tăng trưởng kinh doanh."
+    },
+    "mobileApp": {
+      "title": "Dịch vụ phát triển mobile app",
+      "description": "Ứng dụng di động chất lượng cao cho khách hàng."
+    },
+    "softwareTesting": {
+      "title": "Dịch vụ kiểm thử phần mềm",
+      "description": "Xây dựng trải nghiệm web và thiết bị di động tối ưu."
+    },
+    "outsourcing": {
+      "title": "Dịch vụ outsourcing theo dự án",
+      "description": "Xử lý các dự án Outsourcing quốc tế phức tạp."
+    },
+    "offshoreCenter": {
+      "title": "Dịch vụ xây dựng offshore center",
+      "description": "Xây dựng offshore center hiện đại và phù hợp."
+    },
+    "nearshoreSoftware": {
+      "title": "Dịch vụ phát triển phần mềm gần thị trường",
+      "description": "Phát triển phần mềm tại các quốc gia gần với thị trường tiêu thụ."
+    },
+    "blockchain": {
+      "title": "Dịch vụ Blockchain cho doanh nghiệp",
+      "description": "Phát triển Blockchain dễ dàng và an toàn cho doanh nghiệp."
+    }
+  },
+  "hero": {
+    "title1": "THÚC ĐẨY SÁNG TẠO, TĂNG TỐC ĐỔI MỚI",
+    "title2": "ĐỒNG HÀNH PHÁT TRIỂN, NÂNG TẦM THÀNH CÔNG",
+    "subtitle": "_ Chất lượng là danh dự _",
+    "explore": "Khám phá ngay",
+    "contact": "Liên hệ tư vấn"
+  },
+  "contact": {
+    "title": "LIÊN HỆ",
+    "heading": "Hãy kết nối với chúng tôi",
+    "description": "Đội ngũ chuyên gia của HITEK sẵn sàng tư vấn và hỗ trợ bạn",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "address": "Địa chỉ"
+  },
+  "cta": {
+    "ready": "Sẵn sàng triển khai dự án?",
+    "description": "Liên hệ với chúng tôi ngay hôm nay để được tư vấn giải pháp phù hợp nhất",
+    "contactButton": "Liên hệ tư vấn",
+    "callButton": "Gọi ngay"
+  },
+  "servicesSection": {
+    "heading": "Giải Pháp Công Nghệ Toàn Diện",
+    "subheading": "Khám phá các dịch vụ công nghệ hiện đại của chúng tôi, được thiết kế để thúc đẩy chuyển đổi số và nâng cao năng lực cạnh tranh cho doanh nghiệp của bạn",
+    "exploreButton": "Khám phá ngay",
+    "services": {
+      "softwareDev": {
+        "title": "Phát triển phần mềm",
+        "description": "Xây dựng các giải pháp phần mềm tùy chỉnh đáp ứng nhu cầu kinh doanh với công nghệ hiện đại nhất"
+      },
+      "cloudSolution": {
+        "title": "Giải pháp Cloud",
+        "description": "Triển khai và quản lý hạ tầng đám mây hiệu quả và bảo mật cho doanh nghiệp"
+      },
+      "mobileApp": {
+        "title": "Ứng dụng di động",
+        "description": "Phát triển app mobile đa nền tảng với trải nghiệm người dùng tối ưu và hiệu suất cao"
+      },
+      "cybersecurity": {
+        "title": "An ninh mạng",
+        "description": "Bảo vệ hệ thống và dữ liệu với các giải pháp bảo mật tiên tiến và toàn diện"
+      },
+      "aiMl": {
+        "title": "AI & Machine Learning",
+        "description": "Tích hợp AI và ML để tự động hóa và tối ưu quy trình vận hành doanh nghiệp"
+      },
+      "dataManagement": {
+        "title": "Quản lý dữ liệu",
+        "description": "Thiết kế và quản lý cơ sở dữ liệu mạnh mẽ, có khả năng mở rộng và bảo mật cao"
+      },
+      "consulting": {
+        "title": "Tư vấn công nghệ",
+        "description": "Đưa ra các giải pháp công nghệ tối ưu cho doanh nghiệp dựa trên nhu cầu thực tế"
+      },
+      "maintenance": {
+        "title": "Bảo trì hệ thống",
+        "description": "Dịch vụ bảo trì và nâng cấp hệ thống định kỳ đảm bảo hoạt động ổn định"
+      }
+    }
+  },
+  "aboutSection": {
+    "badge": "THÀNH TỰU CỦA CHÚNG TÔI",
+    "heading": "Cảm ơn sự tin tưởng của khách hàng",
+    "subheading": "Hành trình của chúng tôi được xây dựng dựa trên sự tin tưởng và hợp tác từ các đối tác toàn cầu, mang đến những giải pháp công nghệ xuất sắc và trải nghiệm khách hàng vượt trội.",
+    "title": "Đối tác công nghệ đáng tin cậy của bạn",
+    "description1": "HITEK là công ty công nghệ hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp phần mềm và dịch vụ chuyển đổi số. Với đội ngũ chuyên gia giàu kinh nghiệm và công nghệ tiên tiến, chúng tôi cam kết mang đến những sản phẩm chất lượng cao.",
+    "description2": "Sứ mệnh của chúng tôi là thúc đẩy sáng tạo, tăng tốc đổi mới, đồng hành phát triển và nâng tầm thành công cho mọi doanh nghiệp.",
+    "ctaHeading": "Sẵn sàng hợp tác cùng chúng tôi?",
+    "ctaDescription": "Hãy để chúng tôi giúp bạn hiện thực hóa ý tưởng với giải pháp công nghệ tối ưu",
+    "ctaButton": "Liên hệ ngay",
+    "stats": {
+      "experience": "Năm kinh nghiệm",
+      "experienceDesc": "Nhiều năm kinh nghiệm đã mang lại cho chúng tôi kiến thức sâu rộng về nhiều ngành, cho phép cung cấp giải pháp trải nghiệm số tốt nhất.",
+      "clients": "Khách hàng toàn cầu",
+      "clientsDesc": "Hơn 80 khách hàng toàn cầu từ khắp nơi trên thế giới, bao gồm Hàn Quốc, Nhật Bản, Canada, Úc và nhiều nơi khác.",
+      "projects": "Dự án hoàn thành",
+      "projectsDesc": "Các dự án hoàn thành cho khách hàng, mang lại trải nghiệm chuyển đổi số vượt trội và giải pháp tối ưu.",
+      "team": "Đội ngũ tài năng",
+      "teamDesc": "Đội ngũ tài năng bao gồm các chuyên gia kỹ thuật số, nhà tư duy chiến lược, nhà thiết kế và nhà phát triển sáng tạo."
+    }
+  }
+}

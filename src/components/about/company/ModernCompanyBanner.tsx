@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 const ModernCompanyBanner: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -115,10 +118,10 @@ const ModernCompanyBanner: React.FC = () => {
   };
 
   const stats = [
-    { number: "5+", label: "Năm kinh nghiệm" },
-    { number: "100+", label: "Nhân sự" },
-    { number: "50+", label: "Dự án" },
-    { number: "10+", label: "Quốc gia" }
+    { number: t("stats.experience.number"), label: t("stats.experience.label") },
+    { number: t("stats.staff.number"), label: t("stats.staff.label") },
+    { number: t("stats.projects.number"), label: t("stats.projects.label") },
+    { number: t("stats.countries.number"), label: t("stats.countries.label") }
   ];
 
   return (
@@ -167,7 +170,7 @@ const ModernCompanyBanner: React.FC = () => {
             variants={titleVariants}
             className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 leading-tight"
           >
-            Thông tin
+            {t("about.company.banner.title.line1")}
           </motion.h1>
           <motion.span 
             variants={gradientTextVariants}
@@ -176,7 +179,7 @@ const ModernCompanyBanner: React.FC = () => {
               backgroundSize: "200% 100%"
             }}
           >
-            công ty
+            {t("about.company.banner.title.line2")}
           </motion.span>
         </motion.div>
 
@@ -186,9 +189,9 @@ const ModernCompanyBanner: React.FC = () => {
           transition={{ delay: 0.8 }}
           className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
         >
-          Khám phá câu chuyện đằng sau một trong những công ty công nghệ 
-          <span className="font-semibold text-white"> phát triển nhanh nhất </span>
-          với tầm nhìn trở thành đối tác công nghệ hàng đầu toàn cầu
+          {t("about.company.banner.description.line1")}
+          <span className="font-semibold text-white"> {t("about.company.banner.highlight")} </span>
+          {t("about.company.banner.description.line2")}
         </motion.p>
 
         {/* Stats */}
@@ -249,7 +252,7 @@ const ModernCompanyBanner: React.FC = () => {
             whileHover={{ gap: 4 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            Khám phá ngay
+            {t("about.company.banner.cta.exploreNow")}
             <motion.svg 
               className="w-5 h-5"
               animate={{ x: [0, 5, 0] }}

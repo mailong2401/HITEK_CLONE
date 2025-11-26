@@ -117,7 +117,7 @@ const timelineData = timelineItems.map((item, idx) => ({
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-3xl font-bold text-primary mb-6 font-heading"
             >
-              Từ Khởi Nghiệp Đến Toàn Cầu
+              {t("about.us.aboutHitek.mainTitle")}
             </motion.h3>
             
             <motion.p 
@@ -126,7 +126,7 @@ const timelineData = timelineItems.map((item, idx) => ({
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-foreground leading-relaxed text-lg mb-6 max-w-3xl"
             >
-              Hitek được thành lập từ năm 2018, một chặng đường đủ dài để chúng tôi có thể khẳng định vị thế của mình ở thị trường công nghệ hiện tại.
+              {t(`about.us.aboutHitek.introTexts.${0}`)}
             </motion.p>
             
             <motion.p 
@@ -135,7 +135,7 @@ const timelineData = timelineItems.map((item, idx) => ({
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-foreground leading-relaxed text-lg font-semibold max-w-3xl mb-8"
             >
-              Mục tiêu ở tương lai Hitek không chỉ là một công ty phát triển phần mềm tốt nhất tại Việt Nam, mà còn là một công ty phần mềm hàng đầu Thế giới!
+              {t(`about.us.aboutHitek.introTexts.${1}`)}
             </motion.p>
 
             <motion.div 
@@ -172,7 +172,7 @@ const timelineData = timelineItems.map((item, idx) => ({
                         transition={{ duration: 0.6, delay: 1.4 }}
                         className="font-bold text-primary text-lg"
                       >
-                        Since 2018
+                        {t("about.us.aboutHitek.sinceText")}
                       </motion.p>
                     </div>
                   </motion.div>
@@ -291,7 +291,7 @@ const timelineData = timelineItems.map((item, idx) => ({
               transition={{ duration: 0.6, delay: 1.8 }}
               className="text-2xl font-bold text-primary mb-4 font-heading"
             >
-              Sứ Mệnh Tiếp Theo
+              {t("about.us.aboutHitek.mission.title")}
             </motion.h3>
             <motion.p 
               initial={{ opacity: 0 }}
@@ -299,8 +299,7 @@ const timelineData = timelineItems.map((item, idx) => ({
               transition={{ duration: 0.6, delay: 2.0 }}
               className="text-lg text-foreground leading-relaxed"
             >
-              Tiếp tục mở rộng sang các thị trường mới, đẩy mạnh nghiên cứu AI và công nghệ tiên tiến, 
-              không ngừng nâng cao chất lượng dịch vụ để trở thành đối tác công nghệ đáng tin cậy trên toàn cầu.
+              {t("about.us.aboutHitek.mission.description")}
             </motion.p>
           </div>
         </motion.div>

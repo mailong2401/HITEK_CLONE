@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 // Animation variants
 const containerVariants = {
@@ -74,6 +76,8 @@ const gridItem = {
 };
 
 const CompanyInformation: React.FC = () => {
+  const { t } = useLanguage();
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -104,7 +108,7 @@ const CompanyInformation: React.FC = () => {
           className="relative flex-shrink-0 mr-8"
         >
           <div className="text-6xl font-bold text-primary pb-4 border-b-4 border-accent relative">
-            03
+            {t("about.company.info.sectionNumber")}
             <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/50 rounded-full"></div>
           </div>
         </motion.div>
@@ -119,14 +123,14 @@ const CompanyInformation: React.FC = () => {
             variants={itemVariants}
             className="mb-8"
           >
-            <h2 className="text-3xl font-bold text-primary mb-3 font-heading">THÔNG TIN CÔNG TY</h2>
+            <h2 className="text-3xl font-bold text-primary mb-3 font-heading">{t("about.company.info.title")}</h2>
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-muted-foreground bg-primary/5 inline-block px-4 py-2 rounded-lg"
             >
-              XEM HỒ SƠ CÔNG TY
+              {t("about.company.info.subtitle")}
             </motion.p>
           </motion.div>
 
@@ -151,7 +155,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.2 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>Tên công ty</span>
+                  <span>{t("about.company.info.companyInfo.companyName")}</span>
                 </div>
               </div>
               <motion.div 
@@ -170,7 +174,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.4 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>Thành lập</span>
+                  <span>{t("about.company.info.companyInfo.established")}</span>
                 </div>
               </div>
               <motion.div 
@@ -196,7 +200,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.6 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>Nhân sự</span>
+                  <span>{t("about.company.info.companyInfo.staff")}</span>
                 </div>
               </div>
               <motion.div 
@@ -222,7 +226,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.9 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>Vốn điều lệ</span>
+                  <span>{t("about.company.info.companyInfo.capital")}</span>
                 </div>
               </div>
               <motion.div 
@@ -255,7 +259,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 1.2 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>Lĩnh vực kinh doanh</span>
+                  <span>{t("about.company.info.companyInfo.businessField.label")}</span>
                 </div>
               </div>
               <motion.div 
@@ -270,7 +274,7 @@ const CompanyInformation: React.FC = () => {
                   transition={{ duration: 0.6, delay: 1.4 }}
                   className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-xl border border-border w-full"
                 >
-                  <p className="font-medium">Lập trình máy vi tính, Chi tiết: Sản xuất sản phẩm phần mềm</p>
+                  <p className="font-medium">{t("about.company.info.companyInfo.businessField.value")}</p>
                 </motion.div>
               </motion.div>
             </motion.div>

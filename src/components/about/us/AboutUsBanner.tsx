@@ -117,10 +117,10 @@ const AboutUsBanner: React.FC = () => {
   };
 
   const stats = [
-    { number: "5+", label: "Năm kinh nghiệm" },
-    { number: "100+", label: "Nhân sự" },
-    { number: "50+", label: "Dự án thành công" },
-    { number: "10+", label: "Quốc gia" }
+    { number: t("stats.experience.number"), label: t("stats.experience.label") },
+    { number: t("stats.staff.number"), label: t("stats.staff.label") },
+    { number: t("stats.projects.number"), label: t("stats.projects.label") },
+    { number: t("stats.countries.number"), label: t("stats.countries.label") }
   ];
 
   return (

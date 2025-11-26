@@ -1,29 +1,25 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import translations from '@/i18n/translations.json';
-
-type Language = 'vi' | 'en' | 'ja' | 'kr';
+import { translations, Language, TranslationKey } from '@/i18n';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: TranslationKey) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    // Load language from localStorage or default to 'vi'
     const saved = localStorage.getItem('language');
     return (saved as Language) || 'vi';
   });
 
   useEffect(() => {
-    // Save language to localStorage whenever it changes
     localStorage.setItem('language', language);
   }, [language]);
 
-  const t = (key: string): string => {
+  const t = (key: TranslationKey): string => {
     const keys = key.split('.');
     let value: any = translations[language];
     
@@ -31,7 +27,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (value && typeof value === 'object') {
         value = value[k];
       } else {
-        return key; // Return key if translation not found
+        // Trả về key nếu không tìm thấy bản dịch
+        // Có thể thêm fallback logic ở đây
+        return key;
       }
     }
     

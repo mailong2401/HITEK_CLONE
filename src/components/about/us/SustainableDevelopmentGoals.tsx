@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Book, Briefcase, Cpu, Target, Globe, Users } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 const SustainableDevelopmentGoals: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -69,35 +72,21 @@ const SustainableDevelopmentGoals: React.FC = () => {
     }
   };
 
-  const goalsData = [
-    {
-      number: "1",
-      icon: Book,
-      title: "Giáo dục có chất lượng",
-      description: "Đảm bảo giáo dục chất lượng, rộng mở và công bằng và nâng cao cơ hội học tập suốt đời cho tất cả mọi người.",
-      hitekAction: "Hitek Software thường xuyên tổ chức các buổi training cho nhân viên về kiến thức lập trình, cùng những kỹ năng mềm cần thiết cho mọi người trong quá trình làm việc.",
-      color: "from-red-500 to-pink-500",
-      bgColor: "bg-red-50 dark:bg-red-900/20"
-    },
-    {
-      number: "2",
-      icon: Briefcase,
-      title: "Công việc tốt và tăng trưởng kinh tế",
-      description: "Để đạt được hiệu suất kinh tế ở một mức độ cao nhất định, luôn cải tiến và đổi mới công nghệ, bao gồm cả việc tập trung vào các khu vực giá trị gia tăng cao và cần nhiều lao động.",
-      hitekAction: "Thúc đẩy các chính sách định hướng phát triển để hỗ trợ các hoạt động sản xuất, tạo việc làm tốt, kinh doanh, sáng tạo và đổi mới.",
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-green-50 dark:bg-green-900/20"
-    },
-    {
-      number: "3",
-      icon: Cpu,
-      title: "Công nghiệp, sáng tạo và phát triển hạ tầng",
-      description: "Tạo ra các công nghệ mới, chú trọng phát triển các ý tưởng sáng tạo nhất của nhân viên.",
-      hitekAction: "Luôn tạo điều kiện để nhân viên có thể làm việc trong một môi trường đầy đủ cơ sở vật chất hạ tầng chất lượng nhất.",
-      color: "from-orange-500 to-amber-500",
-      bgColor: "bg-orange-50 dark:bg-orange-900/20"
-    }
-  ];
+  const goalsItems = [
+  { icon: Book, color: "from-red-500 to-pink-500", bgColor: "bg-red-50 dark:bg-red-900/20" },
+  { icon: Briefcase, color: "from-green-500 to-emerald-500", bgColor: "bg-green-50 dark:bg-green-900/20" },
+  { icon: Cpu, color: "from-orange-500 to-amber-500", bgColor: "bg-orange-50 dark:bg-orange-900/20" }
+];
+
+const goalsData = goalsItems.map((item, idx) => ({
+  number: (idx + 1).toString(),
+  icon: item.icon,
+  title: t(`about.us.sdg.goals.${idx}.title`),
+  description: t(`about.us.sdg.goals.${idx}.description`),
+  hitekAction: t(`about.us.sdg.goals.${idx}.hitekAction`),
+  color: item.color,
+  bgColor: item.bgColor
+}));
 
   return (
     <motion.section 
@@ -161,21 +150,21 @@ const SustainableDevelopmentGoals: React.FC = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            Mục tiêu phát triển bền vững
+            {t("about.us.sdg.header.title")}
           </motion.h2>
           
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8"
           >
-            Hitek Software đã và đang thiết lập mạng lưới hoạt động trên toàn thế giới, do đó chúng tôi luôn chú trọng chất lượng làm việc ở từng bước, từng giai đoạn.
+            {t(`about.us.sdg.header.paragraphs.${0}`)}
           </motion.p>
 
           <motion.p 
             variants={itemVariants}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed"
           >
-            Ban lãnh đạo của Hitek cũng rất quan tâm đến đời sống của nhân viên, vì thế chúng tôi hướng đến những mục tiêu phù hợp trong <span className="font-semibold text-blue-600 dark:text-blue-400">17 Mục tiêu phát triển bền vững (Sustainable Development Goals)</span>.
+            {t(`about.us.sdg.header.paragraphs.${1}`)}
           </motion.p>
         </motion.div>
 
@@ -188,13 +177,13 @@ const SustainableDevelopmentGoals: React.FC = () => {
             variants={itemVariants}
             className="text-2xl md:text-3xl font-bold mb-4"
           >
-            Tầm nhìn của chúng tôi
+            {t("about.us.sdg.vision.title")}
           </motion.h3>
           <motion.p 
             variants={itemVariants}
             className="text-lg md:text-xl leading-relaxed"
           >
-            Hitek Software tin rằng sẽ giúp nâng cao chất lượng cuộc sống, và chúng tôi sẽ tiếp tục cố gắng để thực hiện hoá một xã hội hiện đại mới, thông minh hơn, hạnh phúc hơn.
+            {t("about.us.sdg.vision.description")}
           </motion.p>
         </motion.div>
 
@@ -312,15 +301,14 @@ const SustainableDevelopmentGoals: React.FC = () => {
             variants={itemVariants}
             className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            Tác động toàn cầu
+            {t("about.us.sdg.globalImpact.title")}
           </motion.h3>
           
           <motion.p 
             variants={itemVariants}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Thông qua việc thực hiện các mục tiêu phát triển bền vững, Hitek Software không chỉ đóng góp cho cộng đồng địa phương 
-            mà còn tạo ra tác động tích cực trên quy mô toàn cầu.
+            {t("about.us.sdg.globalImpact.description")}
           </motion.p>
         </motion.div>
       </div>
