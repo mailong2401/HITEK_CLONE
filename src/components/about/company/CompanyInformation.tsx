@@ -226,7 +226,7 @@ const CompanyInformation: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.9 }}
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
-                  <span>{t("about.company.info.companyInfo.capital")}</span>
+                  <span>{t("about.company.info.companyInfo.capital.label")}</span>
                 </div>
               </div>
               <motion.div 
@@ -241,7 +241,7 @@ const CompanyInformation: React.FC = () => {
                   transition={{ type: "spring", stiffness: 200, delay: 1.1 }}
                   className="bg-primary/10 text-primary px-3 py-1 rounded-full font-bold text-lg"
                 >
-                  17.4 tỷ
+                  {t("about.company.info.companyInfo.capital.value")}
                 </motion.span>
               </motion.div>
             </motion.div>
@@ -320,7 +320,7 @@ const CompanyInformation: React.FC = () => {
                 transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
                 className="w-1 h-8 bg-accent rounded-full mr-4"
               ></motion.div>
-              <h3 className="text-2xl font-bold text-primary font-heading">Ban Lãnh Đạo</h3>
+              <h3 className="text-2xl font-bold text-primary font-heading">{t("about.company.info.leadership.title")}</h3>
             </motion.div>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -335,12 +335,12 @@ const CompanyInformation: React.FC = () => {
                     className="flex-shrink-0"
                   >
                     <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">SB</span>
+                      <span className="text-white font-bold text-lg">{t(`about.company.info.leadership.members.${0}.initials`)}</span>
                     </div>
                   </motion.div>
                   <div className="flex-1">
-                    <p className="font-semibold text-primary text-lg">Giám đốc Kinh doanh</p>
-                    <p className="text-foreground mt-1">Ông QN Sean Beom</p>
+                    <p className="font-semibold text-primary text-lg">{t(`about.company.info.leadership.members.${0}.position`)}</p>
+                    <p className="text-foreground mt-1">{t(`about.company.info.leadership.members.${0}.name`)}</p>
                     <motion.div 
                       initial={{ opacity: 0, y: 10 }}
                       animate={leadersInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -348,7 +348,7 @@ const CompanyInformation: React.FC = () => {
                       className="flex items-center mt-2"
                     >
                       <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
-                        Người Hàn Quốc
+                        {t(`about.company.info.leadership.members.${0}.nationality`)}
                       </span>
                     </motion.div>
                   </div>
@@ -366,12 +366,12 @@ const CompanyInformation: React.FC = () => {
                     className="flex-shrink-0"
                   >
                     <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">TK</span>
+                      <span className="text-white font-bold text-lg">{t(`about.company.info.leadership.members.${1}.initials`)}</span>
                     </div>
                   </motion.div>
                   <div className="flex-1">
-                    <p className="font-semibold text-primary text-lg">Giám đốc Điều hành</p>
-                    <p className="text-foreground mt-1">Ông Trần Anh Khôi</p>
+                    <p className="font-semibold text-primary text-lg">{t(`about.company.info.leadership.members.${1}.position`)}</p>
+                    <p className="text-foreground mt-1">{t(`about.company.info.leadership.members.${1}.name`)}</p>
                     <motion.div 
                       initial={{ opacity: 0, y: 10 }}
                       animate={leadersInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -379,7 +379,7 @@ const CompanyInformation: React.FC = () => {
                       className="flex items-center mt-2"
                     >
                       <span className="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full">
-                        Người sáng lập
+                        {t(`about.company.info.leadership.members.${1}.role`)}
                       </span>
                     </motion.div>
                   </div>
@@ -409,7 +409,7 @@ const CompanyInformation: React.FC = () => {
                     className="w-2 h-2 bg-accent rounded-full"
                   ></motion.div>
                 ))}
-                <span className="text-sm text-muted-foreground">Đội ngũ lãnh đạo tận tâm</span>
+                <span className="text-sm text-muted-foreground">{t(`about.company.info.leadership.footerText`)}</span>
                 {[...Array(3)].map((_, i) => (
                   <motion.div 
                     key={i}

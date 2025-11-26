@@ -2,50 +2,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AchievementsTimeline: React.FC = () => {
-  const achievements = [
-    {
-      year: "2021",
-      title: "Top 20 công ty khởi nghiệp nổi bật tại Việt Nam",
-      type: "giải thưởng"
-    },
-    {
-      year: "2022",
-      title: "Đạt chứng chỉ ISO 9001:2015",
-      type: "chứng nhận"
-    },
-    {
-      year: "2022",
-      title: "Hội viên Hiệp hội Tin học TP.HCM - HCA",
-      type: "thành viên"
-    },
-    {
-      year: "2022",
-      title: "Hội viên Hiệp hội Phần mềm VINASA",
-      type: "thành viên"
-    },
-    {
-      year: "2022", 
-      title: "Đạt chứng chỉ ISTQB",
-      type: "chứng nhận"
-    },
-    {
-      year: "2023",
-      title: "Đạt chứng chỉ AWS Certification",
-      type: "chứng nhận"
-    },
-    {
-      year: "2023",
-      title: "Đạt chứng chỉ PMP",
-      type: "chứng nhận"
-    },
-    {
-      year: "2023",
-      title: "Đạt chứng chỉ ISO 27001:2022",
-      type: "chứng nhận"
-    }
-  ];
+  const { t } = useLanguage();
+  
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  const [timelineRef, timelineInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.05
+  });
+
+  const [statsRef, statsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
 
   // Animation variants
   const containerVariants = {
@@ -120,37 +95,34 @@ const AchievementsTimeline: React.FC = () => {
   };
 
   const getTypeColor = (type: string) => {
+    // Sử dụng giá trị type từ translation để xác định màu sắc
     switch (type) {
-      case "giải thưởng": return "from-yellow-500 to-orange-500";
-      case "chứng nhận": return "from-blue-500 to-cyan-500";
-      case "thành viên": return "from-green-500 to-emerald-500";
-      default: return "from-gray-500 to-gray-600";
+      case "giải thưởng":
+      case "award": 
+        return "from-yellow-500 to-orange-500";
+      case "chứng nhận":
+      case "certification": 
+        return "from-blue-500 to-cyan-500";
+      case "thành viên":
+      case "membership": 
+        return "from-green-500 to-emerald-500";
+      default: 
+        return "from-gray-500 to-gray-600";
     }
   };
 
-  const getTypeText = (type: string) => {
-    switch (type) {
-      case "giải thưởng": return "Giải thưởng";
-      case "chứng nhận": return "Chứng nhận";
-      case "thành viên": return "Thành viên";
-      default: return type;
-    }
-  };
+  // Lấy dữ liệu từ translation
+  const achievements = Array.from({ length: 8 }, (_, index) => ({
+    year: t(`about.company.achievementsTimeline.achievements.${index}.year`),
+    title: t(`about.company.achievementsTimeline.achievements.${index}.title`),
+    type: t(`about.company.achievementsTimeline.achievements.${index}.type`)
+  }));
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const [timelineRef, timelineInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.05
-  });
-
-  const [statsRef, statsInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const stats = Array.from({ length: 4 }, (_, index) => ({
+    number: t(`about.company.achievementsTimeline.stats.${index}.number`),
+    text: t(`about.company.achievementsTimeline.stats.${index}.text`),
+    color: index % 2 === 0 ? "text-primary" : "text-accent"
+  }));
 
   return (
     <motion.div 
@@ -167,7 +139,7 @@ const AchievementsTimeline: React.FC = () => {
           className="relative flex-shrink-0 mr-8"
         >
           <div className="text-6xl font-bold text-primary pb-4 border-b-4 border-accent relative">
-            04
+            {t("about.company.achievementsTimeline.sectionNumber")}
             <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/50 rounded-full"></div>
           </div>
         </motion.div>
@@ -182,14 +154,16 @@ const AchievementsTimeline: React.FC = () => {
             variants={itemVariants}
             className="mb-12"
           >
-            <h2 className="text-3xl font-bold text-primary mb-4 font-heading">THÀNH TỰU VÀ GIẢI THƯỞNG</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4 font-heading">
+              {t("about.company.achievementsTimeline.title")}
+            </h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-muted-foreground"
             >
-              Hành trình phát triển và những cột mốc quan trọng
+              {t("about.company.achievementsTimeline.subtitle")}
             </motion.p>
           </motion.div>
 
@@ -262,7 +236,7 @@ const AchievementsTimeline: React.FC = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
                         className={`px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${getTypeColor(achievement.type)}`}
                       >
-                        {getTypeText(achievement.type)}
+                        {achievement.type}
                       </motion.span>
                     </div>
                     <motion.h3 
@@ -287,12 +261,7 @@ const AchievementsTimeline: React.FC = () => {
             variants={containerVariants}
             className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
-            {[
-              { number: "7+", text: "Năm hoạt động", color: "text-primary" },
-              { number: "8+", text: "Giải thưởng & Chứng nhận", color: "text-accent" },
-              { number: "2", text: "Hiệp hội thành viên", color: "text-primary" },
-              { number: "100%", text: "Chất lượng đạt chuẩn", color: "text-accent" }
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <motion.div 
                 key={index}
                 variants={statsVariants}
@@ -355,7 +324,7 @@ const AchievementsTimeline: React.FC = () => {
                 transition={{ duration: 0.5, delay: 2.0 }}
                 className="text-sm text-muted-foreground mx-2"
               >
-                Tiếp tục phát triển và đạt được nhiều thành tựu hơn nữa
+                {t("about.company.achievementsTimeline.footerText")}
               </motion.span>
               {[...Array(5)].map((_, i) => (
                 <motion.div 
