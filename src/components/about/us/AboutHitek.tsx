@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, Users, Globe, Target, Rocket, Star } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+
+
+
 
 // Animation variants
 const containerVariants = {
@@ -59,6 +63,7 @@ const timelineItemVariants = {
 };
 
 const AboutHitek: React.FC = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -69,44 +74,22 @@ const AboutHitek: React.FC = () => {
     threshold: 0.1
   });
 
-  const timelineData = [
-    {
-      year: "2018",
-      icon: Users,
-      title: "Thành lập Hitek",
-      description: "Hitek được thành lập chỉ với 5 kỹ sư phần mềm, làm việc tự do, tập trung vào phát triển web và ứng dụng di động cho thị trường Việt Nam.",
-      stats: "5 kỹ sư",
-      color: "from-blue-500 to-cyan-500",
-      badgeColor: "bg-blue-500"
-    },
-    {
-      year: "2019",
-      icon: Globe,
-      title: "Bước ra thế giới",
-      description: "Lần đầu nhận được hợp đồng gia công phần mềm cho thị trường Hàn Quốc, Hitek đã thay đổi chiến lược kinh doanh mở rộng sang thị trường nước ngoài.",
-      stats: "Thị trường Hàn Quốc",
-      color: "from-green-500 to-emerald-500",
-      badgeColor: "bg-green-500"
-    },
-    {
-      year: "2020 - 2021",
-      icon: Target,
-      title: "Chuyên sâu Hàn Quốc",
-      description: "Chúng tôi tiếp tục phát triển công nghệ tại Hàn Quốc. Gần 90% các dự án đến từ thị trường này.",
-      stats: "90% dự án từ Hàn Quốc",
-      color: "from-purple-500 to-pink-500",
-      badgeColor: "bg-purple-500"
-    },
-    {
-      year: "2022 - Nay",
-      icon: Rocket,
-      title: "Toàn cầu hóa",
-      description: "Hitek cung cấp các dịch vụ gia công phần mềm và cung cấp phần mềm cho các khách hàng đến từ Mỹ, Canada, Đức, Hàn, Úc, Nhật.",
-      stats: "6+ quốc gia",
-      color: "from-orange-500 to-red-500",
-      badgeColor: "bg-orange-500"
-    }
-  ];
+  const timelineItems = [
+  { icon: Users, color: "from-blue-500 to-cyan-500", badgeColor: "bg-blue-500" },
+  { icon: Globe, color: "from-green-500 to-emerald-500", badgeColor: "bg-green-500" },
+  { icon: Target, color: "from-purple-500 to-pink-500", badgeColor: "bg-purple-500" },
+  { icon: Rocket, color: "from-orange-500 to-red-500", badgeColor: "bg-orange-500" }
+];
+
+const timelineData = timelineItems.map((item, idx) => ({
+  year: t(`about.us.aboutHitek.timeline.items.${idx}.year`),
+  icon: item.icon,
+  title: t(`about.us.aboutHitek.timeline.items.${idx}.title`),
+  description: t(`about.us.aboutHitek.timeline.items.${idx}.description`),
+  stats: t(`about.us.aboutHitek.timeline.items.${idx}.stats`),
+  color: item.color,
+  badgeColor: item.badgeColor
+}));
 
   return (
     <motion.div 

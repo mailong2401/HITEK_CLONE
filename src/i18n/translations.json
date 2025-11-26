@@ -11,94 +11,123 @@
       "learnMore": "Tìm hiểu thêm",
       "viewMore": "Xem thêm"
     },
-    "home" : 
-{
-  "aiSection": {
-    "title": "Giải Pháp Phát Triển Phần Mềm",
-    "subtitle": "Thông Minh với AI",
-    "description": "HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, mang lại hiệu quả vượt trội về chất lượng và tốc độ",
-    "banner": {
-      "heading": "Công Nghệ AI Hàng Đầu Được Tích Hợp",
-      "note": "Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển",
-      "tools": [
-        "ChatGPT",
-        "GitHub Copilot",
-        "Testim",
-        "Harness",
-        "Moogsoft"
-      ]
-    },
-    "steps": [
-      {
-        "step": "01",
-        "title": "Phân tích yêu cầu",
-        "description": "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
-        "features": [
-          "Phân tích yêu cầu, tư vấn giải pháp",
-          "Tự động viết tài liệu ban đầu",
-          "Chuyển lời nói → văn bản thông minh"
-        ],
-        "tools": ["ChatGPT / GPT", "Bard / Gemini", "Avscribe"]
-      },
-      {
-        "step": "02",
-        "title": "Thiết kế hệ thống",
-        "description": "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
-        "features": [
-          "Tạo sơ đồ kiến trúc thông minh",
-          "Mô tả API, ERD tự động",
-          "Thiết kế mô hình nâng cao"
-        ],
-        "tools": ["Bard / Gemini", "ChatGPT", "Draw.io", "Figma", "Visio"]
-      },
-      {
-        "step": "03",
-        "title": "Lập trình",
-        "description": "Viết code các module theo thiết kế với sự hỗ trợ của AI",
-        "features": [
-          "Tự động gợi ý code thông minh",
-          "AI review và refactor code",
-          "Hỗ trợ tìm kiếm code nhanh"
-        ],
-        "tools": ["GitHub Copilot", "Cursor", "Tabnine", "Sourcegraph"]
-      },
-      {
-        "step": "04",
-        "title": "Kiểm thử phần mềm",
-        "description": "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
-        "features": [
-          "Kiểm thử tự động bằng AI",
-          "Tạo test case tự động",
-          "Testing đa nền tảng thông minh"
-        ],
-        "tools": ["Testim", "Sapienz", "Selenium", "BrowserStack", "ChatGPT"]
-      },
-      {
-        "step": "05",
-        "title": "Triển khai",
-        "description": "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
-        "features": [
-          "CI/CD với AI tối ưu",
-          "Deploy đa nền tảng",
-          "GitOps cho Kubernetes"
-        ],
-        "tools": ["Harness", "Spinnaker", "ArgoCD", "AWS CodePipeline"]
-      },
-      {
-        "step": "06",
-        "title": "Bảo trì & Vận hành",
-        "description": "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
-        "features": [
-          "Phát hiện sự cố tự động",
-          "Phân tích log thông minh",
-          "Giám sát hiệu năng bằng AI"
-        ],
-        "tools": ["Moogsoft", "Splunk", "Dynatrace", "Chatbot AI"]
+    "home": {
+      "aiSection": {
+        "title": "Giải Pháp Phát Triển Phần Mềm",
+        "subtitle": "Thông Minh với AI",
+        "description": "HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, mang lại hiệu quả vượt trội về chất lượng và tốc độ",
+        "banner": {
+          "heading": "Công Nghệ AI Hàng Đầu Được Tích Hợp",
+          "note": "Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển",
+          "tools": [
+            "ChatGPT",
+            "GitHub Copilot",
+            "Testim",
+            "Harness",
+            "Moogsoft"
+          ]
+        },
+        "steps": [
+          {
+            "step": "01",
+            "title": "Phân tích yêu cầu",
+            "description": "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
+            "features": [
+              "Phân tích yêu cầu, tư vấn giải pháp",
+              "Tự động viết tài liệu ban đầu",
+              "Chuyển lời nói → văn bản thông minh"
+            ],
+            "tools": [
+              "ChatGPT / GPT",
+              "Bard / Gemini",
+              "Avscribe"
+            ]
+          },
+          {
+            "step": "02",
+            "title": "Thiết kế hệ thống",
+            "description": "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
+            "features": [
+              "Tạo sơ đồ kiến trúc thông minh",
+              "Mô tả API, ERD tự động",
+              "Thiết kế mô hình nâng cao"
+            ],
+            "tools": [
+              "Bard / Gemini",
+              "ChatGPT",
+              "Draw.io",
+              "Figma",
+              "Visio"
+            ]
+          },
+          {
+            "step": "03",
+            "title": "Lập trình",
+            "description": "Viết code các module theo thiết kế với sự hỗ trợ của AI",
+            "features": [
+              "Tự động gợi ý code thông minh",
+              "AI review và refactor code",
+              "Hỗ trợ tìm kiếm code nhanh"
+            ],
+            "tools": [
+              "GitHub Copilot",
+              "Cursor",
+              "Tabnine",
+              "Sourcegraph"
+            ]
+          },
+          {
+            "step": "04",
+            "title": "Kiểm thử phần mềm",
+            "description": "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
+            "features": [
+              "Kiểm thử tự động bằng AI",
+              "Tạo test case tự động",
+              "Testing đa nền tảng thông minh"
+            ],
+            "tools": [
+              "Testim",
+              "Sapienz",
+              "Selenium",
+              "BrowserStack",
+              "ChatGPT"
+            ]
+          },
+          {
+            "step": "05",
+            "title": "Triển khai",
+            "description": "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
+            "features": [
+              "CI/CD với AI tối ưu",
+              "Deploy đa nền tảng",
+              "GitOps cho Kubernetes"
+            ],
+            "tools": [
+              "Harness",
+              "Spinnaker",
+              "ArgoCD",
+              "AWS CodePipeline"
+            ]
+          },
+          {
+            "step": "06",
+            "title": "Bảo trì & Vận hành",
+            "description": "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
+            "features": [
+              "Phát hiện sự cố tự động",
+              "Phân tích log thông minh",
+              "Giám sát hiệu năng bằng AI"
+            ],
+            "tools": [
+              "Moogsoft",
+              "Splunk",
+              "Dynatrace",
+              "Chatbot AI"
+            ]
+          }
+        ]
       }
-    ]
-  }
-}
-,
+    },
     "about": {
       "company": {
         "title": "Thông tin công ty",
@@ -132,6 +161,46 @@
             }
           },
           "cta": "Khám phá hành trình"
+        },
+        "aboutHitek": {
+          "mainTitle": "Từ Khởi Nghiệp Đến Toàn Cầu",
+          "introTexts": [
+            "Hitek được thành lập từ năm 2018, một chặng đường đủ dài để chúng tôi có thể khẳng định vị thế của mình ở thị trường công nghệ hiện tại.",
+            "Mục tiêu ở tương lai Hitek không chỉ là một công ty phát triển phần mềm tốt nhất tại Việt Nam, mà còn là một công ty phần mềm hàng đầu Thế giới!"
+          ],
+          "sinceText": "Since 2018",
+          "timeline": {
+            "items": [
+              {
+                "year": "2018",
+                "title": "Thành lập Hitek",
+                "description": "Hitek được thành lập chỉ với 5 kỹ sư phần mềm, làm việc tự do, tập trung vào phát triển web và ứng dụng di động cho thị trường Việt Nam.",
+                "stats": "5 kỹ sư"
+              },
+              {
+                "year": "2019",
+                "title": "Bước ra thế giới",
+                "description": "Lần đầu nhận được hợp đồng gia công phần mềm cho thị trường Hàn Quốc, Hitek đã thay đổi chiến lược kinh doanh mở rộng sang thị trường nước ngoài.",
+                "stats": "Thị trường Hàn Quốc"
+              },
+              {
+                "year": "2020 - 2021",
+                "title": "Chuyên sâu Hàn Quốc",
+                "description": "Chúng tôi tiếp tục phát triển công nghệ tại Hàn Quốc. Gần 90% các dự án đến từ thị trường này.",
+                "stats": "90% dự án từ Hàn Quốc"
+              },
+              {
+                "year": "2022 - Nay",
+                "title": "Toàn cầu hóa",
+                "description": "Hitek cung cấp các dịch vụ gia công phần mềm và cung cấp phần mềm cho các khách hàng đến từ Mỹ, Canada, Đức, Hàn, Úc, Nhật.",
+                "stats": "6+ quốc gia"
+              }
+            ]
+          },
+          "mission": {
+            "title": "Sứ Mệnh Tiếp Theo",
+            "description": "Tiếp tục mở rộng sang các thị trường mới, đẩy mạnh nghiên cứu AI và công nghệ tiên tiến, không ngừng nâng cao chất lượng dịch vụ để trở thành đối tác công nghệ đáng tin cậy trên toàn cầu."
+          }
         }
       }
     },
