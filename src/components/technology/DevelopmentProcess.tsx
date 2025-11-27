@@ -1,39 +1,42 @@
 // components/technology/DevelopmentProcess.tsx
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const process = [
-  {
-    step: "01",
-    title: "Phân tích & Lập kế hoạch",
-    description: "Phân tích yêu cầu và lập kế hoạch chi tiết với công nghệ phù hợp"
-  },
-  {
-    step: "02",
-    title: "Thiết kế & Prototype",
-    description: "Thiết kế UI/UX và tạo prototype để xác nhận concept"
-  },
-  {
-    step: "03",
-    title: "Phát triển & Tích hợp",
-    description: "Phát triển ứng dụng với công nghệ hiện đại và tích hợp hệ thống"
-  },
-  {
-    step: "04",
-    title: "Kiểm thử & Triển khai",
-    description: "Kiểm thử toàn diện và triển khai sản phẩm cuối cùng"
-  }
-];
+
 
 const DevelopmentProcess = () => {
+  const { t } = useLanguage();
+  const process = [
+  {
+    step: t(`technology.developmentProcess.steps.${0}.step`),
+    title: t(`technology.developmentProcess.steps.${0}.title`),
+    description: t(`technology.developmentProcess.steps.${0}.description`)
+  },
+  {
+    step: t(`technology.developmentProcess.steps.${1}.step`),
+    title: t(`technology.developmentProcess.steps.${1}.title`),
+    description: t(`technology.developmentProcess.steps.${1}.description`)
+  },
+  {
+    step: t(`technology.developmentProcess.steps.${2}.step`),
+    title: t(`technology.developmentProcess.steps.${2}.title`),
+    description: t(`technology.developmentProcess.steps.${2}.description`)
+  },
+  {
+    step: t(`technology.developmentProcess.steps.${3}.step`),
+    title: t(`technology.developmentProcess.steps.${3}.title`),
+    description: t(`technology.developmentProcess.steps.${3}.description`)
+  }
+];
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Quy Trình Phát Triển
+            {t("technology.developmentProcess.title")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Quy trình làm việc chuyên nghiệp đảm bảo chất lượng và tiến độ dự án
+            {t("technology.developmentProcess.subtitle")}
           </p>
         </div>
 

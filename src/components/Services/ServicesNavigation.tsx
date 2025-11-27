@@ -15,21 +15,6 @@ const ServicesNavigation = ({
   activeService, 
   setActiveService 
 }: ServicesNavigationProps) => {
-  const getIcon = (iconName: string) => {
-    const icons: any = {
-      Code2: '💻',
-      BarChart3: '📊',
-      Globe: '🌐',
-      Cloud: '☁️',
-      Smartphone: '📱',
-      CheckCircle: '✅',
-      Users: '👥',
-      Building: '🏢',
-      TrendingUp: '📈',
-      Shield: '🛡️'
-    };
-    return icons[iconName] || '⚡';
-  };
 
   return (
     <section className="py-12 bg-background border-b border-border">
@@ -45,7 +30,6 @@ const ServicesNavigation = ({
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
-              <span>{getIcon(service.iconName)}</span>
               <span className="font-medium">{service.title}</span>
             </button>
           ))}

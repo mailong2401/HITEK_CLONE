@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Service {
   id: string;
@@ -16,6 +17,7 @@ interface AllServicesGridProps {
 }
 
 const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) => {
+  const { t } = useLanguage();
   const [containerRef, containerInView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -109,11 +111,10 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Tất Cả Dịch Vụ
+            {t("services.allServicesGrid.title")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Khám phá toàn bộ dịch vụ công nghệ đa dạng mà HITEK cung cấp, 
-            mang đến giải pháp tối ưu cho doanh nghiệp của bạn
+            {t("services.allServicesGrid.description")}
           </p>
         </motion.div>
 
@@ -198,7 +199,7 @@ const AllServicesGrid = ({ services, setActiveService }: AllServicesGridProps) =
           className="text-center mt-12"
         >
           <p className="text-muted-foreground/60 text-sm font-medium">
-            👆 Click vào từng dịch vụ để khám phá chi tiết
+            {t("services.allServicesGrid.hintClick")}
           </p>
         </motion.div>
       </div>

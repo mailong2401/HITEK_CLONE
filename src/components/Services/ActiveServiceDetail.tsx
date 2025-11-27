@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Phone, ArrowRight, CheckCircle2, Star, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 interface Service {
   title: string;
@@ -20,7 +22,9 @@ interface ActiveServiceDetailProps {
 }
 
 const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>(
+
   function ActiveServiceDetail({ services, activeService }, ref) {
+  const { t } = useLanguage();
     const [contentRef, contentInView] = useInView({
       threshold: 0.2,
       triggerOnce: true,
@@ -177,7 +181,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                     className="pt-4"
                   >
                     <h4 className="text-lg font-semibold text-foreground mb-3">
-                      Công nghệ sử dụng
+                      {t("services.activeServiceDetail.technologiesTitle")}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech, idx) => (
@@ -206,14 +210,14 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                     className="group bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Phone className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                    <span className="font-semibold">Liên hệ ngay</span>
+                    <span className="font-semibold">{t("services.activeServiceDetail.contactNow")}</span>
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline"
                     className="group border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
                   >
-                    <span className="font-semibold">Xem case study</span>
+                    <span className="font-semibold">{t("services.activeServiceDetail.viewCaseStudy")}</span>
                     <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
@@ -264,10 +268,10 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                       >
                         <div className="flex items-center gap-2 text-primary mb-2">
                           <Star className="w-4 h-4 fill-current" />
-                          <span className="font-semibold text-sm">Giải pháp hàng đầu</span>
+                          <span className="font-semibold text-sm">{t("services.activeServiceDetail.topSolutionLabel")}</span>
                         </div>
                         <p className="text-foreground text-sm">
-                          Thiết kế tối ưu cho hiệu suất và trải nghiệm người dùng
+                          {t("services.activeServiceDetail.topSolutionDescription")}
                         </p>
                       </motion.div>
                     </div>
@@ -302,7 +306,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                   >
                     <Rocket className="w-8 h-8 text-primary" />
                   </motion.div>
-                  Tính Năng Nổi Bật
+                  {t("services.activeServiceDetail.featuresTitle")}
                   <motion.div
                     animate={{ rotate: [0, -10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -311,7 +315,7 @@ const ActiveServiceDetail = forwardRef<HTMLDivElement, ActiveServiceDetailProps>
                   </motion.div>
                 </motion.h3>
                 <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Khám phá những tính năng đặc biệt giúp giải pháp của chúng tôi trở nên khác biệt
+                  {t("services.activeServiceDetail.featuresSubtitle")}
                 </p>
               </motion.div>
 

@@ -2,33 +2,40 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const technologies = {
+
+
+
+const TechnologyTabs = () => {
+  const { t } = useLanguage();
+
+  const technologies = {
   frontend: {
     title: "Front-end Development",
-    description: "Công nghệ hiện đại cho trải nghiệm người dùng tuyệt vời",
+    description: t("technology.technologyTabs.tabs.frontend.description"),
     items: [
       {
         name: "ReactJS",
-        description: "Thư viện JavaScript cho xây dựng giao diện người dùng",
+        description: t(`technology.technologyTabs.tabs.frontend.items.${0}.description`),
         icon: "⚛️",
         features: ["Component-based", "Virtual DOM", "Reusable Components"]
       },
       {
         name: "Angular",
-        description: "Framework hoàn chỉnh cho ứng dụng web động",
+        description: t(`technology.technologyTabs.tabs.frontend.items.${1}.description`),
         icon: "🅰️",
         features: ["Two-way Data Binding", "Dependency Injection", "Modular Architecture"]
       },
       {
         name: "Vue.js",
-        description: "Framework progressive cho xây dựng UI",
+        description: t(`technology.technologyTabs.tabs.frontend.items.${2}.description`),
         icon: "📊",
         features: ["Reactive Data Binding", "Component System", "Vue Router"]
       },
       {
         name: "TypeScript",
-        description: "JavaScript với type system mạnh mẽ",
+        description: t(`technology.technologyTabs.tabs.frontend.items.${3}.description`),
         icon: "🔷",
         features: ["Static Typing", "Better IntelliSense", "Enhanced Refactoring"]
       }
@@ -36,29 +43,29 @@ const technologies = {
   },
   backend: {
     title: "Back-end Development",
-    description: "Công nghệ server-side mạnh mẽ và bảo mật",
+    description: t(`technology.technologyTabs.tabs.backend.description`),
     items: [
       {
         name: "Node.js",
-        description: "JavaScript runtime cho server-side development",
+        description: t(`technology.technologyTabs.tabs.backend.items.${0}.description`),
         icon: "🟢",
         features: ["Non-blocking I/O", "Event-driven", "NPM Ecosystem"]
       },
       {
         name: ".NET Core",
-        description: "Framework đa nền tảng từ Microsoft",
+        description: t(`technology.technologyTabs.tabs.backend.items.${1}.description`),
         icon: "🔷",
         features: ["Cross-platform", "High Performance", "Enterprise Ready"]
       },
       {
         name: "Java Spring",
-        description: "Framework enterprise Java phổ biến",
+        description: t(`technology.technologyTabs.tabs.backend.items.${2}.description`),
         icon: "☕",
         features: ["Dependency Injection", "AOP", "Spring Boot"]
       },
       {
         name: "Python Django",
-        description: "Framework web Python cấp cao",
+        description: t(`technology.technologyTabs.tabs.backend.items.${3}.description`),
         icon: "🐍",
         features: ["Rapid Development", "Secure", "Scalable"]
       }
@@ -66,29 +73,29 @@ const technologies = {
   },
   mobile: {
     title: "Mobile Development",
-    description: "Phát triển ứng dụng di động đa nền tảng",
+        description: t(`technology.technologyTabs.tabs.mobile.description`),
     items: [
       {
         name: "React Native",
-        description: "Xây dựng ứng dụng mobile với React",
+        description: t(`technology.technologyTabs.tabs.mobile.items.${0}.description`),
         icon: "📱",
         features: ["Cross-platform", "Native Performance", "Hot Reload"]
       },
       {
         name: "Flutter",
-        description: "SDK của Google cho ứng dụng native",
+        description: t(`technology.technologyTabs.tabs.mobile.items.${1}.description`),
         icon: "🎯",
         features: ["Single Codebase", "Fast Development", "Beautiful UI"]
       },
       {
         name: "iOS Swift",
-        description: "Phát triển ứng dụng iOS native",
+        description: t(`technology.technologyTabs.tabs.mobile.items.${2}.description`),
         icon: "🍎",
         features: ["Performance", "Safety", "Modern Syntax"]
       },
       {
         name: "Android Kotlin",
-        description: "Ngôn ngữ chính thức cho Android development",
+        description: t(`technology.technologyTabs.tabs.mobile.items.${3}.description`),
         icon: "🤖",
         features: ["Concise", "Safe", "Interoperable"]
       }
@@ -96,29 +103,29 @@ const technologies = {
   },
   database: {
     title: "Database & Cloud",
-    description: "Công nghệ lưu trữ và điện toán đám mây",
+    description: t(`technology.technologyTabs.tabs.database.description`),
     items: [
       {
         name: "MongoDB",
-        description: "NoSQL database cho ứng dụng hiện đại",
+        description: t(`technology.technologyTabs.tabs.database.items.${0}.description`),
         icon: "🍃",
         features: ["Document-based", "Scalable", "Flexible Schema"]
       },
       {
         name: "PostgreSQL",
-        description: "Relational database mã nguồn mở mạnh mẽ",
+        description: t(`technology.technologyTabs.tabs.database.items.${1}.description`),
         icon: "🐘",
         features: ["ACID Compliance", "Extensible", "JSON Support"]
       },
       {
         name: "AWS",
-        description: "Amazon Web Services - nền tảng cloud hàng đầu",
+        description: t(`technology.technologyTabs.tabs.database.items.${2}.description`),
         icon: "☁️",
         features: ["Scalable", "Secure", "Global Infrastructure"]
       },
       {
         name: "Azure",
-        description: "Cloud platform của Microsoft",
+        description: t(`technology.technologyTabs.tabs.database.items.${3}.description`),
         icon: "🔷",
         features: ["Hybrid Cloud", "AI Integration", "Enterprise Focus"]
       }
@@ -126,29 +133,29 @@ const technologies = {
   },
   blockchain: {
     title: "Blockchain & AI",
-    description: "Công nghệ tiên tiến cho tương lai",
+    description: t(`technology.technologyTabs.tabs.blockchain.description`),
     items: [
       {
         name: "Ethereum",
-        description: "Blockchain platform cho smart contracts",
+        description: t(`technology.technologyTabs.tabs.blockchain.items.${0}.description`),
         icon: "⛓️",
         features: ["Smart Contracts", "DApps", "DeFi"]
       },
       {
         name: "Solidity",
-        description: "Ngôn ngữ lập trình cho Ethereum",
+        description: t(`technology.technologyTabs.tabs.blockchain.items.${1}.description`),
         icon: "📝",
         features: ["Static Typing", "Inheritance", "Libraries"]
       },
       {
         name: "Machine Learning",
-        description: "AI và học máy cho ứng dụng thông minh",
+        description: t(`technology.technologyTabs.tabs.blockchain.items.${2}.description`),
         icon: "🧠",
         features: ["Predictive Analytics", "Natural Language Processing", "Computer Vision"]
       },
       {
         name: "IoT",
-        description: "Internet of Things cho kết nối thông minh",
+        description: t(`technology.technologyTabs.tabs.blockchain.items.${3}.description`),
         icon: "📡",
         features: ["Real-time Data", "Sensor Networks", "Edge Computing"]
       }
@@ -156,7 +163,6 @@ const technologies = {
   }
 };
 
-const TechnologyTabs = () => {
   const [activeTab, setActiveTab] = useState("frontend");
 
   return (
@@ -164,11 +170,10 @@ const TechnologyTabs = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Công Nghệ Chúng Tôi Sử Dụng
+            {t(`technology.technologyTabs.title`)}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Lựa chọn công nghệ phù hợp nhất cho từng dự án với sự am hiểu 
-            chuyên sâu về các nền tảng hiện đại
+            {t(`technology.technologyTabs.subtitle`)}
           </p>
         </div>
 

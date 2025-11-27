@@ -3,8 +3,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Star, Rocket, Zap, Sparkles, Code2, Cloud, Database } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -132,7 +136,7 @@ const HeroSection = () => {
           >
             <Rocket className="w-4 h-4 text-primary" />
             <span className="text-primary font-semibold text-sm">
-              Sử dụng 50+ công nghệ hiện đại
+              {t("technology.hero.badge.text")}
             </span>
             <Zap className="w-4 h-4 text-primary fill-current" />
           </motion.div>
@@ -143,7 +147,7 @@ const HeroSection = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight"
           >
             <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent">
-              Công Nghệ{" "}
+              {t("technology.hero.main_heading.part1")}{" "}
             </span>
             <motion.span
               animate={{
@@ -156,7 +160,7 @@ const HeroSection = () => {
               }}
               className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-[length:200%_auto] bg-clip-text text-transparent"
             >
-              Hiện Đại
+              {t("technology.hero.main_heading.part2")}
             </motion.span>
           </motion.h1>
 
@@ -168,7 +172,7 @@ const HeroSection = () => {
             <motion.p
               className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
             >
-              Khám phá các công nghệ tiên tiến từ{" "}
+              {t("technology.hero.subheading.text")}{" "}
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
@@ -196,7 +200,7 @@ const HeroSection = () => {
               >
                 AI/Blockchain
               </motion.span>
-              {" "}cho giải pháp phần mềm đột phá
+              {" "}{t("technology.hero.subheading.description")}{" "}
             </motion.p>
           </motion.div>
 
@@ -206,10 +210,10 @@ const HeroSection = () => {
             className="flex flex-wrap justify-center gap-8 mb-12"
           >
             {[
-              { number: "50+", label: "Công nghệ sử dụng" },
-              { number: "100+", label: "Dự án thành công" },
-              { number: "10+", label: "Năm kinh nghiệm" },
-              { number: "98%", label: "Khách hàng hài lòng" }
+              { number: t("stats.technology.number"), label: t("stats.technology.label") },
+              { number: t("stats.projects.number"), label: t("stats.projects.label") },
+              { number: t("stats.experience.number"), label: t("stats.experience.label") },
+              { number: t("stats.satisfied.number"), label: t("stats.satisfied.label") }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -225,7 +229,6 @@ const HeroSection = () => {
               </motion.div>
             ))}
           </motion.div>
-
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
@@ -240,7 +243,7 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:from-primary/90 hover:to-primary transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
               >
-                <span>Xem các dự án</span>
+                <span>{t("technology.hero.cta_buttons.primary.text")}</span>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -264,7 +267,7 @@ const HeroSection = () => {
               >
                 <Play className="w-4 h-4 text-primary" />
               </motion.div>
-              <span>Xem demo công nghệ</span>
+              <span>{t("technology.hero.cta_buttons.secondary.text")}</span>
             </motion.button>
           </motion.div>
 

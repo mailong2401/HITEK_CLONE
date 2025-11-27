@@ -12,11 +12,11 @@
   },
   "home": {
     "aiSection": {
-      "title": "AI-Powered Software Development Solutions",
-      "subtitle": "Smart with AI",
-      "description": "HITEK integrates top AI technologies throughout the development process, delivering exceptional quality and speed efficiency",
+      "title": "Smart Software Development Solutions",
+      "subtitle": "with AI",
+      "description": "HITEK integrates leading AI technologies throughout the development process, delivering exceptional efficiency in quality and speed",
       "banner": {
-        "heading": "Integrated Top AI Technologies",
+        "heading": "Leading AI Technologies Integrated",
         "note": "20+ AI tools optimized for each development stage",
         "tools": [
           "ChatGPT",
@@ -30,11 +30,11 @@
         {
           "step": "01",
           "title": "Requirements Analysis",
-          "description": "Understand customer needs, business requirements, and required functions with high accuracy",
+          "description": "Understand customer needs, business requirements, and required functionalities with high accuracy",
           "features": [
-            "Requirements analysis, solution consulting",
+            "Requirements analysis and solution consulting",
             "Automated initial documentation",
-            "Speech → intelligent text conversion"
+            "Smart speech-to-text conversion"
           ],
           "tools": [
             "ChatGPT / GPT",
@@ -47,8 +47,8 @@
           "title": "System Design",
           "description": "Design overall architecture, data models, and optimized APIs",
           "features": [
-            "Intelligent architecture diagram creation",
-            "Automated API description, ERD",
+            "Smart architecture diagram generation",
+            "Automated API and ERD description",
             "Advanced model design"
           ],
           "tools": [
@@ -64,7 +64,7 @@
           "title": "Programming",
           "description": "Code modules according to design with AI assistance",
           "features": [
-            "Intelligent code suggestions",
+            "Smart code suggestion automation",
             "AI code review and refactoring",
             "Fast code search support"
           ],
@@ -78,11 +78,11 @@
         {
           "step": "04",
           "title": "Software Testing",
-          "description": "Ensure system is error-free with AI automated testing",
+          "description": "Ensure error-free systems with AI-powered automated testing",
           "features": [
-            "AI automated testing",
+            "AI-powered automated testing",
             "Automated test case generation",
-            "Intelligent cross-platform testing"
+            "Smart cross-platform testing"
           ],
           "tools": [
             "Testim",
@@ -95,7 +95,7 @@
         {
           "step": "05",
           "title": "Deployment",
-          "description": "Deploy system to production environment with intelligent CI/CD",
+          "description": "Deploy systems to production environments with smart CI/CD",
           "features": [
             "AI-optimized CI/CD",
             "Multi-platform deployment",
@@ -111,11 +111,11 @@
         {
           "step": "06",
           "title": "Maintenance & Operations",
-          "description": "Monitor system, fix errors, upgrade with AIOps",
+          "description": "Monitor systems, fix issues, and upgrade with AIOps",
           "features": [
             "Automatic incident detection",
-            "Intelligent log analysis",
-            "AI performance monitoring"
+            "Smart log analysis",
+            "AI-powered performance monitoring"
           ],
           "tools": [
             "Moogsoft",
@@ -143,6 +143,158 @@
     "countries": {
       "number": "10+",
       "label": "Countries"
+    },
+    "satisfied": {
+      "number": "99%",
+      "label": "Satisfied Customers"
+    },
+    "support": {
+      "number": "24/7",
+      "label": "Technical Support"
+    },
+    "technology": {
+      "number": "50+",
+      "label": "Technologies Used"
+    }
+  },
+  "technology": {
+    "hero": {
+      "badge": {
+        "text": "Using 50+ modern technologies"
+      },
+      "main_heading": {
+        "part1": "Modern",
+        "part2": "Technology"
+      },
+      "subheading": {
+        "text": "Discover advanced technologies from",
+        "description": "for breakthrough software solutions"
+      },
+      "cta_buttons": {
+        "primary": {
+          "text": "View Projects"
+        },
+        "secondary": {
+          "text": "View Technology Demo"
+        }
+      }
+    },
+    "technologyTabs": {
+      "title": "Technologies We Use",
+      "subtitle": "Selecting the most suitable technologies for each project with deep expertise in modern platforms",
+      "tabs": {
+        "frontend": {
+          "description": "Modern technologies for excellent user experience",
+          "items": [
+            {
+              "description": "JavaScript library for building user interfaces"
+            },
+            {
+              "description": "Complete framework for dynamic web applications"
+            },
+            {
+              "description": "Progressive framework for UI building"
+            },
+            {
+              "description": "JavaScript with powerful type system"
+            }
+          ]
+        },
+        "backend": {
+          "description": "Powerful and secure server-side technologies",
+          "items": [
+            {
+              "description": "JavaScript runtime for server-side development"
+            },
+            {
+              "description": "Cross-platform framework from Microsoft"
+            },
+            {
+              "description": "Popular enterprise Java framework"
+            },
+            {
+              "description": "High-level Python web framework"
+            }
+          ]
+        },
+        "mobile": {
+          "description": "Cross-platform mobile application development",
+          "items": [
+            {
+              "description": "Building mobile applications with React"
+            },
+            {
+              "description": "Google's SDK for native applications"
+            },
+            {
+              "description": "Native iOS application development"
+            },
+            {
+              "description": "Official language for Android development"
+            }
+          ]
+        },
+        "database": {
+          "description": "Storage and cloud computing technologies",
+          "items": [
+            {
+              "description": "NoSQL database for modern applications"
+            },
+            {
+              "description": "Powerful open-source relational database"
+            },
+            {
+              "description": "Amazon Web Services - leading cloud platform"
+            },
+            {
+              "description": "Microsoft's cloud platform"
+            }
+          ]
+        },
+        "blockchain": {
+          "description": "Advanced technologies for the future",
+          "items": [
+            {
+              "description": "Blockchain platform for smart contracts"
+            },
+            {
+              "description": "Programming language for Ethereum"
+            },
+            {
+              "description": "AI and machine learning for smart applications"
+            },
+            {
+              "description": "Internet of Things for smart connectivity"
+            }
+          ]
+        }
+      }
+    },
+    "developmentProcess": {
+      "title": "Development Process",
+      "subtitle": "Professional workflow ensuring project quality and timeline",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Analysis & Planning",
+          "description": "Analyze requirements and create detailed plans with suitable technologies"
+        },
+        {
+          "step": "02",
+          "title": "Design & Prototype",
+          "description": "UI/UX design and prototype creation to confirm concepts"
+        },
+        {
+          "step": "03",
+          "title": "Development & Integration",
+          "description": "Application development with modern technologies and system integration"
+        },
+        {
+          "step": "04",
+          "title": "Testing & Deployment",
+          "description": "Comprehensive testing and final product deployment"
+        }
+      ]
     }
   },
   "about": {
@@ -155,8 +307,8 @@
           "line2": "Information"
         },
         "description": {
-          "line1": "Discover the story behind one of the fastest-growing",
-          "line2": "technology companies with vision to become leading global technology partner"
+          "line1": "Discover the story behind one of the fastest-growing technology companies",
+          "line2": "with the vision to become a leading global technology partner"
         },
         "highlight": "fastest-growing",
         "cta": {
@@ -177,7 +329,7 @@
           },
           "businessField": {
             "label": "Business Field",
-            "value": "Computer programming, Detail: Software product manufacturing"
+            "value": "Computer programming, Detail: Software product development"
           }
         },
         "leadership": {
@@ -203,18 +355,18 @@
         "visionSection": {
           "number": "01",
           "title": "HITEK'S VISION",
-          "mainStatement": "Hitek's long-term goal is to become a world-leading software tool",
-          "description": "Hitek Software continuously researches new technologies every day to achieve the goal of becoming a world-leading software tool."
+          "mainStatement": "Hitek's long-term goal is to become a leading software company in the World",
+          "description": "Hitek Software continuously strives to research technology every day to achieve the goal of becoming a leading software company in the World."
         },
         "messageSection": {
           "number": "02",
           "title": "CHAIRMAN'S MESSAGE",
           "mainGoal": "HITEK'S LONG-TERM GOAL IS TO BECOME A WORLD-LEADING SOFTWARE COMPANY",
           "paragraphs": [
-            "Having the opportunity to work with many customers worldwide during the startup phase, I have accumulated extensive experience to understand customer needs in each country and each field they target.",
+            "Fortunately having the opportunity to work with many customers worldwide during the startup phase, I have accumulated extensive experience to understand customer needs in each country and each field they target.",
             "I am building Hitek Software stronger every day with that experience.",
-            "Hitek Software is a collection of young, energetic talents always ready to explore and adapt to new technologies. Therefore, we are confident that with the strength of quickly updating new technologies and knowledge, we can satisfy our customers' requirements.",
-            "In addition to young human resources, we also have consultants who are fluent in foreign languages and have deep technology expertise, which helps eliminate language barriers between Hitek and foreign customers. This is also the formula that has allowed Hitek Software to approach and accompany many customers worldwide for over 5 years."
+            "Hitek Software is a collection of young, enthusiastic energy, always ready to explore and adapt to new technologies. Therefore, we are confident that with the strength of quickly updating new technologies and knowledge, we will satisfy the needs of Hitek's customers.",
+            "In addition to young human resources, we also have consulting staff who are fluent in foreign languages and have deep expertise in technology, which will eliminate language barriers between Hitek and foreign customers. This is also the formula that has helped Hitek Software approach and accompany many customers worldwide for over 5 years."
           ],
           "image": {
             "alt": "Hitek Software Chairman - Tran Anh Khoi",
@@ -224,7 +376,7 @@
             "position": "Chairman - Founder",
             "name": "Tran Anh Khoi"
           },
-          "quote": "Continuous innovation, continuous development - Leading the passionate young team to global reach"
+          "quote": "Continuously innovate, continuously develop - Leading the passionate young team to reach global standards"
         }
       },
       "achievementsTimeline": {
@@ -244,12 +396,12 @@
           },
           {
             "year": "2022",
-            "title": "Member of Ho Chi Minh City Informatics Association - HCA",
+            "title": "Member of HCMC Informatics Association - HCA",
             "type": "membership"
           },
           {
             "year": "2022",
-            "title": "Member of Vietnam Software Association - VINASA",
+            "title": "Member of VINASA Software Association",
             "type": "membership"
           },
           {
@@ -296,7 +448,7 @@
       "keyMembers": {
         "sectionNumber": "05",
         "title": "KEY MEMBERS",
-        "description": "Talented leadership team with many years of experience in technology and management, bringing breakthrough development to Hitek Software.",
+        "description": "Talented leadership team with many years of experience in technology and management, bringing outstanding development to Hitek Software.",
         "members": [
           {
             "name": "MR. OH SEAN BEOM",
@@ -304,15 +456,15 @@
             "achievements": [
               {
                 "type": "highlight",
-                "text": "10+ years of experience in mobile app/web development"
+                "text": "10+ years of mobile app/web development experience"
               },
               {
                 "type": "highlight",
-                "text": "5+ years of experience in team management and leadership"
+                "text": "5+ years of team management and leadership experience"
               },
               {
                 "type": "normal",
-                "text": "Main responsibility in progress management, planning for timeline, budget, and personnel"
+                "text": "Main responsibility in managing progress, planning timeline, budget, and personnel"
               },
               {
                 "type": "normal",
@@ -326,11 +478,11 @@
           },
           {
             "name": "MR. LE QUOC VU",
-            "position": "CTO of Hitek Software Company",
+            "position": "Chief Technology Officer of Hitek Software",
             "achievements": [
               {
                 "type": "highlight",
-                "text": "7+ years of experience in software development and system design"
+                "text": "7+ years of software development and system design experience"
               },
               {
                 "type": "highlight",
@@ -360,7 +512,7 @@
           },
           {
             "name": "MR. LAM THU TIEN",
-            "position": "Director of Hitek Capital Company",
+            "position": "Director of Hitek Capital",
             "achievements": [
               {
                 "type": "normal",
@@ -387,7 +539,7 @@
         ],
         "stats": [
           {
-            "label": "Years Exp",
+            "label": "Years EXP",
             "value": "10+"
           },
           {
@@ -401,7 +553,7 @@
         ],
         "additionalInfo": [
           {
-            "text": "Top experts"
+            "text": "Leading experts"
           },
           {
             "text": "International experience"
@@ -412,18 +564,77 @@
         ],
         "footerText": "Excellent leadership team - Strategic vision",
         "imageFallbackText": "Member photo"
+      },
+      "activities": {
+        "sectionNumber": "06",
+        "title": "HITEK SOFTWARE ACTIVITIES",
+        "subtitle": "DISCOVER OUTSTANDING ACTIVITIES",
+        "footerText": "Diverse activities - Outstanding quality",
+        "activities": [
+          {
+            "id": 1,
+            "title": "Software Development",
+            "description": "Research and develop customized software solutions meeting diverse needs of domestic and international customers.",
+            "color": "accent",
+            "buttonText": "View details"
+          },
+          {
+            "id": 2,
+            "title": "Technology Consulting",
+            "description": "Provide in-depth technology consulting services, helping customers optimize processes and improve performance.",
+            "color": "primary",
+            "buttonText": "View details"
+          },
+          {
+            "id": 3,
+            "title": "Maintenance & Support",
+            "description": "24/7 maintenance, upgrade and technical support services ensuring stable and continuous system operation.",
+            "color": "accent",
+            "buttonText": "View details"
+          },
+          {
+            "id": 4,
+            "title": "Personnel Training",
+            "description": "Train and develop high-quality human resources, updating new technologies and professional skills.",
+            "color": "primary",
+            "buttonText": "View details"
+          },
+          {
+            "id": 5,
+            "title": "International Cooperation",
+            "description": "Expand cooperation with international partners, access advanced technologies and expand global markets.",
+            "color": "accent",
+            "buttonText": "View details"
+          },
+          {
+            "id": 6,
+            "title": "Research & Innovation",
+            "description": "Continuously research and innovate technology, develop creative products anticipating trends.",
+            "color": "primary",
+            "buttonText": "View details"
+          }
+        ],
+        "images": {
+          "softwareDevelopment": "@/assets/activities/activitie_1.jpg",
+          "techConsulting": "@/assets/activities/activitie_2.jpg",
+          "maintenanceSupport": "@/assets/activities/activitie_3.jpg",
+          "training": "@/assets/activities/activitie_4.jpg",
+          "internationalCooperation": "@/assets/activities/activitie_5.jpg",
+          "researchInnovation": "@/assets/activities/activitie_6.jpg",
+          "fallbackAlt": "Hitek Software Activities"
+        }
       }
     },
     "us": {
       "title": "About Us",
-      "description": "Expert team, company culture and core values",
+      "description": "Team of experts, company culture and core values",
       "banner": {
         "companyName": "HITEK SOFTWARE",
         "description": {
-          "text1": "Discover the journey from startup with 5 engineers to global technology company",
-          "highlight": " with mission to become world's leading software partner"
+          "text1": "Discover the journey from a startup with 5 engineers to a global technology company",
+          "highlight": " with the mission to become a world-leading software partner"
         },
-        "cta": "Explore Journey"
+        "cta": "Discover the journey"
       },
       "aboutHitek": {
         "mainTitle": "From Startup to Global",
@@ -436,14 +647,14 @@
           "items": [
             {
               "year": "2018",
-              "title": "Hitek Establishment",
-              "description": "Hitek was established with only 5 software engineers, working freelance, focusing on web and mobile app development for Vietnamese market.",
+              "title": "Hitek Founded",
+              "description": "Hitek was established with only 5 software engineers, working freelance, focusing on web and mobile application development for the Vietnamese market.",
               "stats": "5 engineers"
             },
             {
               "year": "2019",
               "title": "Going Global",
-              "description": "First received software outsourcing contract for Korean market, Hitek changed business strategy to expand to foreign markets.",
+              "description": "First receiving software outsourcing contracts for the Korean market, Hitek changed business strategy to expand to foreign markets.",
               "stats": "Korean market"
             },
             {
@@ -462,24 +673,24 @@
         },
         "mission": {
           "title": "Next Mission",
-          "description": "Continue expanding to new markets, enhance AI and advanced technology research, constantly improve service quality to become reliable global technology partner."
+          "description": "Continue expanding to new markets, enhancing AI and advanced technology research, continuously improving service quality to become a reliable technology partner globally."
         }
       },
       "csr": {
-        "headercompany": {
+        "header": {
           "title": "HITEK SOFTWARE IMPLEMENTS CSR",
-          "description": "CSR stands for Corporate Social Responsibility, which is considered a popular trend worldwide, becoming a 'soft' requirement for businesses. To fulfill the obligations that a business and related individuals must perform for society to achieve the most positive impacts and minimize negative impacts on society. Hitek Software has been implementing the following items:"
+          "description": "CSR stands for Corporate Social Responsibility, which is considered a popular global trend, becoming a 'soft' requirement for businesses. To fulfill the obligations that a business and related individuals must perform for society to achieve the most positive impacts and minimize negative impacts on society. Hitek Software has been implementing the following items:"
         },
         "items": [
           {
             "title": "First",
             "subtitle": "Economic",
-            "description": "Includes satisfying social needs, increasing social welfare, ensuring business existence and development."
+            "description": "Includes satisfying social needs, increasing social welfare, ensuring business survival and development."
           },
           {
             "title": "Second",
             "subtitle": "Legal",
-            "description": "Business must fully comply with legal regulations for stakeholders, including shareholders, consumers, employees' families."
+            "description": "Businesses must fully implement legal regulations for stakeholders, including shareholders, consumers, employees' families."
           },
           {
             "title": "Third",
@@ -489,11 +700,11 @@
           {
             "title": "Fourth",
             "subtitle": "Humanitarian",
-            "description": "Business should implement behaviors demonstrating desire to contribute to community and society."
+            "description": "Businesses need to perform behaviors showing desire to contribute to community and society."
           }
         ],
         "footer": {
-          "title": "Commitment to sustainable development",
+          "title": "Sustainable development commitment",
           "description": "Hitek Software continuously strives to implement social responsibility in all business activities, aiming for sustainable development and positive contributions to the community."
         }
       },
@@ -502,41 +713,101 @@
           "title": "Sustainable Development Goals",
           "paragraphs": [
             "Hitek Software has been establishing a global operational network, therefore we always focus on work quality at every step and stage.",
-            "Hitek's leadership also cares deeply about employees' lives, so we aim for appropriate goals within the 17 Sustainable Development Goals (SDGs)."
+            "Hitek's leadership also greatly cares about employees' lives, so we aim for appropriate goals within the 17 Sustainable Development Goals."
           ]
         },
         "vision": {
           "title": "Our Vision",
-          "description": "Hitek Software believes that we will help improve quality of life, and we will continue to strive to realize a new modern society that is smarter and happier."
+          "description": "Hitek Software believes that we will help improve quality of life, and we will continue to strive to realize a new modern society, smarter and happier."
         },
         "goals": [
           {
             "number": "1",
             "title": "Quality Education",
-            "description": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
-            "hitekAction": "Hitek Software regularly organizes training sessions for employees on programming knowledge and necessary soft skills for everyone during work."
+            "description": "Ensure quality, inclusive and equitable education and promote lifelong learning opportunities for all.",
+            "hitekAction": "Hitek Software regularly organizes training sessions for employees on programming knowledge, along with necessary soft skills for everyone during work."
           },
           {
             "number": "2",
             "title": "Decent Work and Economic Growth",
-            "description": "Achieve higher levels of economic productivity through diversification, technological upgrading and innovation.",
-            "hitekAction": "Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation."
+            "description": "To achieve economic performance at a high level, always improve and innovate technology, including focusing on high value-added and labor-intensive areas.",
+            "hitekAction": "Promote development-oriented policies to support productive activities, decent job creation, entrepreneurship, creativity and innovation."
           },
           {
             "number": "3",
             "title": "Industry, Innovation and Infrastructure",
-            "description": "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation.",
+            "description": "Create new technologies, focus on developing employees' most creative ideas.",
             "hitekAction": "Always create conditions for employees to work in an environment with the best quality infrastructure facilities."
           }
         ],
         "globalImpact": {
           "title": "Global Impact",
-          "description": "Through implementing sustainable development goals, Hitek Software not only contributes to the local community but also creates positive impact on a global scale."
+          "description": "Through implementing sustainable development goals, Hitek Software not only contributes to the local community but also creates positive impacts on a global scale."
         }
       }
     }
   },
   "services": {
+    "hero": {
+      "badge": {
+        "text": "Partnering with 500+ businesses"
+      },
+      "heading": {
+        "part1": "Technology",
+        "part2": "Services"
+      },
+      "subheading": {
+        "text": "Providing comprehensive technology solutions from",
+        "highlightedWords": [
+          {
+            "text": "consulting"
+          },
+          {
+            "text": "design"
+          },
+          {
+            "text": "to"
+          },
+          {
+            "text": "development"
+          },
+          {
+            "text": "and"
+          },
+          {
+            "text": "maintenance"
+          },
+          {
+            "text": "of software systems for businesses"
+          }
+        ]
+      },
+      "cta": {
+        "consultation": "Get consultation now",
+        "caseStudy": "View case study"
+      },
+      "background": "Technology Background"
+    },
+    "activeServiceDetail": {
+      "contactNow": "Contact now",
+      "viewCaseStudy": "View case study",
+      "technologiesTitle": "Technologies used",
+      "topSolutionLabel": "Top solution",
+      "topSolutionDescription": "Optimized design for performance and user experience",
+      "featuresTitle": "Outstanding Features",
+      "featuresSubtitle": "Discover the special features that make our solutions stand out"
+    },
+    "allServicesGrid": {
+      "title": "All Services",
+      "description": "Explore all the diverse technology services that HITEK provides, offering optimal solutions for your business",
+      "hintClick": "Click on each service to explore details"
+    },
+    "developmentProcess": {
+      "badge": "Work Process",
+      "title": "Development Process",
+      "description": "We follow a professional development process, ensuring optimal quality and efficiency for each project",
+      "ctaNote": "Each step is meticulously and professionally executed"
+    },
     "customSoftware": {
       "title": "Custom software services",
       "description": "Leading custom software development company in Vietnam."
@@ -547,10 +818,10 @@
     },
     "webDevelopment": {
       "title": "Web development services",
-      "description": "Web development with .NET, NodeJS, Java, PHP, Angular, ReactJS..."
+      "description": "Web development using .NET, NodeJS, Java, PHP, Angular, ReactJS..."
     },
     "cloudMigration": {
-      "title": "Cloud Migration Services",
+      "title": "Cloud Migration services",
       "description": "Leverage cloud and infrastructure for business growth."
     },
     "mobileApp": {
@@ -574,46 +845,224 @@
       "description": "Software development in countries close to target markets."
     },
     "blockchain": {
-      "title": "Enterprise Blockchain Services",
-      "description": "Easy and secure blockchain development for enterprises."
-    }
+      "title": "Enterprise Blockchain services",
+      "description": "Easy and secure Blockchain development for businesses."
+    },
+    "sectionTitle": "Technology Services",
+    "sectionDescription": "Comprehensive technology solutions for businesses",
+    "servicesList": [
+      {
+        "title": "Custom software services",
+        "description": "As a leading custom software development company in Vietnam, we have successfully completed hundreds of projects for customers worldwide.",
+        "fullDescription": "Established in 2017, Hitek always proficiently applies new methods. We provide customized software solutions suitable for specific business needs of each customer. With an experienced team of engineers, we commit to delivering high-quality products meeting the most stringent requirements.",
+        "features": [
+          "Custom software development according to specific requirements",
+          "Integration with existing systems",
+          "Continuous maintenance and upgrades",
+          "24/7 technical support",
+          "Optimal solution consulting",
+          "Absolute information security"
+        ]
+      },
+      {
+        "title": "Long-term software development services",
+        "description": "Long-term software development is a complex building process requiring deep knowledge and experience.",
+        "fullDescription": "Not everyone is formally trained and has deep knowledge to handle long-term software development projects themselves. We provide a team of experts committed long-term, accompanying businesses throughout the development and operation process.",
+        "features": [
+          "Dedicated expert team",
+          "Clear development roadmap",
+          "Regular progress reports",
+          "Long-term cost optimization",
+          "Flexible requirement changes",
+          "Product quality assurance"
+        ]
+      },
+      {
+        "title": "Web development services",
+        "description": "Nearly 10 years of experience in the industry, we always develop web using the most outstanding technologies.",
+        "fullDescription": "We use modern front-end technologies (Angular, ReactJS, Jquery, HTML5, CSS3...) combined with powerful backend frameworks to create high-quality web applications. From corporate introduction websites to complex web application systems.",
+        "features": [
+          "Responsive multi-platform design",
+          "SEO optimization",
+          "High performance",
+          "Comprehensive security",
+          "Best user experience",
+          "Diverse payment integration"
+        ]
+      },
+      {
+        "title": "Cloud Migration services",
+        "description": "Leverage cloud and infrastructure to drive business growth.",
+        "fullDescription": "We help businesses migrate systems to cloud safely and efficiently, optimizing costs and enhancing scalability. Services include consulting, planning, implementation and system operation on cloud platforms.",
+        "features": [
+          "Optimal Migration strategy",
+          "Cost optimization",
+          "Security & Compliance",
+          "24/7 monitoring",
+          "Backup and recovery",
+          "System automation"
+        ]
+      },
+      {
+        "title": "Mobile app development services",
+        "description": "As a leading mobile application development company, we have many years of experience in creating innovative applications.",
+        "fullDescription": "We develop mobile applications for both iOS and Android, ensuring the best user experience and optimal performance. From idea to complete product, we accompany you at every step.",
+        "features": [
+          "Native & Cross-platform",
+          "UI/UX Excellence",
+          "App Store optimization",
+          "Maintenance & Support",
+          "API integration",
+          "Push Notification"
+        ]
+      },
+      {
+        "title": "Software testing services",
+        "description": "As one of the leading software development companies in Vietnam, Hitek excels in quality testing.",
+        "fullDescription": "Our professional QA/QC team ensures product quality through rigorous testing processes and automation. We provide comprehensive testing services from unit, integration to system testing.",
+        "features": [
+          "Automated testing",
+          "Performance testing",
+          "Security testing",
+          "Quality assurance",
+          "Integration testing",
+          "Regression testing"
+        ]
+      },
+      {
+        "title": "Project-based outsourcing services",
+        "description": "Having and continuing to have opportunities to implement Outsourcing projects for developed countries worldwide.",
+        "fullDescription": "With experience handling the most complex projects for US, Canada, Korea,... markets, we confidently deliver quality outsourcing solutions. Our team of experts is ready to participate in all project phases.",
+        "features": [
+          "Dedicated team",
+          "Flexible cooperation model",
+          "Cost efficiency",
+          "Delivery quality",
+          "Professional project management",
+          "Information security"
+        ]
+      },
+      {
+        "title": "Offshore center building services",
+        "description": "Accumulated experience from offshore center building projects with customers from around the world.",
+        "fullDescription": "Hitek confidently believes we are one of the few providers of the most suitable and modern offshore center building services. We provide comprehensive solutions from infrastructure setup to team recruitment and management.",
+        "features": [
+          "Infrastructure setup",
+          "Team recruitment",
+          "Process establishment",
+          "Long-term partnership",
+          "Personnel training",
+          "Operational management"
+        ]
+      },
+      {
+        "title": "Software development in neighboring countries",
+        "description": "Software development in countries close to target markets and usually having similar time zones.",
+        "fullDescription": "Differences will always be minimal when you choose software development in neighboring countries with Hitek's team. We provide efficient software development solutions with optimal costs and convenient communication.",
+        "features": [
+          "Similar time zones",
+          "Cultural proximity",
+          "Cost efficiency",
+          "Easy communication",
+          "Convenient management",
+          "Quality assurance"
+        ]
+      },
+      {
+        "title": "Enterprise Blockchain application services",
+        "description": "We help you develop Blockchain technology for businesses in all fields.",
+        "fullDescription": "Blockchain technology can provide you with easy and secure transaction records, transparent and unchangeable. We provide comprehensive Blockchain solutions from consulting, development to deployment and maintenance.",
+        "features": [
+          "Smart contracts",
+          "Decentralized applications",
+          "Asset tokenization",
+          "Security & Transparency",
+          "Digital wallets",
+          "Payment solutions"
+        ]
+      },
+      {
+        "title": "AI & Machine Learning services",
+        "description": "Apply artificial intelligence and machine learning to optimize business processes.",
+        "fullDescription": "We develop AI and Machine Learning solutions helping businesses automate processes, optimize operations and make smart decisions. From natural language processing to computer vision and forecasting.",
+        "features": [
+          "Natural language processing",
+          "Computer vision",
+          "Forecasting and analysis",
+          "Process automation",
+          "Recommendation systems",
+          "Big data processing"
+        ]
+      },
+      {
+        "title": "DevOps services",
+        "description": "Optimize software development and operation processes with DevOps.",
+        "fullDescription": "We provide comprehensive DevOps services helping businesses automate software development, integration and deployment processes. Accelerate product release speed and ensure quality.",
+        "features": [
+          "CI/CD Pipeline",
+          "Infrastructure as Code",
+          "Containerization",
+          "Monitoring & Logging",
+          "Auto Scaling",
+          "Security Integration"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "title": "Consulting & Analysis",
+        "description": "Analyze requirements and consult the most optimal solutions for businesses"
+      },
+      {
+        "title": "Planning",
+        "description": "Build detailed plans, timeline and clear budget"
+      },
+      {
+        "title": "Development",
+        "description": "Implement development with experienced expert team"
+      },
+      {
+        "title": "Delivery & Support",
+        "description": "Product delivery and technical support after deployment"
+      }
+    ]
   },
   "hero": {
     "title1": "DRIVING CREATIVITY, ACCELERATING INNOVATION",
-    "title2": "PARTNERING DEVELOPMENT, ELEVATING SUCCESS",
+    "title2": "PARTNERING FOR DEVELOPMENT, ELEVATING SUCCESS",
     "subtitle": "_ Quality is honor _",
-    "explore": "Explore Now",
-    "contact": "Contact Consultation"
+    "explore": "Explore now",
+    "contact": "Contact consultation"
   },
   "contact": {
     "title": "CONTACT",
     "heading": "Let's connect with us",
-    "description": "HITEK's expert team is ready to consult and support you",
+    "description": "HITEK's team of experts is ready to consult and support you",
     "phone": "Phone",
     "email": "Email",
     "address": "Address"
   },
   "cta": {
     "ready": "Ready to implement your project?",
-    "description": "Contact us today for the most suitable solution consultation",
-    "contactButton": "Contact Consultation",
-    "callButton": "Call Now"
+    "description": "Contact us today to get the most suitable solution consultation",
+    "contactButton": "Contact consultation",
+    "callButton": "Call now"
   },
   "servicesSection": {
     "heading": "Comprehensive Technology Solutions",
-    "subheading": "Discover our modern technology services, designed to drive digital transformation and enhance your business competitiveness",
-    "exploreButton": "Explore Now",
+    "subheading": "Discover our modern technology services, designed to drive digital transformation and enhance competitiveness for your business",
+    "exploreButton": "Explore now",
     "services": {
       "softwareDev": {
-        "title": "Software Development",
-        "description": "Build custom software solutions that meet business needs with the most modern technology"
+        "title": "Software development",
+        "description": "Build customized software solutions meeting business needs with the most modern technologies"
       },
       "cloudSolution": {
-        "title": "Cloud Solutions",
+        "title": "Cloud solutions",
         "description": "Deploy and manage efficient and secure cloud infrastructure for businesses"
       },
       "mobileApp": {
-        "title": "Mobile Applications",
+        "title": "Mobile applications",
         "description": "Develop cross-platform mobile apps with optimized user experience and high performance"
       },
       "cybersecurity": {
@@ -622,40 +1071,40 @@
       },
       "aiMl": {
         "title": "AI & Machine Learning",
-        "description": "Integrate AI and ML to automate and optimize business operations"
+        "description": "Integrate AI and ML to automate and optimize business operation processes"
       },
       "dataManagement": {
-        "title": "Data Management",
-        "description": "Design and manage robust, scalable and highly secure databases"
+        "title": "Data management",
+        "description": "Design and manage robust databases with high scalability and security"
       },
       "consulting": {
-        "title": "Technology Consulting",
+        "title": "Technology consulting",
         "description": "Provide optimal technology solutions for businesses based on actual needs"
       },
       "maintenance": {
-        "title": "System Maintenance",
+        "title": "System maintenance",
         "description": "Regular system maintenance and upgrade services ensuring stable operation"
       }
     }
   },
   "aboutSection": {
     "badge": "OUR ACHIEVEMENTS",
-    "heading": "Thank you for customers' trust",
+    "heading": "Thank you for customer trust",
     "subheading": "Our journey is built on trust and cooperation from global partners, delivering excellent technology solutions and superior customer experience.",
     "title": "Your reliable technology partner",
-    "description1": "HITEK is a leading technology company in Vietnam, specializing in providing software solutions and digital transformation services. With an experienced expert team and advanced technology, we are committed to delivering high-quality products.",
-    "description2": "Our mission is to drive creativity, accelerate innovation, partner development and elevate success for every business.",
+    "description1": "HITEK is a leading technology company in Vietnam, specializing in providing software solutions and digital transformation services. With an experienced team of experts and advanced technology, we commit to delivering high-quality products.",
+    "description2": "Our mission is to drive creativity, accelerate innovation, partner for development and elevate success for every business.",
     "ctaHeading": "Ready to cooperate with us?",
     "ctaDescription": "Let us help you realize your ideas with optimal technology solutions",
-    "ctaButton": "Contact Now",
+    "ctaButton": "Contact now",
     "stats": {
-      "experience": "Years of Experience",
-      "experienceDesc": "Many years of experience have given us extensive knowledge across various industries, allowing us to provide the best digital experience solutions.",
-      "clients": "Global Clients",
+      "experience": "Years of experience",
+      "experienceDesc": "Many years of experience have given us extensive knowledge about many industries, allowing us to provide the best digital experience solutions.",
+      "clients": "Global clients",
       "clientsDesc": "Over 80 global clients from around the world, including Korea, Japan, Canada, Australia and many others.",
-      "projects": "Completed Projects",
-      "projectsDesc": "Projects completed for customers, delivering superior digital transformation experience and optimal solutions.",
-      "team": "Talented Team",
+      "projects": "Completed projects",
+      "projectsDesc": "Completed projects for customers, delivering superior digital transformation experience and optimal solutions.",
+      "team": "Talented team",
       "teamDesc": "Talented team including digital experts, strategic thinkers, designers and creative developers."
     }
   }

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, CheckCircle2, Clock, Users, Code2, Zap, BarChart3, Rocket } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 interface ProcessStep {
   step: string;
@@ -14,6 +16,8 @@ interface DevelopmentProcessProps {
 }
 
 const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
+  const { t } = useLanguage();
+
   const [containerRef, containerInView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -130,16 +134,13 @@ const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6"
           >
             <Rocket className="w-4 h-4" />
-            Quy Trình Làm Việc
+            {t("services.developmentProcess.badge")}
           </motion.div>
-          
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
-            Quy Trình Phát Triển
+            {t("services.developmentProcess.title")}
           </h2>
-          
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Chúng tôi tuân theo quy trình phát triển chuyên nghiệp, đảm bảo chất lượng 
-            và hiệu quả tối ưu cho từng dự án
+            {t("services.developmentProcess.description")}
           </p>
         </motion.div>
 
@@ -269,7 +270,7 @@ const DevelopmentProcess = ({ process }: DevelopmentProcessProps) => {
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/5 rounded-2xl border border-primary/10">
             <CheckCircle2 className="w-5 h-5 text-primary" />
             <span className="text-sm text-muted-foreground font-medium">
-              Mỗi bước được thực hiện tỉ mỉ và chuyên nghiệp
+              {t("services.developmentProcess.ctaNote")}
             </span>
           </div>
         </motion.div>

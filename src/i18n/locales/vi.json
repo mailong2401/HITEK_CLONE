@@ -151,30 +151,151 @@
     "support": {
       "number": "24/7",
       "label": "Hỗ trợ kỹ thuật"
+    },
+    "technology": {
+      "number": "50+",
+      "label": "Công nghệ sử dụng"
     }
   },
-  "technology" : {
-"hero": {
-    "badge": {
-      "text": "Sử dụng 50+ công nghệ hiện đại"
-    },
-    "main_heading": {
-      "part1": "Công Nghệ",
-      "part2": "Hiện Đại"
-    },
-    "subheading": {
-      "text": "Khám phá các công nghệ tiên tiến từ",
-      "description": "cho giải pháp phần mềm đột phá"
-    },
-    "cta_buttons": {
-      "primary": {
-        "text": "Xem các dự án"
+  "technology": {
+    "hero": {
+      "badge": {
+        "text": "Sử dụng 50+ công nghệ hiện đại"
       },
-      "secondary": {
-        "text": "Xem demo công nghệ"
+      "main_heading": {
+        "part1": "Công Nghệ",
+        "part2": "Hiện Đại"
+      },
+      "subheading": {
+        "text": "Khám phá các công nghệ tiên tiến từ",
+        "description": "cho giải pháp phần mềm đột phá"
+      },
+      "cta_buttons": {
+        "primary": {
+          "text": "Xem các dự án"
+        },
+        "secondary": {
+          "text": "Xem demo công nghệ"
+        }
       }
+    },
+    "technologyTabs": {
+      "title": "Công Nghệ Chúng Tôi Sử Dụng",
+      "subtitle": "Lựa chọn công nghệ phù hợp nhất cho từng dự án với sự am hiểu chuyên sâu về các nền tảng hiện đại",
+      "tabs": {
+        "frontend": {
+          "description": "Công nghệ hiện đại cho trải nghiệm người dùng tuyệt vời",
+          "items": [
+            {
+              "description": "Thư viện JavaScript cho xây dựng giao diện người dùng"
+            },
+            {
+              "description": "Framework hoàn chỉnh cho ứng dụng web động"
+            },
+            {
+              "description": "Framework progressive cho xây dựng UI"
+            },
+            {
+              "description": "JavaScript với type system mạnh mẽ"
+            }
+          ]
+        },
+        "backend": {
+          "description": "Công nghệ server-side mạnh mẽ và bảo mật",
+          "items": [
+            {
+              "description": "JavaScript runtime cho server-side development"
+            },
+            {
+              "description": "Framework đa nền tảng từ Microsoft"
+            },
+            {
+              "description": "Framework enterprise Java phổ biến"
+            },
+            {
+              "description": "Framework web Python cấp cao"
+            }
+          ]
+        },
+        "mobile": {
+          "description": "Phát triển ứng dụng di động đa nền tảng",
+          "items": [
+            {
+              "description": "Xây dựng ứng dụng mobile với React"
+            },
+            {
+              "description": "SDK của Google cho ứng dụng native"
+            },
+            {
+              "description": "Phát triển ứng dụng iOS native"
+            },
+            {
+              "description": "Ngôn ngữ chính thức cho Android development"
+            }
+          ]
+        },
+        "database": {
+          "description": "Công nghệ lưu trữ và điện toán đám mây",
+          "items": [
+            {
+              "description": "NoSQL database cho ứng dụng hiện đại"
+            },
+            {
+              "description": "Relational database mã nguồn mở mạnh mẽ"
+            },
+            {
+              "description": "Amazon Web Services - nền tảng cloud hàng đầu"
+            },
+            {
+              "description": "Cloud platform của Microsoft"
+            }
+          ]
+        },
+        "blockchain": {
+          "description": "Công nghệ tiên tiến cho tương lai",
+          "items": [
+            {
+              "description": "Blockchain platform cho smart contracts"
+            },
+            {
+              "description": "Ngôn ngữ lập trình cho Ethereum"
+            },
+            {
+              "description": "AI và học máy cho ứng dụng thông minh"
+            },
+            {
+              "description": "Internet of Things cho kết nối thông minh"
+            }
+          ]
+        }
+      }
+    },
+    "developmentProcess": {
+      "title": "Quy Trình Phát Triển",
+      "subtitle": "Quy trình làm việc chuyên nghiệp đảm bảo chất lượng và tiến độ dự án",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Phân tích & Lập kế hoạch",
+          "description": "Phân tích yêu cầu và lập kế hoạch chi tiết với công nghệ phù hợp"
+        },
+        {
+          "step": "02",
+          "title": "Thiết kế & Prototype",
+          "description": "Thiết kế UI/UX và tạo prototype để xác nhận concept"
+        },
+        {
+          "step": "03",
+          "title": "Phát triển & Tích hợp",
+          "description": "Phát triển ứng dụng với công nghệ hiện đại và tích hợp hệ thống"
+        },
+        {
+          "step": "04",
+          "title": "Kiểm thử & Triển khai",
+          "description": "Kiểm thử toàn diện và triển khai sản phẩm cuối cùng"
+        }
+      ]
     }
-  }
   },
   "about": {
     "company": {
@@ -666,6 +787,26 @@
         "caseStudy": "Xem case study"
       },
       "background": "Technology Background"
+    },
+    "activeServiceDetail": {
+      "contactNow": "Liên hệ ngay",
+      "viewCaseStudy": "Xem case study",
+      "technologiesTitle": "Công nghệ sử dụng",
+      "topSolutionLabel": "Giải pháp hàng đầu",
+      "topSolutionDescription": "Thiết kế tối ưu cho hiệu suất và trải nghiệm người dùng",
+      "featuresTitle": "Tính Năng Nổi Bật",
+      "featuresSubtitle": "Khám phá những tính năng đặc biệt giúp giải pháp của chúng tôi trở nên khác biệt"
+    },
+    "allServicesGrid": {
+      "title": "Tất Cả Dịch Vụ",
+      "description": "Khám phá toàn bộ dịch vụ công nghệ đa dạng mà HITEK cung cấp, mang đến giải pháp tối ưu cho doanh nghiệp của bạn",
+      "hintClick": "Click vào từng dịch vụ để khám phá chi tiết"
+    },
+    "developmentProcess": {
+      "badge": "Quy Trình Làm Việc",
+      "title": "Quy Trình Phát Triển",
+      "description": "Chúng tôi tuân theo quy trình phát triển chuyên nghiệp, đảm bảo chất lượng và hiệu quả tối ưu cho từng dự án",
+      "ctaNote": "Mỗi bước được thực hiện tỉ mỉ và chuyên nghiệp"
     },
     "customSoftware": {
       "title": "Dịch vụ custom phần mềm",
