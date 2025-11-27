@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Star, Rocket, Zap, Sparkles } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -119,7 +122,7 @@ const HeroSection = () => {
           >
             <Rocket className="w-4 h-4 text-primary" />
             <span className="text-primary font-semibold text-sm">
-              Đồng hành cùng 500+ doanh nghiệp
+              {t("services.hero.badge.text")}
             </span>
             <Star className="w-4 h-4 text-primary fill-current" />
           </motion.div>
@@ -130,7 +133,7 @@ const HeroSection = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight"
           >
             <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent">
-              Dịch Vụ{" "}
+              {t("services.hero.heading.part1")}{" "}
             </span>
             <motion.span
               animate={{
@@ -143,7 +146,7 @@ const HeroSection = () => {
               }}
               className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-[length:200%_auto] bg-clip-text text-transparent"
             >
-              Công Nghệ
+              {t("services.hero.heading.part2")}
             </motion.span>
           </motion.h1>
 
@@ -155,35 +158,35 @@ const HeroSection = () => {
             <motion.p
               className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
             >
-              Cung cấp giải pháp công nghệ toàn diện từ{" "}
+              {t("services.hero.subheading.text")}{" "}
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
               >
-                tư vấn
+                {t(`services.hero.subheading.highlightedWords.${0}.text`)}
               </motion.span>
               ,{" "}
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
               >
-                thiết kế
+                {t(`services.hero.subheading.highlightedWords.${1}.text`)}
               </motion.span>
-              {" "}đến{" "}
+              {" "}{t(`services.hero.subheading.highlightedWords.${2}.text`)}{" "}
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
               >
-                phát triển
+                {t(`services.hero.subheading.highlightedWords.${3}.text`)}
               </motion.span>
-              {" "}và{" "}
+              {" "}{t(`services.hero.subheading.highlightedWords.${4}.text`)}{" "}
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 className="text-primary font-semibold bg-primary/10 px-2 py-1 rounded-lg"
               >
-                bảo trì
+                {t(`services.hero.subheading.highlightedWords.${5}.text`)}
               </motion.span>
-              {" "}hệ thống phần mềm cho doanh nghiệp
+              {" "}{t(`services.hero.subheading.highlightedWords.${6}.text`)}
             </motion.p>
           </motion.div>
 
@@ -193,10 +196,10 @@ const HeroSection = () => {
             className="flex flex-wrap justify-center gap-8 mb-12"
           >
             {[
-              { number: "500+", label: "Dự án thành công" },
-              { number: "50+", label: "Chuyên gia" },
-              { number: "99%", label: "Khách hàng hài lòng" },
-              { number: "24/7", label: "Hỗ trợ kỹ thuật" }
+              { number: t("stats.projects.number"), label: t("stats.projects.label") },
+              { number: t("stats.staff.number"), label: t("stats.staff.label") },
+              { number: t("stats.satisfied.number"), label: t("stats.satisfied.label") },
+              { number: t("stats.support.number"), label: t("stats.support.label") },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -227,7 +230,7 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold hover:from-primary/90 hover:to-primary transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl"
               >
-                <span>Nhận tư vấn ngay</span>
+                <span>{t(`services.hero.cta.consultation`)}</span>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -251,7 +254,7 @@ const HeroSection = () => {
               >
                 <Play className="w-4 h-4 text-primary" />
               </motion.div>
-              <span>Xem case study</span>
+              <span>{t(`services.hero.cta.caseStudy`)}</span>
             </motion.button>
           </motion.div>
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import các hình ảnh - thay thế bằng đường dẫn thực tế của bạn
 import SoftwareDevelopmentImg from "@/assets/activities/activitie_1.jpg";
@@ -12,48 +13,57 @@ import InternationalCooperationImg from "@/assets/activities/activitie_5.jpg";
 import ResearchInnovationImg from "@/assets/activities/activitie_6.jpg";
 
 const CompanyActivities: React.FC = () => {
-  const activities = [
+  const { t } = useLanguage();
+
+  // Lấy dữ liệu từ translation
+  const activitiesData = [
     {
       id: 1,
-      title: "Phát Triển Phần Mềm",
-      description: "Nghiên cứu và phát triển các giải pháp phần mềm tùy chỉnh đáp ứng nhu cầu đa dạng của khách hàng trong nước và quốc tế.",
+      title: t('about.company.activities.activities.0.title'),
+      description: t('about.company.activities.activities.0.description'),
       image: SoftwareDevelopmentImg,
-      color: "accent"
+      color: "accent",
+      buttonText: t('about.company.activities.activities.0.buttonText')
     },
     {
       id: 2,
-      title: "Tư Vấn Công Nghệ",
-      description: "Cung cấp dịch vụ tư vấn công nghệ chuyên sâu, giúp khách hàng tối ưu hóa quy trình và nâng cao hiệu suất.",
+      title: t('about.company.activities.activities.1.title'),
+      description: t('about.company.activities.activities.1.description'),
       image: TechConsultingImg,
-      color: "primary"
+      color: "primary",
+      buttonText: t('about.company.activities.activities.1.buttonText')
     },
     {
       id: 3,
-      title: "Bảo Trì & Hỗ Trợ",
-      description: "Dịch vụ bảo trì, nâng cấp và hỗ trợ kỹ thuật 24/7 đảm bảo hệ thống vận hành ổn định và liên tục.",
+      title: t('about.company.activities.activities.2.title'),
+      description: t('about.company.activities.activities.2.description'),
       image: MaintenanceSupportImg,
-      color: "accent"
+      color: "accent",
+      buttonText: t('about.company.activities.activities.2.buttonText')
     },
     {
       id: 4,
-      title: "Đào Tạo Nhân Sự",
-      description: "Đào tạo và phát triển nguồn nhân lực chất lượng cao, cập nhật công nghệ mới và kỹ năng chuyên môn.",
+      title: t('about.company.activities.activities.3.title'),
+      description: t('about.company.activities.activities.3.description'),
       image: TrainingImg,
-      color: "primary"
+      color: "primary",
+      buttonText: t('about.company.activities.activities.3.buttonText')
     },
     {
       id: 5,
-      title: "Hợp Tác Quốc Tế",
-      description: "Mở rộng hợp tác với các đối tác quốc tế, tiếp cận công nghệ tiên tiến và mở rộng thị trường toàn cầu.",
+      title: t('about.company.activities.activities.4.title'),
+      description: t('about.company.activities.activities.4.description'),
       image: InternationalCooperationImg,
-      color: "accent"
+      color: "accent",
+      buttonText: t('about.company.activities.activities.4.buttonText')
     },
     {
       id: 6,
-      title: "Nghiên Cứu & Đổi Mới",
-      description: "Không ngừng nghiên cứu và đổi mới công nghệ, phát triển các sản phẩm sáng tạo đón đầu xu hướng.",
+      title: t('about.company.activities.activities.5.title'),
+      description: t('about.company.activities.activities.5.description'),
       image: ResearchInnovationImg,
-      color: "primary"
+      color: "primary",
+      buttonText: t('about.company.activities.activities.5.buttonText')
     }
   ];
 
@@ -79,7 +89,7 @@ const CompanyActivities: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -94,7 +104,7 @@ const CompanyActivities: React.FC = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -111,7 +121,7 @@ const CompanyActivities: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -126,7 +136,7 @@ const CompanyActivities: React.FC = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -164,7 +174,7 @@ const CompanyActivities: React.FC = () => {
           className="relative flex-shrink-0 mr-8"
         >
           <div className="text-6xl font-bold text-primary pb-4 border-b-4 border-accent relative">
-            06
+            {t('about.company.activities.sectionNumber')}
             <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent/50 rounded-full"></div>
           </div>
         </motion.div>
@@ -179,14 +189,16 @@ const CompanyActivities: React.FC = () => {
             variants={itemVariants}
             className="mb-8"
           >
-            <h2 className="text-3xl font-bold text-primary mb-3 font-heading">CÁC HOẠT ĐỘNG CỦA HITEK SOFTWARE</h2>
+            <h2 className="text-3xl font-bold text-primary mb-3 font-heading">
+              {t('about.company.activities.title')}
+            </h2>
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-muted-foreground bg-primary/5 inline-block px-4 py-2 rounded-lg"
             >
-              KHÁM PHÁ HOẠT ĐỘNG NỔI BẬT
+              {t('about.company.activities.subtitle')}
             </motion.p>
           </motion.div>
 
@@ -198,7 +210,7 @@ const CompanyActivities: React.FC = () => {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
           >
-            {activities.map((activity, index) => (
+            {activitiesData.map((activity, index) => (
               <motion.div 
                 key={activity.id}
                 variants={cardVariants}
@@ -291,7 +303,7 @@ const CompanyActivities: React.FC = () => {
                       whileTap={{ scale: 0.95 }}
                       className={`text-xs font-semibold ${activity.color === 'accent' ? 'text-accent hover:text-accent/80' : 'text-primary hover:text-primary/80'} transition-colors duration-200 flex items-center space-x-1`}
                     >
-                      <span>Xem chi tiết</span>
+                      <span>{activity.buttonText}</span>
                       <motion.svg 
                         className="w-3 h-3"
                         animate={{ x: [0, 3, 0] }}
@@ -341,7 +353,7 @@ const CompanyActivities: React.FC = () => {
                 transition={{ duration: 0.5, delay: 2.2 }}
                 className="text-muted-foreground text-sm"
               >
-                Đa dạng hoạt động - Chất lượng vượt trội
+                {t('about.company.activities.footerText')}
               </motion.span>
               {[...Array(3)].map((_, i) => (
                 <motion.div 

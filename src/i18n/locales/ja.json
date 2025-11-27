@@ -1,329 +1,662 @@
 {
-    "nav": {
-      "home": "TRANG CHỦ",
-      "about": "VỀ HITEK",
-      "services": "DỊCH VỤ",
-      "technology": "CÔNG NGHỆ",
-      "projects": "DỰ ÁN",
-      "testimonials": "TESTIMONIALS",
-      "careers": "TUYỂN DỤNG",
-      "learnMore": "Tìm hiểu thêm",
-      "viewMore": "Xem thêm"
-    },
-    "home": {
-      "aiSection": {
-        "title": "Giải Pháp Phát Triển Phần Mềm",
-        "subtitle": "Thông Minh với AI",
-        "description": "HITEK tích hợp các công nghệ AI hàng đầu xuyên suốt quy trình phát triển, mang lại hiệu quả vượt trội về chất lượng và tốc độ",
-        "banner": {
-          "heading": "Công Nghệ AI Hàng Đầu Được Tích Hợp",
-          "note": "Hơn 20+ công cụ AI được tối ưu hóa cho từng giai đoạn phát triển",
+  "nav": {
+    "home": "ホーム",
+    "about": "ハイテックについて",
+    "services": "サービス",
+    "technology": "技術",
+    "projects": "プロジェクト",
+    "testimonials": "お客様の声",
+    "careers": "採用情報",
+    "learnMore": "詳細を見る",
+    "viewMore": "もっと見る"
+  },
+  "home": {
+    "aiSection": {
+      "title": "AI駆動型ソフトウェア開発ソリューション",
+      "subtitle": "AIによるスマート化",
+      "description": "HITEKは開発プロセス全体に最高のAI技術を統合し、卓越した品質とスピード効率を提供します",
+      "banner": {
+        "heading": "統合されたトップAI技術",
+        "note": "各開発段階に最適化された20以上のAIツール",
+        "tools": [
+          "ChatGPT",
+          "GitHub Copilot",
+          "Testim",
+          "Harness",
+          "Moogsoft"
+        ]
+      },
+      "steps": [
+        {
+          "step": "01",
+          "title": "要件分析",
+          "description": "顧客ニーズ、ビジネス要件、必要な機能を高精度で理解",
+          "features": [
+            "要件分析、ソリューションコンサルティング",
+            "自動化された初期ドキュメント作成",
+            "音声→インテリジェントテキスト変換"
+          ],
           "tools": [
-            "ChatGPT",
-            "GitHub Copilot",
-            "Testim",
-            "Harness",
-            "Moogsoft"
+            "ChatGPT / GPT",
+            "Bard / Gemini",
+            "Avscribe"
           ]
         },
-        "steps": [
-          {
-            "step": "01",
-            "title": "Phân tích yêu cầu",
-            "description": "Hiểu nhu cầu khách hàng, nghiệp vụ, chức năng cần có với độ chính xác cao",
-            "features": [
-              "Phân tích yêu cầu, tư vấn giải pháp",
-              "Tự động viết tài liệu ban đầu",
-              "Chuyển lời nói → văn bản thông minh"
-            ],
-            "tools": [
-              "ChatGPT / GPT",
-              "Bard / Gemini",
-              "Avscribe"
-            ]
-          },
-          {
-            "step": "02",
-            "title": "Thiết kế hệ thống",
-            "description": "Thiết kế kiến trúc tổng thể, mô hình dữ liệu, API tối ưu",
-            "features": [
-              "Tạo sơ đồ kiến trúc thông minh",
-              "Mô tả API, ERD tự động",
-              "Thiết kế mô hình nâng cao"
-            ],
-            "tools": [
-              "Bard / Gemini",
-              "ChatGPT",
-              "Draw.io",
-              "Figma",
-              "Visio"
-            ]
-          },
-          {
-            "step": "03",
-            "title": "Lập trình",
-            "description": "Viết code các module theo thiết kế với sự hỗ trợ của AI",
-            "features": [
-              "Tự động gợi ý code thông minh",
-              "AI review và refactor code",
-              "Hỗ trợ tìm kiếm code nhanh"
-            ],
-            "tools": [
-              "GitHub Copilot",
-              "Cursor",
-              "Tabnine",
-              "Sourcegraph"
-            ]
-          },
-          {
-            "step": "04",
-            "title": "Kiểm thử phần mềm",
-            "description": "Đảm bảo hệ thống không lỗi với kiểm thử tự động AI",
-            "features": [
-              "Kiểm thử tự động bằng AI",
-              "Tạo test case tự động",
-              "Testing đa nền tảng thông minh"
-            ],
-            "tools": [
-              "Testim",
-              "Sapienz",
-              "Selenium",
-              "BrowserStack",
-              "ChatGPT"
-            ]
-          },
-          {
-            "step": "05",
-            "title": "Triển khai",
-            "description": "Đưa hệ thống lên môi trường thực tế với CI/CD thông minh",
-            "features": [
-              "CI/CD với AI tối ưu",
-              "Deploy đa nền tảng",
-              "GitOps cho Kubernetes"
-            ],
-            "tools": [
-              "Harness",
-              "Spinnaker",
-              "ArgoCD",
-              "AWS CodePipeline"
-            ]
-          },
-          {
-            "step": "06",
-            "title": "Bảo trì & Vận hành",
-            "description": "Theo dõi hệ thống, sửa lỗi, nâng cấp với AIOps",
-            "features": [
-              "Phát hiện sự cố tự động",
-              "Phân tích log thông minh",
-              "Giám sát hiệu năng bằng AI"
-            ],
-            "tools": [
-              "Moogsoft",
-              "Splunk",
-              "Dynatrace",
-              "Chatbot AI"
-            ]
-          }
-        ]
-      }
-    },
-    "about": {
-      "company": {
-        "title": "Thông tin công ty",
-        "description": "Tìm hiểu về hành trình phát triển, sứ mệnh và tầm nhìn của HITEK"
-      },
-      "us": {
-        "title": "Về chúng tôi",
-        "description": "Đội ngũ chuyên gia, văn hóa công ty và những giá trị cốt lõi",
-        "banner": {
-          "companyName": "HITEK SOFTWARE",
-          "description": {
-            "text1": "Khám phá hành trình từ startup với 5 kỹ sư đến công ty công nghệ toàn cầu",
-            "highlight": " với sứ mệnh trở thành đối tác phần mềm hàng đầu thế giới"
-          },
-          "stats": {
-            "experience": {
-              "number": "5+",
-              "label": "Năm kinh nghiệm"
-            },
-            "staff": {
-              "number": "100+",
-              "label": "Nhân sự"
-            },
-            "projects": {
-              "number": "50+",
-              "label": "Dự án thành công"
-            },
-            "countries": {
-              "number": "10+",
-              "label": "Quốc gia"
-            }
-          },
-          "cta": "Khám phá hành trình"
-        },
-        "aboutHitek": {
-          "mainTitle": "Từ Khởi Nghiệp Đến Toàn Cầu",
-          "introTexts": [
-            "Hitek được thành lập từ năm 2018, một chặng đường đủ dài để chúng tôi có thể khẳng định vị thế của mình ở thị trường công nghệ hiện tại.",
-            "Mục tiêu ở tương lai Hitek không chỉ là một công ty phát triển phần mềm tốt nhất tại Việt Nam, mà còn là một công ty phần mềm hàng đầu Thế giới!"
+        {
+          "step": "02",
+          "title": "システム設計",
+          "description": "全体アーキテクチャ、データモデル、最適化されたAPIの設計",
+          "features": [
+            "インテリジェントなアーキテクチャ図作成",
+            "自動化されたAPI説明、ERD",
+            "高度なモデル設計"
           ],
-          "sinceText": "Since 2018",
-          "timeline": {
-            "items": [
+          "tools": [
+            "Bard / Gemini",
+            "ChatGPT",
+            "Draw.io",
+            "Figma",
+            "Visio"
+          ]
+        },
+        {
+          "step": "03",
+          "title": "プログラミング",
+          "description": "AI支援による設計に基づくモジュールコーディング",
+          "features": [
+            "インテリジェントなコード提案",
+            "AIコードレビューとリファクタリング",
+            "高速コード検索サポート"
+          ],
+          "tools": [
+            "GitHub Copilot",
+            "Cursor",
+            "Tabnine",
+            "Sourcegraph"
+          ]
+        },
+        {
+          "step": "04",
+          "title": "ソフトウェアテスト",
+          "description": "AI自動テストによるシステムのエラーフリー確保",
+          "features": [
+            "AI自動テスト",
+            "自動化されたテストケース生成",
+            "インテリジェントなクロスプラットフォームテスト"
+          ],
+          "tools": [
+            "Testim",
+            "Sapienz",
+            "Selenium",
+            "BrowserStack",
+            "ChatGPT"
+          ]
+        },
+        {
+          "step": "05",
+          "title": "デプロイメント",
+          "description": "インテリジェントCI/CDによる本番環境へのシステム展開",
+          "features": [
+            "AI最適化CI/CD",
+            "マルチプラットフォームデプロイメント",
+            "Kubernetes向けGitOps"
+          ],
+          "tools": [
+            "Harness",
+            "Spinnaker",
+            "ArgoCD",
+            "AWS CodePipeline"
+          ]
+        },
+        {
+          "step": "06",
+          "title": "保守と運用",
+          "description": "AIOpsによるシステム監視、エラー修正、アップグレード",
+          "features": [
+            "自動インシデント検出",
+            "インテリジェントなログ分析",
+            "AIパフォーマンス監視"
+          ],
+          "tools": [
+            "Moogsoft",
+            "Splunk",
+            "Dynatrace",
+            "AIチャットボット"
+          ]
+        }
+      ]
+    }
+  },
+  "stats": {
+    "experience": {
+      "number": "5+",
+      "label": "年の経験"
+    },
+    "staff": {
+      "number": "100+",
+      "label": "スタッフ"
+    },
+    "projects": {
+      "number": "50+",
+      "label": "プロジェクト"
+    },
+    "countries": {
+      "number": "10+",
+      "label": "国"
+    }
+  },
+  "about": {
+    "company": {
+      "title": "会社情報",
+      "description": "HITEKの開発の旅、ミッション、ビジョンについて学ぶ",
+      "banner": {
+        "title": {
+          "line1": "会社",
+          "line2": "情報"
+        },
+        "description": {
+          "line1": "世界的な技術パートナーになるというビジョンを持つ",
+          "line2": "最も急速に成長している技術企業の1つのストーリーを発見する"
+        },
+        "highlight": "最も急速に成長している",
+        "cta": {
+          "exploreNow": "今すぐ探検"
+        }
+      },
+      "info": {
+        "sectionNumber": "03",
+        "title": "会社情報",
+        "subtitle": "会社プロファイルを見る",
+        "companyInfo": {
+          "companyName": "会社名",
+          "established": "設立",
+          "staff": "スタッフ",
+          "capital": {
+            "label": "資本金",
+            "value": "174億"
+          },
+          "businessField": {
+            "label": "事業分野",
+            "value": "コンピュータプログラミング、詳細：ソフトウェア製品製造"
+          }
+        },
+        "leadership": {
+          "title": "リーダーシップチーム",
+          "members": [
+            {
+              "position": "ビジネスディレクター",
+              "name": "オ・ションボム氏",
+              "nationality": "韓国人",
+              "initials": "SB"
+            },
+            {
+              "position": "最高経営責任者",
+              "name": "チャン・アン・コイ氏",
+              "role": "創業者",
+              "initials": "TK"
+            }
+          ],
+          "footerText": "献身的なリーダーシップチーム"
+        }
+      },
+      "vision": {
+        "visionSection": {
+          "number": "01",
+          "title": "HITEKのビジョン",
+          "mainStatement": "Hitekの長期的な目標は、世界をリードするソフトウェアツールになることです",
+          "description": "Hitek Softwareは、世界をリードするソフトウェアツールになるという目標を達成するために、毎日新しい技術を継続的に研究しています。"
+        },
+        "messageSection": {
+          "number": "02",
+          "title": "会長メッセージ",
+          "mainGoal": "HITEKの長期的な目標は、世界をリードするソフトウェア企業になることです",
+          "paragraphs": [
+            "スタートアップ段階で世界中の多くの顧客と協力する機会に恵まれ、各国および各分野の顧客ニーズを理解するための広範な経験を蓄積しました。",
+            "私はその経験でHitek Softwareを日々強く構築しています。",
+            "Hitek Softwareは、新しい技術を探求し適応する準備が常にできている若くエネルギッシュな人材の集まりです。したがって、新しい技術と知識を迅速に更新する強みにより、顧客の要件を満たすことができると確信しています。",
+            "若い人的資源に加えて、外国語に堪能で技術に深い専門知識を持つコンサルタントも擁しており、これによりHitekと外国の顧客間の言語障壁を取り除くのに役立っています。これはまた、Hitek Softwareが5年以上にわたり世界中の多くの顧客にアプローチし同行することを可能にした公式です。"
+          ],
+          "image": {
+            "alt": "Hitek Software会長 - チャン・アン・コイ",
+            "fallbackText": "メンバー写真"
+          },
+          "signature": {
+            "position": "会長 - 創業者",
+            "name": "チャン・アン・コイ"
+          },
+          "quote": "継続的な革新、継続的な発展 - 情熱的な若いチームを率いて世界的な到達へ"
+        }
+      },
+      "achievementsTimeline": {
+        "sectionNumber": "04",
+        "title": "実績と受賞",
+        "subtitle": "開発の旅と重要なマイルストーン",
+        "achievements": [
+          {
+            "year": "2021",
+            "title": "ベトナムの注目すべきスタートアップトップ20",
+            "type": "受賞"
+          },
+          {
+            "year": "2022",
+            "title": "ISO 9001:2015認証取得",
+            "type": "認証"
+          },
+          {
+            "year": "2022",
+            "title": "ホーチミン市情報産業協会会員",
+            "type": "会員"
+          },
+          {
+            "year": "2022",
+            "title": "ベトナムソフトウェア協会会員",
+            "type": "会員"
+          },
+          {
+            "year": "2022",
+            "title": "ISTQB認証取得",
+            "type": "認証"
+          },
+          {
+            "year": "2023",
+            "title": "AWS認定取得",
+            "type": "認証"
+          },
+          {
+            "year": "2023",
+            "title": "PMP認証取得",
+            "type": "認証"
+          },
+          {
+            "year": "2023",
+            "title": "ISO 27001:2022認証取得",
+            "type": "認証"
+          }
+        ],
+        "stats": [
+          {
+            "number": "7+",
+            "text": "運営年数"
+          },
+          {
+            "number": "8+",
+            "text": "受賞と認証"
+          },
+          {
+            "number": "2",
+            "text": "協会会員"
+          },
+          {
+            "number": "100%",
+            "text": "品質基準達成"
+          }
+        ],
+        "footerText": "発展を続け、より多くの成果を達成する"
+      },
+      "keyMembers": {
+        "sectionNumber": "05",
+        "title": "主要メンバー",
+        "description": "技術と管理における多年の経験を持つ才能あるリーダーシップチームが、Hitek Softwareに画期的な発展をもたらします。",
+        "members": [
+          {
+            "name": "オ・ションボム氏",
+            "position": "韓国ビジネスディレクター",
+            "achievements": [
               {
-                "year": "2018",
-                "title": "Thành lập Hitek",
-                "description": "Hitek được thành lập chỉ với 5 kỹ sư phần mềm, làm việc tự do, tập trung vào phát triển web và ứng dụng di động cho thị trường Việt Nam.",
-                "stats": "5 kỹ sư"
+                "type": "highlight",
+                "text": "10年以上のモバイルアプリ/ウェブ開発経験"
               },
               {
-                "year": "2019",
-                "title": "Bước ra thế giới",
-                "description": "Lần đầu nhận được hợp đồng gia công phần mềm cho thị trường Hàn Quốc, Hitek đã thay đổi chiến lược kinh doanh mở rộng sang thị trường nước ngoài.",
-                "stats": "Thị trường Hàn Quốc"
+                "type": "highlight",
+                "text": "5年以上のチーム管理とリーダーシップ経験"
               },
               {
-                "year": "2020 - 2021",
-                "title": "Chuyên sâu Hàn Quốc",
-                "description": "Chúng tôi tiếp tục phát triển công nghệ tại Hàn Quốc. Gần 90% các dự án đến từ thị trường này.",
-                "stats": "90% dự án từ Hàn Quốc"
+                "type": "normal",
+                "text": "進捗管理、タイムライン、予算、人員の計画における主要責任"
               },
               {
-                "year": "2022 - Nay",
-                "title": "Toàn cầu hóa",
-                "description": "Hitek cung cấp các dịch vụ gia công phần mềm và cung cấp phần mềm cho các khách hàng đến từ Mỹ, Canada, Đức, Hàn, Úc, Nhật.",
-                "stats": "6+ quốc gia"
+                "type": "normal",
+                "text": "遠隔国際チームの管理、従業員の個人開発計画策定"
+              },
+              {
+                "type": "normal",
+                "text": "国際環境での勤務経験：日本、ベトナム、韓国、ヨーロッパ"
               }
             ]
           },
-          "mission": {
-            "title": "Sứ Mệnh Tiếp Theo",
-            "description": "Tiếp tục mở rộng sang các thị trường mới, đẩy mạnh nghiên cứu AI và công nghệ tiên tiến, không ngừng nâng cao chất lượng dịch vụ để trở thành đối tác công nghệ đáng tin cậy trên toàn cầu."
+          {
+            "name": "レ・クオック・ヴー氏",
+            "position": "Hitek Software CTO",
+            "achievements": [
+              {
+                "type": "highlight",
+                "text": "7年以上のソフトウェア開発およびシステム設計経験"
+              },
+              {
+                "type": "highlight",
+                "text": "2年以上のIoTシステム設計と実装、プロトタイプ構築経験"
+              },
+              {
+                "type": "normal",
+                "text": "ソフトウェア工学学士"
+              },
+              {
+                "type": "award",
+                "text": "2016年科学技術記事執筆参加"
+              },
+              {
+                "type": "award",
+                "text": "2015年オープンソースソフトウェアコンテスト1位"
+              },
+              {
+                "type": "award",
+                "text": "2014年ACM/ICPC国際プログラミングコンテスト2位"
+              },
+              {
+                "type": "normal",
+                "text": "ソフトウェアシステムアーキテクチャの構築と設計、技術方向性の責任"
+              }
+            ]
+          },
+          {
+            "name": "ラム・トゥ・ティエン氏",
+            "position": "Hitek Capitalディレクター",
+            "achievements": [
+              {
+                "type": "normal",
+                "text": "ロビ・デジタル技術投資株式会社の創業者兼取締役会長"
+              },
+              {
+                "type": "normal",
+                "text": "エブリワン・ハブ・ファン技術株式会社の創業株主兼取締役"
+              },
+              {
+                "type": "normal",
+                "text": "元ザングループ投資株式会社代表取締役社長"
+              },
+              {
+                "type": "normal",
+                "text": "元エブリワン・ハブ・ファンサービス有限会社商業ディレクター"
+              },
+              {
+                "type": "normal",
+                "text": "元アフォーダブル・フォン・チェーンシステム創業者兼運営者（2012年）"
+              }
+            ]
           }
+        ],
+        "stats": [
+          {
+            "label": "経験年数",
+            "value": "10+"
+          },
+          {
+            "label": "国",
+            "value": "4+"
+          },
+          {
+            "label": "プロジェクト",
+            "value": "15+"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "text": "トップエキスパート"
+          },
+          {
+            "text": "国際経験"
+          },
+          {
+            "text": "献身的なリーダーシップ"
+          }
+        ],
+        "footerText": "優秀なリーダーシップチーム - 戦略的ビジョン",
+        "imageFallbackText": "メンバー写真"
+      }
+    },
+    "us": {
+      "title": "私たちについて",
+      "description": "専門家チーム、企業文化、コアバリュー",
+      "banner": {
+        "companyName": "HITEK SOFTWARE",
+        "description": {
+          "text1": "5人のエンジニアによるスタートアップからグローバル技術企業への旅を発見する",
+          "highlight": " 世界をリードするソフトウェアパートナーになるというミッションと共に"
+        },
+        "cta": "旅を探検"
+      },
+      "aboutHitek": {
+        "mainTitle": "スタートアップからグローバルへ",
+        "introTexts": [
+          "Hitekは2018年に設立され、現在の技術市場で私たちの地位を確立するのに十分な長い旅を歩んできました。",
+          "Hitekの将来の目標は、ベトナムで最高のソフトウェア開発会社であるだけでなく、世界をリードするソフトウェア企業になることです！"
+        ],
+        "sinceText": "2018年設立",
+        "timeline": {
+          "items": [
+            {
+              "year": "2018",
+              "title": "Hitek設立",
+              "description": "Hitekは5人のソフトウェアエンジニアのみで設立され、フリーランスとして作業し、ベトナム市場向けのウェブおよびモバイルアプリ開発に焦点を当てました。",
+              "stats": "5人のエンジニア"
+            },
+            {
+              "year": "2019",
+              "title": "グローバル進出",
+              "description": "韓国市場向けの最初のソフトウェアアウトソーシング契約を受注し、Hitekは海外市場への拡大のためのビジネス戦略を変更しました。",
+              "stats": "韓国市場"
+            },
+            {
+              "year": "2020 - 2021",
+              "title": "韓国特化",
+              "description": "韓国での技術開発を継続しました。プロジェクトのほぼ90％がこの市場から来ました。",
+              "stats": "韓国からのプロジェクト90％"
+            },
+            {
+              "year": "2022 - 現在",
+              "title": "グローバル化",
+              "description": "Hitekは、アメリカ、カナダ、ドイツ、韓国、オーストラリア、日本からの顧客向けにソフトウェアアウトソーシングサービスおよびソフトウェア製品を提供します。",
+              "stats": "6+カ国"
+            }
+          ]
+        },
+        "mission": {
+          "title": "次のミッション",
+          "description": "新市場への拡大を継続し、AIおよび先進技術研究を強化し、サービス品質を絶えず改善して、信頼できるグローバル技術パートナーになること。"
         }
-      }
-    },
-    "services": {
-      "customSoftware": {
-        "title": "Dịch vụ custom phần mềm",
-        "description": "Công ty phát triển phần mềm custom hàng đầu Việt Nam."
       },
-      "longTermDevelopment": {
-        "title": "Dịch vụ phát triển phần mềm dài hạn",
-        "description": "Xây dựng phần mềm dài hạn phức tạp và chuyên sâu."
-      },
-      "webDevelopment": {
-        "title": "Dịch vụ phát triển web",
-        "description": "Phát triển web bằng .NET, NodeJS, Java, PHP, Angular, ReactJS..."
-      },
-      "cloudMigration": {
-        "title": "Dịch vụ Cloud Migration",
-        "description": "Tận dụng đám mây và cơ sở hạ tầng để tăng trưởng kinh doanh."
-      },
-      "mobileApp": {
-        "title": "Dịch vụ phát triển mobile app",
-        "description": "Ứng dụng di động chất lượng cao cho khách hàng."
-      },
-      "softwareTesting": {
-        "title": "Dịch vụ kiểm thử phần mềm",
-        "description": "Xây dựng trải nghiệm web và thiết bị di động tối ưu."
-      },
-      "outsourcing": {
-        "title": "Dịch vụ outsourcing theo dự án",
-        "description": "Xử lý các dự án Outsourcing quốc tế phức tạp."
-      },
-      "offshoreCenter": {
-        "title": "Dịch vụ xây dựng offshore center",
-        "description": "Xây dựng offshore center hiện đại và phù hợp."
-      },
-      "nearshoreSoftware": {
-        "title": "Dịch vụ phát triển phần mềm gần thị trường",
-        "description": "Phát triển phần mềm tại các quốc gia gần với thị trường tiêu thụ."
-      },
-      "blockchain": {
-        "title": "Dịch vụ Blockchain cho doanh nghiệp",
-        "description": "Phát triển Blockchain dễ dàng và an toàn cho doanh nghiệp."
-      }
-    },
-    "hero": {
-      "title1": "THÚC ĐẨY SÁNG TẠO, TĂNG TỐC ĐỔI MỚI",
-      "title2": "ĐỒNG HÀNH PHÁT TRIỂN, NÂNG TẦM THÀNH CÔNG",
-      "subtitle": "_ Chất lượng là danh dự _",
-      "explore": "Khám phá ngay",
-      "contact": "Liên hệ tư vấn"
-    },
-    "contact": {
-      "title": "LIÊN HỆ",
-      "heading": "Hãy kết nối với chúng tôi",
-      "description": "Đội ngũ chuyên gia của HITEK sẵn sàng tư vấn và hỗ trợ bạn",
-      "phone": "Điện thoại",
-      "email": "Email",
-      "address": "Địa chỉ"
-    },
-    "cta": {
-      "ready": "Sẵn sàng triển khai dự án?",
-      "description": "Liên hệ với chúng tôi ngay hôm nay để được tư vấn giải pháp phù hợp nhất",
-      "contactButton": "Liên hệ tư vấn",
-      "callButton": "Gọi ngay"
-    },
-    "servicesSection": {
-      "heading": "Giải Pháp Công Nghệ Toàn Diện",
-      "subheading": "Khám phá các dịch vụ công nghệ hiện đại của chúng tôi, được thiết kế để thúc đẩy chuyển đổi số và nâng cao năng lực cạnh tranh cho doanh nghiệp của bạn",
-      "exploreButton": "Khám phá ngay",
-      "services": {
-        "softwareDev": {
-          "title": "Phát triển phần mềm",
-          "description": "Xây dựng các giải pháp phần mềm tùy chỉnh đáp ứng nhu cầu kinh doanh với công nghệ hiện đại nhất"
+      "csr": {
+        "headercompany": {
+          "title": "HITEK SOFTWAREのCSR実施",
+          "description": "CSRは企業の社会的責任を表し、世界的に人気のあるトレンドと見なされ、企業にとって「ソフト」な要件となっています。企業および関連個人が社会に対して実行しなければならない義務を履行し、最も前向きな影響を最大化し、社会への否定的な影響を最小化するために。Hitek Softwareは以下の項目を実施してきました："
         },
-        "cloudSolution": {
-          "title": "Giải pháp Cloud",
-          "description": "Triển khai và quản lý hạ tầng đám mây hiệu quả và bảo mật cho doanh nghiệp"
-        },
-        "mobileApp": {
-          "title": "Ứng dụng di động",
-          "description": "Phát triển app mobile đa nền tảng với trải nghiệm người dùng tối ưu và hiệu suất cao"
-        },
-        "cybersecurity": {
-          "title": "An ninh mạng",
-          "description": "Bảo vệ hệ thống và dữ liệu với các giải pháp bảo mật tiên tiến và toàn diện"
-        },
-        "aiMl": {
-          "title": "AI & Machine Learning",
-          "description": "Tích hợp AI và ML để tự động hóa và tối ưu quy trình vận hành doanh nghiệp"
-        },
-        "dataManagement": {
-          "title": "Quản lý dữ liệu",
-          "description": "Thiết kế và quản lý cơ sở dữ liệu mạnh mẽ, có khả năng mở rộng và bảo mật cao"
-        },
-        "consulting": {
-          "title": "Tư vấn công nghệ",
-          "description": "Đưa ra các giải pháp công nghệ tối ưu cho doanh nghiệp dựa trên nhu cầu thực tế"
-        },
-        "maintenance": {
-          "title": "Bảo trì hệ thống",
-          "description": "Dịch vụ bảo trì và nâng cấp hệ thống định kỳ đảm bảo hoạt động ổn định"
+        "items": [
+          {
+            "title": "第一",
+            "subtitle": "経済的",
+            "description": "社会的ニーズの充足、社会福祉の増進、企業の存続と発展の確保を含みます。"
+          },
+          {
+            "title": "第二",
+            "subtitle": "法的",
+            "description": "企業は、株主、消費者、従業員の家族を含む利害関係者に対する法的規制を完全に遵守しなければなりません。"
+          },
+          {
+            "title": "第三",
+            "subtitle": "倫理的",
+            "description": "社会が企業に期待するが、法的体系で規制されていない行動および活動です。"
+          },
+          {
+            "title": "第四",
+            "subtitle": "人道的",
+            "description": "企業は、コミュニティおよび社会への貢献意欲を示す行動を実施すべきです。"
+          }
+        ],
+        "footer": {
+          "title": "持続可能な開発へのコミットメント",
+          "description": "Hitek Softwareは、すべてのビジネス活動において社会的責任を実施し、持続可能な開発とコミュニティへの前向きな貢献を目指して絶えず努力しています。"
         }
-      }
-    },
-    "aboutSection": {
-      "badge": "THÀNH TỰU CỦA CHÚNG TÔI",
-      "heading": "Cảm ơn sự tin tưởng của khách hàng",
-      "subheading": "Hành trình của chúng tôi được xây dựng dựa trên sự tin tưởng và hợp tác từ các đối tác toàn cầu, mang đến những giải pháp công nghệ xuất sắc và trải nghiệm khách hàng vượt trội.",
-      "title": "Đối tác công nghệ đáng tin cậy của bạn",
-      "description1": "HITEK là công ty công nghệ hàng đầu tại Việt Nam, chuyên cung cấp các giải pháp phần mềm và dịch vụ chuyển đổi số. Với đội ngũ chuyên gia giàu kinh nghiệm và công nghệ tiên tiến, chúng tôi cam kết mang đến những sản phẩm chất lượng cao.",
-      "description2": "Sứ mệnh của chúng tôi là thúc đẩy sáng tạo, tăng tốc đổi mới, đồng hành phát triển và nâng tầm thành công cho mọi doanh nghiệp.",
-      "ctaHeading": "Sẵn sàng hợp tác cùng chúng tôi?",
-      "ctaDescription": "Hãy để chúng tôi giúp bạn hiện thực hóa ý tưởng với giải pháp công nghệ tối ưu",
-      "ctaButton": "Liên hệ ngay",
-      "stats": {
-        "experience": "Năm kinh nghiệm",
-        "experienceDesc": "Nhiều năm kinh nghiệm đã mang lại cho chúng tôi kiến thức sâu rộng về nhiều ngành, cho phép cung cấp giải pháp trải nghiệm số tốt nhất.",
-        "clients": "Khách hàng toàn cầu",
-        "clientsDesc": "Hơn 80 khách hàng toàn cầu từ khắp nơi trên thế giới, bao gồm Hàn Quốc, Nhật Bản, Canada, Úc và nhiều nơi khác.",
-        "projects": "Dự án hoàn thành",
-        "projectsDesc": "Các dự án hoàn thành cho khách hàng, mang lại trải nghiệm chuyển đổi số vượt trội và giải pháp tối ưu.",
-        "team": "Đội ngũ tài năng",
-        "teamDesc": "Đội ngũ tài năng bao gồm các chuyên gia kỹ thuật số, nhà tư duy chiến lược, nhà thiết kế và nhà phát triển sáng tạo."
+      },
+      "sdg": {
+        "header": {
+          "title": "持続可能な開発目標",
+          "paragraphs": [
+            "Hitek Softwareはグローバルな運営ネットワークを確立してきたため、私たちは常に各ステップと段階での作業品質に焦点を当てています。",
+            "Hitekのリーダーシップは従業員の生活にも深く関心を持っているため、私たちは17の持続可能な開発目標（SDGs）内で適切な目標を目指しています。"
+          ]
+        },
+        "vision": {
+          "title": "私たちのビジョン",
+          "description": "Hitek Softwareは、生活の質向上に貢献すると信じており、よりスマートで幸せな新しい現代社会を実現するために努力し続けます。"
+        },
+        "goals": [
+          {
+            "number": "1",
+            "title": "質の高い教育",
+            "description": "すべての人々に包摂的かつ公平で質の高い教育を確保し、生涯学習の機会を促進します。",
+            "hitekAction": "Hitek Softwareは、従業員向けにプログラミング知識および仕事中に必要なソフトスキルに関する定期的なトレーニングセッションを組織します。"
+          },
+          {
+            "number": "2",
+            "title": "働きがいと経済成長",
+            "description": "多様化、技術革新および技術向上を通じて、経済的生产性のより高いレベルを達成します。",
+            "hitekAction": "生産的活動、働きがいのある人間らしい雇用の創出、起業、創造性及び革新を支援する開発志向の政策を促進します。"
+          },
+          {
+            "number": "3",
+            "title": "産業と技術革新の基盤",
+            "description": "強靭なインフラを整備し、包摂的かつ持続可能な産業化を促進し、革新を育成します。",
+            "hitekAction": "従業員が最高品質のインフラ施設を備えた環境で働ける条件を常に創出します。"
+          }
+        ],
+        "globalImpact": {
+          "title": "グローバルな影響",
+          "description": "持続可能な開発目標を実施することにより、Hitek Softwareは地域社会に貢献するだけでなく、グローバル規模で前向きな影響を創出します。"
+        }
       }
     }
+  },
+  "services": {
+    "customSoftware": {
+      "title": "カスタムソフトウェアサービス",
+      "description": "ベトナムをリードするカスタムソフトウェア開発会社。"
+    },
+    "longTermDevelopment": {
+      "title": "長期ソフトウェア開発サービス",
+      "description": "複雑で深遠な長期ソフトウェアの構築。"
+    },
+    "webDevelopment": {
+      "title": "ウェブ開発サービス",
+      "description": ".NET、NodeJS、Java、PHP、Angular、ReactJSによるウェブ開発..."
+    },
+    "cloudMigration": {
+      "title": "クラウド移行サービス",
+      "description": "ビジネス成長のためのクラウドとインフラの活用。"
+    },
+    "mobileApp": {
+      "title": "モバイルアプリ開発サービス",
+      "description": "顧客向けの高品質モバイルアプリケーション。"
+    },
+    "softwareTesting": {
+      "title": "ソフトウェアテストサービス",
+      "description": "最適なウェブおよびモバイルデバイス体験の構築。"
+    },
+    "outsourcing": {
+      "title": "プロジェクトベースのアウトソーシングサービス",
+      "description": "複雑な国際アウトソーシングプロジェクトの処理。"
+    },
+    "offshoreCenter": {
+      "title": "オフショアセンター構築サービス",
+      "description": "現代的で適切なオフショアセンターの構築。"
+    },
+    "nearshoreSoftware": {
+      "title": "ニアショアソフトウェア開発サービス",
+      "description": "ターゲット市場に近い国でのソフトウェア開発。"
+    },
+    "blockchain": {
+      "title": "企業向けブロックチェーンサービス",
+      "description": "企業向けの簡単で安全なブロックチェーン開発。"
+    }
+  },
+  "hero": {
+    "title1": "創造性の推進、革新の加速",
+    "title2": "発展のパートナーシップ、成功の高みへ",
+    "subtitle": "_ 品質は名誉 _",
+    "explore": "今すぐ探検",
+    "contact": "コンサルテーション問合せ"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "heading": "ぜひご連絡ください",
+    "description": "HITEKの専門家チームが、あなたをコンサルティングしサポートする準備ができています",
+    "phone": "電話",
+    "email": "メール",
+    "address": "住所"
+  },
+  "cta": {
+    "ready": "プロジェクトを実装する準備はできていますか？",
+    "description": "最も適したソリューションコンサルティングのために、今日弊社にご連絡ください",
+    "contactButton": "コンサルテーション問合せ",
+    "callButton": "今すぐ電話"
+  },
+  "servicesSection": {
+    "heading": "包括的な技術ソリューション",
+    "subheading": "デジタルトランスフォーメーションを推進し、ビジネスの競争力を高めるように設計された現代的な技術サービスを発見してください",
+    "exploreButton": "今すぐ探検",
+    "services": {
+      "softwareDev": {
+        "title": "ソフトウェア開発",
+        "description": "最も現代的な技術でビジネスニーズを満たすカスタムソフトウェアソリューションの構築"
+      },
+      "cloudSolution": {
+        "title": "クラウドソリューション",
+        "description": "企業向けの効率的で安全なクラウドインフラの展開と管理"
+      },
+      "mobileApp": {
+        "title": "モバイルアプリケーション",
+        "description": "最適化されたユーザー体験と高性能を備えたクロスプラットフォームモバイルアプリの開発"
+      },
+      "cybersecurity": {
+        "title": "サイバーセキュリティ",
+        "description": "高度かつ包括的なセキュリティソリューションによるシステムとデータの保護"
+      },
+      "aiMl": {
+        "title": "AI＆機械学習",
+        "description": "AIとMLを統合してビジネス運用の自動化と最適化"
+      },
+      "dataManagement": {
+        "title": "データ管理",
+        "description": "堅牢で拡張性が高く、高いセキュリティ性を備えたデータベースの設計と管理"
+      },
+      "consulting": {
+        "title": "技術コンサルティング",
+        "description": "実際のニーズに基づいた企業向けの最適な技術ソリューションの提供"
+      },
+      "maintenance": {
+        "title": "システム保守",
+        "description": "安定した運用を確保する定期的なシステム保守とアップグレードサービス"
+      }
+    }
+  },
+  "aboutSection": {
+    "badge": "私たちの実績",
+    "heading": "お客様の信頼に感謝します",
+    "subheading": "私たちの旅は、グローバルパートナーからの信頼と協力に基づいて構築され、優れた技術ソリューションと卓越した顧客体験を提供します。",
+    "title": "あなたの信頼できる技術パートナー",
+    "description1": "HITEKはベトナムのリーディングテクノロジー企業であり、ソフトウェアソリューションおよびデジタルトランスフォーメーションサービスを専門的に提供しています。経験豊富な専門家チームと先進技術により、高品質な製品を提供することをお約束します。",
+    "description2": "私たちのミッションは、あらゆるビジネスのための創造性の推進、革新の加速、発展のパートナーシップ、成功の高みへです。",
+    "ctaHeading": "私たちと協力する準備はできていますか？",
+    "ctaDescription": "最適な技術ソリューションであなたのアイデアを実現するお手伝いをさせてください",
+    "ctaButton": "今すぐ連絡",
+    "stats": {
+      "experience": "経験年数",
+      "experienceDesc": "多年の経験は、さまざまな業界にわたる広範な知識をもたらし、最高のデジタル体験ソリューションを提供することを可能にします。",
+      "clients": "グローバルクライアント",
+      "clientsDesc": "韓国、日本、カナダ、オーストラリアなど世界中の80以上のグローバルクライアント。",
+      "projects": "完了したプロジェクト",
+      "projectsDesc": "顧客向けに完了したプロジェクトは、卓越したデジタルトランスフォーメーション体験と最適なソリューションを提供します。",
+      "team": "才能あるチーム",
+      "teamDesc": "デジタル専門家、戦略的思考家、デザイナー、創造的開発者を含む才能あるチーム。"
+    }
   }
+}

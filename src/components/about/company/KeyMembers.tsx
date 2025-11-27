@@ -1,54 +1,86 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Award, Users, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const KeyMembers = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-100px 0px" });
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [direction, setDirection] = useState(0); // 0: next, 1: prev
+  const [direction, setDirection] = useState(0);
 
+  // Sử dụng trực tiếp translation keys
   const members = [
     {
-      name: "ÔNG OH SEAN BEOM",
-      position: "Giám đốc kinh doanh tại Hàn Quốc",
+      name: t('about.company.keyMembers.members.0.name'),
+      position: t('about.company.keyMembers.members.0.position'),
       image: "https://hitek.com.vn/wp-content/uploads/2022/09/sean-1.png",
       achievements: [
-        { type: "highlight", text: "10+ năm kinh nghiệm phát triển mobile app/web" },
-        { type: "highlight", text: "5+ năm kinh nghiệm quản lý team, leadership" },
-        { type: "normal", text: "Đảm nhận trách nhiệm chính trong quản lý tiến độ, lên kế hoạch về timeline, budget, nhân sự" },
-        { type: "normal", text: "Quản lý team nước ngoài từ xa, lên kế hoạch phát triển bản thân cho nhân viên" },
-        { type: "normal", text: "Kinh nghiệm làm việc trong môi trường quốc tế: Nhật, Việt Nam, Hàn Quốc, Châu Âu" }
+        { type: "highlight", text: t('about.company.keyMembers.members.0.achievements.0.text') },
+        { type: "highlight", text: t('about.company.keyMembers.members.0.achievements.1.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.0.achievements.2.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.0.achievements.3.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.0.achievements.4.text') }
       ]
     },
     {
-      name: "ÔNG LÊ QUỐC VŨ",
-      position: "Giám đốc công nghệ công ty Hitek Software",
+      name: t('about.company.keyMembers.members.1.name'),
+      position: t('about.company.keyMembers.members.1.position'),
       image: "https://hitek.com.vn/wp-content/uploads/2022/11/Le-Quoc-Vu.png",
       achievements: [
-        { type: "highlight", text: "7+ năm kinh nghiệm phát triển phần mềm và thiết kế hệ thống" },
-        { type: "highlight", text: "2+ năm kinh nghiệm trong thiết kế và triển khai hệ thống IOT, xây dựng bản mẫu" },
-        { type: "normal", text: "Cử nhân chuyên ngành kỹ thuật phần mềm" },
-        { type: "award", text: "Tham gia viết các bài báo khoa học công nghệ năm 2016" },
-        { type: "award", text: "Giải nhất cuộc thi phần mềm mã nguồn mở 2015" },
-        { type: "award", text: "Giải nhì cuộc thi lập trình quốc tế ACM/ICPC 2014" },
-        { type: "normal", text: "Chịu trách nhiệm xây dựng và thiết kế kiến trúc hệ thống phần mềm, định hướng kỹ thuật" }
+        { type: "highlight", text: t('about.company.keyMembers.members.1.achievements.0.text') },
+        { type: "highlight", text: t('about.company.keyMembers.members.1.achievements.1.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.1.achievements.2.text') },
+        { type: "award", text: t('about.company.keyMembers.members.1.achievements.3.text') },
+        { type: "award", text: t('about.company.keyMembers.members.1.achievements.4.text') },
+        { type: "award", text: t('about.company.keyMembers.members.1.achievements.5.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.1.achievements.6.text') }
       ]
     },
     {
-      name: "ÔNG LÂM THỨ TIÊN",
-      position: "Giám đốc công ty Hitek Capital",
+      name: t('about.company.keyMembers.members.2.name'),
+      position: t('about.company.keyMembers.members.2.position'),
       image: "https://hitek.com.vn/wp-content/uploads/2022/09/Sep-Long-768x816.png",
       achievements: [
-        { type: "normal", text: "Sáng lập và là Chủ tịch HĐQT Công ty cổ phần Đầu tư Công nghệ số Rồng Việt (Rovi Group)" },
-        { type: "normal", text: "Cổ đông sáng lập và Thành viên HĐQT Công ty cổ phần Công nghệ Mọi Người Cùng Vui" },
-        { type: "normal", text: "Từng đảm nhận vị trí Tổng giám đốc Công ty cổ phần đầu tư Thengroup" },
-        { type: "normal", text: "Từng đảm nhận vị trí Giám đốc thương mại Công ty TNHH Dịch vụ Mọi Người Cùng Vui" },
-        { type: "normal", text: "Từng là Nhà sáng lập và điều hành chuỗi hệ thống Điện thoại bình dân (2012)" }
+        { type: "normal", text: t('about.company.keyMembers.members.2.achievements.0.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.2.achievements.1.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.2.achievements.2.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.2.achievements.3.text') },
+        { type: "normal", text: t('about.company.keyMembers.members.2.achievements.4.text') }
       ]
     }
+  ];
+
+  // Stats data với translation
+  const stats = [
+    { 
+      icon: Users, 
+      color: "blue", 
+      value: t('about.company.keyMembers.stats.0.value'), 
+      label: t('about.company.keyMembers.stats.0.label') 
+    },
+    { 
+      icon: Globe, 
+      color: "purple", 
+      value: t('about.company.keyMembers.stats.1.value'), 
+      label: t('about.company.keyMembers.stats.1.label') 
+    },
+    { 
+      icon: Award, 
+      color: "green", 
+      value: t('about.company.keyMembers.stats.2.value'), 
+      label: t('about.company.keyMembers.stats.2.label') 
+    }
+  ];
+
+  // Additional info với translation
+  const additionalInfo = [
+    { color: "green", text: t('about.company.keyMembers.additionalInfo.0.text') },
+    { color: "blue", text: t('about.company.keyMembers.additionalInfo.1.text') },
+    { color: "purple", text: t('about.company.keyMembers.additionalInfo.2.text') }
   ];
 
   // Animation variants
@@ -73,7 +105,7 @@ const KeyMembers = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -88,7 +120,7 @@ const KeyMembers = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -141,11 +173,11 @@ const KeyMembers = () => {
   const getAchievementIcon = (type: string) => {
     switch (type) {
       case "highlight":
-        return "🎯";
+        return "";
       case "award":
-        return "🏆";
+        return "";
       default:
-        return "💼";
+        return "";
     }
   };
 
@@ -158,6 +190,37 @@ const KeyMembers = () => {
       default:
         return "border-l-4 border-gray-300 bg-gray-50 dark:bg-gray-900";
     }
+  };
+
+  // Component cho màu sắc động
+  const StatIcon = ({ icon: Icon, color }: { icon: any, color: string }) => {
+    const colorClasses = {
+      blue: "text-blue-600 dark:text-blue-400",
+      purple: "text-purple-600 dark:text-purple-400", 
+      green: "text-green-600 dark:text-green-400"
+    };
+
+    return <Icon className={`h-6 w-6 ${colorClasses[color as keyof typeof colorClasses] || colorClasses.blue} mx-auto mb-2`} />;
+  };
+
+  const StatBackground = ({ color }: { color: string }) => {
+    const colorClasses = {
+      blue: "bg-blue-50 dark:bg-blue-900/20",
+      purple: "bg-purple-50 dark:bg-purple-900/20",
+      green: "bg-green-50 dark:bg-green-900/20"
+    };
+
+    return colorClasses[color as keyof typeof colorClasses] || colorClasses.blue;
+  };
+
+  const DotColor = ({ color }: { color: string }) => {
+    const colorClasses = {
+      blue: "bg-blue-500",
+      purple: "bg-purple-500",
+      green: "bg-green-500"
+    };
+
+    return colorClasses[color as keyof typeof colorClasses] || colorClasses.blue;
   };
 
   const currentMember = members[currentIndex];
@@ -179,7 +242,7 @@ const KeyMembers = () => {
             className="relative flex-shrink-0 mr-8"
           >
             <div className="text-6xl font-bold text-gray-900 dark:text-white pb-4 border-b-4 border-blue-500 relative">
-              05
+              {t("about.company.keyMembers.sectionNumber")}
               <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></div>
             </div>
           </motion.div>
@@ -190,7 +253,7 @@ const KeyMembers = () => {
             className="flex-1"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              THÀNH VIÊN CHỦ CHỐT
+              {t("about.company.keyMembers.title")}
             </h2>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -199,8 +262,7 @@ const KeyMembers = () => {
               className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800"
             >
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Đội ngũ lãnh đạo tài năng với nhiều năm kinh nghiệm trong lĩnh vực công nghệ 
-                và quản lý, mang đến sự phát triển vượt bậc cho Hitek Software.
+                {t("about.company.keyMembers.description")}
               </p>
             </motion.div>
           </motion.div>
@@ -310,17 +372,13 @@ const KeyMembers = () => {
                         transition={{ duration: 0.6, delay: 0.8 }}
                         className="mt-6 grid grid-cols-3 gap-4 text-center"
                       >
-                        {[
-                          { icon: Users, color: "blue", value: "10+", label: "Năm KN" },
-                          { icon: Globe, color: "purple", value: "4+", label: "Quốc gia" },
-                          { icon: Award, color: "green", value: "15+", label: "Dự án" }
-                        ].map((stat, index) => (
+                        {stats.map((stat, index) => (
                           <motion.div 
                             key={index}
                             whileHover={{ scale: 1.05, y: -5 }}
-                            className={`bg-${stat.color}-50 dark:bg-${stat.color}-900/20 rounded-lg p-4`}
+                            className={`${StatBackground({ color: stat.color })} rounded-lg p-4`}
                           >
-                            <stat.icon className={`h-6 w-6 text-${stat.color}-600 dark:text-${stat.color}-400 mx-auto mb-2`} />
+                            <StatIcon icon={stat.icon} color={stat.color} />
                             <div className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
                             <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
                           </motion.div>
@@ -376,11 +434,7 @@ const KeyMembers = () => {
                         className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700"
                       >
                         <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
-                          {[
-                            { color: "green", text: "Chuyên gia hàng đầu" },
-                            { color: "blue", text: "Kinh nghiệm quốc tế" },
-                            { color: "purple", text: "Lãnh đạo tận tâm" }
-                          ].map((item, index) => (
+                          {additionalInfo.map((item, index) => (
                             <motion.div 
                               key={index}
                               initial={{ opacity: 0, scale: 0 }}
@@ -388,7 +442,7 @@ const KeyMembers = () => {
                               transition={{ duration: 0.4, delay: 1.4 + index * 0.1 }}
                               className="flex items-center space-x-2"
                             >
-                              <div className={`w-2 h-2 bg-${item.color}-500 rounded-full`}></div>
+                              <div className={`w-2 h-2 ${DotColor({ color: item.color })} rounded-full`}></div>
                               <span>{item.text}</span>
                             </motion.div>
                           ))}
@@ -457,7 +511,7 @@ const KeyMembers = () => {
               transition={{ duration: 0.5, delay: 2.5 }}
               className="text-gray-600 dark:text-gray-400 text-sm font-medium"
             >
-              Đội ngũ lãnh đạo xuất sắc - Tầm nhìn chiến lược
+              {t("about.company.keyMembers.footerText")}
             </motion.span>
             {[...Array(3)].map((_, i) => (
               <motion.div 

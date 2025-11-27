@@ -143,7 +143,38 @@
     "countries": {
       "number": "10+",
       "label": "Quốc gia"
+    },
+    "satisfied": {
+      "number": "99%",
+      "label": "Khách hàng hài lòng"
+    },
+    "support": {
+      "number": "24/7",
+      "label": "Hỗ trợ kỹ thuật"
     }
+  },
+  "technology" : {
+"hero": {
+    "badge": {
+      "text": "Sử dụng 50+ công nghệ hiện đại"
+    },
+    "main_heading": {
+      "part1": "Công Nghệ",
+      "part2": "Hiện Đại"
+    },
+    "subheading": {
+      "text": "Khám phá các công nghệ tiên tiến từ",
+      "description": "cho giải pháp phần mềm đột phá"
+    },
+    "cta_buttons": {
+      "primary": {
+        "text": "Xem các dự án"
+      },
+      "secondary": {
+        "text": "Xem demo công nghệ"
+      }
+    }
+  }
   },
   "about": {
     "company": {
@@ -292,6 +323,185 @@
           }
         ],
         "footerText": "Tiếp tục phát triển và đạt được nhiều thành tựu hơn nữa"
+      },
+      "keyMembers": {
+        "sectionNumber": "05",
+        "title": "THÀNH VIÊN CHỦ CHỐT",
+        "description": "Đội ngũ lãnh đạo tài năng với nhiều năm kinh nghiệm trong lĩnh vực công nghệ và quản lý, mang đến sự phát triển vượt bậc cho Hitek Software.",
+        "members": [
+          {
+            "name": "ÔNG OH SEAN BEOM",
+            "position": "Giám đốc kinh doanh tại Hàn Quốc",
+            "achievements": [
+              {
+                "type": "highlight",
+                "text": "10+ năm kinh nghiệm phát triển mobile app/web"
+              },
+              {
+                "type": "highlight",
+                "text": "5+ năm kinh nghiệm quản lý team, leadership"
+              },
+              {
+                "type": "normal",
+                "text": "Đảm nhận trách nhiệm chính trong quản lý tiến độ, lên kế hoạch về timeline, budget, nhân sự"
+              },
+              {
+                "type": "normal",
+                "text": "Quản lý team nước ngoài từ xa, lên kế hoạch phát triển bản thân cho nhân viên"
+              },
+              {
+                "type": "normal",
+                "text": "Kinh nghiệm làm việc trong môi trường quốc tế: Nhật, Việt Nam, Hàn Quốc, Châu Âu"
+              }
+            ]
+          },
+          {
+            "name": "ÔNG LÊ QUỐC VŨ",
+            "position": "Giám đốc công nghệ công ty Hitek Software",
+            "achievements": [
+              {
+                "type": "highlight",
+                "text": "7+ năm kinh nghiệm phát triển phần mềm và thiết kế hệ thống"
+              },
+              {
+                "type": "highlight",
+                "text": "2+ năm kinh nghiệm trong thiết kế và triển khai hệ thống IOT, xây dựng bản mẫu"
+              },
+              {
+                "type": "normal",
+                "text": "Cử nhân chuyên ngành kỹ thuật phần mềm"
+              },
+              {
+                "type": "award",
+                "text": "Tham gia viết các bài báo khoa học công nghệ năm 2016"
+              },
+              {
+                "type": "award",
+                "text": "Giải nhất cuộc thi phần mềm mã nguồn mở 2015"
+              },
+              {
+                "type": "award",
+                "text": "Giải nhì cuộc thi lập trình quốc tế ACM/ICPC 2014"
+              },
+              {
+                "type": "normal",
+                "text": "Chịu trách nhiệm xây dựng và thiết kế kiến trúc hệ thống phần mềm, định hướng kỹ thuật"
+              }
+            ]
+          },
+          {
+            "name": "ÔNG LÂM THỨ TIÊN",
+            "position": "Giám đốc công ty Hitek Capital",
+            "achievements": [
+              {
+                "type": "normal",
+                "text": "Sáng lập và là Chủ tịch HĐQT Công ty cổ phần Đầu tư Công nghệ số Rồng Việt (Rovi Group)"
+              },
+              {
+                "type": "normal",
+                "text": "Cổ đông sáng lập và Thành viên HĐQT Công ty cổ phần Công nghệ Mọi Người Cùng Vui"
+              },
+              {
+                "type": "normal",
+                "text": "Từng đảm nhận vị trí Tổng giám đốc Công ty cổ phần đầu tư Thengroup"
+              },
+              {
+                "type": "normal",
+                "text": "Từng đảm nhận vị trí Giám đốc thương mại Công ty TNHH Dịch vụ Mọi Người Cùng Vui"
+              },
+              {
+                "type": "normal",
+                "text": "Từng là Nhà sáng lập và điều hành chuỗi hệ thống Điện thoại bình dân (2012)"
+              }
+            ]
+          }
+        ],
+        "stats": [
+          {
+            "label": "Năm KN",
+            "value": "10+"
+          },
+          {
+            "label": "Quốc gia",
+            "value": "4+"
+          },
+          {
+            "label": "Dự án",
+            "value": "15+"
+          }
+        ],
+        "additionalInfo": [
+          {
+            "text": "Chuyên gia hàng đầu"
+          },
+          {
+            "text": "Kinh nghiệm quốc tế"
+          },
+          {
+            "text": "Lãnh đạo tận tâm"
+          }
+        ],
+        "footerText": "Đội ngũ lãnh đạo xuất sắc - Tầm nhìn chiến lược",
+        "imageFallbackText": "Ảnh thành viên"
+      },
+      "activities": {
+        "sectionNumber": "06",
+        "title": "CÁC HOẠT ĐỘNG CỦA HITEK SOFTWARE",
+        "subtitle": "KHÁM PHÁ HOẠT ĐỘNG NỔI BẬT",
+        "footerText": "Đa dạng hoạt động - Chất lượng vượt trội",
+        "activities": [
+          {
+            "id": 1,
+            "title": "Phát Triển Phần Mềm",
+            "description": "Nghiên cứu và phát triển các giải pháp phần mềm tùy chỉnh đáp ứng nhu cầu đa dạng của khách hàng trong nước và quốc tế.",
+            "color": "accent",
+            "buttonText": "Xem chi tiết"
+          },
+          {
+            "id": 2,
+            "title": "Tư Vấn Công Nghệ",
+            "description": "Cung cấp dịch vụ tư vấn công nghệ chuyên sâu, giúp khách hàng tối ưu hóa quy trình và nâng cao hiệu suất.",
+            "color": "primary",
+            "buttonText": "Xem chi tiết"
+          },
+          {
+            "id": 3,
+            "title": "Bảo Trì & Hỗ Trợ",
+            "description": "Dịch vụ bảo trì, nâng cấp và hỗ trợ kỹ thuật 24/7 đảm bảo hệ thống vận hành ổn định và liên tục.",
+            "color": "accent",
+            "buttonText": "Xem chi tiết"
+          },
+          {
+            "id": 4,
+            "title": "Đào Tạo Nhân Sự",
+            "description": "Đào tạo và phát triển nguồn nhân lực chất lượng cao, cập nhật công nghệ mới và kỹ năng chuyên môn.",
+            "color": "primary",
+            "buttonText": "Xem chi tiết"
+          },
+          {
+            "id": 5,
+            "title": "Hợp Tác Quốc Tế",
+            "description": "Mở rộng hợp tác với các đối tác quốc tế, tiếp cận công nghệ tiên tiến và mở rộng thị trường toàn cầu.",
+            "color": "accent",
+            "buttonText": "Xem chi tiết"
+          },
+          {
+            "id": 6,
+            "title": "Nghiên Cứu & Đổi Mới",
+            "description": "Không ngừng nghiên cứu và đổi mới công nghệ, phát triển các sản phẩm sáng tạo đón đầu xu hướng.",
+            "color": "primary",
+            "buttonText": "Xem chi tiết"
+          }
+        ],
+        "images": {
+          "softwareDevelopment": "@/assets/activities/activitie_1.jpg",
+          "techConsulting": "@/assets/activities/activitie_2.jpg",
+          "maintenanceSupport": "@/assets/activities/activitie_3.jpg",
+          "training": "@/assets/activities/activitie_4.jpg",
+          "internationalCooperation": "@/assets/activities/activitie_5.jpg",
+          "researchInnovation": "@/assets/activities/activitie_6.jpg",
+          "fallbackAlt": "Hoạt động của Hitek Software"
+        }
       }
     },
     "us": {
@@ -417,6 +627,46 @@
     }
   },
   "services": {
+    "hero": {
+      "badge": {
+        "text": "Đồng hành cùng 500+ doanh nghiệp"
+      },
+      "heading": {
+        "part1": "Dịch Vụ",
+        "part2": "Công Nghệ"
+      },
+      "subheading": {
+        "text": "Cung cấp giải pháp công nghệ toàn diện từ",
+        "highlightedWords": [
+          {
+            "text": "tư vấn"
+          },
+          {
+            "text": "thiết kế"
+          },
+          {
+            "text": "đến"
+          },
+          {
+            "text": "phát triển"
+          },
+          {
+            "text": "và"
+          },
+          {
+            "text": "bảo trì"
+          },
+          {
+            "text": "hệ thống phần mềm cho doanh nghiệp"
+          }
+        ]
+      },
+      "cta": {
+        "consultation": "Nhận tư vấn ngay",
+        "caseStudy": "Xem case study"
+      },
+      "background": "Technology Background"
+    },
     "customSoftware": {
       "title": "Dịch vụ custom phần mềm",
       "description": "Công ty phát triển phần mềm custom hàng đầu Việt Nam."
@@ -456,7 +706,185 @@
     "blockchain": {
       "title": "Dịch vụ Blockchain cho doanh nghiệp",
       "description": "Phát triển Blockchain dễ dàng và an toàn cho doanh nghiệp."
-    }
+    },
+    "sectionTitle": "Dịch Vụ Công Nghệ",
+    "sectionDescription": "Các giải pháp công nghệ toàn diện cho doanh nghiệp",
+    "servicesList": [
+      {
+        "title": "Dịch vụ custom phần mềm",
+        "description": "Là một công ty phát triển phần mềm custom hàng đầu Việt Nam, chúng tôi đã hoàn thành xuất sắc hàng trăm dự án cho các khách hàng trên toàn thế giới.",
+        "fullDescription": "Thành lập từ năm 2017, Hitek luôn áp dụng các phương pháp mới một cách thuần thục. Chúng tôi cung cấp giải pháp phần mềm tùy chỉnh phù hợp với nhu cầu kinh doanh cụ thể của từng khách hàng. Với đội ngũ kỹ sư giàu kinh nghiệm, chúng tôi cam kết mang đến sản phẩm chất lượng cao, đáp ứng mọi yêu cầu khắt khe nhất.",
+        "features": [
+          "Phát triển phần mềm theo yêu cầu riêng biệt",
+          "Tích hợp hệ thống hiện có",
+          "Bảo trì và nâng cấp liên tục",
+          "Hỗ trợ kỹ thuật 24/7",
+          "Tư vấn giải pháp tối ưu",
+          "Bảo mật thông tin tuyệt đối"
+        ]
+      },
+      {
+        "title": "Dịch vụ phát triển phần mềm dài hạn",
+        "description": "Phát triển phần mềm dài hạn là một quá trình xây dựng phức tạp, đòi hỏi kiến thức chuyên sâu và kinh nghiệm.",
+        "fullDescription": "Không phải ai cũng được đào tạo bài bản và có kiến thức chuyên sâu để tự mình xử lý các dự án phát triển phần mềm dài hạn. Chúng tôi cung cấp đội ngũ chuyên gia cam kết lâu dài, đồng hành cùng doanh nghiệp trong suốt quá trình phát triển và vận hành.",
+        "features": [
+          "Đội ngũ chuyên gia dedicated",
+          "Lộ trình phát triển rõ ràng",
+          "Báo cáo tiến độ định kỳ",
+          "Tối ưu chi phí dài hạn",
+          "Linh hoạt thay đổi yêu cầu",
+          "Đảm bảo chất lượng sản phẩm"
+        ]
+      },
+      {
+        "title": "Dịch vụ phát triển web",
+        "description": "Gần 10 năm kinh nghiệm trong nghề, chúng tôi luôn phát triển web bằng các công nghệ nổi trội bậc nhất.",
+        "fullDescription": "Chúng tôi sử dụng các công nghệ front-end hiện đại (Angular, ReactJS, Jquery, HTML5, CSS3…) kết hợp với các framework backend mạnh mẽ để tạo ra các ứng dụng web chất lượng cao. Từ website giới thiệu doanh nghiệp đến các hệ thống web application phức tạp.",
+        "features": [
+          "Thiết kế Responsive đa nền tảng",
+          "Tối ưu hóa SEO",
+          "Hiệu suất cao",
+          "Bảo mật toàn diện",
+          "Trải nghiệm người dùng tốt nhất",
+          "Tích hợp thanh toán đa dạng"
+        ]
+      },
+      {
+        "title": "Dịch vụ Cloud Migration",
+        "description": "Tận dụng đám mây và cơ sở hạ tầng để thúc đẩy tăng trưởng kinh doanh.",
+        "fullDescription": "Chúng tôi giúp doanh nghiệp chuyển đổi hệ thống lên cloud một cách an toàn và hiệu quả, tối ưu hóa chi phí và nâng cao khả năng mở rộng. Dịch vụ bao gồm tư vấn, lập kế hoạch, thực hiện và vận hành hệ thống trên nền tảng cloud.",
+        "features": [
+          "Chiến lược Migration tối ưu",
+          "Tối ưu hóa chi phí",
+          "Bảo mật & Tuân thủ",
+          "Giám sát 24/7",
+          "Sao lưu và phục hồi",
+          "Tự động hóa hệ thống"
+        ]
+      },
+      {
+        "title": "Dịch vụ phát triển mobile app",
+        "description": "Là một công ty phát triển ứng dụng di động hàng đầu, chúng tôi có nhiều năm kinh nghiệm trong việc tạo ra các ứng dụng sáng tạo.",
+        "fullDescription": "Chúng tôi phát triển ứng dụng di động cho cả iOS và Android, đảm bảo trải nghiệm người dùng tốt nhất và hiệu suất tối ưu. Từ ý tưởng đến sản phẩm hoàn chỉnh, chúng tôi đồng hành cùng bạn ở mọi bước.",
+        "features": [
+          "Native & Cross-platform",
+          "UI/UX Excellence",
+          "Tối ưu App Store",
+          "Bảo trì & Hỗ trợ",
+          "Tích hợp API",
+          "Push Notification"
+        ]
+      },
+      {
+        "title": "Dịch vụ kiểm thử phần mềm",
+        "description": "Là một trong những công ty phát triển phần mềm hàng đầu tại Việt Nam, Hitek vượt trội trong việc kiểm thử chất lượng.",
+        "fullDescription": "Đội ngũ QA/QC chuyên nghiệp của chúng tôi đảm bảo chất lượng sản phẩm thông qua các quy trình kiểm thử nghiêm ngặt và tự động hóa. Chúng tôi cung cấp dịch vụ kiểm thử toàn diện từ đơn vị, tích hợp đến hệ thống.",
+        "features": [
+          "Kiểm thử tự động",
+          "Kiểm thử hiệu năng",
+          "Kiểm thử bảo mật",
+          "Đảm bảo chất lượng",
+          "Kiểm thử tích hợp",
+          "Kiểm thử hồi quy"
+        ]
+      },
+      {
+        "title": "Dịch vụ outsourcing theo dự án",
+        "description": "Đã và đang có nhiều cơ hội thực hiện những dự án Outsourcing cho các quốc gia phát triển trên thế giới.",
+        "fullDescription": "Với kinh nghiệm xử lý những dự án phức tạp nhất cho các thị trường Mỹ, Canada, Hàn Quốc,... chúng tôi tự tin mang đến giải pháp outsourcing chất lượng. Đội ngũ chuyên gia của chúng tôi sẵn sàng tham gia vào mọi giai đoạn của dự án.",
+        "features": [
+          "Đội ngũ chuyên dụng",
+          "Mô hình hợp tác linh hoạt",
+          "Hiệu quả chi phí",
+          "Chất lượng bàn giao",
+          "Quản lý dự án chuyên nghiệp",
+          "Bảo mật thông tin"
+        ]
+      },
+      {
+        "title": "Dịch vụ xây dựng offshore center",
+        "description": "Được tích lũy kinh nghiệm từ các dự án xây dựng offshore center với các khách hàng từ khắp nơi trên thế giới.",
+        "fullDescription": "Hitek tự tin rằng chúng tôi là một trong số ít những nhà cung cấp dịch vụ xây dựng offshore center phù hợp và hiện đại nhất. Chúng tôi cung cấp giải pháp toàn diện từ thiết lập cơ sở hạ tầng đến tuyển dụng và quản lý đội ngũ.",
+        "features": [
+          "Thiết lập hạ tầng",
+          "Tuyển dụng đội ngũ",
+          "Thiết lập quy trình",
+          "Quan hệ đối tác lâu dài",
+          "Đào tạo nhân sự",
+          "Quản lý vận hành"
+        ]
+      },
+      {
+        "title": "Dịch vụ phát triển phần mềm tại các quốc gia lân cận",
+        "description": "Phát triển phần mềm tại các quốc gia gần với thị trường tiêu thụ và thường có múi giờ tương tự.",
+        "fullDescription": "Sự khác biệt sẽ luôn nằm ở mức tối thiểu khi bạn chọn phát triển phần mềm tại các quốc gia lân cận với đội ngũ Hitek. Chúng tôi cung cấp giải pháp phát triển phần mềm hiệu quả với chi phí tối ưu và giao tiếp thuận lợi.",
+        "features": [
+          "Múi giờ tương đồng",
+          "Gần gũi văn hóa",
+          "Hiệu quả chi phí",
+          "Giao tiếp dễ dàng",
+          "Quản lý thuận tiện",
+          "Chất lượng đảm bảo"
+        ]
+      },
+      {
+        "title": "Dịch vụ ứng dụng Blockchain cho doanh nghiệp",
+        "description": "Chúng tôi giúp bạn phát triển công nghệ Blockchain cho doanh nghiệp mọi lĩnh vực.",
+        "fullDescription": "Công nghệ Blockchain có thể cung cấp cho bạn những hồ sơ giao dịch dễ dàng và an toàn, minh bạch và không thể thay đổi. Chúng tôi cung cấp giải pháp Blockchain toàn diện từ tư vấn, phát triển đến triển khai và bảo trì.",
+        "features": [
+          "Hợp đồng thông minh",
+          "Ứng dụng phi tập trung",
+          "Token hóa tài sản",
+          "Bảo mật & Minh bạch",
+          "Ví điện tử",
+          "Giải pháp thanh toán"
+        ]
+      },
+      {
+        "title": "Dịch vụ AI & Machine Learning",
+        "description": "Ứng dụng trí tuệ nhân tạo và học máy để tối ưu hóa quy trình kinh doanh.",
+        "fullDescription": "Chúng tôi phát triển các giải pháp AI và Machine Learning giúp doanh nghiệp tự động hóa quy trình, tối ưu hóa vận hành và đưa ra quyết định thông minh. Từ xử lý ngôn ngữ tự nhiên đến thị giác máy tính và dự báo.",
+        "features": [
+          "Xử lý ngôn ngữ tự nhiên",
+          "Thị giác máy tính",
+          "Dự báo và phân tích",
+          "Tự động hóa quy trình",
+          "Hệ thống đề xuất",
+          "Xử lý dữ liệu lớn"
+        ]
+      },
+      {
+        "title": "Dịch vụ DevOps",
+        "description": "Tối ưu hóa quy trình phát triển và vận hành phần mềm với DevOps.",
+        "fullDescription": "Chúng tôi cung cấp dịch vụ DevOps toàn diện giúp doanh nghiệp tự động hóa quy trình phát triển, tích hợp và triển khai phần mềm. Tăng tốc độ phát hành sản phẩm và đảm bảo chất lượng.",
+        "features": [
+          "CI/CD Pipeline",
+          "Infrastructure as Code",
+          "Containerization",
+          "Monitoring & Logging",
+          "Auto Scaling",
+          "Security Integration"
+        ]
+      }
+    ],
+    "process": [
+      {
+        "title": "Tư vấn & Phân tích",
+        "description": "Phân tích yêu cầu và tư vấn giải pháp tối ưu nhất cho doanh nghiệp"
+      },
+      {
+        "title": "Lập kế hoạch",
+        "description": "Xây dựng kế hoạch chi tiết, timeline và ngân sách rõ ràng"
+      },
+      {
+        "title": "Phát triển",
+        "description": "Triển khai phát triển với đội ngũ chuyên gia giàu kinh nghiệm"
+      },
+      {
+        "title": "Bàn giao & Hỗ trợ",
+        "description": "Bàn giao sản phẩm và hỗ trợ kỹ thuật sau triển khai"
+      }
+    ]
   },
   "hero": {
     "title1": "THÚC ĐẨY SÁNG TẠO, TĂNG TỐC ĐỔI MỚI",
