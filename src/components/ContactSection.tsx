@@ -130,7 +130,7 @@ const ContactSection = () => {
               <div>
                 <Input
                   name="name"
-                  placeholder={t('contact.form.name') || "Họ và tên"}
+                  placeholder="Họ và tên"
                   className="bg-background border-border/50 focus:border-primary"
                   value={formData.name}
                   onChange={handleInputChange}
@@ -141,7 +141,7 @@ const ContactSection = () => {
                 <Input
                   name="email"
                   type="email"
-                  placeholder={t('contact.form.email') || "Email"}
+                  placeholder="Email"
                   className="bg-background border-border/50 focus:border-primary"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -151,7 +151,7 @@ const ContactSection = () => {
               <div>
                 <Input
                   name="phone"
-                  placeholder={t('contact.form.phone') || "Số điện thoại"}
+                  placeholder="Số điện thoại"
                   className="bg-background border-border/50 focus:border-primary"
                   value={formData.phone}
                   onChange={handleInputChange}
@@ -160,7 +160,7 @@ const ContactSection = () => {
               <div>
                 <Input
                   name="company"
-                  placeholder={t('contact.form.company') || "Công ty"}
+                  placeholder="Công ty"
                   className="bg-background border-border/50 focus:border-primary"
                   value={formData.company}
                   onChange={handleInputChange}
@@ -169,7 +169,7 @@ const ContactSection = () => {
               <div>
                 <Textarea
                   name="message"
-                  placeholder={t('contact.form.message') || "Nội dung tin nhắn"}
+                  placeholder="Nội dung tin nhắn"
                   rows={5}
                   className="bg-background border-border/50 focus:border-primary resize-none"
                   value={formData.message}
@@ -182,7 +182,7 @@ const ContactSection = () => {
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 disabled={isLoading}
               >
-                {isLoading ? (t('contact.form.sending') || "Đang gửi...") : (t('contact.form.send') || "Gửi tin nhắn")}
+                {isLoading ? "Đang gửi..." : "Gửi tin nhắn"}
               </Button>
             </form>
           </div>
