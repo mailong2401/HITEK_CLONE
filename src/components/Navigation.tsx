@@ -145,7 +145,7 @@ const Navigation = () => {
     scrollToTop();
     // Sau khi scroll lên đầu, chuyển hướng đến trang dịch vụ
     setTimeout(() => {
-      window.location.href = "/HITEK_CLONE/services-page";
+      window.location.href = "/services-page";
     }, 500);
   };
 
