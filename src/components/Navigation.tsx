@@ -3,12 +3,14 @@ import { Menu, X, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSelector from "@/components/LanguageSelector";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import LogoHitek from "@/assets/logoHitek.avif"
 
 const Navigation = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -16,19 +18,11 @@ const Navigation = () => {
   const [isAboutHovered, setIsAboutHovered] = useState(false);
   const [isServicesHovered, setIsServicesHovered] = useState(false);
 
-  const scrollContainerRef = useRef(null);
-  const aboutDropdownRef = useRef(null);
-  const servicesDropdownRef = useRef(null);
-  const aboutTimeoutRef = useRef(null);
-  const servicesTimeoutRef = useRef(null);
-
-  // Hàm scroll lên đầu trang
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
-    setIsAboutHovered(false);
-    setIsServicesHovered(false);
-  }, []);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // ----- SCROLL EFFECT -----
   useEffect(() => {
@@ -67,11 +61,11 @@ const Navigation = () => {
 
   // ----- CLICK OUTSIDE DROPDOWN -----
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(event.target as Node)) {
         setIsAboutHovered(false);
       }
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
         setIsServicesHovered(false);
       }
     };
@@ -86,30 +80,30 @@ const Navigation = () => {
   ];
 
   const servicesData = [
-    { title: t('services.customSoftware.title'), description: t('services.customSoftware.description'), link: "#custom-software" },
-    { title: t('services.longTermDevelopment.title'), description: t('services.longTermDevelopment.description'), link: "#long-term-software" },
-    { title: t('services.webDevelopment.title'), description: t('services.webDevelopment.description'), link: "#web-development" },
-    { title: t('services.cloudMigration.title'), description: t('services.cloudMigration.description'), link: "#cloud-migration" },
-    { title: t('services.mobileApp.title'), description: t('services.mobileApp.description'), link: "#mobile-app" },
-    { title: t('services.softwareTesting.title'), description: t('services.softwareTesting.description'), link: "#software-testing" },
-    { title: t('services.outsourcing.title'), description: t('services.outsourcing.description'), link: "#outsourcing" },
-    { title: t('services.offshoreCenter.title'), description: t('services.offshoreCenter.description'), link: "#offshore-center" },
-    { title: t('services.nearshoreSoftware.title'), description: t('services.nearshoreSoftware.description'), link: "#nearshore-software" },
-    { title: t('services.blockchain.title'), description: t('services.blockchain.description'), link: "#blockchain" },
+    { title: t('services.customSoftware.title'), description: t('services.customSoftware.description'), link: "/services-page/custom-software" },
+    { title: t('services.longTermDevelopment.title'), description: t('services.longTermDevelopment.description'), link: "/services-page#long-term-software" },
+    { title: t('services.webDevelopment.title'), description: t('services.webDevelopment.description'), link: "/services-page#web-development" },
+    { title: t('services.cloudMigration.title'), description: t('services.cloudMigration.description'), link: "/services-page#cloud-migration" },
+    { title: t('services.mobileApp.title'), description: t('services.mobileApp.description'), link: "/services-page#mobile-app" },
+    { title: t('services.softwareTesting.title'), description: t('services.softwareTesting.description'), link: "/services-page#software-testing" },
+    { title: t('services.outsourcing.title'), description: t('services.outsourcing.description'), link: "/services-page#outsourcing" },
+    { title: t('services.offshoreCenter.title'), description: t('services.offshoreCenter.description'), link: "/services-page#offshore-center" },
+    { title: t('services.nearshoreSoftware.title'), description: t('services.nearshoreSoftware.description'), link: "/services-page#nearshore-software" },
+    { title: t('services.blockchain.title'), description: t('services.blockchain.description'), link: "/services-page#blockchain" },
   ];
 
   const navLinks = [
-    { name: t('nav.home'), href: "/", onClick: scrollToTop },
-    { name: t('nav.about'), href: "#about", hasDropdown: true, type: "about" },
-    { name: t('nav.services'), href: "/services-page", type: "services", onClick: scrollToTop },
-    { name: t('nav.technology'), href: "/technology", onClick: scrollToTop },
-    { name: t('nav.projects'), href: "/projects-page", onClick: scrollToTop },
-    { name: t('nav.testimonials'), href: "/blog", onClick: scrollToTop },
-    { name: t('nav.careers'), href: "/recruitment", onClick: scrollToTop },
+    { name: t('nav.home'), href: "/" },
+    { name: t('nav.about'), href: "#", hasDropdown: true, type: "about" },
+    { name: t('nav.services'), href: "/services-page", hasDropdown: true, type: "services" },
+    { name: t('nav.technology'), href: "/technology" },
+    { name: t('nav.projects'), href: "/projects-page" },
+    { name: t('nav.testimonials'), href: "/blog" },
+    { name: t('nav.careers'), href: "/recruitment" },
   ];
 
   // ----- HOVER HANDLERS -----
-  const handleMouseEnter = (type) => {
+  const handleMouseEnter = (type: string) => {
     if (type === "about") {
       if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
       setIsAboutHovered(true);
@@ -119,7 +113,7 @@ const Navigation = () => {
     }
   };
 
-  const handleMouseLeave = (type) => {
+  const handleMouseLeave = (type: string) => {
     if (type === "about") {
       aboutTimeoutRef.current = setTimeout(() => setIsAboutHovered(false), 150);
     } else if (type === "services") {
@@ -134,24 +128,35 @@ const Navigation = () => {
     };
   }, []);
 
+  // Hàm scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Hàm xử lý khi click vào các mục dropdown
   const handleDropdownItemClick = () => {
     scrollToTop();
+    setIsMobileMenuOpen(false);
   };
 
-  // Hàm xử lý khi click vào link chính của DỊCH VỤ
-  const handleServicesLinkClick = (e) => {
+  // Hàm xử lý khi click vào link chính của DỊCH VỤ - FIXED
+  const handleServicesLinkClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setIsServicesHovered(false);
     scrollToTop();
-    // Sau khi scroll lên đầu, chuyển hướng đến trang dịch vụ
-    setTimeout(() => {
-      window.location.href = "/services-page";
-    }, 500);
+    navigate("/services-page");
+  };
+
+  // Hàm xử lý click vào ABOUT (chỉ có dropdown, không có trang riêng)
+  const handleAboutLinkClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Không làm gì cả, chỉ để mở dropdown khi hover
   };
 
   // ----- RENDER DROPDOWNS -----
   const renderAboutDropdown = () => (
     <motion.div 
+      ref={aboutDropdownRef}
       className="absolute top-full left-0 mt-2 w-80 bg-background border border-border rounded-lg shadow-xl z-50"
       onMouseEnter={() => handleMouseEnter("about")}
       onMouseLeave={() => handleMouseLeave("about")}
@@ -181,6 +186,7 @@ const Navigation = () => {
 
   const renderServicesDropdown = () => (
     <motion.div 
+      ref={servicesDropdownRef}
       className="absolute top-full left-0 mt-2 w-[800px] bg-background border border-border rounded-lg shadow-xl z-50 overflow-y-auto max-h-[500px]"
       onMouseEnter={() => handleMouseEnter("services")}
       onMouseLeave={() => handleMouseLeave("services")}
@@ -190,16 +196,16 @@ const Navigation = () => {
     >
       <div className="p-6 grid grid-cols-2 gap-6">
         {servicesData.map((service, index) => (
-          <a
+          <Link
             key={index}
-            href={service.link}
+            to={service.link}
             className="block border border-border rounded-lg p-4 hover:border-primary transition-colors"
             onClick={handleDropdownItemClick}
           >
             <h4 className="font-medium text-foreground mb-2">{service.title}</h4>
             <p className="text-sm text-muted-foreground mb-2 line-clamp-3">{service.description}</p>
             <span className="text-sm text-primary hover:underline font-medium">{t('nav.viewMore')}</span>
-          </a>
+          </Link>
         ))}
       </div>
     </motion.div>
@@ -210,8 +216,8 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-lg" : ""} h-16 md:h-20`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center" onClick={scrollToTop}>
-          <img src="https://hitek.com.vn/wp-content/uploads/2022/08/logo-140x38.avif" alt="HITEK Logo" className="h-8 w-auto" />
+        <Link to="/" className="flex items-center" >
+          <img src={LogoHitek} alt="HITEK Logo" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -220,27 +226,27 @@ const Navigation = () => {
             <div key={link.name} className="relative"
               onMouseEnter={() => link.type && handleMouseEnter(link.type)}
               onMouseLeave={() => link.type && handleMouseLeave(link.type)}
-              ref={link.type === "about" ? aboutDropdownRef : link.type === "services" ? servicesDropdownRef : null}
             >
               {link.hasDropdown ? (
                 <div className="flex items-center cursor-pointer">
                   {link.type === "services" ? (
-                    // Xử lý riêng cho link DỊCH VỤ
-                    <a
-                      href={link.href}
+                    // Xử lý cho link DỊCH VỤ
+                    <Link
+                      to={link.href}
                       className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                      onClick={handleServicesLinkClick}
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link 
-                      to={link.href} 
-                      className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                      onClick={link.onClick}
+                      onClick={(e) => handleServicesLinkClick(e)}
                     >
                       {link.name}
                     </Link>
+                  ) : (
+                    // Xử lý cho ABOUT (chỉ có dropdown)
+                    <a
+                      href="#"
+                      className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      onClick={(e) => handleAboutLinkClick(e)}
+                    >
+                      {link.name}
+                    </a>
                   )}
                   <ChevronDown className={`h-4 w-4 ml-1 transition-transform ${(link.type === "about" && isAboutHovered) || (link.type === "services" && isServicesHovered) ? "rotate-180" : ""}`} />
                   <AnimatePresence>
@@ -252,7 +258,6 @@ const Navigation = () => {
                 <Link 
                   to={link.href} 
                   className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                  onClick={link.onClick}
                 >
                   {link.name}
                 </Link>
@@ -275,19 +280,33 @@ const Navigation = () => {
               {navLinks.map((link) => (
                 <div key={link.name}>
                   {link.type === "services" ? (
-                    <a
-                      href={link.href}
+                    // Xử lý cho DỊCH VỤ trên tablet
+                    <Link
+                      to={link.href}
                       className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0"
-                      onClick={handleServicesLinkClick}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToTop();
+                        navigate("/services-page");
+                      }}
                     >
                       {link.name}
-                    </a>
+                    </Link>
+                  ) : link.type === "about" ? (
+                    // Xử lý cho ABOUT trên tablet (không có dropdown)
+                    <Link
+                      to={aboutData[0].href} // Mặc định chuyển đến trang đầu tiên
+                      className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0"
+                      onClick={() => scrollToTop()}
+                    >
+                      {link.name}
+                    </Link>
                   ) : (
                     <Link 
                       key={link.name} 
                       to={link.href} 
                       className="text-sm font-medium text-foreground hover:text-primary whitespace-nowrap flex-shrink-0"
-                      onClick={link.onClick || scrollToTop}
+                      onClick={() => scrollToTop()}
                     >
                       {link.name}
                     </Link>
@@ -316,51 +335,74 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden mt-4 pb-4 space-y-3">
-          {navLinks.map((link) => (
-            <div key={link.name}>
-              {link.hasDropdown ? (
-                <div className="space-y-3">
-                  <div className="text-sm font-medium text-foreground">
-                    {link.type === "services" ? (
-                      <a
-                        href={link.href}
-                        onClick={handleServicesLinkClick}
-                        className="cursor-pointer"
-                      >
-                        {link.name}
-                      </a>
-                    ) : (
-                      link.name
-                    )}
-                  </div>
-                  <div className="pl-4 space-y-3 border-l-2 border-border">
-                    {(link.type === "about" ? aboutData : servicesData).map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={item.href || item.link} 
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors" 
-                        onClick={handleDropdownItemClick}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            className="md:hidden bg-background border-t border-border"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container mx-auto px-4 py-4 space-y-4">
+              {navLinks.map((link) => (
+                <div key={link.name}>
+                  {link.hasDropdown ? (
+                    <div className="space-y-2">
+                      {link.type === "services" ? (
+                        // DỊCH VỤ trên mobile - click chuyển trang
+                        <Link
+                          to={link.href}
+                          className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            scrollToTop();
+                          }}
+                        >
+                          {link.name}
+                        </Link>
+                      ) : (
+                        // ABOUT trên mobile - có dropdown
+                        <>
+                          <div className="text-base font-medium text-foreground py-2">
+                            {link.name}
+                          </div>
+                          <div className="pl-4 space-y-2 border-l-2 border-border">
+                            {(link.type === "about" ? aboutData : servicesData).map((item, index) => (
+                              <Link 
+                                key={index} 
+                                to={item.href || item.link} 
+                                className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2" 
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  scrollToTop();
+                                }}
+                              >
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  ) : (
+                    <Link 
+                      to={link.href} 
+                      className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        scrollToTop();
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </div>
-              ) : (
-                <Link 
-                  to={link.href} 
-                  className="block text-sm font-medium text-foreground hover:text-primary transition-colors" 
-                  onClick={link.onClick || scrollToTop}
-                >
-                  {link.name}
-                </Link>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
