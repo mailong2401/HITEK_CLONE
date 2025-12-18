@@ -3,6 +3,7 @@ import CustomSoftwareSection from "@/components/Services/service_custom/CustomSo
 import OurSolutionsSection from '@/components/Services/service_custom/OurSolutionsSection';
 import DevelopmentProcessSection from '@/components/Services/service_custom/DevelopmentProcessSection';
 import OurTechnologiesSection from '@/components/Services/service_custom/OurTechnologiesSection';
+import ContactSection from "@/components/ContactSection";
 
 const ServiceCustom = () => {
   return (
@@ -12,6 +13,7 @@ const ServiceCustom = () => {
       <OurSolutionsSection/>
       <DevelopmentProcessSection />
       <OurTechnologiesSection />
+      <ContactSection />
     </>
   )
 }

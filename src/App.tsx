@@ -22,6 +22,11 @@ import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import ScrollToTop from '@/components/ScrollToTop'; // Đã import
 import ServiceCustom from '@/pages/services/ServiceCustom'
+import LongTermSoftware from '@/pages/services/LongTermSoftware'
+import ServiceMobileApp from '@/pages/services/ServiceMobileApp'
+import MigrateServer from '@/pages/services/MigrateServer'
+import SoftwareTesting from '@/pages/services/SoftwareTesting'
+import Outsourcing from '@/pages/services/Outsourcing'
 
 const queryClient = new QueryClient();
 
@@ -65,6 +70,31 @@ const App = () => (
                   <ServiceCustom />
                 </Layout>
               } />
+              <Route path="/services-page/long-term-software" element={
+                <Layout>
+                  <LongTermSoftware />
+                </Layout>
+              } />
+              <Route path="/services-page/mobile-app" element={
+                <Layout>
+                  <ServiceMobileApp />
+                </Layout>
+              } />
+              <Route path="/services-page/migrate-server" element={
+                <Layout>
+                  <MigrateServer />
+                </Layout>
+              } />
+              <Route path="/services-page/software-testing" element={
+                <Layout>
+                  <SoftwareTesting />
+                </Layout>
+              } />
+              <Route path="/services-page/outsourcing" element={
+                <Layout>
+                  <Outsourcing />
+                </Layout>
+              } />
               <Route path="/projects-page" element={
                 <Layout>
                   <ProjectsPage />
@@ -90,7 +120,7 @@ const App = () => (
                   <BlogPage />
                 </Layout>
               } />
-              <Route path="/blog/:slug" element={
+              <Route path="/blog/:id" element={
                 <Layout>
                   <BlogPostPage />
                 </Layout>
