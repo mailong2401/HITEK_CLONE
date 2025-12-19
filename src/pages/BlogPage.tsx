@@ -303,7 +303,6 @@ export default function BlogPage() {
       <div ref={allBlogsRef} className="relative">
         <AllBlogsPage
           getFallbackImage={getFallbackImage}
-          onBack={scrollToTop} // Scroll lên đầu trang
         />
       </div>
 
