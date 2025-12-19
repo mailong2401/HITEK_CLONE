@@ -60,7 +60,7 @@ const HeroSection = () => {
           {/* H1 với animation đơn giản */}
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+            className="text-4xl text-primary md:text-6xl lg:text-7xl font-bold leading-tight"
           >
             {t('hero.title1')}
           </motion.h1>

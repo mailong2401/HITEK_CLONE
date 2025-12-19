@@ -365,7 +365,7 @@ const AISection = () => {
             className="h-80 rounded-3xl bg-cover bg-center relative overflow-hidden shadow-2xl border border-primary/20"
             style={{ backgroundImage: `url(${aiTechImage})` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/95 via-tech-dark/80 to-tech-dark/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/50 via-tech-dark/40 to-tech-dark/50"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white">
                 <motion.h3 

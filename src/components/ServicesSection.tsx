@@ -1,16 +1,21 @@
 import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import các hình ảnh mẫu
-import softwareDevImg from "@/assets/ai-tech.jpg";
-import cloudSolutionImg from "@/assets/ai-tech.jpg";
-import mobileAppImg from "@/assets/ai-tech.jpg";
-import cybersecurityImg from "@/assets/ai-tech.jpg";
-import aiMlImg from "@/assets/ai-tech.jpg";
-import dataManagementImg from "@/assets/ai-tech.jpg";
+import service1 from "@/assets/Services/s1.jpg"
+import service2 from "@/assets/Services/s2.jpg"
+import service3 from "@/assets/Services/s3.jpg"
+import service4 from "@/assets/Services/s4.jpg"
+import service5 from "@/assets/Services/s5.jpg"
+import service6 from "@/assets/Services/s6.jpg"
+import service7 from "@/assets/Services/s7.jpg"
+import service8 from "@/assets/Services/s8.jpg"
+import service9 from "@/assets/Services/s9.jpg"
+import service10 from "@/assets/Services/s10.jpg"
 
 const ServicesSection = () => {
   const { t } = useLanguage();
@@ -24,44 +29,54 @@ const ServicesSection = () => {
 
   const services = [
     {
-      image: softwareDevImg,
-      title: t('servicesSection.services.softwareDev.title'),
-      description: t('servicesSection.services.softwareDev.description'),
+      image: service1,
+      title: t('services.customSoftware.title'),
+      description: t('services.customSoftware.description'),
     },
     {
-      image: cloudSolutionImg,
-      title: t('servicesSection.services.cloudSolution.title'),
-      description: t('servicesSection.services.cloudSolution.description'),
+      image: service2,
+      title: t('services.longTermDevelopment.title'),
+      description: t('services.longTermDevelopment.description'),
     },
     {
-      image: mobileAppImg,
-      title: t('servicesSection.services.mobileApp.title'),
-      description: t('servicesSection.services.mobileApp.description'),
+      image: service3,
+      title: t('services.webDevelopment.title'),
+      description: t('services.webDevelopment.description'),
     },
     {
-      image: cybersecurityImg,
-      title: t('servicesSection.services.cybersecurity.title'),
-      description: t('servicesSection.services.cybersecurity.description'),
+      image: service4,
+      title: t('services.cloudMigration.title'),
+      description: t('services.cloudMigration.description'),
     },
     {
-      image: aiMlImg,
-      title: t('servicesSection.services.aiMl.title'),
-      description: t('servicesSection.services.aiMl.description'),
+      image: service5,
+      title: t('services.mobileApp.title'),
+      description: t('services.mobileApp.description'),
     },
     {
-      image: dataManagementImg,
-      title: t('servicesSection.services.dataManagement.title'),
-      description: t('servicesSection.services.dataManagement.description'),
+      image: service6,
+      title: t('services.softwareTesting.title'),
+      description: t('services.softwareTesting.description'),
     },
     {
-      image: dataManagementImg,
-      title: t('servicesSection.services.consulting.title'),
-      description: t('servicesSection.services.consulting.description'),
+      image: service7,
+      title: t('services.outsourcing.title'),
+      description: t('services.outsourcing.description'),
     },
     {
-      image: dataManagementImg,
-      title: t('servicesSection.services.maintenance.title'),
-      description: t('servicesSection.services.maintenance.description'),
+      image: service8,
+      title: t('services.offshoreCenter.title'),
+      description: t('services.offshoreCenter.description'),
+    },
+    {
+      image: service9,
+      title: t('services.nearshoreSoftware.title'),
+      description: t('services.nearshoreSoftware.description'),
+    },
+    {
+      image: service10,
+      title: t('services.blockchain.title'),
+      description: t('services.blockchain.description'),
     },
   ];
 
@@ -71,15 +86,19 @@ const ServicesSection = () => {
   const scrollToIndex = (index) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = 400;
-      const gap = 20;
-      const scrollPosition = index * (cardWidth + gap);
-      
-      container.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
-      setCurrentIndex(index);
+      const cardElement = container.children[index];
+      if (cardElement) {
+        const containerWidth = container.offsetWidth;
+        const cardWidth = cardElement.offsetWidth;
+        const gap = 20;
+        const scrollPosition = index * (cardWidth + gap) - (containerWidth - cardWidth) / 2;
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+        setCurrentIndex(index);
+      }
     }
   };
 
@@ -91,17 +110,6 @@ const ServicesSection = () => {
     
     scrollToIndex(newIndex);
   };
-
-  // Auto scroll chỉ khi section trong view
-  useEffect(() => {
-    if (!isInView) return;
-
-    const interval = setInterval(() => {
-      scroll('right');
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, isInView]);
 
   // Cập nhật số card hiển thị dựa trên kích thước màn hình
   useEffect(() => {
@@ -132,13 +140,45 @@ const ServicesSection = () => {
     return index === currentIndex + Math.floor(visibleCards / 2);
   };
 
+  // Xử lý scroll bằng touch/swipe
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      scroll('right');
+    } else if (isRightSwipe) {
+      scroll('left');
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
     <section 
       ref={sectionRef}
       id="services" 
-      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-slate-950 dark:via-blue-950/20 dark:to-purple-950/10 overflow-hidden"
+      className="py-20 bg-gradient-to-br from-background via-background/90 to-secondary/50 overflow-hidden relative"
     >
-      <div className="container mx-auto px-4">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.05),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header Section với hiệu ứng xuất hiện */}
         <div 
           className={`
@@ -149,52 +189,64 @@ const ServicesSection = () => {
             }
           `}
         >
+          <div className="inline-block mb-4">
+            <span className="text-sm font-semibold tracking-wider text-primary bg-primary/10 px-4 py-2 rounded-full">
+              {t('servicesSection.tagline')}
+            </span>
+          </div>
+          
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            {t('servicesSection.heading').split(' ').slice(0, 2).join(' ')}
+            <span className="block bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+              {t('servicesSection.heading').split(' ').slice(0, 2).join(' ')}
+            </span>
             <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent pb-2">
               {t('servicesSection.heading').split(' ').slice(2).join(' ')}
             </span>
           </h2>
 
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             {t('servicesSection.subheading')}
           </p>
         </div>
 
-        {/* Carousel Container với hiệu ứng xuất hiện */}
-        <div 
-          className={`
-            relative max-w-6xl mx-auto transition-all duration-1000 delay-300
-            ${isInView 
-              ? 'translate-y-0 opacity-100' 
-              : 'translate-y-10 opacity-0'
-            }
-          `}
-        >
-          {/* Navigation Buttons */}
-          <button 
-            onClick={() => scroll('left')}
-            className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm rounded-full p-4 shadow-2xl border hover:bg-background hover:scale-110 transition-all duration-300 flex items-center justify-center"
-          >
-            <ChevronLeft className="h-6 w-6 text-foreground" />
-          </button>
-          
-          <button 
-            onClick={() => scroll('right')}
-            className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm rounded-full p-4 shadow-2xl border hover:bg-background hover:scale-110 transition-all duration-300 flex items-center justify-center"
-          >
-            <ChevronRight className="h-6 w-6 text-foreground" />
-          </button>
+        {/* Carousel Container */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Navigation Buttons - chỉ hiện trên desktop */}
+          <div className="hidden lg:block">
+            <Button
+              onClick={() => scroll('left')}
+              variant="outline"
+              size="icon"
+              className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm rounded-full p-4 shadow-2xl border-2 hover:bg-background hover:scale-110 transition-all duration-300 hover:border-primary"
+            >
+              <ChevronLeft className="h-6 w-6 text-foreground" />
+            </Button>
+            
+            <Button
+              onClick={() => scroll('right')}
+              variant="outline"
+              size="icon"
+              className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-20 bg-background/90 backdrop-blur-sm rounded-full p-4 shadow-2xl border-2 hover:bg-background hover:scale-110 transition-all duration-300 hover:border-primary"
+            >
+              <ChevronRight className="h-6 w-6 text-foreground" />
+            </Button>
+          </div>
 
-          {/* Scrollable Cards Container với hiệu ứng phóng to */}
+          {/* Scrollable Cards Container */}
           <div 
             ref={scrollContainerRef}
-            className="flex overflow-x-auto gap-5 pb-8 scroll-smooth px-8 snap-x snap-mandatory"
+            className="flex overflow-x-auto gap-5 pb-8 px-2 md:px-8 scroll-smooth snap-x snap-mandatory"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
-              scrollBehavior: 'smooth'
+              cursor: 'grab'
             }}
+            onMouseDown={() => document.body.style.cursor = 'grabbing'}
+            onMouseUp={() => document.body.style.cursor = 'grab'}
+            onMouseLeave={() => document.body.style.cursor = 'default'}
           >
             {services.map((service, index) => {
               const isCenter = isCenterCard(index);
@@ -202,20 +254,26 @@ const ServicesSection = () => {
                 <Card
                   key={index}
                   className={`
-                    group transition-all duration-500 border-2 flex-shrink-0 flex flex-col snap-start
+                    group transition-all duration-500 border-2 flex-shrink-0 flex flex-col snap-start cursor-pointer
                     ${isCenter 
-                      ? 'scale-105 shadow-2xl border-primary/30 bg-gradient-to-br from-card to-blue-50/50 dark:to-blue-950/20 w-[400px]' 
-                      : 'scale-95 shadow-lg border-border/30 bg-card/70 backdrop-blur-sm opacity-70 w-[380px] hover:opacity-90'
+                      ? 'scale-105 shadow-2xl border-primary/50 bg-gradient-to-br from-card to-primary/5 w-[400px]' 
+                      : 'scale-95 shadow-lg border-border/50 bg-card/90 backdrop-blur-sm opacity-80 hover:opacity-100 w-[380px]'
                     }
-                    ${hasAnimated ? 'animate-in slide-in-from-bottom-8 duration-700' : ''}
+                    ${hasAnimated ? 'animate-in fade-in duration-700' : ''}
+                    hover:shadow-xl hover:-translate-y-2 transition-all duration-300
                   `}
                   style={{
                     animationDelay: `${index * 100}ms`,
                     animationFillMode: 'both'
                   }}
+                  onClick={() => {
+                    if (!isCenter) {
+                      scrollToIndex(index - Math.floor(visibleCards / 2));
+                    }
+                  }}
                 >
                   <CardHeader className="p-0 flex-shrink-0">
-                    <div className="h-52 overflow-hidden rounded-t-lg relative">
+                    <div className="h-56 overflow-hidden rounded-t-lg relative">
                       <img 
                         src={service.image} 
                         alt={service.title}
@@ -224,15 +282,21 @@ const ServicesSection = () => {
                           ${isCenter ? 'group-hover:scale-110' : 'group-hover:scale-105'}
                         `}
                       />
-                      {/* Overlay gradient cho ảnh */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div>
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                      {/* Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="text-xs font-semibold text-white bg-primary/90 px-3 py-1 rounded-full">
+                          {index + 1}
+                        </span>
+                      </div>
                     </div>
                     <div className="p-6 pb-0">
                       <CardTitle className={`
                         transition-all duration-300 flex items-center
                         ${isCenter 
                           ? 'text-2xl font-bold text-foreground group-hover:text-primary' 
-                          : 'text-xl font-semibold text-foreground/90'
+                          : 'text-xl font-semibold text-foreground/90 group-hover:text-foreground'
                         }
                       `}>
                         {service.title}
@@ -244,25 +308,28 @@ const ServicesSection = () => {
                       leading-relaxed flex-1 transition-all duration-300
                       ${isCenter 
                         ? 'text-foreground/80 text-base' 
-                        : 'text-muted-foreground text-sm'
+                        : 'text-muted-foreground text-sm group-hover:text-foreground/70'
                       }
                     `}>
                       {service.description}
                     </p>
                     <div className="mt-6 pt-4 border-t border-border/30">
-                      <button className={`
-                        font-semibold text-sm transition-all duration-300 flex items-center gap-2 group-hover:gap-3
-                        ${isCenter 
-                          ? 'text-primary hover:text-primary/80' 
-                          : 'text-muted-foreground hover:text-foreground'
-                        }
-                      `}>
+                      <Button
+                        variant="ghost"
+                        className={`
+                          px-0 font-semibold text-sm transition-all duration-300 flex items-center gap-2 group-hover:gap-3
+                          ${isCenter 
+                            ? 'text-primary hover:text-primary/80' 
+                            : 'text-muted-foreground hover:text-foreground'
+                          }
+                        `}
+                      >
                         <span>{t('servicesSection.exploreButton')}</span>
                         <ChevronRight className={`
                           transition-all duration-300
                           ${isCenter ? 'h-5 w-5' : 'h-4 w-4'}
                         `} />
-                      </button>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -286,18 +353,43 @@ const ServicesSection = () => {
               key={index}
               onClick={() => scrollToIndex(index)}
               className={`
-                rounded-full transition-all duration-500 ease-out
+                rounded-full transition-all duration-500 ease-out group
                 ${index === currentIndex 
-                  ? 'bg-primary scale-125 w-8 h-3' 
+                  ? 'bg-primary scale-125 w-10 h-3 shadow-lg shadow-primary/30' 
                   : 'bg-border hover:bg-primary/50 w-3 h-3'
                 }
               `}
-            />
+              aria-label={`Go to slide ${index + 1}`}
+            >
+              {index === currentIndex && (
+                <span className="block w-2 h-2 bg-white rounded-full mx-auto"></span>
+              )}
+            </button>
           ))}
+        </div>
+
+        {/* Mobile navigation buttons */}
+        <div className="flex justify-center gap-4 mt-8 lg:hidden">
+          <Button
+            onClick={() => scroll('left')}
+            variant="outline"
+            size="icon"
+            className="bg-background/90 backdrop-blur-sm rounded-full p-3 shadow-lg border-2"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+          <Button
+            onClick={() => scroll('right')}
+            variant="outline"
+            size="icon"
+            className="bg-background/90 backdrop-blur-sm rounded-full p-3 shadow-lg border-2"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </Button>
         </div>
       </div>
 
-      <style>{`
+      <style jsx>{`
         .snap-x {
           scroll-snap-type: x mandatory;
         }
@@ -306,6 +398,31 @@ const ServicesSection = () => {
         }
         .overflow-x-auto::-webkit-scrollbar {
           display: none;
+        }
+        
+        /* Smooth grab cursor effect */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Card hover glow effect */
+        .group:hover .card-glow {
+          box-shadow: 0 0 40px rgba(var(--primary) / 0.3);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .service-card {
+            width: 85vw !important;
+            min-width: 85vw !important;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .service-card {
+            width: 90vw !important;
+            min-width: 90vw !important;
+          }
         }
       `}</style>
     </section>
