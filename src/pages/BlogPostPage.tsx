@@ -389,7 +389,7 @@ export default function BlogPostPage() {
   const readTime = calculateReadTime(post.content);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="pt-20 min-h-screen bg-background">
       {/* Hero Section với ảnh cover */}
       {post.image && (
         <div className="relative h-[400px] md:h-[500px] w-full">

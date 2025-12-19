@@ -109,105 +109,63 @@ export default function BlogPage() {
   };
 
   // Hàm chuyển slide với hiệu ứng
-  const showSlider = (type: 'next' | 'prev') => {
-    if (isAnimating || blogPosts.length <= 1) return;
-    
-    setIsAnimating(true);
+const showSlider = (type: 'next' | 'prev') => {
+  if (isAnimating || blogPosts.length <= 1) return;
+  
+  setIsAnimating(true);
 
-    const targetPostId = type === 'next' ? nextPostId : prevPostId;
-    if (!targetPostId) return;
+  // Vô hiệu hóa nút khi đang animate
+  if (nextBtnRef.current) nextBtnRef.current.disabled = true;
+  if (prevBtnRef.current) prevBtnRef.current.disabled = true;
 
-    // Vô hiệu hóa nút khi đang animate
-    if (nextBtnRef.current) nextBtnRef.current.disabled = true;
-    if (prevBtnRef.current) prevBtnRef.current.disabled = true;
-
-    if (type === 'next') {
-      const thumbnailClone = createThumbnailClone(thumbnailContainerRef, targetPostId, false);
+  // Tạo overlay
+  const overlay = document.createElement('div');
+  overlay.style.position = 'absolute';
+  overlay.style.left = '0';
+  overlay.style.top = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'black';
+  overlay.style.zIndex = '40'; // Cao hơn tất cả nội dung
+  overlay.style.opacity = '0';
+  overlay.style.transition = 'opacity 0.6s ease-in-out';
+  
+  // Thêm overlay vào carouselRef
+  if (carouselRef.current) {
+      carouselRef.current.appendChild(overlay);
+  }
+  
+  // Xác định index mới
+  let newIndex;
+  if (type === 'next') {
+      newIndex = (currentIndex + 1) % blogPosts.length;
+  } else {
+      newIndex = currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1;
+  }
+  
+  // Bắt đầu fade in overlay
+  requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+  });
+  
+  // Sau khi overlay đen hoàn toàn, thay đổi currentIndex và fade out overlay
+  setTimeout(() => {
+      setCurrentIndex(newIndex);
       
-      if (thumbnailClone && backgroundImageRef.current) {
-        const bgRect = backgroundImageRef.current.getBoundingClientRect();
-        
-        requestAnimationFrame(() => {
-          thumbnailClone.style.left = `${bgRect.left}px`;
-          thumbnailClone.style.top = `${bgRect.top}px`;
-          thumbnailClone.style.width = `${bgRect.width}px`;
-          thumbnailClone.style.height = `${bgRect.height}px`;
-          thumbnailClone.style.borderRadius = '0';
-        });
-        
-        setTimeout(() => {
-          setCurrentIndex(prev => (prev + 1) % blogPosts.length);
-        }, 300);
-        
-        setTimeout(() => {
-          thumbnailClone.remove();
+      // Fade out overlay
+      overlay.style.opacity = '0';
+      
+      // Kết thúc animation
+      setTimeout(() => {
+          if (carouselRef.current && carouselRef.current.contains(overlay)) {
+              carouselRef.current.removeChild(overlay);
+          }
           setIsAnimating(false);
           if (nextBtnRef.current) nextBtnRef.current.disabled = false;
           if (prevBtnRef.current) prevBtnRef.current.disabled = false;
-        }, 600);
-      } else {
-        setCurrentIndex(prev => (prev + 1) % blogPosts.length);
-        setTimeout(() => setIsAnimating(false), 300);
-      }
-    } else {
-      if (!backgroundImageRef.current) return;
-      
-      const bgRect = backgroundImageRef.current.getBoundingClientRect();
-      const currentPost = blogPosts[currentIndex];
-      
-      const bgClone = document.createElement('div');
-      bgClone.style.position = 'fixed';
-      bgClone.style.left = `${bgRect.left}px`;
-      bgClone.style.top = `${bgRect.top}px`;
-      bgClone.style.width = `${bgRect.width}px`;
-      bgClone.style.height = `${bgRect.height}px`;
-      bgClone.style.backgroundImage = `url(${currentPost.image || getFallbackImage(currentIndex)})`;
-      bgClone.style.backgroundSize = 'cover';
-      bgClone.style.backgroundPosition = 'center';
-      bgClone.style.zIndex = '1000';
-      bgClone.style.pointerEvents = 'none';
-      bgClone.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-      bgClone.style.borderRadius = '0';
-      document.body.appendChild(bgClone);
-      
-      const thumbnailClone = createThumbnailClone(thumbnailContainerRef, '', true);
-      
-      if (thumbnailClone) {
-        const thumbnailRect = thumbnailClone.getBoundingClientRect();
-        const newIndex = currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-        
-        requestAnimationFrame(() => {
-          bgClone.style.left = `${thumbnailRect.left}px`;
-          bgClone.style.top = `${thumbnailRect.top}px`;
-          bgClone.style.width = `${thumbnailRect.width}px`;
-          bgClone.style.height = `${thumbnailRect.height}px`;
-          bgClone.style.borderRadius = '12px';
-          
-          if (backgroundImageRef.current) {
-            backgroundImageRef.current.style.opacity = '0';
-          }
-        });
-        
-        setTimeout(() => {
-          bgClone.remove();
-          thumbnailClone.remove();
-          
-          if (backgroundImageRef.current) {
-            backgroundImageRef.current.style.opacity = '1';
-          }
-          
-          setIsAnimating(false);
-          if (nextBtnRef.current) nextBtnRef.current.disabled = false;
-          if (prevBtnRef.current) prevBtnRef.current.disabled = false;
-        }, 600);
-      } else {
-        setCurrentIndex(prev => prev === 0 ? blogPosts.length - 1 : prev - 1);
-        setTimeout(() => setIsAnimating(false), 300);
-      }
-    }
-  };
-
+      }, 400);
+  }, 100);
+};
   // Xử lý click thumbnail
   const handleThumbnailClick = (clickedIndex: number) => {
     if (!isAnimating && clickedIndex !== currentIndex) {

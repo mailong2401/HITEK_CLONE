@@ -27,7 +27,7 @@ const BlogCarousel: React.FC<ExtendedBlogCarouselProps> = ({
         />
         
         {/* Gradient overlay - Sử dụng gradient từ design system */}
-        <div className="absolute inset-0 bg-gradient-to-r from-tech-dark via-tech-dark/90 to-transparent dark:from-tech-navy dark:via-tech-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-tech-dark via-tech-dark/70 to-transparent dark:from-tech-navy dark:via-tech-navy/70" />
         
         {/* Content - CHUYỂN SANG BÊN TRÁI */}
         <div className="absolute top-1/2 left-8 md:left-16 lg:left-24 transform -translate-y-1/2 w-full max-w-2xl px-4">
