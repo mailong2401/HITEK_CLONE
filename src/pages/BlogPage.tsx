@@ -118,53 +118,93 @@ const showSlider = (type: 'next' | 'prev') => {
   if (nextBtnRef.current) nextBtnRef.current.disabled = true;
   if (prevBtnRef.current) prevBtnRef.current.disabled = true;
 
-  // Tạo overlay
+  // Xác định index mới
+  const newIndex = type === 'next' 
+    ? (currentIndex + 1) % blogPosts.length 
+    : currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1;
+  
+  // Tạo overlay mờ dần
   const overlay = document.createElement('div');
   overlay.style.position = 'absolute';
   overlay.style.left = '0';
   overlay.style.top = '0';
   overlay.style.width = '100%';
   overlay.style.height = '100%';
-  overlay.style.backgroundColor = 'black';
-  overlay.style.zIndex = '40'; // Cao hơn tất cả nội dung
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+  overlay.style.zIndex = '20';
   overlay.style.opacity = '0';
-  overlay.style.transition = 'opacity 0.6s ease-in-out';
+  overlay.style.transition = 'opacity 0.5s ease-in-out';
+  overlay.style.pointerEvents = 'none';
   
   // Thêm overlay vào carouselRef
   if (carouselRef.current) {
-      carouselRef.current.appendChild(overlay);
+    carouselRef.current.appendChild(overlay);
   }
-  
-  // Xác định index mới
-  let newIndex;
-  if (type === 'next') {
-      newIndex = (currentIndex + 1) % blogPosts.length;
-  } else {
-      newIndex = currentIndex === 0 ? blogPosts.length - 1 : currentIndex - 1;
-  }
-  
-  // Bắt đầu fade in overlay
+
+  // Lấy các phần tử cần làm mờ
+  const contentContainer = carouselRef.current?.querySelector('.carousel-content');
+  const thumbnailContainer = carouselRef.current?.querySelector('.thumbnail-container');
+
+  // Bắt đầu fade in overlay và làm mờ nội dung
   requestAnimationFrame(() => {
-      overlay.style.opacity = '1';
+    overlay.style.opacity = '1';
+    
+    // Làm mờ nội dung hiện tại
+    if (contentContainer) {
+      contentContainer.style.opacity = '0.3';
+      contentContainer.style.transform = 'scale(0.98)';
+      contentContainer.style.transition = 'all 0.5s ease-in-out';
+    }
+    
+    if (thumbnailContainer) {
+      thumbnailContainer.style.opacity = '0.3';
+      thumbnailContainer.style.transform = 'translateY(20px) scale(0.95)';
+      thumbnailContainer.style.transition = 'all 0.5s ease-in-out';
+    }
   });
   
-  // Sau khi overlay đen hoàn toàn, thay đổi currentIndex và fade out overlay
+  // Sau khi overlay đạt độ mờ tối đa, thay đổi nội dung
   setTimeout(() => {
-      setCurrentIndex(newIndex);
-      
+    // Thay đổi currentIndex
+    setCurrentIndex(newIndex);
+    
+    // Sau khi nội dung mới được render, fade out overlay
+    setTimeout(() => {
       // Fade out overlay
       overlay.style.opacity = '0';
       
+      // Phục hồi nội dung
+      if (contentContainer) {
+        contentContainer.style.opacity = '1';
+        contentContainer.style.transform = 'scale(1)';
+      }
+      
+      if (thumbnailContainer) {
+        thumbnailContainer.style.opacity = '1';
+        thumbnailContainer.style.transform = 'translateY(0) scale(1)';
+      }
+      
       // Kết thúc animation
       setTimeout(() => {
-          if (carouselRef.current && carouselRef.current.contains(overlay)) {
-              carouselRef.current.removeChild(overlay);
-          }
-          setIsAnimating(false);
-          if (nextBtnRef.current) nextBtnRef.current.disabled = false;
-          if (prevBtnRef.current) prevBtnRef.current.disabled = false;
-      }, 400);
-  }, 100);
+        if (carouselRef.current && carouselRef.current.contains(overlay)) {
+          carouselRef.current.removeChild(overlay);
+        }
+        
+        // Reset styles
+        if (contentContainer) {
+          contentContainer.style.transition = '';
+        }
+        
+        if (thumbnailContainer) {
+          thumbnailContainer.style.transition = '';
+        }
+        
+        setIsAnimating(false);
+        if (nextBtnRef.current) nextBtnRef.current.disabled = false;
+        if (prevBtnRef.current) prevBtnRef.current.disabled = false;
+      }, 300);
+    }, 200); // Thời gian chờ để nội dung mới được render
+  }, 300);
 };
   // Xử lý click thumbnail
   const handleThumbnailClick = (clickedIndex: number) => {
