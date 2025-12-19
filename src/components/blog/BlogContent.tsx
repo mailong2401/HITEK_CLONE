@@ -25,7 +25,7 @@ const BlogContent: React.FC<BlogContentProps> = ({
       </div>
 
       {/* Title - GIỚI HẠN 3 DÒNG, CANH TRÁI */}
-      <h1 className="title text-red-800 font-bold text-3xl md:text-5xl lg:text-5xl mb-10 py-1 opacity-0 animate-showContent animation-delay-200 line-clamp-3 leading-[1.3] md:leading-[1.25]">
+      <h1 className="title text-primary font-bold text-3xl md:text-5xl lg:text-5xl mb-10 py-1 opacity-0 animate-showContent animation-delay-200 line-clamp-3 leading-[1.3] md:leading-[1.25]">
         {currentPost.title}
       </h1>
       
