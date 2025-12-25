@@ -84,12 +84,12 @@ const Navigation = () => {
     { title: t('services.longTermDevelopment.title'), description: t('services.longTermDevelopment.description'), link: "/services-page/long-term-software" },
     { title: t('services.webDevelopment.title'), description: t('services.webDevelopment.description'), link: "/services-page/mobile-app" },
     { title: t('services.cloudMigration.title'), description: t('services.cloudMigration.description'), link: "/services-page/migrate-server" },
-    { title: t('services.mobileApp.title'), description: t('services.mobileApp.description'), link: "/services-page#mobile-app" },
+    { title: t('services.mobileApp.title'), description: t('services.mobileApp.description'), link: "/services-page/mobile-app" },
     { title: t('services.softwareTesting.title'), description: t('services.softwareTesting.description'), link: "/services-page/software-testing" },
     { title: t('services.outsourcing.title'), description: t('services.outsourcing.description'), link: "/services-page/outsourcing" },
     { title: t('services.offshoreCenter.title'), description: t('services.offshoreCenter.description'), link: "/services-page#offshore-center" },
     { title: t('services.nearshoreSoftware.title'), description: t('services.nearshoreSoftware.description'), link: "/services-page#nearshore-software" },
-    { title: t('services.blockchain.title'), description: t('services.blockchain.description'), link: "/services-page#blockchain" },
+    { title: t('services.blockchain.title'), description: t('services.blockchain.description'), link: "/services-page/blockchain" },
   ];
 
   const navLinks = [

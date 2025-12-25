@@ -27,6 +27,7 @@ import ServiceMobileApp from '@/pages/services/ServiceMobileApp'
 import MigrateServer from '@/pages/services/MigrateServer'
 import SoftwareTesting from '@/pages/services/SoftwareTesting'
 import Outsourcing from '@/pages/services/Outsourcing'
+import Blockchain from '@/pages/services/Blockchain'
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,11 @@ const App = () => (
               <Route path="/services-page/outsourcing" element={
                 <Layout>
                   <Outsourcing />
+                </Layout>
+              } />
+              <Route path="/services-page/blockchain" element={
+                <Layout>
+                  <Blockchain />
                 </Layout>
               } />
               <Route path="/projects-page" element={
